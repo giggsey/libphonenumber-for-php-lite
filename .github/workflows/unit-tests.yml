@@ -18,8 +18,9 @@ jobs:
     name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
     runs-on: ubuntu-latest
     strategy:
-      php: ['8.0', 8.1, 8.2]
-      stability: [prefer-lowest, prefer-stable]
+      matrix:
+        php: ['8.0', 8.1, 8.2]
+        stability: [prefer-lowest, prefer-stable]
 
     steps:
       - name: Checkout
@@ -32,12 +33,6 @@ jobs:
           extensions: dom
           coverage: xdebug
           tools: composer:v2
-        env:
-          update: true
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Problem Matchers for PHPUnit
-        run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - uses: "ramsey/composer-install@v2"
         with:
