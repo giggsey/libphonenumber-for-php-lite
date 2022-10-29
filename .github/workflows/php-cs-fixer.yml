@@ -28,7 +28,7 @@ jobs:
           dependency-versions: highest
 
       - name: Run PHP CS Fixer
-        run: "composer cs"
+        run: "composer run-script cs"
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
