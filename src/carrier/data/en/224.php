@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   22460 => 'Sotelgui',
   22461 => 'Orange',
   22462 => 'Orange',

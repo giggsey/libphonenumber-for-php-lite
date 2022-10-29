@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   230525 => 'Cellplus',
   230526 => 'Cellplus',
   230527 => 'MTML',

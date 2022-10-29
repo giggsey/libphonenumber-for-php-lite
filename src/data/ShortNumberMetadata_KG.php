@@ -11,107 +11,107 @@
  */
 
 
-return array (
-  'generalDesc' => 
-  array (
+return array(
+  'generalDesc' =>
+  array(
     'NationalNumberPattern' => '[14]\\d{2,3}',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
       1 => 4,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'tollFree' => 
-  array (
+  'tollFree' =>
+  array(
     'NationalNumberPattern' => '10[1-3]',
     'ExampleNumber' => '101',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'premiumRate' => 
-  array (
-    'PossibleLength' => 
-    array (
+  'premiumRate' =>
+  array(
+    'PossibleLength' =>
+    array(
       0 => -1,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'emergency' => 
-  array (
+  'emergency' =>
+  array(
     'NationalNumberPattern' => '10[1-3]',
     'ExampleNumber' => '101',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'shortCode' => 
-  array (
+  'shortCode' =>
+  array(
     'NationalNumberPattern' => '10[1-3]|4040',
     'ExampleNumber' => '101',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'standardRate' => 
-  array (
-    'PossibleLength' => 
-    array (
+  'standardRate' =>
+  array(
+    'PossibleLength' =>
+    array(
       0 => -1,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'carrierSpecific' => 
-  array (
+  'carrierSpecific' =>
+  array(
     'NationalNumberPattern' => '404\\d',
     'ExampleNumber' => '4040',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 4,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'smsServices' => 
-  array (
+  'smsServices' =>
+  array(
     'NationalNumberPattern' => '404\\d',
     'ExampleNumber' => '4040',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 4,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
   'id' => 'KG',
   'countryCode' => 0,
   'internationalPrefix' => '',
   'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' => 
-  array (
+  'numberFormat' =>
+  array(
   ),
-  'intlNumberFormat' => 
-  array (
+  'intlNumberFormat' =>
+  array(
   ),
   'mainCountryForCode' => false,
   'mobileNumberPortableRegion' => false,

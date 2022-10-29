@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   29821 => 'Faroese Telecom',
   29822 => 'Faroese Telecom',
   29823 => 'Faroese Telecom',

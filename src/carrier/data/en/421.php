@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   421901 => 'T-Mobile (Slovak Telekom)',
   421902 => 'T-Mobile (Slovak Telekom)',
   421903 => 'T-Mobile (Slovak Telekom)',

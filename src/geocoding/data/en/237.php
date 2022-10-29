@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   237222111 => 'Mbalmayo',
   237222120 => 'Akonolinga',
   237222121 => 'Ayos',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   24762 => 'US Base',
   24763 => 'Travellers Hill & Airhead',
   24764 => 'Two Boats',

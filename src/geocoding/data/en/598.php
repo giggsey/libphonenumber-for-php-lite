@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   5982 => 'Montevideo',
   59842 => 'San Carlos',
   598433 => 'Canelones',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   25882 => 'mcel',
   25883 => 'mcel',
   25884 => 'Vodacom',

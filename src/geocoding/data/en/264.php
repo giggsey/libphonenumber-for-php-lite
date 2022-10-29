@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   26461 => 'Windhoek',
   264621730 => 'Babi-Babi',
   264621732 => 'Buitepos',

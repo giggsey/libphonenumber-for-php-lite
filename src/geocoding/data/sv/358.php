@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   35813 => 'Norra Karelen',
   35814 => 'Mellersta Finland',
   35815 => 'St Michel',

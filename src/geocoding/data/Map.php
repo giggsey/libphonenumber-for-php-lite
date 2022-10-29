@@ -10,37 +10,37 @@
  * Do not modify this file directly!
  */
 
-return array (
-  'ar' => 
-  array (
+return array(
+  'ar' =>
+  array(
     0 => 966,
   ),
-  'be' => 
-  array (
+  'be' =>
+  array(
     0 => 375,
   ),
-  'bg' => 
-  array (
+  'bg' =>
+  array(
     0 => 359,
   ),
-  'bs' => 
-  array (
+  'bs' =>
+  array(
     0 => 387,
   ),
-  'de' => 
-  array (
+  'de' =>
+  array(
     0 => 32,
     1 => 352,
     2 => 41,
     3 => 43,
     4 => 49,
   ),
-  'el' => 
-  array (
+  'el' =>
+  array(
     0 => 30,
   ),
-  'en' => 
-  array (
+  'en' =>
+  array(
     0 => 12,
     1 => 13,
     2 => 14,
@@ -240,8 +240,8 @@ return array (
     196 => 995,
     197 => 996,
   ),
-  'es' => 
-  array (
+  'es' =>
+  array(
     0 => 228,
     1 => 230,
     2 => 34,
@@ -250,17 +250,17 @@ return array (
     5 => 56,
     6 => 58,
   ),
-  'fa' => 
-  array (
+  'fa' =>
+  array(
     0 => 93,
     1 => 98,
   ),
-  'fi' => 
-  array (
+  'fi' =>
+  array(
     0 => 358,
   ),
-  'fr' => 
-  array (
+  'fr' =>
+  array(
     0 => 212,
     1 => 222,
     2 => 225,
@@ -274,50 +274,50 @@ return array (
     10 => 352,
     11 => 41,
   ),
-  'hr' => 
-  array (
+  'hr' =>
+  array(
     0 => 387,
   ),
-  'hu' => 
-  array (
+  'hu' =>
+  array(
     0 => 36,
   ),
-  'hy' => 
-  array (
+  'hy' =>
+  array(
     0 => 374,
   ),
-  'id' => 
-  array (
+  'id' =>
+  array(
     0 => 62,
   ),
-  'it' => 
-  array (
+  'it' =>
+  array(
     0 => 39,
     1 => 41,
   ),
-  'iw' => 
-  array (
+  'iw' =>
+  array(
     0 => 972,
   ),
-  'ja' => 
-  array (
+  'ja' =>
+  array(
     0 => 81,
   ),
-  'ko' => 
-  array (
+  'ko' =>
+  array(
     0 => 82,
   ),
-  'nl' => 
-  array (
+  'nl' =>
+  array(
     0 => 31,
     1 => 32,
   ),
-  'pl' => 
-  array (
+  'pl' =>
+  array(
     0 => 48,
   ),
-  'pt' => 
-  array (
+  'pt' =>
+  array(
     0 => 238,
     1 => 239,
     2 => 244,
@@ -326,50 +326,50 @@ return array (
     5 => 351,
     6 => 55,
   ),
-  'ro' => 
-  array (
+  'ro' =>
+  array(
     0 => 373,
     1 => 40,
   ),
-  'ru' => 
-  array (
+  'ru' =>
+  array(
     0 => 373,
     1 => 374,
     2 => 375,
     3 => 7,
   ),
-  'sq' => 
-  array (
+  'sq' =>
+  array(
     0 => 383,
   ),
-  'sr' => 
-  array (
+  'sr' =>
+  array(
     0 => 381,
     1 => 383,
     2 => 387,
   ),
-  'sv' => 
-  array (
+  'sv' =>
+  array(
     0 => 358,
   ),
-  'th' => 
-  array (
+  'th' =>
+  array(
     0 => 66,
   ),
-  'tr' => 
-  array (
+  'tr' =>
+  array(
     0 => 90,
   ),
-  'uk' => 
-  array (
+  'uk' =>
+  array(
     0 => 380,
   ),
-  'vi' => 
-  array (
+  'vi' =>
+  array(
     0 => 84,
   ),
-  'zh' => 
-  array (
+  'zh' =>
+  array(
     0 => 8610,
     1 => 86130,
     2 => 86131,
@@ -409,8 +409,8 @@ return array (
     36 => 86,
     37 => 886,
   ),
-  'zh_Hant' => 
-  array (
+  'zh_Hant' =>
+  array(
     0 => 886,
   ),
 );

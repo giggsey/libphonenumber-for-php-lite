@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   9320 => 'کابل',
   9321 => 'پروان',
   9322 => 'کاپیسا',

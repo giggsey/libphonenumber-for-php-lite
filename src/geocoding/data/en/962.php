@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   962262 => 'Mafraq',
   962263 => 'Jarash',
   962264 => 'Ajloun',

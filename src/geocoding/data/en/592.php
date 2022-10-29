@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   592216 => 'Diamond/Grove',
   592217 => 'Mocha',
   592218 => 'Georgetown (S/R/Veldt)',

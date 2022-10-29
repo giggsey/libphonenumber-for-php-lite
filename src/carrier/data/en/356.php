@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   35672 => 'GO Mobile',
   35677 => 'Melita Mobile',
   35679 => 'GO Mobile',

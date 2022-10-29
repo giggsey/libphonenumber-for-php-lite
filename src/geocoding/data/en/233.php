@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   233302 => 'Accra',
   233303 => 'Tema',
   2333035 => 'Ada',

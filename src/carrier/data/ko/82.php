@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   821020 => 'SK 텔링크',
   821021 => 'SK 텔링크',
   821022 => '데이콤',

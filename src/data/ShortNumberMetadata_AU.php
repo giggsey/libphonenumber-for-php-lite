@@ -11,12 +11,12 @@
  */
 
 
-return array (
-  'generalDesc' => 
-  array (
+return array(
+  'generalDesc' =>
+  array(
     'NationalNumberPattern' => '[0-27]\\d{2,7}',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
       1 => 4,
       2 => 5,
@@ -24,113 +24,113 @@ return array (
       4 => 7,
       5 => 8,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'tollFree' => 
-  array (
+  'tollFree' =>
+  array(
     'NationalNumberPattern' => '000|1(?:06|12|258885|55\\d)|733',
     'ExampleNumber' => '000',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
       1 => 4,
       2 => 7,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'premiumRate' => 
-  array (
+  'premiumRate' =>
+  array(
     'NationalNumberPattern' => '1(?:2(?:34|456)|9\\d{4,6})',
     'ExampleNumber' => '1234',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 4,
       1 => 5,
       2 => 6,
       3 => 7,
       4 => 8,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'emergency' => 
-  array (
+  'emergency' =>
+  array(
     'NationalNumberPattern' => '000|1(?:06|12)',
     'ExampleNumber' => '000',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'shortCode' => 
-  array (
+  'shortCode' =>
+  array(
     'NationalNumberPattern' => '000|1(?:06|1(?:00|2|9[46])|2(?:014[1-3]|[23]\\d|(?:4|5\\d)\\d{2,3}|68[689]|72(?:20|3\\d\\d)|8(?:[013-9]\\d|2))|555|9\\d{4,6})|225|7(?:33|67)',
     'ExampleNumber' => '000',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'standardRate' => 
-  array (
+  'standardRate' =>
+  array(
     'NationalNumberPattern' => '1(?:1[09]\\d|24733)|225|767',
     'ExampleNumber' => '225',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
       1 => 4,
       2 => 6,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'carrierSpecific' => 
-  array (
+  'carrierSpecific' =>
+  array(
     'NationalNumberPattern' => '1(?:258885|55\\d)',
     'ExampleNumber' => '1550',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 4,
       1 => 7,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'smsServices' => 
-  array (
+  'smsServices' =>
+  array(
     'NationalNumberPattern' => '19\\d{4,6}',
     'ExampleNumber' => '190000',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 6,
       1 => 7,
       2 => 8,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
   'id' => 'AU',
   'countryCode' => 0,
   'internationalPrefix' => '',
   'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' => 
-  array (
+  'numberFormat' =>
+  array(
   ),
-  'intlNumberFormat' => 
-  array (
+  'intlNumberFormat' =>
+  array(
   ),
   'mainCountryForCode' => false,
   'mobileNumberPortableRegion' => false,

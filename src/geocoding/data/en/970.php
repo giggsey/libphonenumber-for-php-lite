@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   970222 => 'Jericho/Hebron',
   970223 => 'Jerusalem',
   970227 => 'Bethlehem',

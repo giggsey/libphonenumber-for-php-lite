@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   24201 => 'Equateur Telecom',
   24202 => 'Congo telecom',
   24204 => 'Warid',

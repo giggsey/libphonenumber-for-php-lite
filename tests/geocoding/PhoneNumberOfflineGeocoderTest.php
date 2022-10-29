@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class PhoneNumberOfflineGeocoderTest extends TestCase
 {
-    const TEST_META_DATA_FILE_PREFIX = '/../../tests/prefixmapper/data';
+    public const TEST_META_DATA_FILE_PREFIX = '/../../tests/prefixmapper/data';
     private static $KO_Number1;
     private static $KO_Number2;
     private static $KO_Number3;

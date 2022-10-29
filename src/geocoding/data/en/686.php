@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   68621 => 'Bairiki',
   68622 => 'Bairiki',
   68623 => 'Bairiki',

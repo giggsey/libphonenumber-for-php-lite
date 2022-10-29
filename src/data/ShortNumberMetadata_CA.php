@@ -11,111 +11,111 @@
  */
 
 
-return array (
-  'generalDesc' => 
-  array (
+return array(
+  'generalDesc' =>
+  array(
     'NationalNumberPattern' => '[1-9]\\d\\d(?:\\d\\d(?:\\d(?:\\d{2})?)?)?',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
       1 => 5,
       2 => 6,
       3 => 8,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'tollFree' => 
-  array (
+  'tollFree' =>
+  array(
     'NationalNumberPattern' => '112|988|[29]11',
     'ExampleNumber' => '112',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'premiumRate' => 
-  array (
-    'PossibleLength' => 
-    array (
+  'premiumRate' =>
+  array(
+    'PossibleLength' =>
+    array(
       0 => -1,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'emergency' => 
-  array (
+  'emergency' =>
+  array(
     'NationalNumberPattern' => '112|911',
     'ExampleNumber' => '112',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'shortCode' => 
-  array (
+  'shortCode' =>
+  array(
     'NationalNumberPattern' => '112|30000\\d{3}|[1-35-9]\\d{4,5}|[2-8]11|9(?:11|88)',
     'ExampleNumber' => '112',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'standardRate' => 
-  array (
-    'PossibleLength' => 
-    array (
+  'standardRate' =>
+  array(
+    'PossibleLength' =>
+    array(
       0 => -1,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'carrierSpecific' => 
-  array (
+  'carrierSpecific' =>
+  array(
     'NationalNumberPattern' => '[235-7]11',
     'ExampleNumber' => '211',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 3,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
-  'smsServices' => 
-  array (
+  'smsServices' =>
+  array(
     'NationalNumberPattern' => '300\\d{5}|[1-35-9]\\d{4,5}',
     'ExampleNumber' => '10000',
-    'PossibleLength' => 
-    array (
+    'PossibleLength' =>
+    array(
       0 => 5,
       1 => 6,
       2 => 8,
     ),
-    'PossibleLengthLocalOnly' => 
-    array (
+    'PossibleLengthLocalOnly' =>
+    array(
     ),
   ),
   'id' => 'CA',
   'countryCode' => 0,
   'internationalPrefix' => '',
   'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' => 
-  array (
+  'numberFormat' =>
+  array(
   ),
-  'intlNumberFormat' => 
-  array (
+  'intlNumberFormat' =>
+  array(
   ),
   'mainCountryForCode' => false,
   'mobileNumberPortableRegion' => false,

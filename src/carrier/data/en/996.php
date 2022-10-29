@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   99620 => 'Aktel',
   99622 => 'Sky mobile',
   99631258 => 'Sky mobile',

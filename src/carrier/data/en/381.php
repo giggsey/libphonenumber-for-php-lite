@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38160 => 'VIP',
   38161 => 'VIP',
   38162 => 'Telenor',

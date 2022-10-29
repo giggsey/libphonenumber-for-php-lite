@@ -11,19 +11,19 @@
  */
 
 
-return array (
+return array(
   'id' => '',
   'countryCode' => 95,
   'internationalPrefix' => '',
   'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' => 
-  array (
-    0 => 
-    array (
+  'numberFormat' =>
+  array(
+    0 =>
+    array(
       'pattern' => '(\\d)(\\d{4})(\\d{5})',
       'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' => 
-      array (
+      'leadingDigitsPatterns' =>
+      array(
         0 => '92',
       ),
       'nationalPrefixFormattingRule' => '',
@@ -31,8 +31,8 @@ return array (
       'nationalPrefixOptionalWhenFormatting' => false,
     ),
   ),
-  'intlNumberFormat' => 
-  array (
+  'intlNumberFormat' =>
+  array(
   ),
   'mainCountryForCode' => false,
   'mobileNumberPortableRegion' => false,

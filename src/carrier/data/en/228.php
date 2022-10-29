@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   22870 => 'TOGOCEL',
   22879 => 'Moov',
   22890 => 'TOGOCEL',

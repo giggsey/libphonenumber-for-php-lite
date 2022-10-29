@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861810000 => '北京市',
   861810001 => '北京市',
   861810002 => '北京市',

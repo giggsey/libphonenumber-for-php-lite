@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   84203 => 'Quang Ninh province',
   84204 => 'Bac Giang province',
   84205 => 'Lang Son province',

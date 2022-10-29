@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3592 => 'София',
   359301 => 'Смолян',
   3593019 => 'Писаница',

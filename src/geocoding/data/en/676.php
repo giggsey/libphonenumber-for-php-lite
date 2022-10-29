@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6762 => 'Nuku\'alofa',
   67629 => 'Pea',
   67630 => 'Pea',

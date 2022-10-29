@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   9111 => 'New Delhi',
   91120 => 'Ghaziabad/Dadri, Uttar Pradesh',
   91121 => 'Meerut, Uttar Pradesh',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   52221 => 'Puebla',
   52222 => 'Puebla',
   52223 => 'Puebla',

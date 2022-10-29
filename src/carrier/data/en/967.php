@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   96770 => 'Y',
   96771 => 'SabaFon',
   96773 => 'MTN',

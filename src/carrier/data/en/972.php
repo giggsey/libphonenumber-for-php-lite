@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   97250 => 'Pelephone',
   97251 => 'Xphone',
   97252 => 'Cellcom',

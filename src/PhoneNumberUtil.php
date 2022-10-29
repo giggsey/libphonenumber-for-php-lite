@@ -22,49 +22,49 @@ use libphonenumber\Leniency\AbstractLeniency;
 class PhoneNumberUtil
 {
     /** Flags to use when compiling regular expressions for phone numbers */
-    const REGEX_FLAGS = 'ui'; //Unicode and case insensitive
+    public const REGEX_FLAGS = 'ui'; //Unicode and case insensitive
     // The minimum and maximum length of the national significant number.
-    const MIN_LENGTH_FOR_NSN = 2;
+    public const MIN_LENGTH_FOR_NSN = 2;
     // The ITU says the maximum length should be 15, but we have found longer numbers in Germany.
-    const MAX_LENGTH_FOR_NSN = 17;
+    public const MAX_LENGTH_FOR_NSN = 17;
 
     // We don't allow input strings for parsing to be longer than 250 chars. This prevents malicious
     // input from overflowing the regular-expression engine.
-    const MAX_INPUT_STRING_LENGTH = 250;
+    public const MAX_INPUT_STRING_LENGTH = 250;
 
     // The maximum length of the country calling code.
-    const MAX_LENGTH_COUNTRY_CODE = 3;
+    public const MAX_LENGTH_COUNTRY_CODE = 3;
 
-    const REGION_CODE_FOR_NON_GEO_ENTITY = '001';
-    const META_DATA_FILE_PREFIX = 'PhoneNumberMetadata';
-    const TEST_META_DATA_FILE_PREFIX = 'PhoneNumberMetadataForTesting';
+    public const REGION_CODE_FOR_NON_GEO_ENTITY = '001';
+    public const META_DATA_FILE_PREFIX = 'PhoneNumberMetadata';
+    public const TEST_META_DATA_FILE_PREFIX = 'PhoneNumberMetadataForTesting';
 
     // Region-code for the unknown region.
-    const UNKNOWN_REGION = 'ZZ';
+    public const UNKNOWN_REGION = 'ZZ';
 
-    const NANPA_COUNTRY_CODE = 1;
+    public const NANPA_COUNTRY_CODE = 1;
     // The PLUS_SIGN signifies the international prefix.
-    const PLUS_SIGN = '+';
-    const PLUS_CHARS = '+＋';
-    const STAR_SIGN = '*';
+    public const PLUS_SIGN = '+';
+    public const PLUS_CHARS = '+＋';
+    public const STAR_SIGN = '*';
 
-    const RFC3966_EXTN_PREFIX = ';ext=';
-    const RFC3966_PREFIX = 'tel:';
-    const RFC3966_PHONE_CONTEXT = ';phone-context=';
-    const RFC3966_ISDN_SUBADDRESS = ';isub=';
+    public const RFC3966_EXTN_PREFIX = ';ext=';
+    public const RFC3966_PREFIX = 'tel:';
+    public const RFC3966_PHONE_CONTEXT = ';phone-context=';
+    public const RFC3966_ISDN_SUBADDRESS = ';isub=';
 
     // We use this pattern to check if the phone number has at least three letters in it - if so, then
     // we treat it as a number where some phone-number digits are represented by letters.
-    const VALID_ALPHA_PHONE_PATTERN = '(?:.*?[A-Za-z]){3}.*';
+    public const VALID_ALPHA_PHONE_PATTERN = '(?:.*?[A-Za-z]){3}.*';
     // We accept alpha characters in phone numbers, ASCII only, upper and lower case.
-    const VALID_ALPHA = 'A-Za-z';
+    public const VALID_ALPHA = 'A-Za-z';
 
 
     // Default extension prefix to use when formatting. This will be put in front of any extension
     // component of the number, after the main national number is formatted. For example, if you wish
     // the default extension formatting to be " extn: 3456", then you should specify " extn: " here
     // as the default extension prefix. This can be overridden by region-specific preferences.
-    const DEFAULT_EXTN_PREFIX = ' ext. ';
+    public const DEFAULT_EXTN_PREFIX = ' ext. ';
 
     // Regular expression of acceptable punctuation found in phone numbers, used to find numbers in
     // text and to decide what is a viable phone number. This excludes diallable characters.
@@ -72,8 +72,8 @@ class PhoneNumberUtil
     // square brackets, parentheses and tildes. It also includes the letter 'x' as that is found as a
     // placeholder for carrier information in some phone numbers. Full-width variants are also
     // present.
-    const VALID_PUNCTUATION = "-x\xE2\x80\x90-\xE2\x80\x95\xE2\x88\x92\xE3\x83\xBC\xEF\xBC\x8D-\xEF\xBC\x8F \xC2\xA0\xC2\xAD\xE2\x80\x8B\xE2\x81\xA0\xE3\x80\x80()\xEF\xBC\x88\xEF\xBC\x89\xEF\xBC\xBB\xEF\xBC\xBD.\\[\\]/~\xE2\x81\x93\xE2\x88\xBC";
-    const DIGITS = "\\p{Nd}";
+    public const VALID_PUNCTUATION = "-x\xE2\x80\x90-\xE2\x80\x95\xE2\x88\x92\xE3\x83\xBC\xEF\xBC\x8D-\xEF\xBC\x8F \xC2\xA0\xC2\xAD\xE2\x80\x8B\xE2\x81\xA0\xE3\x80\x80()\xEF\xBC\x88\xEF\xBC\x89\xEF\xBC\xBB\xEF\xBC\xBD.\\[\\]/~\xE2\x81\x93\xE2\x88\xBC";
+    public const DIGITS = "\\p{Nd}";
 
     // Pattern that makes it easy to distinguish whether a region has a single international dialing
     // prefix or not. If a region has a single international prefix (e.g. 011 in USA), it will be
@@ -81,24 +81,24 @@ class PhoneNumberUtil
     // signals waiting for the tone. If there are multiple available international prefixes in a
     // region, they will be represented as a regex string that always contains one or more characters
     // that are not ASCII digits or a tilde.
-    const SINGLE_INTERNATIONAL_PREFIX = "[\\d]+(?:[~\xE2\x81\x93\xE2\x88\xBC\xEF\xBD\x9E][\\d]+)?";
-    const NON_DIGITS_PATTERN = "(\\D+)";
+    public const SINGLE_INTERNATIONAL_PREFIX = "[\\d]+(?:[~\xE2\x81\x93\xE2\x88\xBC\xEF\xBD\x9E][\\d]+)?";
+    public const NON_DIGITS_PATTERN = "(\\D+)";
 
     // The FIRST_GROUP_PATTERN was originally set to $1 but there are some countries for which the
     // first group is not used in the national pattern (e.g. Argentina) so the $1 group does not match
     // correctly. Therefore, we use \d, so that the first group actually used in the pattern will be
     // matched.
-    const FIRST_GROUP_PATTERN = "(\\$\\d)";
+    public const FIRST_GROUP_PATTERN = "(\\$\\d)";
     // Constants used in the formatting rules to represent the national prefix, first group and
     // carrier code respectively.
-    const NP_STRING = '$NP';
-    const FG_STRING = '$FG';
-    const CC_STRING = '$CC';
+    public const NP_STRING = '$NP';
+    public const FG_STRING = '$FG';
+    public const CC_STRING = '$CC';
 
     // A pattern that is used to determine if the national prefix formatting rule has the first group
     // only, i.e, does not start with the national prefix. Note that the pattern explicitly allows
     // for unbalanced parentheses.
-    const FIRST_GROUP_ONLY_PREFIX_PATTERN = '\\(?\\$1\\)?';
+    public const FIRST_GROUP_ONLY_PREFIX_PATTERN = '\\(?\\$1\\)?';
     public static $PLUS_CHARS_PATTERN;
     protected static $SEPARATOR_PATTERN;
     protected static $CAPTURING_DIGIT_PATTERN;

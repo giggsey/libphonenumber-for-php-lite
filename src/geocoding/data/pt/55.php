@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   5561 => 'Distrito Federal',
   5561202 => '',
   55612030 => '',

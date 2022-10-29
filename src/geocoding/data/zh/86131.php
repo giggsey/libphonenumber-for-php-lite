@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861310000 => '山西省太原市',
   861310001 => '山西省太原市',
   861310002 => '山西省大同市',

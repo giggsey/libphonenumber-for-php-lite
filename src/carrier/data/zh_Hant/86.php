@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   86130 => '中國聯通',
   86131 => '中國聯通',
   86132 => '中國聯通',

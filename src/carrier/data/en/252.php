@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   25224 => 'Telesom',
   25228 => 'Nationlink',
   25235 => 'AirSom',

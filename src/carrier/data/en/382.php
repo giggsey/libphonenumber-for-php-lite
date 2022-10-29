@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38260 => 'm:tel',
   38263 => 'Telenor',
   38266 => 'Telekom',

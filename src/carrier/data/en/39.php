@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   39319 => 'Intermatica',
   3932 => 'WIND',
   3933 => 'TIM',

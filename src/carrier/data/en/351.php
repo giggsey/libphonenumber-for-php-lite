@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3511 => 'NOS',
   351609230 => 'NOS',
   35160929 => 'NOS',

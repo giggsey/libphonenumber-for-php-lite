@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38730 => 'Županija Središnja Bosna',
   38731 => 'Županija Posavska',
   38732 => 'Zeničko-dobojska županija',

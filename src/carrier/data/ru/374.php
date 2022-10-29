@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   37433 => 'Билайн',
   37441 => 'Юком',
   37443 => 'Билайн',

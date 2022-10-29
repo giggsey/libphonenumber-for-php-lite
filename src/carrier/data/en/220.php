@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2202 => 'Africell',
   2203 => 'QCell',
   22050 => 'QCell',

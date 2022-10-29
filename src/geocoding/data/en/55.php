@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   551 => 'São Paulo',
   551120 => 'São Paulo - SP',
   55112078 => 'Barueri - SP',

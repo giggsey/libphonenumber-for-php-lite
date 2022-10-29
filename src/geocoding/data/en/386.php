@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3861 => 'Ljubljana',
   3862 => 'Maribor/Ravne na Koroškem/Murska Sobota',
   38632 => 'Celje/Trbovlje',

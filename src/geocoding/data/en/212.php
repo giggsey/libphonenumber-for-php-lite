@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   212520 => 'Casablanca',
   212521 => 'Casablanca/Central Morocco',
   2125220 => 'Casablanca',

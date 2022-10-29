@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   9230 => 'Mobilink',
   9231 => 'Zong',
   9232 => 'Warid',

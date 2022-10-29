@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   269760 => 'Domoni',
   269761 => 'Mutsamudu',
   269762 => 'Mohéli',

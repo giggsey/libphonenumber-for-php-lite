@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   407000 => 'Enigma-System',
   407013 => 'Lycamobile',
   407014 => 'Lycamobile',

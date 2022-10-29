@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   4812 => 'Kraków',
   4813 => 'Krosno',
   4814 => 'Tarnów',

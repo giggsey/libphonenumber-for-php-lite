@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   9050 => 'Turk Telekom',
   90510210 => 'Pasifik Telekom',
   90510220 => 'Netgsm',

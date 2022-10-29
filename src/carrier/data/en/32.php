@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3245001 => 'Gateway Communications',
   32455 => 'VOO',
   32456 => 'Mobile Vikings/JIM Mobile',

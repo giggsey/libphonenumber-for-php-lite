@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   7301 => 'Republic of Buryatia',
   7302 => 'Chita',
   733 => 'Baikonur',

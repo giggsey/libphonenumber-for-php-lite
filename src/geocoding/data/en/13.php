@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1301 => 'Maryland',
   1301203 => 'Fort Washington, MD',
   1301208 => 'Gaithersburg, MD',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   88011 => 'Citycell',
   88013 => 'Grameenphone',
   88014 => 'Banglalink',

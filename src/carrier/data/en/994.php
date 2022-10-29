@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   99410 => 'Azercell',
   99436554 => 'Naxtel',
   99440 => 'FONEX',

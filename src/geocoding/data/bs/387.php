@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38730 => 'Srednjobosanski kanton',
   38731 => 'Posavski kanton',
   38732 => 'Zeničko-dobojski kanton',

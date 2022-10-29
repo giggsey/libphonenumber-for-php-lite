@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   226204 => 'Kaya',
   2262052 => 'Dédougou',
   2262053 => 'Boromo/Djibasso/Nouna',

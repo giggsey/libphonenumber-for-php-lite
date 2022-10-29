@@ -11,7 +11,7 @@ use libphonenumber\prefixmapper\PrefixFileReader;
 
 class PhoneNumberOfflineGeocoder
 {
-    const MAPPING_DATA_DIRECTORY = '/data';
+    public const MAPPING_DATA_DIRECTORY = '/data';
     /**
      * @var PhoneNumberOfflineGeocoder
      */

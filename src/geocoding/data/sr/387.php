@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38730 => 'Средњoбосански кантон',
   38731 => 'Посавски кантон',
   38732 => 'Зеничко-добојски кантон',

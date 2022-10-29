@@ -12,9 +12,9 @@ use libphonenumber\prefixmapper\PrefixTimeZonesMap;
 
 class PhoneNumberToTimeZonesMapper
 {
-    const UNKNOWN_TIMEZONE = 'Etc/Unknown';
-    const MAPPING_DATA_DIRECTORY = '/timezone/data/';
-    const MAPPING_DATA_FILE_NAME = 'map_data.php';
+    public const UNKNOWN_TIMEZONE = 'Etc/Unknown';
+    public const MAPPING_DATA_DIRECTORY = '/timezone/data/';
+    public const MAPPING_DATA_FILE_NAME = 'map_data.php';
     /**
      * @var PhoneNumberToTimeZonesMapper
      */

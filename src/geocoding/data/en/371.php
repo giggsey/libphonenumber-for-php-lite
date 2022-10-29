@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   37161 => 'Jūrmala',
   37162 => 'Valmiera',
   371630 => 'Jelgava',

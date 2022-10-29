@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6332 => 'Cebu',
   6333 => 'Iloilo',
   633461 => 'Negros Occidental',

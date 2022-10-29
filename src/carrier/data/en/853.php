@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   853620 => 'CTM',
   8536200 => 'SmarTone',
   853621 => 'China Telecom',

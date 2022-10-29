@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   50230 => 'Tigo',
   50231 => 'Tigo',
   50232 => 'Tigo',

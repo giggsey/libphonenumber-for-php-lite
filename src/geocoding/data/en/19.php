@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1901 => 'Tennessee',
   1901213 => 'Memphis, TN',
   1901226 => 'Memphis, TN',

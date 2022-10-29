@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   26313 => 'Victoria Falls',
   26314 => 'Rutenga',
   26315 => 'Binga',

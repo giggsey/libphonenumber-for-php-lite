@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   22170 => 'Expresso',
   22172 => 'HAYO',
   22175 => 'Promobile',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   86138000 => '北京市',
   861380004 => '辽宁省沈阳市',
   861380005 => '辽宁省沈阳市',

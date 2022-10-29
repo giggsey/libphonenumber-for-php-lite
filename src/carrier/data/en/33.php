@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   336000 => 'Free Mobile',
   336001 => 'Orange France',
   336002 => 'SFR',

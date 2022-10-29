@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   850195 => 'Pyongyang',
   85021 => 'Pyongyang',
   8502381 => 'Pyongyang',

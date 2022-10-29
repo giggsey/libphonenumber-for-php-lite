@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   35222 => 'Luxembourg City',
   35223 => 'Mondorf-les-Bains/Bascharage/Noerdange/Remich',
   352240 => 'Luxembourg',

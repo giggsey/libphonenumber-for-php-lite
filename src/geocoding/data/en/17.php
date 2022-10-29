@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1701 => 'North Dakota',
   1701221 => 'Bismarck, ND',
   1701222 => 'Bismarck, ND',

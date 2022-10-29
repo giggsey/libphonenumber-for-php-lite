@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   81701 => 'Softbank',
   817010 => 'NTT Docomo',
   817020 => 'KDDI',

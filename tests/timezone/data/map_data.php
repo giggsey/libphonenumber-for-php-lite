@@ -11,7 +11,7 @@
 
  */
 
-return array (
+return array(
   1 => 'America/New_York&America/Chicago&America/Winnipeg&America/Los_Angeles',
   1201 => 'America/New_York',
   1212812 => 'America/New_York',

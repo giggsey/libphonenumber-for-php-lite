@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   4202 => 'Prague',
   42031 => 'Central Bohemian Region',
   42032 => 'Central Bohemian Region',

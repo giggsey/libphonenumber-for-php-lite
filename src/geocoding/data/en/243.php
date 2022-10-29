@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2431 => 'Kinshasa',
   2432 => 'Katanga',
   2433 => 'Bas-Congo/Bandundu',

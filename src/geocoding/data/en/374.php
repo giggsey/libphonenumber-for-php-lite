@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   37410 => 'Yerevan/Jrvezh',
   37411 => 'Yerevan',
   37412 => 'Yerevan',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2292021 => 'Ongala',
   2292022 => 'Kandiévé',
   2292024 => 'Sèmè',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   977960 => 'STM Telecom',
   977961 => 'Smart Telecom',
   977962 => 'Smart Telecom',

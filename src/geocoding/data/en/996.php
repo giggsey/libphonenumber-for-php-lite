@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   9963120 => 'Bishkek, Chuy region',
   9963121 => 'Bishkek, Chuy region',
   9963122 => 'Bishkek, Chuy region',

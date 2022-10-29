@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   355211 => 'Koplik',
   355212 => 'Pukë',
   355213 => 'Bajram Curri',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861300000 => '山东省济南市',
   861300001 => '江苏省常州市',
   861300002 => '安徽省巢湖市',

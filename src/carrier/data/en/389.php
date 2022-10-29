@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3897 => 'A1',
   38970 => 'T-Mobile',
   38971 => 'T-Mobile',

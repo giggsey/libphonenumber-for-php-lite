@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   59595 => 'VOX',
   59596 => 'VOX',
   59597 => 'Personal',

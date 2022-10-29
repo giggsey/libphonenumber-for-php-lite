@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   97331 => 'Royal Court',
   97332 => 'Batelco',
   97333 => 'VIVA',

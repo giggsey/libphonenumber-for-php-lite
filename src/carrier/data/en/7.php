@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   7700 => 'Altel',
   7701 => 'Kcell/Activ',
   7702 => 'Kcell/Activ',

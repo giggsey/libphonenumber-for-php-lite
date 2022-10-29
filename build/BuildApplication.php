@@ -9,7 +9,7 @@ use Symfony\Component\Console\Application;
 
 class BuildApplication extends Application
 {
-    const VERSION = '5';
+    public const VERSION = '5';
 
     public function __construct()
     {

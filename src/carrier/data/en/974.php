@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   97428 => 'ooredoo',
   97429 => 'Vodafone',
   97430 => 'Vodafone',

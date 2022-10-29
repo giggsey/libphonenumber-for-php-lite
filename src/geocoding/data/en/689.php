@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   689404 => 'Îles du Vent(IDV)',
   689405 => 'Îles du Vent(IDV)',
   689406 => 'Îles Sous-le-vent(ISLV)',

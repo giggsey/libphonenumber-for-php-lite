@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   24910 => 'Sudatel',
   24911 => 'Sudatel',
   24912 => 'Sudatel',

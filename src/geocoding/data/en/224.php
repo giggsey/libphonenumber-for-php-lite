@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   224302 => 'Fria',
   2243031 => 'Boké',
   2243032 => 'Kamsar',

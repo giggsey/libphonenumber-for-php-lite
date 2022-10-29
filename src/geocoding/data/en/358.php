@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   35813 => 'North Karelia',
   35814 => 'Central Finland',
   35815 => 'Mikkeli',

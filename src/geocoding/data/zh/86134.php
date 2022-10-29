@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861340000 => '江苏省无锡市',
   861340001 => '江苏省无锡市',
   861340002 => '江苏省无锡市',

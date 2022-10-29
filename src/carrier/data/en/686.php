@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   68662 => 'Ocean Link',
   68663 => 'Ocean Link',
   686720 => 'ATHKL',

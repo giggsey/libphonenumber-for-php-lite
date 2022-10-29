@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   37433 => 'Beeline',
   37441 => 'Ucom',
   37443 => 'Beeline',

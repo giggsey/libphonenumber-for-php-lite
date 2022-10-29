@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1601 => 'Mississippi',
   1601200 => 'Jackson, MS',
   1601225 => 'Gloster, MS',

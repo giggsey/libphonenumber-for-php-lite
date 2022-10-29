@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   25410 => 'Airtel',
   25411 => 'Safaricom',
   254120 => 'Telkom',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2341 => 'Lagos',
   2342 => 'Ibadan',
   23430 => 'Ado Ekiti',

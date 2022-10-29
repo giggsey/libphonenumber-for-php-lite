@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class UKNumbersTest extends TestCase
 {
-    const META_DATA_FILE_PREFIX = 'PhoneNumberMetadata';
+    public const META_DATA_FILE_PREFIX = 'PhoneNumberMetadata';
     /**
      * @var \libphonenumber\PhoneNumberUtil
      */

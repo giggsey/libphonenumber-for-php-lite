@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1801 => 'Utah',
   1801213 => 'Salt Lake City, UT',
   180122 => 'Orem, UT',

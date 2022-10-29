@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   23225 => 'Sierratel',
   23230 => 'Africell',
   23231 => 'QCELL',

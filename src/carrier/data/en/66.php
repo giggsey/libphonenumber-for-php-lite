@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6661010 => 'True Move',
   6661012 => 'True Move',
   6661013 => 'True Move',

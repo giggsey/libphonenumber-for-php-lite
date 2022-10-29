@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   88024 => 'Dhaka',
   88025 => 'Dhaka',
   88027 => 'Dhaka',

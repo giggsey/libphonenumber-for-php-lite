@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38031 => 'Закарпатська',
   380312 => 'Ужгород/Чоп, Закарпатська',
   3803122 => 'Ужгород, Закарпатська',

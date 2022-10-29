@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   68571 => 'Bluesky',
   68572 => 'Digicel',
   68573 => 'Digicel',

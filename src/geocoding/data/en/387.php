@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38730 => 'Central Bosnia Canton',
   38731 => 'Posavina Canton',
   38732 => 'Zenica-Doboj Canton',

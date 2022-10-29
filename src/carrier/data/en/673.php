@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   673228 => 'DSTCom',
   673229 => 'DSTCom',
   67371 => 'DSTCom',

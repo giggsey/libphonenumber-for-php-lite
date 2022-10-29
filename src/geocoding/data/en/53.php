@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   5321 => 'Guantánamo Province',
   5322 => 'Santiago de Cuba Province',
   5323 => 'Granma Province',

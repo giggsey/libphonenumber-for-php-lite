@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   852440 => '中国移动',
   852441 => '香港移动通讯',
   852444 => '香港移动通讯',

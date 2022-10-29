@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   26263900 => 'Orange',
   26263901 => 'Orange',
   26263902 => 'Orange',

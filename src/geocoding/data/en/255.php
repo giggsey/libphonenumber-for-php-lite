@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   25522 => 'Dar-Es-Salaam',
   25523 => 'Coast/Morogoro/Lindi/Mtwara',
   25524 => 'Zanzibar',

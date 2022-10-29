@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2402 => 'GETESA',
   2405 => 'Muni',
 );

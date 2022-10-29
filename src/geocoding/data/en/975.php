@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   9752 => 'Thimphu',
   9753 => 'Trongsa',
   9754 => 'Trashigang',

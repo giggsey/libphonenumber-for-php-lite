@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   35813 => 'Pohjois-Karjala',
   35814 => 'Keski-Suomi',
   35815 => 'Mikkeli',

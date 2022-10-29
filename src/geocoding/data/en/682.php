@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6822 => 'Rarotonga',
   68231 => 'Aitutaki',
   68233 => 'Atiu',

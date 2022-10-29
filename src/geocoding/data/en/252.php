@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2521 => 'Mogadishu',
   2523 => 'Hargeisa',
   2524 => 'Garowe',

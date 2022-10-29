@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   26511 => 'Malawi Telecom-munications Ltd (MTL)',
   2653 => 'TNM',
   2657 => 'Globally Advanced Integrated Networks Ltd',

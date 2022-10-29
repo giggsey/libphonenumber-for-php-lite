@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3212 => 'Tongres',
   3215 => 'Malines',
   3216 => 'Louvain',

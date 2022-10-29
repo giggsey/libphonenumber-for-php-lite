@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   86136000 => '广东省广州市',
   86136001 => '广东省深圳市',
   861360010 => '广东省惠州市',

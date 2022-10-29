@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   59322 => 'Pichincha',
   59323 => 'Cotopaxi/Tungurahua/Chimborazo/Bolívar/Pastaza',
   59326 => 'Carchi/Imbabura/Esmeraldas/Sucumbíos/Napo/Orellana',

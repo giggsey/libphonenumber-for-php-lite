@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3110 => 'Rotterdam',
   31111 => 'Zierikzee',
   31113 => 'Goes',

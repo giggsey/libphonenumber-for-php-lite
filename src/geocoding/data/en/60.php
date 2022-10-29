@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6032011 => 'Kuala Lumpur',
   6032020 => 'Kuala Lumpur',
   6032021 => 'Kuala Lumpur',

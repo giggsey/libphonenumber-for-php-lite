@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3625 => 'Dunaújváros',
   3627 => 'Vác',
   3628 => 'Gödöllő',

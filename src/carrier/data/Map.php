@@ -10,17 +10,17 @@
  * Do not modify this file directly!
  */
 
-return array (
-  'ar' => 
-  array (
+return array(
+  'ar' =>
+  array(
     0 => 965,
   ),
-  'be' => 
-  array (
+  'be' =>
+  array(
     0 => 375,
   ),
-  'en' => 
-  array (
+  'en' =>
+  array(
     0 => 1,
     1 => 20,
     2 => 211,
@@ -228,32 +228,32 @@ return array (
     204 => 996,
     205 => 998,
   ),
-  'fa' => 
-  array (
+  'fa' =>
+  array(
     0 => 93,
     1 => 98,
   ),
-  'ko' => 
-  array (
+  'ko' =>
+  array(
     0 => 82,
   ),
-  'ru' => 
-  array (
+  'ru' =>
+  array(
     0 => 374,
     1 => 375,
     2 => 7,
   ),
-  'uk' => 
-  array (
+  'uk' =>
+  array(
     0 => 380,
   ),
-  'zh' => 
-  array (
+  'zh' =>
+  array(
     0 => 852,
     1 => 86,
   ),
-  'zh_Hant' => 
-  array (
+  'zh_Hant' =>
+  array(
     0 => 852,
     1 => 86,
   ),

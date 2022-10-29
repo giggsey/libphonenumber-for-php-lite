@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   43650 => 'tele.ring',
   43660 => 'Hutchison Drei Austria',
   43664 => 'A1 TA',

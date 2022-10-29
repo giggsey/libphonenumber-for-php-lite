@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38343 => 'IPKO',
   38344 => 'vala',
   383451 => 'vala',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   86155000 => '吉林省长春市',
   86155001 => '吉林省四平市',
   861550020 => '吉林省白山市',

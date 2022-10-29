@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   96823 => 'Dhofar & Al Wusta',
   96824 => 'Muscat',
   96825 => 'A’Dakhliyah, Al Sharqiya & A’Dhahira',

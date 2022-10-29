@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   8810 => 'ico satellite',
   8811 => 'ico satellite',
   8812 => 'ellipso satellite',

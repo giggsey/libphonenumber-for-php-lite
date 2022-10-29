@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   47210 => 'Oslo',
   47211 => 'Oslo',
   47212 => 'Oslo',

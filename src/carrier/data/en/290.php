@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   29051 => 'Sure South Atlantic Ltd',
   29052 => 'Sure South Atlantic Ltd',
   29053 => 'Sure South Atlantic Ltd',

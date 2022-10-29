@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   86187000 => '陕西省咸阳市',
   86187001 => '陕西省延安市',
   861870018 => '陕西省西安市',

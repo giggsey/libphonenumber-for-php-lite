@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6792 => 'Vodafone',
   6794 => 'Vodafone',
   67950 => 'Digicel',

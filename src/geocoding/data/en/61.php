@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   61238000 => 'Bowral',
   61238001 => 'Barrallier',
   61238002 => 'Bevendale',

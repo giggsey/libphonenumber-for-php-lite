@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   96391 => 'Wafa Telecom',
   96392 => 'Wafa Telecom',
   96393 => 'Syriatel',

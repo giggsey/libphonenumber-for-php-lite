@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2294 => 'SBIN',
   2295 => 'MTN',
   22955 => 'Moov',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2682207 => 'Nhlangano, Shiselweni district',
   2682217 => 'Hlathikulu, Shiselweni district',
   2682227 => 'Hluthi, Shiselweni district',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   245320 => 'Bissau',
   245321 => 'Bissau',
   245322 => 'Sta. Luzia',

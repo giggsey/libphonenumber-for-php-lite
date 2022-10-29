@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   67822 => 'Port Vila, Shefa',
   67823 => 'Port Vila, Shefa',
   67824 => 'Port Vila, Shefa',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   96611 => 'الرياض/الخرج',
   96612 => 'مكة/جدة',
   96613 => 'الدمام/الخبر/الظهران',

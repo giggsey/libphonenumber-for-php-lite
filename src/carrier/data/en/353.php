@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   35383 => '3',
   35385 => 'Meteor',
   35386 => 'O2',

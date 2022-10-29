@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   50160 => 'Belize Telemedia Ltd (Digi)',
   50161 => 'Belize Telemedia Ltd (Digi)',
   50162 => 'Belize Telemedia Ltd (Digi)',

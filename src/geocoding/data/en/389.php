@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3892 => 'Skopje',
   38931 => 'Kumanovo/Kriva Palanka/Kratovo',
   38932 => 'Stip/Probistip/Sveti Nikole/Radovis',

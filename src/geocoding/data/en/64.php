@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6424 => 'Scott Base',
   64320 => 'Gore',
   643206 => 'Edendale',

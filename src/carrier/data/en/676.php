@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   676554 => 'Toko Wireless',
   676555 => 'Toko Wireless',
   676556 => 'Toko Wireless',

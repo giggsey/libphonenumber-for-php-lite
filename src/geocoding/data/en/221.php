@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   221338 => 'Dakar',
   2213393 => 'Outside Dakar',
   2213394 => 'Outside Dakar',

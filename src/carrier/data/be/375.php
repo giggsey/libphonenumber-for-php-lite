@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   37525 => 'БеСТ',
   375292 => 'МТС',
   375294 => 'БелСел',

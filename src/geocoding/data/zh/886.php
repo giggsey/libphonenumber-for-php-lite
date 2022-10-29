@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   8862 => '台北',
   8863 => '桃园、新竹、花莲、宜兰',
   88637 => '苗栗',

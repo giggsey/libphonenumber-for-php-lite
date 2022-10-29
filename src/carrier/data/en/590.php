@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   59069000 => 'SFR/Rife',
   59069005 => 'SFR/Rife',
   59069006 => 'Digicel',

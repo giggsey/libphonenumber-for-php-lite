@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   96473 => 'ITPC',
   9647400 => 'Itisaluna',
   9647401 => 'Itisaluna',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   21891 => 'Al-Madar',
   21892 => 'Libyana',
   21893 => 'Al-Madar',

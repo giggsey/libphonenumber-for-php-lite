@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   99412 => 'Baku',
   99418 => 'Sumgayit',
   9942020 => 'Barda',

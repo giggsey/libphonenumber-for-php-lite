@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38110 => 'Pirot',
   38111 => 'Belgrade',
   38112 => 'Pozarevac',

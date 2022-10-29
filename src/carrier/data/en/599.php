@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   5993181 => 'Telcell',
   5993184 => 'Telcell',
   5993185 => 'Telcell',

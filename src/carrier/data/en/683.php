@@ -10,6 +10,6 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6838 => 'Telecom Niue',
 );

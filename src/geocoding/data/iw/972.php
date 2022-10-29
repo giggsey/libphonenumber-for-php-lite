@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   9722 => 'ירושלים',
   9723 => 'תל אביב-יפו והמרכז',
   9724 => 'חיפה והצפון',

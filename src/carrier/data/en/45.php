@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   45201 => 'tdc',
   45202 => 'tdc',
   45203 => 'tdc',

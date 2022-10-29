@@ -25,7 +25,7 @@ abstract class AbstractLeniency
     public static function verify(PhoneNumber $number, $candidate, PhoneNumberUtil $util)
     {
         // This can not be called directly
-        throw new \BadMethodCallException;
+        throw new \BadMethodCallException();
     }
 
     /**

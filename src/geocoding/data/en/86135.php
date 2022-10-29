@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861350000 => 'Guangzhou, Guangdong',
   861350001 => 'Guangzhou, Guangdong',
   861350002 => 'Guangzhou, Guangdong',

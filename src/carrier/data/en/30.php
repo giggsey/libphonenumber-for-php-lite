@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   30685185 => 'Cyta',
   3068519 => 'Cyta',
   30685500 => 'Cyta',

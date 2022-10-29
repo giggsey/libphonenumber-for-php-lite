@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   25670 => 'Airtel',
   25671 => 'UTL',
   256720 => 'Smile',

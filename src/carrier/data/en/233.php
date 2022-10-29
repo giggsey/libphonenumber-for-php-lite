@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   23320 => 'Vodafone',
   23323 => 'Globacom (Zain)',
   23324 => 'MTN',

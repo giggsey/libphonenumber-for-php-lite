@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3751511 => 'Vyalikaya Byerastavitsa, Grodno Region',
   3751512 => 'Volkovysk',
   3751513 => 'Svisloch, Grodno Region',

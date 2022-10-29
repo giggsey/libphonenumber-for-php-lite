@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861330000 => '广西南宁市',
   861330001 => '安徽省安庆市',
   861330002 => '重庆市',

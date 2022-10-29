@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   50930 => 'Digicel',
   50931 => 'Digicel',
   50934 => 'Digicel',

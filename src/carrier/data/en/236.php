@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   23670 => 'A-Cell',
   23672 => 'Orange',
   23674 => 'Orange',

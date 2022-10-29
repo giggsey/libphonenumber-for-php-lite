@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   65801 => 'Simba',
   658018 => 'SingTel',
   658019 => 'SingTel',

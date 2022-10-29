@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   97611 => 'Ulaanbaatar',
   976121 => 'Baganuur',
   976122 => 'Bagakhangai',

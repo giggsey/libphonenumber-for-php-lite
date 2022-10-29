@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   25111111 => 'Arada I, Addis Ababa',
   25111112 => 'Arada II, Addis Ababa',
   25111114 => 'French Legasion, Addis Ababa',

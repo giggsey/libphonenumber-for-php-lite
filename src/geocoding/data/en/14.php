@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1401 => 'Rhode Island',
   1401222 => 'Providence, RI',
   1401232 => 'Smithfield, RI',

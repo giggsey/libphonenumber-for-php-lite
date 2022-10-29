@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   8111 => 'Sapporo, Hokkaido',
   811232 => 'Chitose, Hokkaido',
   811233 => 'Chitose, Hokkaido',

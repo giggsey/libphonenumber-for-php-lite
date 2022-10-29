@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   417500 => 'Swisscom',
   417507 => 'Swisscom',
   417508 => 'Swisscom',

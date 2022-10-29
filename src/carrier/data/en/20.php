@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2010 => 'Vodafone',
   2011 => 'Etisalat',
   2012 => 'Orange',

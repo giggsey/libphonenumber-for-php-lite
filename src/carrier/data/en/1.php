@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1242357 => 'BaTelCo',
   1242359 => 'BaTelCo',
   1242375 => 'BaTelCo',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   49201 => 'Essen',
   49202 => 'Wuppertal',
   49203 => 'Duisburg',

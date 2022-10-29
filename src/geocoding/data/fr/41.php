@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   4122 => 'Genève',
   4133 => 'Thoune',
   4152 => 'Winterthour',

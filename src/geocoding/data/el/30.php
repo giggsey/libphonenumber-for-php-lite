@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3021 => 'Αθήνα/Πειραιάς/Σαλαμίνα',
   302221 => 'Χαλκίδα',
   302222 => 'Κύμη',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   4915020 => 'Interactive digital media',
   4915050 => 'NAKA AG',
   4915080 => 'Easy World',

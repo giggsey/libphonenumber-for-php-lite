@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   551195472 => 'Vivo',
   551195473 => 'Vivo',
   551195474 => 'Vivo',

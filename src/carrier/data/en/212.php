@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   21260 => 'Inwi',
   21261 => 'Maroc Telecom',
   212612 => 'Méditel',

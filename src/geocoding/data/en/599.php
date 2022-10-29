@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   5993180 => 'St. Eustatius',
   5993182 => 'St. Eustatius',
   5993183 => 'St. Eustatius',

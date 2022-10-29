@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   4121 => 'Losanna',
   4122 => 'Ginevra',
   4126 => 'Friburgo',

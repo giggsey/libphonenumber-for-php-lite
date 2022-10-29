@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   3021 => 'Athens/Piraeus/Salamina',
   302221 => 'Chalcis',
   302222 => 'Kymi',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   4312 => 'Wien',
   4313 => 'Wien',
   4314 => 'Wien',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   511 => 'Lima/Callao',
   5141 => 'Amazonas',
   5142 => 'San Martín',

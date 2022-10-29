@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38590 => 'Tele2',
   38591 => 'A1 Telekom',
   38592 => 'A1 Telekom',

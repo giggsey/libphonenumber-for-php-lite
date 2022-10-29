@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   99361 => 'TM-Cell',
   99362 => 'TM-Cell',
   99363 => 'TM-Cell',

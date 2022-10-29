@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   59170 => 'Nuevatel',
   591710 => 'Entel',
   591711 => 'Entel',

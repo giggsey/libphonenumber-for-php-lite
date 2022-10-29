@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1501 => 'Arkansas',
   1501202 => 'Little Rock, AR',
   1501205 => 'Conway, AR',

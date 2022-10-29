@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   84203 => 'Quảng Ninh',
   84204 => 'Bắc Giang',
   84205 => 'Lạng Sơn',

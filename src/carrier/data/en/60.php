@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   60102 => 'DiGi',
   601030 => 'XOX',
   601031 => 'XOX',

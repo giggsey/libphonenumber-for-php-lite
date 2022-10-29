@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   9722 => 'Jerusalem',
   9723 => 'Tel Aviv',
   9724 => 'Haifa and North Regions',

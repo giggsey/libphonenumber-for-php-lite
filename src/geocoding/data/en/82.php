@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   822 => 'Seoul',
   8231 => 'Gyeonggi',
   8232 => 'Incheon',

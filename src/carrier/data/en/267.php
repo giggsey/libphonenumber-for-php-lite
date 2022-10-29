@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   26732 => 'Mascom',
   26771 => 'Mascom',
   26772 => 'Orange',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   24422 => 'Luanda',
   244231 => 'Cabinda',
   244232 => 'Zaire',

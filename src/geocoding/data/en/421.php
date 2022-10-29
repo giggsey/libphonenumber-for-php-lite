@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   4212 => 'Bratislava',
   42131 => 'Dunajska Streda',
   42132 => 'Trencin',

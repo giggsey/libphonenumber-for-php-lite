@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   68045 => 'PMCI',
   68046 => 'PMCI',
   68077 => 'PalauCel',

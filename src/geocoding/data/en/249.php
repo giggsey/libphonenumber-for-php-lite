@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   249153 => 'Khartoum',
   249155 => 'Khartoum North',
   249156 => 'Khartoum Rural',

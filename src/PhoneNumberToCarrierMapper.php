@@ -19,7 +19,7 @@ class PhoneNumberToCarrierMapper
      */
     protected static $instance = array();
 
-    const MAPPING_DATA_DIRECTORY = '/carrier/data/';
+    public const MAPPING_DATA_DIRECTORY = '/carrier/data/';
 
     /**
      * @var PhoneNumberUtil

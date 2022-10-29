@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6221 => 'Greater Jakarta',
   6222 => 'Bandung/Cimahi',
   62231 => 'Cirebon',

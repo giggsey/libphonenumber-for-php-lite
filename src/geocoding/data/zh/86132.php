@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   8613200 => '上海市',
   861320100 => '新疆昌吉回族自治州',
   861320101 => '新疆昌吉回族自治州',

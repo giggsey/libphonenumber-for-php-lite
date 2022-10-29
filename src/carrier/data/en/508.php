@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   50840 => 'Globaltel',
   50842 => 'Orange',
   50843 => 'Diabolocom',

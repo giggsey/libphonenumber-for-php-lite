@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861390000 => 'Urumchi, Xinjiang',
   861390001 => 'Shenyang, Liaoning',
   861390002 => 'Shenyang, Liaoning',

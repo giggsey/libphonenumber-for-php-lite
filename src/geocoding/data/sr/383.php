@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38328 => 'Косовска Митровица',
   383280 => 'Гњилане',
   38329 => 'Призрен',

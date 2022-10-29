@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   35791 => 'Cytamobile-Vodafone',
   35794 => 'Lemontel',
   35795 => 'PrimeTel',

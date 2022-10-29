@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 
 class PhoneNumberUtilTest extends TestCase
 {
-    const TEST_META_DATA_FILE_PREFIX = '../../tests/core/data/PhoneNumberMetadataForTesting';
+    public const TEST_META_DATA_FILE_PREFIX = '../../tests/core/data/PhoneNumberMetadataForTesting';
     private static $bsNumber;
     private static $coFixedLine;
     private static $internationalTollFree;

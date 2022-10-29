@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   371200 => 'Tele2',
   3712010 => 'Bite Latvia',
   3712011 => 'Bite Latvia',

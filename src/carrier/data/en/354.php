@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   354385 => 'Síminn',
   354388 => 'IMC',
   354389 => 'IMC',

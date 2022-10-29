@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   223202 => 'Bamako',
   2232070 => 'Bamako',
   2232071 => 'Bamako',

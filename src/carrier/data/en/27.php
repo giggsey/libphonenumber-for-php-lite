@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2710492 => 'Vodacom',
   2710493 => 'Vodacom',
   2710494 => 'Vodacom',

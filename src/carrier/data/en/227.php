@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   22723 => 'Orange',
   22770 => 'Orange',
   22774 => 'Moov',

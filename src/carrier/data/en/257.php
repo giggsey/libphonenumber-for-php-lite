@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   25729 => 'Leo',
   2576 => 'Viettel',
   25771 => 'Leo',

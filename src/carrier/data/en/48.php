@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   482111 => 'Polska Spoka Gazownictwa Sp',
   482113 => 'Polska Spoka Gazownictwa Sp',
   482114 => 'Plus',

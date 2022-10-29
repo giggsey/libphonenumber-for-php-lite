@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   46700 => 'Tele2 Sverige',
   467010 => 'SPINBOX AB',
   467011 => 'Telenor Sverige',

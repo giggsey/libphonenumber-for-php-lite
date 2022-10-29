@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   24491 => 'Movicel',
   24492 => 'UNITEL',
   24493 => 'UNITEL',

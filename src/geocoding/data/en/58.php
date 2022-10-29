@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   5821 => 'Caracas/Miranda/Vargas',
   58234 => 'Miranda',
   58235 => 'Anzoátegui/Bolívar/Guárico',

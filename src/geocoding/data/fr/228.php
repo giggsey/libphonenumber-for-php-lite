@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   22822 => 'Lomé',
   22823 => 'Région Maritime',
   22824 => 'Région des Plateaux',

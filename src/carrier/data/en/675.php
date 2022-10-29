@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   6757 => 'Digicel',
   67575 => 'bmobile',
   67576 => 'bmobile',

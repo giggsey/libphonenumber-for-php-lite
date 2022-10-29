@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   63813 => 'Smart',
   6389 => 'Dito',
   63905 => 'Globe',

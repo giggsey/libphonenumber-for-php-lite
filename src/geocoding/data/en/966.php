@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   96611 => 'Riyadh/Kharj',
   96612 => 'Makkah/Jeddah',
   96613 => 'Dammam/Khobar/Dahran',

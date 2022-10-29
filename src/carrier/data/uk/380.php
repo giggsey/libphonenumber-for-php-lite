@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   38039 => 'Київстар',
   38050 => 'Vodafone Україна',
   38066 => 'Vodafone Україна',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   373210 => 'Grigoriopol',
   373215 => 'Dubasari',
   373216 => 'Camenca',

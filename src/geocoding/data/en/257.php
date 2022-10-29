@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2572220 => 'Bujumbura',
   2572221 => 'Bujumbura',
   2572222 => 'Bujumbura',

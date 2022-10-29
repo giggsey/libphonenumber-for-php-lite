@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861800010 => '江苏省徐州市',
   861800011 => '江苏省徐州市',
   861800012 => '江苏省宿迁市',

@@ -10,19 +10,19 @@
  * Do not modify this file directly!
  */
 
-return array (
-  'de' => 
-  array (
+return array(
+  'de' =>
+  array(
     0 => 1,
   ),
-  'en' => 
-  array (
+  'en' =>
+  array(
     0 => 1,
     1 => 54,
     2 => 82,
   ),
-  'ko' => 
-  array (
+  'ko' =>
+  array(
     0 => 82,
   ),
 );

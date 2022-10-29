@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   5063 => 'Kolbi ICE',
   50650 => 'Kolbi ICE',
   50657 => 'Kolbi ICE',

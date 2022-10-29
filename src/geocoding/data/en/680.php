@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   68025 => 'Sonsorol State and Hatohobei State',
   68027 => 'Angaur State',
   6803 => 'Peleliu State',

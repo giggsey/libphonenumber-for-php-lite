@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   1201 => 'New Jersey',
   1201200 => 'Jersey City, NJ',
   1201216 => 'Jersey City, NJ',

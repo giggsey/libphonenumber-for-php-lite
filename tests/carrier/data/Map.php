@@ -10,15 +10,15 @@
  * Do not modify this file directly!
  */
 
-return array (
-  'en' => 
-  array (
+return array(
+  'en' =>
+  array(
     0 => 1,
     1 => 244,
     2 => 44,
   ),
-  'sv' => 
-  array (
+  'sv' =>
+  array(
     0 => 44,
   ),
 );

@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class PrefixFileReaderTest extends TestCase
 {
-    const TEST_META_DATA_FILE_PREFIX = '/data/';
+    public const TEST_META_DATA_FILE_PREFIX = '/data/';
     private static $KO_NUMBER;
     private static $US_NUMBER1;
     private static $US_NUMBER2;

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   42364 => 'Soracom',
   423650 => 'Telecom Liechtenstein',
   423651 => 'Cubic',

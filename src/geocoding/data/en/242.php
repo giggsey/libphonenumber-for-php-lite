@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   2422221 => 'Cuvette',
   2422222 => 'Likouala/Sangha',
   2422223 => 'Pool',

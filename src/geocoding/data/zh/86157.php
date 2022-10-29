@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   861570000 => '浙江省衢州市',
   861570001 => '浙江省衢州市',
   861570002 => '浙江省衢州市',

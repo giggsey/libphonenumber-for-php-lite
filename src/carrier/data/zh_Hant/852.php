@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   852460 => '中國移動',
   852461 => '新移動通訊',
   8524640 => '中國移動',

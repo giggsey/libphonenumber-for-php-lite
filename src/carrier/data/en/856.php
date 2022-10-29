@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   856202 => 'ETL',
   856203 => 'ETL',
   856205 => 'Lao Telecom',

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   26724 => 'Francistown',
   26726 => 'Selebi-Phikwe',
   26729 => 'Letlhakane/Orapa',

@@ -9,16 +9,16 @@ use PHPUnit\Framework\TestCase;
 class PrefixTimeZonesMapTest extends TestCase
 {
     // US time zones
-    const CHICAGO_TZ = 'America/Chicago';
-    const DENVER_TZ = 'America/Denver';
-    const LOS_ANGELES_TZ = 'America/Los_Angeles';
-    const NEW_YORK_TZ = 'America/New_York';
+    public const CHICAGO_TZ = 'America/Chicago';
+    public const DENVER_TZ = 'America/Denver';
+    public const LOS_ANGELES_TZ = 'America/Los_Angeles';
+    public const NEW_YORK_TZ = 'America/New_York';
 
     // Russian time zones
-    const IRKUTSK_TZ = 'Asia/Irkutsk';
-    const MOSCOW_TZ = 'Europe/Moscow';
-    const VLADIVOSTOK_TZ = 'Asia/Vladivostok';
-    const YEKATERINBURG_TZ = 'Asia/Yekaterinburg';
+    public const IRKUTSK_TZ = 'Asia/Irkutsk';
+    public const MOSCOW_TZ = 'Europe/Moscow';
+    public const VLADIVOSTOK_TZ = 'Asia/Vladivostok';
+    public const YEKATERINBURG_TZ = 'Asia/Yekaterinburg';
     /**
      * @var PrefixTimeZonesMap
      */

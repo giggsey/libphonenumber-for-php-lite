@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   37410 => 'Երևան/Ջրվեժ',
   37411 => 'Երևան',
   37412 => 'Երևան',

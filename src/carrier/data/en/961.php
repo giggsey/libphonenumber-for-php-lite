@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array (
+return array(
   96130 => 'Touch',
   96131 => 'Alfa',
   96132 => 'Alfa',
