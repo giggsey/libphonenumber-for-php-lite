@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   1242357 => 'BaTelCo',
   1242359 => 'BaTelCo',
   1242375 => 'BaTelCo',
@@ -686,4 +686,4 @@ return array(
   1939910 => 'CENTENNIAL',
   1939940 => 'CENTENNIAL',
   1939969 => 'CENTENNIAL',
-);
+];

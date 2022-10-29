@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   861830000 => 'Shenzhen, Guangdong',
   861830001 => 'Meizhou, Guangdong',
   861830002 => 'Qingyuan, Guangdong',
@@ -3334,4 +3334,4 @@ return array(
   861839982 => 'Shihezi, Xinjiang',
   861839983 => 'Shihezi, Xinjiang',
   86183999 => 'Changji, Xinjiang',
-);
+];

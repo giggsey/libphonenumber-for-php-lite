@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   511 => 'Lima/Callao',
   5141 => 'Amazonas',
   5142 => 'San Martín',
@@ -35,4 +35,4 @@ return array(
   5182 => 'Madre de Dios',
   5183 => 'Apurímac',
   5184 => 'Cusco',
-);
+];

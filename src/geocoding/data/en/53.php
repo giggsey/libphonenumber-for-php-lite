@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   5321 => 'Guantánamo Province',
   5322 => 'Santiago de Cuba Province',
   5323 => 'Granma Province',
@@ -26,4 +26,4 @@ return array(
   5347 => 'Mayabeque and Artemisa',
   5348 => 'Pinar del Río Province',
   537 => 'Havana City',
-);
+];

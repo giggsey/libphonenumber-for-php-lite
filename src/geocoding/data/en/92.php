@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   92212 => 'Karachi',
   92213 => 'Karachi',
   92214 => 'Karachi',
@@ -755,4 +755,4 @@ return array(
   929978 => 'Mansehra/Batagram',
   929979 => 'Mansehra/Batagram',
   92998 => 'Kohistan',
-);
+];

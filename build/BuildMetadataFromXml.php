@@ -55,9 +55,9 @@ class BuildMetadataFromXml
     public const VOICEMAIL = 'voicemail';
     public const VOIP = 'voip';
 
-    private static $phoneNumberDescsWithoutMatchingTypes = array(
-        self::NO_INTERNATIONAL_DIALLING
-    );
+    private static $phoneNumberDescsWithoutMatchingTypes = [
+        self::NO_INTERNATIONAL_DIALLING,
+    ];
 
     /**
      * @internal
@@ -105,7 +105,7 @@ class BuildMetadataFromXml
         }
 
         $territories = $document->getElementsByTagName('territory');
-        $metadataCollection = array();
+        $metadataCollection = [];
 
         $metadataFilter = self::getMetadataFilter($liteBuild, $specialBuild);
 
@@ -191,8 +191,8 @@ class BuildMetadataFromXml
         $nationalPrefixFormattingRule = $element->getAttribute(self::NATIONAL_PREFIX_FORMATTING_RULE);
         // Replace $NP with national prefix and $FG with the first group ($1).
         $nationalPrefixFormattingRule = \str_replace(
-            array('$NP', '$FG'),
-            array($nationalPrefix, '$1'),
+            ['$NP', '$FG'],
+            [$nationalPrefix, '$1'],
             $nationalPrefixFormattingRule
         );
         return $nationalPrefixFormattingRule;
@@ -328,8 +328,8 @@ class BuildMetadataFromXml
         $carrierCodeFormattingRule = $element->getAttribute(self::CARRIER_CODE_FORMATTING_RULE);
         // Replace $FG with the first group ($1) and $NP with the national prefix.
         $carrierCodeFormattingRule = \str_replace(
-            array('$NP', '$FG'),
-            array($nationalPrefix, '$1'),
+            ['$NP', '$FG'],
+            [$nationalPrefix, '$1'],
             $carrierCodeFormattingRule
         );
         return $carrierCodeFormattingRule;
@@ -479,7 +479,7 @@ class BuildMetadataFromXml
         }
 
         $lengths = \explode(',', $possibleLengthString);
-        $lengthSet = array();
+        $lengthSet = [];
 
 
         $lengthLength = \count($lengths);
@@ -582,8 +582,8 @@ class BuildMetadataFromXml
      */
     public static function setPossibleLengthsGeneralDesc(PhoneNumberDesc $generalDesc, $metadataId, \DOMElement $data, $isShortNumberMetadata)
     {
-        $lengths = array();
-        $localOnlyLengths = array();
+        $lengths = [];
+        $localOnlyLengths = [];
         // The general description node should *always* be present if metadata for other types is
         // present, aside from in some unit tests.
         // (However, for e.g. formatting metadata in PhoneNumberAlternateFormats, no PhoneNumberDesc
@@ -716,7 +716,7 @@ class BuildMetadataFromXml
             // -1 will never match a possible phone number length, so is safe to use to ensure this never
             // matches. We don't leave it empty, since for compression reasons, we use the empty list to
             // mean that the generalDesc possible lengths apply.
-            $numberDesc->setPossibleLength(array(-1));
+            $numberDesc->setPossibleLength([-1]);
             return $numberDesc;
         }
 
@@ -742,8 +742,8 @@ class BuildMetadataFromXml
                 // description, since these tags won't be present; instead we will calculate its values
                 // based on the values for all the other number type descriptions (see
                 // setPossibleLengthsGeneralDesc).
-                $lengths = array();
-                $localOnlyLengths = array();
+                $lengths = [];
+                $localOnlyLengths = [];
                 self::populatePossibleLengthSets($element, $lengths, $localOnlyLengths);
                 self::setPossibleLengths($lengths, $localOnlyLengths, $parentDesc, $numberDesc);
             }
@@ -785,7 +785,7 @@ class BuildMetadataFromXml
      */
     public static function buildCountryCodeToRegionCodeMap($metadataCollection)
     {
-        $countryCodeToRegionCodeMap = array();
+        $countryCodeToRegionCodeMap = [];
 
         foreach ($metadataCollection as $metadata) {
             $regionCode = $metadata->getId();
@@ -798,7 +798,7 @@ class BuildMetadataFromXml
                 }
             } else {
                 // For most countries, there will be only one region code for the country calling code.
-                $listWithRegionCode = array();
+                $listWithRegionCode = [];
                 if ($regionCode != '') { // For alternate formats, there are no region codes at all.
                     $listWithRegionCode[] = $regionCode;
                 }

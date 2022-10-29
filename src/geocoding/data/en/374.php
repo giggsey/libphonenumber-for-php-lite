@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   37410 => 'Yerevan/Jrvezh',
   37411 => 'Yerevan',
   37412 => 'Yerevan',
@@ -516,4 +516,4 @@ return array(
   37447732 => 'Berdzor/Kashatagh',
   374478 => 'Martuni',
   374479 => 'Stepanakert',
-);
+];

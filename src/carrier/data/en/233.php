@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   23320 => 'Vodafone',
   23323 => 'Globacom (Zain)',
   23324 => 'MTN',
@@ -25,4 +25,4 @@ return array(
   23356 => 'Airtel',
   23357 => 'tiGO',
   23359 => 'MTN',
-);
+];

@@ -26,7 +26,7 @@ class Matcher
     /**
      * @var array
      */
-    protected $groups = array();
+    protected $groups = [];
 
     private $searchIndex = 0;
 
@@ -64,13 +64,13 @@ class Matcher
         if ($result === 1) {
             // Expand $groups into $this->groups, but being multi-byte aware
 
-            $positions = array();
+            $positions = [];
 
             foreach ($groups as $group) {
-                $positions[] = array(
+                $positions[] = [
                     $group[0],
-                    $offset + mb_strlen(substr($search, 0, $group[1]))
-                );
+                    $offset + mb_strlen(substr($search, 0, $group[1])),
+                ];
             }
 
             $this->groups = $positions;

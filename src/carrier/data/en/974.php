@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   97428 => 'ooredoo',
   97429 => 'Vodafone',
   97430 => 'Vodafone',
@@ -41,4 +41,4 @@ return array(
   974726 => 'Vodafone',
   97474 => 'Vodafone',
   97477 => 'Vodafone',
-);
+];

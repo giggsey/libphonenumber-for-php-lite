@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   43650 => 'tele.ring',
   43660 => 'Hutchison Drei Austria',
   43664 => 'A1 TA',
@@ -26,4 +26,4 @@ return array(
   4368184 => 'A1 TA',
   43688 => 'Orange AT',
   43699 => 'Orange AT',
-);
+];

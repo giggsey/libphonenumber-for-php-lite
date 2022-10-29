@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   86130 => '中國聯通',
   86131 => '中國聯通',
   86132 => '中國聯通',
@@ -67,4 +67,4 @@ return array(
   86189 => '中國電信',
   86198 => '中國電信',
   86199 => '中國電信',
-);
+];

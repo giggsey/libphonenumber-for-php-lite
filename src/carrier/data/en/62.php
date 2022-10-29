@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   62811 => 'Telkomsel',
   62812 => 'Telkomsel',
   62813 => 'Telkomsel',
@@ -49,4 +49,4 @@ return array(
   62897 => '3',
   62898 => '3',
   62899 => '3',
-);
+];

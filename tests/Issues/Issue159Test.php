@@ -29,6 +29,6 @@ class Issue159Test extends TestCase
 
         $timeZoneMapper = PhoneNumberToTimeZonesMapper::getInstance();
 
-        $this->assertEquals(array(self::LOS_ANGELES_TZ), $timeZoneMapper->getTimeZonesForNumber($number));
+        $this->assertEquals([self::LOS_ANGELES_TZ], $timeZoneMapper->getTimeZonesForNumber($number));
     }
 }

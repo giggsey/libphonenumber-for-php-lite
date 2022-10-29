@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   5042200 => 'Polo Paz',
   5042201 => 'Polo Paz',
   5042202 => 'Tegucigalpa',
@@ -171,4 +171,4 @@ return array(
   5042897 => 'San Fco. De Becerra',
   5042898 => 'Domsat',
   5042899 => 'Catacamas',
-);
+];

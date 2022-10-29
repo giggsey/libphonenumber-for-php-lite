@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   59891 => 'Antel',
   59892 => 'Antel',
   59893 => 'Movistar',
@@ -20,4 +20,4 @@ return array(
   59897 => 'Claro',
   59898 => 'Antel',
   59899 => 'Antel',
-);
+];

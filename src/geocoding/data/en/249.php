@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   249153 => 'Khartoum',
   249155 => 'Khartoum North',
   249156 => 'Khartoum Rural',
@@ -19,4 +19,4 @@ return array(
   249185 => 'Khartoum North',
   249186 => 'Khartoum Rural',
   249187 => 'Omdurman',
-);
+];

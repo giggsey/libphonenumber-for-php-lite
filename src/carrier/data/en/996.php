@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   99620 => 'Aktel',
   99622 => 'Sky mobile',
   99631258 => 'Sky mobile',
@@ -32,4 +32,4 @@ return array(
   996997 => 'ALFA Telecom',
   996998 => 'ALFA Telecom',
   996999 => 'ALFA Telecom',
-);
+];

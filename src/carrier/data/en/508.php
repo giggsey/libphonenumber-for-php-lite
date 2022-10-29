@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   50840 => 'Globaltel',
   50842 => 'Orange',
   50843 => 'Diabolocom',
@@ -18,4 +18,4 @@ return array(
   50850 => 'Keyyo',
   50855 => 'SPM Telecom',
   50856 => 'Kav El International',
-);
+];

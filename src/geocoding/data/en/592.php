@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   592216 => 'Diamond/Grove',
   592217 => 'Mocha',
   592218 => 'Georgetown (S/R/Veldt)',
@@ -78,4 +78,4 @@ return array(
   592773 => 'Aishalton',
   592775 => 'Matthews Ridge',
   592777 => 'Mabaruma/Port Kaituma',
-);
+];

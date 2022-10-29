@@ -10,8 +10,8 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   850191 => 'Koryolink',
   850192 => 'Koryolink',
   850193 => 'KPTC',
-);
+];

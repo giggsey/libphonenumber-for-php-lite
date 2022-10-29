@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   24910 => 'Sudatel',
   24911 => 'Sudatel',
   24912 => 'Sudatel',
@@ -21,4 +21,4 @@ return array(
   24995 => 'Network of The World Ltd',
   24996 => 'Zain',
   24999 => 'MTN',
-);
+];

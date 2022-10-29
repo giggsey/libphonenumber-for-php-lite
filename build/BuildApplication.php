@@ -16,11 +16,11 @@ class BuildApplication extends Application
         parent::__construct('libphonenumber Data Builder', self::VERSION);
 
         $this->addCommands(
-            array(
+            [
                 new BuildMetadataPHPFromXMLCommand(),
                 new GeneratePhonePrefixDataCommand(),
                 new GenerateTimeZonesMapDataCommand(),
-            )
+            ]
         );
     }
 }

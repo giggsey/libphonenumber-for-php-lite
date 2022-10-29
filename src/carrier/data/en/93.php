@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9370 => 'AWCC',
   9371 => 'AWCC',
   9372 => 'Roshan',
@@ -24,4 +24,4 @@ return array(
   9377 => 'MTN',
   9378 => 'Etisalat',
   9379 => 'Roshan',
-);
+];

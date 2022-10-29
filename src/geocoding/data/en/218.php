@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   218205 => 'Sidiessaiah',
   218206 => 'Suk Elkhamis',
   21821 => 'Tripoli',
@@ -106,4 +106,4 @@ return array(
   218852 => 'Massa',
   218854 => 'Slenta',
   21888 => 'Jaghbub',
-);
+];

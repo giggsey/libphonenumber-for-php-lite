@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   37232 => 'Rakvere',
   37233 => 'Kohtla-Järve',
   37235 => 'Narva/Sillamäe',
@@ -29,4 +29,4 @@ return array(
   37277 => 'Jõgeva',
   37278 => 'Võru',
   37279 => 'Põlva',
-);
+];

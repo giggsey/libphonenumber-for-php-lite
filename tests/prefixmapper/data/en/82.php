@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   8210 => 'Mobile prefix, should not be geocoded.',
   822 => 'Seoul',
   8231 => 'Gyeonggi',
@@ -28,4 +28,4 @@ return array(
   8262 => 'Gwangju',
   8263 => 'Jeonbuk',
   8264 => 'Jeju',
-);
+];

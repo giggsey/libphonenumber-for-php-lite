@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   67021 => 'Manufahi',
   67022 => 'Cova Lima',
   67023 => 'Bobonaro',
@@ -27,4 +27,4 @@ return array(
   67042 => 'Manatuto',
   67043 => 'Viqueque',
   67044 => 'Lautem',
-);
+];

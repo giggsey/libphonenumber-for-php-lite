@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   1901 => 'Tennessee',
   1901213 => 'Memphis, TN',
   1901226 => 'Memphis, TN',
@@ -4544,4 +4544,4 @@ return array(
   1989893 => 'Bay City, MI',
   1989894 => 'Bay City, MI',
   1989895 => 'Bay City, MI',
-);
+];

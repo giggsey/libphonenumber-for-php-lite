@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   99532 => 'Tbilisi',
   995341 => 'Rustavi',
   995342 => 'Akhalgori',
@@ -86,4 +86,4 @@ return array(
   995495 => 'Khoni',
   995496 => 'Ozurgeti',
   995497 => 'Tkibuli',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   8111 => '札幌',
   811232 => '千歳',
   811233 => '千歳',
@@ -1411,4 +1411,4 @@ return array(
   819978 => '徳之島',
   819979 => '徳之島',
   81998 => '鹿児島',
-);
+];

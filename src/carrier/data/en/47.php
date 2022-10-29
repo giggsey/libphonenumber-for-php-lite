@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   47400 => 'telenor norge',
   474000 => 'telia',
   474001 => 'telia',
@@ -433,4 +433,4 @@ return array(
   479987 => 'telia',
   479988 => 'telia',
   479989 => 'telia',
-);
+];

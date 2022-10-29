@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   26461 => 'Windhoek',
   264621730 => 'Babi-Babi',
   264621732 => 'Buitepos',
@@ -1033,4 +1033,4 @@ return array(
   264677165 => 'Anker/Braunfels/Fransfontein',
   264677166 => 'Kamanjab/Otavi',
   264677173 => 'Otjiwarongo',
-);
+];

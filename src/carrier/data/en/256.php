@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   25670 => 'Airtel',
   25671 => 'UTL',
   256720 => 'Smile',
@@ -22,4 +22,4 @@ return array(
   25677 => 'MTN',
   25678 => 'MTN',
   25679 => 'Africell',
-);
+];

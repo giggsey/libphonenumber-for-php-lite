@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   22601 => 'Onatel',
   22602 => 'Onatel',
   22603 => 'Onatel',
@@ -45,4 +45,4 @@ return array(
   22677 => 'Orange',
   22678 => 'Telecel Faso',
   22679 => 'Telecel Faso',
-);
+];

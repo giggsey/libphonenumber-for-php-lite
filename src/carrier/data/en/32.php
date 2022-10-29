@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3245001 => 'Gateway Communications',
   32455 => 'VOO',
   32456 => 'Mobile Vikings/JIM Mobile',
@@ -63,4 +63,4 @@ return array(
   32488 => 'Telenet',
   32489 => 'Telenet',
   3249 => 'Orange',
-);
+];

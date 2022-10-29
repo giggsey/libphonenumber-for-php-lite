@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   592600 => 'Digicel Guyana',
   592601 => 'Digicel Guyana',
   592602 => 'Digicel Guyana',
@@ -35,4 +35,4 @@ return array(
   59269 => 'Digicel Guyana',
   592700 => 'Digicel Guyana',
   592701 => 'Digicel Guyana',
-);
+];

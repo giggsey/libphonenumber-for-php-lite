@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   61400 => 'Telstra',
   61401 => 'Optus',
   61402 => 'Optus',
@@ -117,4 +117,4 @@ return array(
   6148985 => 'MessageBird',
   614899 => 'Pivotel Satellite',
   6149 => 'Telstra',
-);
+];

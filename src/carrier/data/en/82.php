@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   821020 => 'SKTellink',
   821021 => 'SKTellink',
   821022 => 'LG U+',
@@ -91,4 +91,4 @@ return array(
   8217 => 'SKTellink',
   8218 => 'KT',
   8219 => 'LG U+',
-);
+];

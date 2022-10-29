@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   5993181 => 'Telcell',
   5993184 => 'Telcell',
   5993185 => 'Telcell',
@@ -36,4 +36,4 @@ return array(
   599956 => 'Chippie',
   599957 => 'Antelecom',
   59996 => 'Digicel',
-);
+];

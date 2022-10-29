@@ -1231,7 +1231,7 @@ class PhoneNumberUtilTest extends TestCase
         $newNumFormat = new NumberFormat();
         $newNumFormat->setPattern("(\\d{3})(\\d{3})(\\d{4})");
         $newNumFormat->setFormat('($1) $2-$3');
-        $newNumberFormats = array();
+        $newNumberFormats = [];
         $newNumberFormats[] = $newNumFormat;
 
         $this->assertEquals(

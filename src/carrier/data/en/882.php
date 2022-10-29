@@ -10,11 +10,11 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   88232 => 'Maritime Communications Partner (MCP)',
   88233 => 'Oration Technologies',
   882342 => 'BebbiCell AG',
   882347 => 'BebbiCell AG',
   88237 => 'AT&T Cingular Wireless Network',
   8824 => 'Monaco Telecom',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2252120 => 'Plateau, Abidjan',
   2252121 => 'Abidjan-sud',
   2252122 => 'Cocody, Abidjan',
@@ -49,4 +49,4 @@ return array(
   2252734 => 'San-Pédro',
   2252735 => 'Abengourou',
   2252736 => 'Korhogo',
-);
+];

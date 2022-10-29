@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   99412 => 'Baku',
   99418 => 'Sumgayit',
   9942020 => 'Barda',
@@ -92,4 +92,4 @@ return array(
   99436549 => 'Sadarak',
   99436550 => 'Nakhchivan city',
   99436552 => 'Sharur',
-);
+];

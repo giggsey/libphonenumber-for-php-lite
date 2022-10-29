@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   850195 => 'Pyongyang',
   85021 => 'Pyongyang',
   8502381 => 'Pyongyang',
@@ -28,4 +28,4 @@ return array(
   85073 => 'Chongjin',
   85079 => 'Hyesan',
   8508 => 'Rason',
-);
+];

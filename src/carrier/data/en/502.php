@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   50230 => 'Tigo',
   50231 => 'Tigo',
   50232 => 'Tigo',
@@ -134,4 +134,4 @@ return array(
   5025918 => 'Tigo',
   5025919 => 'Tigo',
   502599 => 'Tigo',
-);
+];

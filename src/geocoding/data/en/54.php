@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   541 => 'Buenos Aires',
   542202 => 'González Catán/Virrey del Pino, Buenos Aires',
   542204 => 'Merlo, Buenos Aires',
@@ -339,4 +339,4 @@ return array(
   543891 => 'Graneros, Tucumán',
   543892 => 'Amaicha del Valle, Tucumán',
   543894 => 'Burruyacú, Tucumán',
-);
+];

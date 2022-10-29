@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9955000 => 'Mobilaive',
   99550050 => 'MagtiCom',
   99550055 => 'Silknet',
@@ -65,4 +65,4 @@ return array(
   995598 => 'MagtiCom',
   995599 => 'MagtiCom',
   99579 => 'MagtiCom',
-);
+];

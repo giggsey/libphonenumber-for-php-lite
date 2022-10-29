@@ -752,7 +752,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $generalDesc = new PhoneNumberDesc();
         // The number lengths set for the general description must be a super-set of those in the
         // element being parsed.
-        $generalDesc->setPossibleLength(array(4, 6, 7, 13));
+        $generalDesc->setPossibleLength([4, 6, 7, 13]);
         $territoryElement = $this->parseXMLString('<territory>'
             . '<fixedLine>'
             // Sorting will be done when parsing.
@@ -905,7 +905,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('Duplicate length element found (6) in possibleLength string 6,6');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(6));
+        $generalDesc->setPossibleLength([6]);
 
         $territoryElement = $this->parseXMLString('<territory>'
             . '<mobile>'
@@ -922,7 +922,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('Possible length(s) found specified as a normal and local-only length: [6]');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(6));
+        $generalDesc->setPossibleLength([6]);
 
         $territoryElement = $this->parseXMLString('<territory>'
             . '<mobile>'
@@ -939,7 +939,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('Out-of-range possible length');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(4));
+        $generalDesc->setPossibleLength([4]);
 
         $territoryElement = $this->parseXMLString('<territory>'
             . '<noInternationalDialling>'
@@ -956,8 +956,8 @@ class BuildMetadataFromXmlTest extends TestCase
         $generalDesc = new PhoneNumberDesc();
         // The number lengths set for the general description must be a super-set of those in the
         // element being parsed.
-        $generalDesc->setPossibleLength(array(4, 6, 7));
-        $generalDesc->setPossibleLengthLocalOnly(array(2));
+        $generalDesc->setPossibleLength([4, 6, 7]);
+        $generalDesc->setPossibleLengthLocalOnly([2]);
         $territoryElement = $this->parseXMLString('<territory>'
             . '<fixedLine>'
             // Sorting will be done when parsing.
@@ -983,7 +983,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('For input string "4d"');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(4));
+        $generalDesc->setPossibleLength([4]);
         $territoryElement = $this->parseXMLString('<territory>'
             . '<fixedLine>'
             . '  <possibleLengths national="4d"/>'
@@ -1022,7 +1022,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('Empty possibleLength string found.');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(4));
+        $generalDesc->setPossibleLength([4]);
         $territoryElement = $this->parseXMLString('<territory>'
             . '<fixedLine>'
             . '  <possibleLengths national=""/>'
@@ -1038,7 +1038,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('Missing end of range character in possible length string [4,7].');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(4));
+        $generalDesc->setPossibleLength([4]);
         $territoryElement = $this->parseXMLString('<territory>'
             . '<fixedLine>'
             . '  <possibleLengths national="[4,7]"/>'
@@ -1054,7 +1054,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('Missing end of range character in possible length string [4-.');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(4));
+        $generalDesc->setPossibleLength([4]);
 
         $territoryElement = $this->parseXMLString('<territory>'
             . '<fixedLine>'
@@ -1071,7 +1071,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('Ranges must have exactly one - character: missing for [4:10].');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(4));
+        $generalDesc->setPossibleLength([4]);
         $territoryElement = $this->parseXMLString('<territory>'
             . '<fixedLine>'
             . '  <possibleLengths national="[4:10]"/>'
@@ -1087,7 +1087,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('The first number in a range should be two or more digits lower than the second. Culprit possibleLength string: [10-10]');
 
         $generalDesc = new PhoneNumberDesc();
-        $generalDesc->setPossibleLength(array(4));
+        $generalDesc->setPossibleLength([4]);
         $territoryElement = $this->parseXMLString('<territory>'
             . '<fixedLine>'
             . '  <possibleLengths national="[10-10]"/>'

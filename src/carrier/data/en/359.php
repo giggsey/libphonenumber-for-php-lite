@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   35987 => 'Vivacom',
   35988 => 'A1',
   35989 => 'Telenor',
@@ -35,4 +35,4 @@ return array(
   3599997 => 'Vivacom',
   3599998 => 'Vivacom',
   3599999 => 'Vivacom',
-);
+];

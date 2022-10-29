@@ -11,141 +11,141 @@
  */
 
 
-return array(
+return [
   'generalDesc' =>
-  array(
+  [
     'NationalNumberPattern' => '\\d{6,10}',
     'PossibleLength' =>
-    array(
+    [
       0 => 10,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
+    [
       0 => 6,
-    ),
-  ),
+    ],
+  ],
   'fixedLine' =>
-  array(
+  [
     'NationalNumberPattern' => '\\d{6,10}',
     'ExampleNumber' => '2261234567',
     'PossibleLength' =>
-    array(
-    ),
+    [
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
+    [
       0 => 6,
-    ),
-  ),
+    ],
+  ],
   'mobile' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'tollFree' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'premiumRate' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'sharedCost' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'personalNumber' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'voip' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'pager' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'uan' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'voicemail' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'noInternationalDialling' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'id' => 'CC',
   'countryCode' => 61,
   'internationalPrefix' => '00',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>
-  array(
-  ),
+  [
+  ],
   'intlNumberFormat' =>
-  array(
-  ),
+  [
+  ],
   'mainCountryForCode' => false,
   'mobileNumberPortableRegion' => false,
-);
+];

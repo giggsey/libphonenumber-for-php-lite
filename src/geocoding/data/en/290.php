@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   29022 => 'Jamestown',
   29023 => 'St. Helena',
   29024 => 'St. Helena',
@@ -22,4 +22,4 @@ return array(
   290269 => 'St. Helena',
   29027 => 'St. Helena',
   2908 => 'Tristan da Cunha',
-);
+];

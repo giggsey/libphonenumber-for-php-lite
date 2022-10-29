@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   35840 => 'Telia',
   35841 => 'DNA',
   35842 => 'Telia',
@@ -60,4 +60,4 @@ return array(
   35846 => 'Elisa',
   35849 => 'Elisa',
   35850 => 'Elisa',
-);
+];

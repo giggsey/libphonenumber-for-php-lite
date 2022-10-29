@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3212 => 'Tongern',
   3215 => 'Mecheln',
   3216 => 'Löwen',
@@ -26,4 +26,4 @@ return array(
   3280 => 'Stablo',
   3281 => 'Namür',
   329 => 'Gent',
-);
+];

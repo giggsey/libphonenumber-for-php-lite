@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9890 => 'Irancell',
   9891 => 'IR-MCI',
   9892 => 'Rightel',
@@ -31,4 +31,4 @@ return array(
   9899997 => 'Rightel',
   9899998 => 'Rightel',
   9899999 => 'Rightel',
-);
+];

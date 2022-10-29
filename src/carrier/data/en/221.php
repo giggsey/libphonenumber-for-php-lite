@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   22170 => 'Expresso',
   22172 => 'HAYO',
   22175 => 'Promobile',
@@ -19,4 +19,4 @@ return array(
   22177 => 'Orange',
   22178 => 'Orange',
   22179 => 'ADIE',
-);
+];

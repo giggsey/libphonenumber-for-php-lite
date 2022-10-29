@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   421901 => 'T-Mobile (Slovak Telekom)',
   421902 => 'T-Mobile (Slovak Telekom)',
   421903 => 'T-Mobile (Slovak Telekom)',
@@ -50,4 +50,4 @@ return array(
   421951 => '4ka of SWAN',
   421952 => '4ka of SWAN',
   4219598 => 'Slovak Republic Railways (GSM-R)',
-);
+];

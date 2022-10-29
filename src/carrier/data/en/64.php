@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   64201 => 'Callplus',
   64202 => 'Callplus',
   64203 => 'Voyager Internet Limted',
@@ -39,4 +39,4 @@ return array(
   642896 => 'Airnet New Zealand NOW',
   642899 => 'Devoli',
   6429 => 'Vodafone',
-);
+];

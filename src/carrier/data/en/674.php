@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   674553 => 'Digicel',
   674554 => 'Digicel',
   674556 => 'Digicel',
@@ -19,4 +19,4 @@ return array(
   674559 => 'Digicel',
   6746 => 'Digicel',
   6748 => 'FSM Telecom',
-);
+];

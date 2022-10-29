@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   573002 => 'Tigo',
   573003 => 'Tigo',
   573004 => 'Tigo',
@@ -284,4 +284,4 @@ return array(
   573508 => 'Avantel',
   57351 => 'Avantel',
   579 => 'Movistar',
-);
+];

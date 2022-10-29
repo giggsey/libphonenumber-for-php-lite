@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   4312 => 'Wien',
   4313 => 'Wien',
   4314 => 'Wien',
@@ -133,4 +133,4 @@ return array(
   437945 => 'Sankt Oswald bei Freistadt',
   437954 => 'Sankt Georgen am Walde',
   437956 => 'Unterweißenbach',
-);
+];

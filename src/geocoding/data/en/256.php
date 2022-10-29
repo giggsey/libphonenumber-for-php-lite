@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   25641 => 'Kampala',
   25643 => 'Jinja',
   25645 => 'Mbale',
@@ -24,4 +24,4 @@ return array(
   256483 => 'Fort Portal',
   256485 => 'Mbarara',
   256486 => 'Kabale/Rukungiri/Kisoro',
-);
+];

@@ -10,8 +10,8 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   6825 => 'Bluesky',
   6827 => 'Bluesky',
   6828 => 'Bluesky',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   49201 => 'Essen',
   49202 => 'Wuppertal',
   49203 => 'Duisburg',
@@ -5213,4 +5213,4 @@ return array(
   499976 => 'Rötz',
   499977 => 'Arnschwang',
   499978 => 'Schönthal Oberpfalz',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   7700 => 'Altel',
   7701 => 'Kcell/Activ',
   7702 => 'Kcell/Activ',
@@ -1018,4 +1018,4 @@ return array(
   79969 => 'MegaFon',
   799690 => 'Tele2',
   7999 => 'MegaFon',
-);
+];

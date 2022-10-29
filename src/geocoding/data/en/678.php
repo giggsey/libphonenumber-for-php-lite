@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   67822 => 'Port Vila, Shefa',
   67823 => 'Port Vila, Shefa',
   67824 => 'Port Vila, Shefa',
@@ -24,4 +24,4 @@ return array(
   67838 => 'Penama/Torba',
   6784 => 'Malampa',
   67888 => 'Tafea',
-);
+];

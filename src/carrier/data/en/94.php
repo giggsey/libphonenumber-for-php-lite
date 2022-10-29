@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9470 => 'Mobitel',
   9471 => 'Mobitel',
   9472 => 'Etisalat',
@@ -19,4 +19,4 @@ return array(
   9476 => 'Dialog',
   9477 => 'Dialog',
   9478 => 'Hutch',
-);
+];

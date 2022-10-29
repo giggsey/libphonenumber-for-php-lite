@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3210 => 'Waver',
   3219 => 'Borgworm',
   322 => 'Brussel',
@@ -28,4 +28,4 @@ return array(
   3281 => 'Namen',
   3285 => 'Hoei',
   329 => 'Gent',
-);
+];

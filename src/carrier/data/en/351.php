@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3511 => 'NOS',
   351609230 => 'NOS',
   35160929 => 'NOS',
@@ -57,4 +57,4 @@ return array(
   3519295 => 'Sumamovil Portugal',
   35193 => 'NOS',
   35196 => 'MEO',
-);
+];

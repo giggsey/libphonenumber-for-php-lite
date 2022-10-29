@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   96391 => 'Wafa Telecom',
   96392 => 'Wafa Telecom',
   96393 => 'Syriatel',
@@ -26,4 +26,4 @@ return array(
   96396 => 'MTN',
   96398 => 'Syriatel',
   96399 => 'Syriatel',
-);
+];

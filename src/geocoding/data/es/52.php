@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   52231 => 'Teteles/Teziutlán, PUE',
   52232 => 'La Vigueta/Martínez de la Torre, VER',
   52238 => 'Santiago Miahuatlán/Tehuacán, PUE',
@@ -111,4 +111,4 @@ return array(
   52995 => 'Magdalena Tequisistlán/Santa Maria Jalapa del Marqués, OAX',
   52997 => 'Yucatán',
   52999 => 'Conkal/Mérida, YUC',
-);
+];

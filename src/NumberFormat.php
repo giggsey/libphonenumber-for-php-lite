@@ -29,7 +29,7 @@ class NumberFormat
     /**
      * @var array
      */
-    protected $leadingDigitsPattern = array();
+    protected $leadingDigitsPattern = [];
 
     /**
      * @var string
@@ -76,7 +76,7 @@ class NumberFormat
         $this->hasFormat = false;
         $this->format = null;
 
-        $this->leadingDigitsPattern = array();
+        $this->leadingDigitsPattern = [];
 
         $this->hasNationalPrefixFormattingRule = false;
         $this->nationalPrefixFormattingRule = '';
@@ -307,7 +307,7 @@ class NumberFormat
      */
     public function toArray()
     {
-        $output = array();
+        $output = [];
         $output['pattern'] = $this->getPattern();
         $output['format'] = $this->getFormat();
 

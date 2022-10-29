@@ -17,7 +17,7 @@ class MultiFileMetadataSourceImpl implements MetadataSourceInterface
      * A mapping from a region code to the PhoneMetadata for that region.
      * @var PhoneMetadata[]
      */
-    protected $regionToMetadataMap = array();
+    protected $regionToMetadataMap = [];
 
     /**
      * A mapping from a country calling code for a non-geographical entity to the PhoneMetadata for
@@ -25,7 +25,7 @@ class MultiFileMetadataSourceImpl implements MetadataSourceInterface
      * Toll Free Service) and 808 (International Shared Cost Service).
      * @var PhoneMetadata[]
      */
-    protected $countryCodeToNonGeographicalMetadataMap = array();
+    protected $countryCodeToNonGeographicalMetadataMap = [];
 
     /**
      * The prefix of the metadata files from which region data is loaded.

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   22245 => 'Nouakchott',
   2224513 => 'Néma',
   2224515 => 'Aioun',
@@ -23,4 +23,4 @@ return array(
   2224563 => 'Kiffa',
   2224569 => 'Rosso/Tidjikja',
   2224574 => 'Nouadhibou',
-);
+];

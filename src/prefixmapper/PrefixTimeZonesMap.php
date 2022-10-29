@@ -54,7 +54,7 @@ class PrefixTimeZonesMap
         $timezonesString = $this->phonePrefixMap->lookupKey($key);
 
         if ($timezonesString === null) {
-            return array();
+            return [];
         }
 
         return $this->tokenizeRawOutputString($timezonesString);

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   21670 => 'Ben Arous',
   21671 => 'Ariana/Ben Arous/Carthage/Tunis',
   21672 => 'Bizerte/Nabeul/Zaghouan',
@@ -21,4 +21,4 @@ return array(
   21677 => 'Haffouz/Kairouan/Kasserine',
   21678 => 'Beja/Jendouba/Kef/La Kef/Siliana/Tabarka',
   21679 => 'Ariana/Ben Arous/Manouba/Tunis',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   59393 => 'Claro',
   5939586 => 'Movistar',
   5939587 => 'Movistar',
@@ -82,4 +82,4 @@ return array(
   5939997 => 'Movistar',
   5939998 => 'Movistar',
   5939999 => 'Movistar',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   22220 => 'Chinguitel',
   22221 => 'Chinguitel',
   22222 => 'Chinguitel',
@@ -38,4 +38,4 @@ return array(
   22247 => 'Mauritel',
   22248 => 'Mauritel',
   22249 => 'Mauritel',
-);
+];

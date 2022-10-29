@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9920 => 'Megafon',
   99210 => 'O-Mobile',
   99211 => 'Tcell',
@@ -34,4 +34,4 @@ return array(
   99294 => 'Babilon-M',
   99298 => 'Babilon-M',
   99299 => 'Tcell',
-);
+];

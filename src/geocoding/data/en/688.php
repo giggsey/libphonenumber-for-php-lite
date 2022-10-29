@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   68820 => 'Funafuti',
   68822 => 'Niulakita',
   68823 => 'Nui',
@@ -20,4 +20,4 @@ return array(
   68827 => 'Nanumaga',
   68828 => 'Niutao',
   68829 => 'Vaitupu',
-);
+];

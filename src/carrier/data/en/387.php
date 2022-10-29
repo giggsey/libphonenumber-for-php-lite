@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   38760 => 'BH Telecom',
   38761 => 'BH Telecom',
   38762 => 'BH Telecom',
@@ -19,4 +19,4 @@ return array(
   38765 => 'm:tel',
   38766 => 'm:tel',
   38767 => 'm:tel',
-);
+];

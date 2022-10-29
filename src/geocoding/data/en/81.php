@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   8111 => 'Sapporo, Hokkaido',
   811232 => 'Chitose, Hokkaido',
   811233 => 'Chitose, Hokkaido',
@@ -1262,4 +1262,4 @@ return array(
   819978 => 'Tokunoshima, Kagoshima',
   819979 => 'Tokunoshima, Kagoshima',
   81998 => 'Kagoshima, Kagoshima',
-);
+];

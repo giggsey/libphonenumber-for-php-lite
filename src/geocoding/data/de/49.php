@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   492203 => 'Köln-Porz',
   49221 => 'Köln',
   492339 => 'Sprockhövel-Haßlinghausen',
@@ -60,4 +60,4 @@ return array(
   499567 => 'Seßlach-Gemünda',
   499636 => 'Plößberg',
   499656 => 'Moosbach bei Vohenstrauß',
-);
+];

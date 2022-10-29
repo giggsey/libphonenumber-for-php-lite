@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9592 => 'MPT',
   9593 => 'MPT',
   95940 => 'MPT',
@@ -39,4 +39,4 @@ return array(
   95996 => 'Ooredoo',
   95997 => 'Ooredoo',
   95998 => 'Ooredoo',
-);
+];

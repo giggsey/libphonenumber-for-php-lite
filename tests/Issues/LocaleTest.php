@@ -59,9 +59,9 @@ class LocaleTest extends TestCase
     {
         $codes = $this->getCountryCodes();
 
-        $return = array();
+        $return = [];
         foreach ($codes as $code => $country) {
-            $return[] = array($code, $country);
+            $return[] = [$code, $country];
         }
 
         return $return;
@@ -75,7 +75,7 @@ class LocaleTest extends TestCase
      */
     private function getCountryCodes()
     {
-        return array(
+        return [
             'AF' => 'Afghanistan',
             'AX' => 'Åland Islands',
             'AL' => 'Albania',
@@ -309,6 +309,6 @@ class LocaleTest extends TestCase
             'YE' => 'Yemen',
             'ZM' => 'Zambia',
             'ZW' => 'Zimbabwe',
-        );
+        ];
     }
 }

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   23836 => 'CVMOVEL',
   23851 => 'T+',
   23852 => 'T+',
@@ -24,4 +24,4 @@ return array(
   23897 => 'CVMOVEL',
   23898 => 'CVMOVEL',
   23899 => 'CVMOVEL',
-);
+];

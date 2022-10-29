@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3531 => 'Dublin',
   35321 => 'Cork',
   3532140 => 'Kinsale',
@@ -311,4 +311,4 @@ return array(
   35397 => 'Belmullet',
   35398 => 'Westport',
   35399 => 'Kilronan',
-);
+];

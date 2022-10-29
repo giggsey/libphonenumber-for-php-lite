@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9671 => 'Sanaa',
   96722 => 'Aden',
   96723 => 'Aden',
@@ -90,4 +90,4 @@ return array(
   9677877 => 'Amran',
   9677878 => 'Saadah',
   9677879 => 'Al Mahweet',
-);
+];

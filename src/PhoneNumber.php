@@ -570,7 +570,7 @@ class PhoneNumber implements \Serializable
 
     public function __serialize()
     {
-        return array(
+        return [
             $this->countryCode,
             $this->nationalNumber,
             $this->extension,
@@ -578,8 +578,8 @@ class PhoneNumber implements \Serializable
             $this->numberOfLeadingZeros,
             $this->rawInput,
             $this->countryCodeSource,
-            $this->preferredDomesticCarrierCode
-        );
+            $this->preferredDomesticCarrierCode,
+        ];
     }
 
     /**
@@ -592,7 +592,7 @@ class PhoneNumber implements \Serializable
 
     public function __unserialize($data)
     {
-        list(
+        [
             $this->countryCode,
             $this->nationalNumber,
             $this->extension,
@@ -601,7 +601,7 @@ class PhoneNumber implements \Serializable
             $this->rawInput,
             $this->countryCodeSource,
             $this->preferredDomesticCarrierCode
-        ) = $data;
+        ] = $data;
 
         if ($this->numberOfLeadingZeros > 1) {
             $this->hasNumberOfLeadingZeros = true;

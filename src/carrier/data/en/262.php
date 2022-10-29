@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   26263900 => 'Orange',
   26263901 => 'Orange',
   26263902 => 'Orange',
@@ -120,4 +120,4 @@ return array(
   26269397 => 'SFR',
   26269399 => 'Orange',
   2629769 => 'Orange',
-);
+];

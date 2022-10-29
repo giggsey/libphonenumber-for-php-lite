@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   67320 => 'Brunei Muara',
   67321 => 'Brunei Muara',
   673220 => 'Brunei Muara',
@@ -38,4 +38,4 @@ return array(
   67357 => 'Temburong',
   67358 => 'Temburong',
   67359 => 'Temburong',
-);
+];

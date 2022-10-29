@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   822 => '서울',
   8231 => '경기',
   8232 => '인천',
@@ -26,4 +26,4 @@ return array(
   8261 => '전남',
   8262 => '광주',
   8263 => '전북',
-);
+];

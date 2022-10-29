@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   37161 => 'Jūrmala',
   37162 => 'Valmiera',
   371630 => 'Jelgava',
@@ -50,4 +50,4 @@ return array(
   371684 => 'Liepāja',
   371686 => 'Jelgava',
   37169 => 'Riga',
-);
+];

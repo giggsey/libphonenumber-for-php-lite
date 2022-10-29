@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   6762 => 'Nuku\'alofa',
   67629 => 'Pea',
   67630 => 'Pea',
@@ -38,4 +38,4 @@ return array(
   67679 => 'Vava’u',
   67680 => 'Niuas',
   67685 => 'Niuas',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   61238000 => 'Bowral',
   61238001 => 'Barrallier',
   61238002 => 'Bevendale',
@@ -61091,4 +61091,4 @@ return array(
   61899997 => 'Coorow West',
   61899998 => 'Eneabba',
   61899999 => 'Eneabba North',
-);
+];

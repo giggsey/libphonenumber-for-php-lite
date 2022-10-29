@@ -11,136 +11,136 @@
  */
 
 
-return array(
+return [
   'generalDesc' =>
-  array(
+  [
     'NationalNumberPattern' => '[1-9]\\d{7}',
     'PossibleLength' =>
-    array(
+    [
       0 => 8,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
+    [
       0 => 5,
       1 => 6,
-    ),
-  ),
+    ],
+  ],
   'fixedLine' =>
-  array(
+  [
     'NationalNumberPattern' => '[1-9]\\d{7}',
     'ExampleNumber' => '10123456',
     'PossibleLength' =>
-    array(
-    ),
+    [
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
+    [
       0 => 5,
       1 => 6,
-    ),
-  ),
+    ],
+  ],
   'mobile' =>
-  array(
+  [
     'NationalNumberPattern' => '[1-9]\\d{7}',
     'ExampleNumber' => '10123456',
     'PossibleLength' =>
-    array(
-    ),
+    [
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
+    [
       0 => 5,
       1 => 6,
-    ),
-  ),
+    ],
+  ],
   'tollFree' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'premiumRate' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'sharedCost' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'personalNumber' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'voip' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'pager' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'uan' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'voicemail' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'noInternationalDialling' =>
-  array(
+  [
     'PossibleLength' =>
-    array(
+    [
       0 => -1,
-    ),
+    ],
     'PossibleLengthLocalOnly' =>
-    array(
-    ),
-  ),
+    [
+    ],
+  ],
   'id' => 'AM',
   'countryCode' => 374,
   'internationalPrefix' => '00',
@@ -148,11 +148,11 @@ return array(
   'nationalPrefixForParsing' => '0',
   'sameMobileAndFixedLinePattern' => true,
   'numberFormat' =>
-  array(
-  ),
+  [
+  ],
   'intlNumberFormat' =>
-  array(
-  ),
+  [
+  ],
   'mainCountryForCode' => false,
   'mobileNumberPortableRegion' => false,
-);
+];

@@ -22,7 +22,7 @@ class PhoneNumberToTimeZonesMapper
      * @var PhoneNumberToTimeZonesMapper
      */
     protected static $instance;
-    protected $unknownTimeZoneList = array();
+    protected $unknownTimeZoneList = [];
     /**
      * @var PhoneNumberUtil
      */

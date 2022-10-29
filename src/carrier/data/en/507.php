@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   507111 => 'Claro',
   507161 => 'Cable & Wireless',
   507218 => 'Telefónica Móviles',
@@ -61,4 +61,4 @@ return array(
   50781 => 'Mobilphone',
   507872 => 'Cable & Wireless',
   507873 => 'Cable & Wireless',
-);
+];

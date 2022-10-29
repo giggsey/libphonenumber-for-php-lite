@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   35672 => 'GO Mobile',
   35677 => 'Melita Mobile',
   35679 => 'GO Mobile',
@@ -20,4 +20,4 @@ return array(
   356988 => 'GO Mobile',
   356989 => 'epic',
   35699 => 'epic',
-);
+];

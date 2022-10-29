@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   37060 => 'Tele 2',
   37061 => 'Omnitel',
   37062 => 'Omnitel',
@@ -95,4 +95,4 @@ return array(
   37069743 => 'BITĖ',
   370698 => 'Omnitel',
   370699 => 'BITĖ',
-);
+];

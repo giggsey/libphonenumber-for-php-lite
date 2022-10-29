@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9983 => 'Uzbektelecom',
   998555 => 'Uzbektelecom',
   99861220 => 'MobiUZ',
@@ -225,4 +225,4 @@ return array(
   99897 => 'MobiUZ',
   99898 => 'Perfectum',
   99899 => 'Uzbektelecom',
-);
+];

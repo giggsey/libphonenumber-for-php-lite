@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   230525 => 'Cellplus',
   230526 => 'Cellplus',
   230527 => 'MTML',
@@ -48,4 +48,4 @@ return array(
   230596 => 'MTML',
   230597 => 'Emtel',
   230598 => 'Emtel',
-);
+];

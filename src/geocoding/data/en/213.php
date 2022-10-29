@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   21321 => 'Algiers',
   21327 => 'Chlef',
   21329 => 'Ghardaia/Illizi/Tamanrasset',
@@ -25,4 +25,4 @@ return array(
   21343 => 'Tlemcen',
   21344 => 'Blida',
   21349 => 'Adrar/Béchar/Tindouf',
-);
+];

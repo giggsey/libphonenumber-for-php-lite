@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   233302 => 'Accra',
   233303 => 'Tema',
   2333035 => 'Ada',
@@ -88,4 +88,4 @@ return array(
   233392 => 'Wa',
   233397 => 'Upper West Region',
   233398 => 'Upper West Region',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   227202 => 'Niamey',
   227203 => 'Niamey',
   2272041 => 'Maradi',
@@ -29,4 +29,4 @@ return array(
   2272075 => 'Niamey',
   2272077 => 'Filingué',
   2272078 => 'Say',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   56211 => 'Santiago, Región Metropolitana',
   562198 => 'Santiago, Región Metropolitana',
   5622 => 'Santiago, Región Metropolitana',
@@ -19,4 +19,4 @@ return array(
   5658 => 'Arica, Arica y Parinacota',
   5661 => 'Punta Arenas, Magallanes',
   5667 => 'Coihaique, Aysén',
-);
+];

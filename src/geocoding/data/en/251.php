@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   25111111 => 'Arada I, Addis Ababa',
   25111112 => 'Arada II, Addis Ababa',
   25111114 => 'French Legasion, Addis Ababa',
@@ -361,4 +361,4 @@ return array(
   25158777 => 'Amanuel, North-West Region',
   25158778 => 'Debre Markos II, North-West Region',
   25158779 => 'Jiga, North-West Region',
-);
+];

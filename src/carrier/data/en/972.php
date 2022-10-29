@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   97250 => 'Pelephone',
   97251 => 'Xphone',
   97252 => 'Cellcom',
@@ -41,4 +41,4 @@ return array(
   97256 => 'Ooredoo',
   97258 => 'Golan Telecom',
   97259 => 'Jawwal',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   238221 => 'Ribeira Grande, Santo Antão',
   238222 => 'Porto Novo, Santo Antão',
   238223 => 'Paúl, Santo Antão',
@@ -49,4 +49,4 @@ return array(
   238283 => 'Mosteiros, Fogo',
   238284 => 'São Jorge, Fogo',
   238285 => 'Nova Sintra, Brava',
-);
+];

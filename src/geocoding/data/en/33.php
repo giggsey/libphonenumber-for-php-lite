@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   33105 => 'Ile de France',
   331241 => 'Ile de France',
   331242 => 'Ile de France',
@@ -13934,4 +13934,4 @@ return array(
   3359676 => 'Sainte-Anne',
   3359677 => 'Ducos',
   3359678 => 'Basse-Pointe',
-);
+];

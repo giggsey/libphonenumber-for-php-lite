@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2292021 => 'Ongala',
   2292022 => 'Kandiévé',
   2292024 => 'Sèmè',
@@ -47,4 +47,4 @@ return array(
   2292380 => 'Djougou',
   2292382 => 'Natitingou',
   2292383 => 'Tanguiéta',
-);
+];

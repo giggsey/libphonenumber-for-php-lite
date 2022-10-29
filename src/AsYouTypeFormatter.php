@@ -84,7 +84,7 @@ class AsYouTypeFormatter
     /**
      * @var NumberFormat[]
      */
-    private $possibleFormats = array();
+    private $possibleFormats = [];
 
     /**
      * @var int
@@ -392,7 +392,7 @@ class AsYouTypeFormatter
         $this->originalPosition = 0;
         $this->isCompleteNumber = false;
         $this->isExpectingCountryCallingCode = false;
-        $this->possibleFormats = array();
+        $this->possibleFormats = [];
         $this->shouldAddSpaceAfterNationalPrefix = false;
         if ($this->currentMetadata !== $this->defaultMetadata) {
             $this->currentMetadata = $this->getMetadataForRegion($this->defaultCountry);
@@ -524,7 +524,7 @@ class AsYouTypeFormatter
     {
         $this->ableToFormat = true;
         $this->isExpectingCountryCallingCode = false;
-        $this->possibleFormats = array();
+        $this->possibleFormats = [];
         $this->lastMatchPosition = 0;
         $this->formattingTemplate = '';
         $this->currentFormattingPattern = '';

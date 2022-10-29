@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   29117 => 'EriTel',
   2917 => 'EriTel',
-);
+];

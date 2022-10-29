@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   260211 => 'Lusaka Province',
   260212 => 'Ndola/Copperbelt and Luapula Provinces',
   260213 => 'Livingstone/Southern Province',
@@ -19,4 +19,4 @@ return array(
   260216 => 'Chipata/Eastern Province',
   260217 => 'Solwezi/Western Province',
   260218 => 'Mongu/North-Western Province',
-);
+];

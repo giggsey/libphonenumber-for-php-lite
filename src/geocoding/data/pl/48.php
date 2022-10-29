@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   4822 => 'Warszawa',
   4824 => 'Płock',
   4829 => 'Ostrołęka',
@@ -26,4 +26,4 @@ return array(
   4885 => 'Białystok',
   4886 => 'Łomża',
   4887 => 'Suwałki',
-);
+];

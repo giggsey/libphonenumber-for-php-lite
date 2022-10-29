@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2710 => 'Johannesburg',
   2711 => 'Johannesburg',
   2712 => 'Brits/Tshwane',
@@ -48,4 +48,4 @@ return array(
   2756 => 'Kroonstad/Parys/Northern Free State',
   2757 => 'Northern Free State Goldfields/Welkom',
   2758 => 'Bethlehem/Eastern Free State',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2013 => 'Banha',
   2015 => '10th of Ramadan',
   202 => 'Cairo/Giza/Qalyubia',
@@ -39,4 +39,4 @@ return array(
   2095 => 'Luxor',
   2096 => 'Qena',
   2097 => 'Aswan',
-);
+];

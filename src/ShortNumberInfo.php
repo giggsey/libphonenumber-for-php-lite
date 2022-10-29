@@ -23,14 +23,14 @@ class ShortNumberInfo
      */
     protected $matcherAPI;
     protected $currentFilePrefix;
-    protected $regionToMetadataMap = array();
-    protected $countryCallingCodeToRegionCodeMap = array();
-    protected $countryCodeToNonGeographicalMetadataMap = array();
-    protected static $regionsWhereEmergencyNumbersMustBeExact = array(
+    protected $regionToMetadataMap = [];
+    protected $countryCallingCodeToRegionCodeMap = [];
+    protected $countryCodeToNonGeographicalMetadataMap = [];
+    protected static $regionsWhereEmergencyNumbersMustBeExact = [
         'BR',
         'CL',
         'NI',
-    );
+    ];
 
     protected function __construct(MatcherAPIInterface $matcherAPI)
     {
@@ -80,7 +80,7 @@ class ShortNumberInfo
             $regionCodes = $this->countryCallingCodeToRegionCodeMap[$countryCallingCode];
         }
 
-        return ($regionCodes === null) ? array() : $regionCodes;
+        return ($regionCodes === null) ? [] : $regionCodes;
     }
 
     /**
@@ -142,7 +142,7 @@ class ShortNumberInfo
             $this->loadMetadataFromFile($this->currentFilePrefix, $regionCode, 0);
         }
 
-        return isset($this->regionToMetadataMap[$regionCode]) ? $this->regionToMetadataMap[$regionCode] : null;
+        return $this->regionToMetadataMap[$regionCode] ?? null;
     }
 
     protected function loadMetadataFromFile($filePrefix, $regionCode, $countryCallingCode)

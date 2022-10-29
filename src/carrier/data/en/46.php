@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   46700 => 'Tele2 Sverige',
   467010 => 'SPINBOX AB',
   467011 => 'Telenor Sverige',
@@ -752,4 +752,4 @@ return array(
   4679581 => 'Borderlight',
   4679585 => 'Telavox AB',
   467997 => 'Telenor Sverige',
-);
+];

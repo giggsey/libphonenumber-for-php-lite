@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9111 => 'New Delhi',
   91120 => 'Ghaziabad/Dadri, Uttar Pradesh',
   91121 => 'Meerut, Uttar Pradesh',
@@ -5754,4 +5754,4 @@ return array(
   918964 => 'Saluru, Andhra Pradesh',
   918965 => 'Gajapathinagaram, Andhra Pradesh',
   918966 => 'Srungavarapukota/Kothavalasa, Andhra Pradesh',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3897 => 'A1',
   38970 => 'T-Mobile',
   38971 => 'T-Mobile',
@@ -26,4 +26,4 @@ return array(
   38974774 => 'Telekabel',
   3897970 => 'T-Mobile',
   3897971 => 'T-Mobile',
-);
+];

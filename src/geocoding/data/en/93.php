@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9320 => 'Kabul',
   9321 => 'Parwan',
   9322 => 'Kapisa',
@@ -45,4 +45,4 @@ return array(
   9363 => 'Laghman',
   9364 => 'Paktia',
   9365 => 'Paktika',
-);
+];

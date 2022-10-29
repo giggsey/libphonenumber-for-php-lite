@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   59170 => 'Nuevatel',
   591710 => 'Entel',
   591711 => 'Entel',
@@ -48,4 +48,4 @@ return array(
   59176 => 'Tigo',
   59177 => 'Tigo',
   59179 => 'Nuevatel',
-);
+];

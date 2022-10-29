@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   96650 => 'STC',
   966510 => 'Salam',
   966511 => 'Salam',
@@ -31,4 +31,4 @@ return array(
   966579 => 'Mobily',
   96658 => 'Zain',
   96659 => 'Zain',
-);
+];

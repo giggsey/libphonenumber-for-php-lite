@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   407000 => 'Enigma-System',
   407013 => 'Lycamobile',
   407014 => 'Lycamobile',
@@ -39,4 +39,4 @@ return array(
   40777 => 'Digi Mobil',
   4078 => 'Telekom',
   4079 => 'Vodafone',
-);
+];

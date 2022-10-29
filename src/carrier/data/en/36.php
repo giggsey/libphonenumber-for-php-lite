@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3620 => 'Yettel Hungary',
   3630 => 'Magyar Telekom',
   36312000 => 'Netfone Telecom',
@@ -65,4 +65,4 @@ return array(
   36508 => 'MVM Net',
   36509 => 'MVM Net',
   3670 => 'Vodafone',
-);
+];

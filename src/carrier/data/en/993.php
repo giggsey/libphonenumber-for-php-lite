@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   99361 => 'TM-Cell',
   99362 => 'TM-Cell',
   99363 => 'TM-Cell',
@@ -20,4 +20,4 @@ return array(
   99367 => 'MTS (BARASH Communication)',
   99368 => 'MTS (BARASH Communication)',
   99369 => 'MTS (BARASH Communication)',
-);
+];

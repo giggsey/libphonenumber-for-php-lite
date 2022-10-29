@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   689404 => 'Îles du Vent(IDV)',
   689405 => 'Îles du Vent(IDV)',
   689406 => 'Îles Sous-le-vent(ISLV)',
@@ -21,4 +21,4 @@ return array(
   689495 => 'Polynesia',
   689496 => 'Polynesia',
   689498 => 'Polynesia',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   25821 => 'Maputo',
   25823 => 'Beira',
   25824 => 'Quelimane',
@@ -22,4 +22,4 @@ return array(
   258281 => 'Chokwe',
   258282 => 'Xai-Xai',
   25829 => 'Inhambane',
-);
+];

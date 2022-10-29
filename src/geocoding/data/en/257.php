@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2572220 => 'Bujumbura',
   2572221 => 'Bujumbura',
   2572222 => 'Bujumbura',
@@ -22,4 +22,4 @@ return array(
   2572230 => 'North zone',
   2572240 => 'Central east zone',
   2572250 => 'South zone',
-);
+];

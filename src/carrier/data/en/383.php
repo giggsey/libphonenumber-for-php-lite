@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   38343 => 'IPKO',
   38344 => 'vala',
   383451 => 'vala',
@@ -26,4 +26,4 @@ return array(
   38347 => 'mts d.o.o.',
   38348 => 'IPKO',
   38349 => 'IPKO',
-);
+];

@@ -47,7 +47,7 @@ class PhoneNumberType
 
     public static function values()
     {
-        return array(
+        return [
             self::FIXED_LINE => 'FIXED_LINE',
             self::MOBILE => 'MOBILE',
             self::FIXED_LINE_OR_MOBILE => 'FIXED_LINE_OR_MOBILE',
@@ -63,6 +63,6 @@ class PhoneNumberType
             self::VOICEMAIL => 'VOICEMAIL',
             self::SHORT_CODE => 'SHORT_CODE',
             self::STANDARD_RATE => 'STANDARD_RATE',
-        );
+        ];
     }
 }

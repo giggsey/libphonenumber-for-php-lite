@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   39319 => 'Intermatica',
   3932 => 'WIND',
   3933 => 'TIM',
@@ -22,4 +22,4 @@ return array(
   3938 => 'WIND',
   39383 => 'Vodafone',
   3939 => '3 Italia',
-);
+];

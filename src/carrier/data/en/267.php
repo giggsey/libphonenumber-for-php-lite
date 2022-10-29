@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   26732 => 'Mascom',
   26771 => 'Mascom',
   26772 => 'Orange',
@@ -51,4 +51,4 @@ return array(
   267778 => 'Mascom',
   267779 => 'Orange',
   26778 => 'Orange',
-);
+];

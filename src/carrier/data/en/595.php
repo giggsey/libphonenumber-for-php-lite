@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   59595 => 'VOX',
   59596 => 'VOX',
   59597 => 'Personal',
@@ -21,4 +21,4 @@ return array(
   595985 => 'Tigo',
   595986 => 'Tigo',
   59599 => 'Claro',
-);
+];

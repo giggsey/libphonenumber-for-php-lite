@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   4915020 => 'Interactive digital media',
   4915050 => 'NAKA AG',
   4915080 => 'Easy World',
@@ -47,4 +47,4 @@ return array(
   49177 => 'Eplus',
   49178 => 'Eplus',
   49179 => 'O2',
-);
+];

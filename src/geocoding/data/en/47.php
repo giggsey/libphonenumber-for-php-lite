@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   47210 => 'Oslo',
   47211 => 'Oslo',
   47212 => 'Oslo',
@@ -176,4 +176,4 @@ return array(
   4777 => 'Troms',
   4778 => 'Finnmark',
   4779 => 'Svalbard & Jan Mayen',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   6918 => 'FSMTC',
   691920 => 'FSMTC',
   691921 => 'FSMTC',
@@ -25,4 +25,4 @@ return array(
   691933 => 'FSMTC',
   69195 => 'FSMTC',
   69197 => 'FSMTC',
-);
+];

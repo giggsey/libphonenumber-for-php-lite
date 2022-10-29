@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   38730 => 'Srednjobosanski kanton',
   38731 => 'Posavski kanton',
   38732 => 'Zeničko-dobojski kanton',
@@ -23,4 +23,4 @@ return array(
   38739 => 'Zapadnohercegovački kanton',
   3874 => 'Brčko Distrikt',
   38757 => 'Istočno Sarajevo',
-);
+];

@@ -11,7 +11,7 @@
 
  */
 
-return array(
+return [
   1 => 'America/Adak&America/Anchorage&America/Anguilla&America/Antigua&America/Barbados&America/Boise&America/Cayman&America/Chicago&America/Denver&America/Dominica&America/Edmonton&America/Fort_Nelson&America/Grand_Turk&America/Grenada&America/Halifax&America/Jamaica&America/Juneau&America/Los_Angeles&America/Lower_Princes&America/Montserrat&America/Nassau&America/New_York&America/North_Dakota/Center&America/Phoenix&America/Port_of_Spain&America/Puerto_Rico&America/Regina&America/Santo_Domingo&America/St_Johns&America/St_Kitts&America/St_Lucia&America/St_Thomas&America/St_Vincent&America/Toronto&America/Tortola&America/Vancouver&America/Winnipeg&Atlantic/Bermuda&Pacific/Guam&Pacific/Honolulu&Pacific/Pago_Pago&Pacific/Saipan',
   1201 => 'America/New_York',
   1202 => 'America/New_York',
@@ -3284,4 +3284,4 @@ return array(
   995 => 'Asia/Tbilisi',
   996 => 'Asia/Bishkek',
   998 => 'Asia/Tashkent',
-);
+];

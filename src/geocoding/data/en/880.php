@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   88024 => 'Dhaka',
   88025 => 'Dhaka',
   88027 => 'Dhaka',
@@ -265,4 +265,4 @@ return array(
   880942 => 'Bajitpur/Bhairabbazar/Itna/Kotiadhi',
   88095 => 'Netrokona',
   88098 => 'Jamalpur/Islampur/Dewanganj',
-);
+];

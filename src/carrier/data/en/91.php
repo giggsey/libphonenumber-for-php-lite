@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   91600 => 'Reliance Jio',
   91602 => 'BSNL MOBILE',
   91603 => 'BSNL MOBILE',
@@ -3264,4 +3264,4 @@ return array(
   919991 => 'Vodafone',
   919992 => 'Idea',
   919999 => 'Vodafone',
-);
+];

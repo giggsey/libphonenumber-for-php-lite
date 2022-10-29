@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   420601 => 'O2',
   420602 => 'O2',
   420603 => 'T-Mobile',
@@ -197,4 +197,4 @@ return array(
   42079956 => 'GoMobil',
   42079979 => 'miniTEL',
   42079999 => 'T-Mobile',
-);
+];

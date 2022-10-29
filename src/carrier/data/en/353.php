@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   35383 => '3',
   35385 => 'Meteor',
   35386 => 'O2',
@@ -43,4 +43,4 @@ return array(
   3538997 => 'Lycamobile',
   3538998 => 'Lycamobile',
   3538999 => 'Tesco Mobile',
-);
+];

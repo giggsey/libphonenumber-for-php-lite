@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   24544320 => 'Bissau',
   24544321 => 'Bissau',
   24544322 => 'St. Luzia',
@@ -32,4 +32,4 @@ return array(
   24544394 => 'Bula',
   24544396 => 'Ingoré',
   24544397 => 'Bigene',
-);
+];

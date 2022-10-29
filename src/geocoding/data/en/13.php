@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   1301 => 'Maryland',
   1301203 => 'Fort Washington, MD',
   1301208 => 'Gaithersburg, MD',
@@ -4096,4 +4096,4 @@ return array(
   1386957 => 'New Smyrna Beach, FL',
   1386985 => 'De Leon Springs, FL',
   1386986 => 'Palm Coast, FL',
-);
+];

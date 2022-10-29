@@ -85,7 +85,7 @@ class PhoneNumberMatcher implements \Iterator
      *
      * @var string[]
      */
-    protected static $innerMatches = array();
+    protected static $innerMatches = [];
 
     /**
      * Punctuation that may be at the start of a phone number - brackets and plus signs.
@@ -105,7 +105,7 @@ class PhoneNumberMatcher implements \Iterator
     {
         static::$alternateFormatsFilePrefix = \dirname(__FILE__) . '/data/' . static::META_DATA_FILE_PREFIX;
 
-        static::$innerMatches = array(
+        static::$innerMatches = [
             // Breaks on the slash - e.g. "651-234-2345/332-445-1234"
             '/+(.*)',
             // Note that the bracket here is inside the capturing group, since we consider it part of the
@@ -121,8 +121,8 @@ class PhoneNumberMatcher implements \Iterator
             // Breaks on a full stop - e.g. "12345. 332-445-1234 is my number."
             "\\.+\\p{Z}*([^.]+)",
             // Breaks on space - e.g. "3324451234 8002341234"
-            "\\p{Z}+(\\P{Z}+)"
-        );
+            "\\p{Z}+(\\P{Z}+)",
+        ];
 
         /*
          * Builds the matchingBrackets and pattern regular expressions. The building blocks exist
@@ -830,7 +830,7 @@ class PhoneNumberMatcher implements \Iterator
      * Storage for Alternate Formats
      * @var PhoneMetadata[]
      */
-    protected static $callingCodeToAlternateFormatsMap = array();
+    protected static $callingCodeToAlternateFormatsMap = [];
 
     /**
      * @param $countryCallingCode

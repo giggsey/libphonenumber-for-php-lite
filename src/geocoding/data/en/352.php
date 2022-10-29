@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   35222 => 'Luxembourg City',
   35223 => 'Mondorf-les-Bains/Bascharage/Noerdange/Remich',
   352240 => 'Luxembourg',
@@ -239,4 +239,4 @@ return array(
   35295 => 'Wiltz',
   35297 => 'Huldange',
   35299 => 'Troisvierges',
-);
+];

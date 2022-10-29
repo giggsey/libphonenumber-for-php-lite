@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   6661010 => 'True Move',
   6661012 => 'True Move',
   6661013 => 'True Move',
@@ -594,4 +594,4 @@ return array(
   66997 => 'True Move',
   66998 => 'True Move',
   66999 => 'True Move',
-);
+];

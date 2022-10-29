@@ -11,7 +11,7 @@
 
  */
 
-return array(
+return [
   1 => 'America/New_York&America/Chicago&America/Winnipeg&America/Los_Angeles',
   1201 => 'America/New_York',
   1212812 => 'America/New_York',
@@ -22,4 +22,4 @@ return array(
   1989 => 'Ameriac/Los_Angeles',
   612 => 'Australia/Sydney',
   82 => 'Asia/Seoul',
-);
+];

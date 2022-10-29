@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   5993180 => 'St. Eustatius',
   5993182 => 'St. Eustatius',
   5993183 => 'St. Eustatius',
@@ -21,4 +21,4 @@ return array(
   59971 => 'Bonaire',
   59972 => 'Bonaire',
   59975 => 'Bonaire',
-);
+];

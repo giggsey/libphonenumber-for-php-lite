@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   23762 => 'Camtel',
   237650 => 'MTN Cameroon',
   237651 => 'MTN Cameroon',
@@ -30,4 +30,4 @@ return array(
   237682 => 'MTN Cameroon',
   237683 => 'MTN Cameroon',
   23769 => 'Orange',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9811 => 'Mazandaran',
   9813 => 'Gilan',
   9817 => 'Golestan',
@@ -42,4 +42,4 @@ return array(
   9884 => 'Ilam province',
   9886 => 'Markazi',
   9887 => 'Kurdistan',
-);
+];

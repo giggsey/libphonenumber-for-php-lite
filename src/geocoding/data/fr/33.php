@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3324190 => 'Cheviré-le-Rouge',
   3324191 => 'Brissac-Quincé',
   3324192 => 'Segré',
@@ -37,4 +37,4 @@ return array(
   3332866 => 'Dunkerque',
   3332869 => 'Dunkerque',
   3336138 => 'Dunkerque',
-);
+];

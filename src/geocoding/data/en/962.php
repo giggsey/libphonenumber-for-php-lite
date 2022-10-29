@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   962262 => 'Mafraq',
   962263 => 'Jarash',
   962264 => 'Ajloun',
@@ -46,4 +46,4 @@ return array(
   96264 => 'Amman',
   962647 => 'Greater Amman',
   96265 => 'Amman',
-);
+];

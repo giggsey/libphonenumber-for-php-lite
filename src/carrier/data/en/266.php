@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2665 => 'Vodacom Lesotho (Pty) Ltd',
   2666 => 'Econet Ezi-Cel Lesotho',
-);
+];

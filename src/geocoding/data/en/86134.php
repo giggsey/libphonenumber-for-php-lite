@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   861340000 => 'Wuxi, Jiangsu',
   861340001 => 'Wuxi, Jiangsu',
   861340002 => 'Wuxi, Jiangsu',
@@ -3085,4 +3085,4 @@ return array(
   861349045 => 'Quanzhou, Fujian',
   861349537 => 'Wuzhou, Guangxi',
   861349846 => 'HuaiAn, Jiangsu',
-);
+];

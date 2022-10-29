@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   25224 => 'Telesom',
   25228 => 'Nationlink',
   25235 => 'AirSom',
@@ -36,4 +36,4 @@ return array(
   25288 => 'Somali Networks',
   2529 => 'STG',
   25290 => 'Golis Telecom',
-);
+];

@@ -16,7 +16,7 @@ class ShortNumbersRegionCodeSet
 {
     // A set of all region codes for which data is available.
 
-    public static $shortNumbersRegionCodeSet = array(
+    public static $shortNumbersRegionCodeSet = [
   0 => 'AC',
   1 => 'AD',
   2 => 'AE',
@@ -258,5 +258,5 @@ class ShortNumbersRegionCodeSet
   238 => 'ZA',
   239 => 'ZM',
   240 => 'ZW',
-);
+];
 }

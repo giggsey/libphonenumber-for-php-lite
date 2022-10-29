@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   86178000 => 'Shanghai',
   861780030 => 'Handan, Hebei',
   861780031 => 'Shijiazhuang, Hebei',
@@ -1412,4 +1412,4 @@ return array(
   861788919 => 'Lhasa, Tibet',
   86178898 => 'Haikou, Hainan',
   86178899 => 'Haikou, Hainan',
-);
+];

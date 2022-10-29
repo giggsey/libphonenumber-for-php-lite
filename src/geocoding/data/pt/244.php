@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   24422 => 'Luanda',
   244231 => 'Cabinda',
   244232 => 'Zaire',
@@ -64,4 +64,4 @@ return array(
   2442728 => 'Baía Farta',
   2442729 => 'Catumbela',
   2442777 => 'Dama Universal',
-);
+];

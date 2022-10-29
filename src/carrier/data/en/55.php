@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   551195472 => 'Vivo',
   551195473 => 'Vivo',
   551195474 => 'Vivo',
@@ -8925,4 +8925,4 @@ return array(
   559999986 => 'Oi',
   559999987 => 'Oi',
   559999989 => 'Oi',
-);
+];

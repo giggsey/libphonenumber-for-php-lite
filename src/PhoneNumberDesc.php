@@ -63,7 +63,7 @@ class PhoneNumberDesc
 
     public function clearPossibleLength()
     {
-        $this->possibleLength = array();
+        $this->possibleLength = [];
     }
 
     /**
@@ -91,7 +91,7 @@ class PhoneNumberDesc
 
     public function clearPossibleLengthLocalOnly()
     {
-        $this->possibleLengthLocalOnly = array();
+        $this->possibleLengthLocalOnly = [];
     }
 
     /**
@@ -204,7 +204,7 @@ class PhoneNumberDesc
      */
     public function toArray()
     {
-        $data = array();
+        $data = [];
         if ($this->hasNationalNumberPattern()) {
             $data['NationalNumberPattern'] = $this->getNationalNumberPattern();
         }

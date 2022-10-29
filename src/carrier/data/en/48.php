@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   482111 => 'Polska Spoka Gazownictwa Sp',
   482113 => 'Polska Spoka Gazownictwa Sp',
   482114 => 'Plus',
@@ -294,4 +294,4 @@ return array(
   48887 => 'Plus',
   48888 => 'T-Mobile',
   48889 => 'T-Mobile',
-);
+];

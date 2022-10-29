@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   370310 => 'Varėna',
   370313 => 'Druskininkai',
   370315 => 'Alytus',
@@ -65,4 +65,4 @@ return array(
   370526 => 'Vilnius',
   370527 => 'Vilnius',
   370528 => 'Trakai',
-);
+];

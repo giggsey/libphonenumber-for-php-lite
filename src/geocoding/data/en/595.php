@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   59521 => 'Fernando De La Mora, Lambare, Limpio, Luque, Mariano Roque Alonso, San Antonio, Valle Pucu and Villa Elisa',
   59524 => 'Ita',
   59525 => 'Villeta',
@@ -84,4 +84,4 @@ return array(
   59583 => 'Villa Florida',
   59585 => 'Santa Rosa / Misiones',
   59586 => 'Pilar',
-);
+];

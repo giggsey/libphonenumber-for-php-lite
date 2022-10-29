@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   38630 => 'A1',
   38631 => 'Telekom Slovenije',
   38640 => 'A1',
@@ -28,4 +28,4 @@ return array(
   3866910 => 'Compatel',
   38670 => 'Telemach',
   38671 => 'Telemach',
-);
+];

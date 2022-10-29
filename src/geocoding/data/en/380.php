@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   38031 => 'Zakarpattia',
   380312 => 'Uzhgorod/Chop, Zakarpattia',
   3803122 => 'Uzhhorod, Zakarpattia',
@@ -628,4 +628,4 @@ return array(
   380649 => 'Luhansk',
   38065 => 'Crimea',
   38069 => 'Sevastopol city',
-);
+];

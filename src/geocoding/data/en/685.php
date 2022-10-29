@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   6852 => 'Apia',
   6853 => 'Apia',
   6854 => 'Upolu Rural',
@@ -24,4 +24,4 @@ return array(
   68567 => 'Apia',
   68568 => 'Apia',
   68569 => 'Apia',
-);
+];

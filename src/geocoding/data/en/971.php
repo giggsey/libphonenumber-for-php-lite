@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9712 => 'Abu dhabi',
   9713 => 'Al Ain',
   97142 => 'Dubai',
@@ -41,4 +41,4 @@ return array(
   97196 => 'Fujairah',
   97197 => 'Fujairah',
   97198 => 'Fujairah',
-);
+];

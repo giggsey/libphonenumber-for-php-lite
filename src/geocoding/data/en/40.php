@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   4021 => 'Bucharest and Ilfov County',
   40230 => 'Suceava',
   40231 => 'Botoșani',
@@ -93,4 +93,4 @@ return array(
   40367 => 'Covasna',
   40368 => 'Brașov',
   40369 => 'Sibiu',
-);
+];

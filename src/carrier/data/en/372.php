@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   37250 => 'Telia Eesti AS',
   372519 => 'Telia Eesti AS',
   37252 => 'Telia Eesti AS',
@@ -71,4 +71,4 @@ return array(
   37284510 => 'Telia Eesti AS',
   37284511 => 'Telia Eesti AS',
   37284512 => 'Telia Eesti AS',
-);
+];

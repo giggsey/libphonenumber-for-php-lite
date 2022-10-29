@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3822 => 'Danilovgad/Kolasin/Podgorica',
   38230 => 'Bar/Ulcinj',
   38231 => 'Herceg Novi',
@@ -21,4 +21,4 @@ return array(
   38250 => 'Bijelo Polje/Mojkovac',
   38251 => 'Andrijevica/Berane/Blue/Gusinje/Petnitsa/Rožaje',
   38252 => 'Pljevlja/Zabljak',
-);
+];

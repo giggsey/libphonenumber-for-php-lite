@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3481 => 'Madrid',
   34820 => 'Ávila',
   34821 => 'Segovia',
@@ -187,4 +187,4 @@ return array(
   34986 => 'Pontevedra',
   34987 => 'León',
   34988 => 'Ourense',
-);
+];

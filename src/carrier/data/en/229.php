@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2294 => 'SBIN',
   2295 => 'MTN',
   22955 => 'Moov',
@@ -34,4 +34,4 @@ return array(
   22997 => 'MTN',
   22998 => 'Moov',
   22999 => 'Moov',
-);
+];

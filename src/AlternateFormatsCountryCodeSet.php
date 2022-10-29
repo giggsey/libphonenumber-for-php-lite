@@ -16,7 +16,7 @@ class AlternateFormatsCountryCodeSet
 {
     // A set of all country codes for which data is available.
 
-    public static $alternateFormatsCountryCodeSet = array(
+    public static $alternateFormatsCountryCodeSet = [
   0 => 7,
   1 => 27,
   2 => 30,
@@ -63,5 +63,5 @@ class AlternateFormatsCountryCodeSet
   43 => 971,
   44 => 972,
   45 => 995,
-);
+];
 }

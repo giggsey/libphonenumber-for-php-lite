@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   551 => 'São Paulo',
   551120 => 'São Paulo - SP',
   55112078 => 'Barueri - SP',
@@ -12015,4 +12015,4 @@ return array(
   55993667 => 'Governador Archer - MA',
   55993668 => 'Timbiras - MA',
   55994102 => 'Imperatriz - MA',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   38328 => 'Mitrovica',
   383280 => 'Gjilan',
   38329 => 'Prizren',
@@ -18,4 +18,4 @@ return array(
   38338 => 'Prishtina',
   38339 => 'Peja',
   383390 => 'Gjakova',
-);
+];

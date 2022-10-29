@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   336000 => 'Free Mobile',
   336001 => 'Orange France',
   336002 => 'SFR',
@@ -373,4 +373,4 @@ return array(
   337847 => 'La poste telecom',
   337848 => 'La poste telecom',
   337849 => 'Euroinformation Telecom',
-);
+];

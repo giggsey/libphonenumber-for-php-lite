@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   37433 => 'Beeline',
   37441 => 'Ucom',
   37443 => 'Beeline',
@@ -26,4 +26,4 @@ return array(
   37496 => 'Beeline',
   37498 => 'VivaCell-MTS',
   37499 => 'Beeline',
-);
+];

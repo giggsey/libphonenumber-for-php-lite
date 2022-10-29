@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   212521 => 'Casablanca/Maroc Central',
   2125233 => 'Mohammedia/El Jadida',
   2125234 => 'Settat',
@@ -33,4 +33,4 @@ return array(
   21253890 => 'Fès/Maknès et alentours',
   2125393 => 'Tanger',
   2125399 => 'Tanger/Larache/Al Hoceima',
-);
+];

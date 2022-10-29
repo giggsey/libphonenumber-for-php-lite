@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   45201 => 'tdc',
   45202 => 'tdc',
   45203 => 'tdc',
@@ -1096,4 +1096,4 @@ return array(
   45997 => 'telenor',
   45998 => 'telenor',
   45999 => 'telenor',
-);
+];

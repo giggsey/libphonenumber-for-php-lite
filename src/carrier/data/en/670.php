@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   67072 => 'Timor Telecom',
   67073 => 'Telkomcel',
   67074 => 'Telkomcel',
@@ -18,4 +18,4 @@ return array(
   67076 => 'Viettel (Telemor brand)',
   67077 => 'Timor Telecom',
   67078 => 'Timor Telecom',
-);
+];

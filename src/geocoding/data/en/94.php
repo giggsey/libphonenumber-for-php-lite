@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9411 => 'Colombo',
   9421 => 'Jaffna',
   9423 => 'Mannar',
@@ -40,4 +40,4 @@ return array(
   9467 => 'Kalmunai, Ampara',
   9482 => 'Kandy',
   9491 => 'Galle',
-);
+];

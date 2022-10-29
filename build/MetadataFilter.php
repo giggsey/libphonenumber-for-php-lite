@@ -17,7 +17,7 @@ use libphonenumber\PhoneNumberDesc;
  */
 class MetadataFilter
 {
-    public static $EXCLUDABLE_PARENT_FIELDS = array(
+    public static $EXCLUDABLE_PARENT_FIELDS = [
         'fixedLine',
         'mobile',
         'tollFree',
@@ -33,29 +33,29 @@ class MetadataFilter
         'standardRate',
         'carrierSpecific',
         'smsServices',
-        'noInternationalDialling'
-    );
+        'noInternationalDialling',
+    ];
 
-    public static $EXCLUDABLE_CHILD_FIELDS = array(
+    public static $EXCLUDABLE_CHILD_FIELDS = [
         'nationalNumberPattern',
         'possibleLength',
         'possibleLengthLocalOnly',
-        'exampleNumber'
-    );
+        'exampleNumber',
+    ];
 
-    public static $EXCLUDABLE_CHILDLESS_FIELDS = array(
+    public static $EXCLUDABLE_CHILDLESS_FIELDS = [
         'preferredInternationalPrefix',
         'nationalPrefix',
         'preferredExtnPrefix',
         'nationalPrefixTransformRule',
         'sameMobileAndFixedLinePattern',
         'mainCountryForCode',
-        'mobileNumberPortableRegion'
-    );
+        'mobileNumberPortableRegion',
+    ];
 
     protected $blackList;
 
-    public function __construct($blackList = array())
+    public function __construct($blackList = [])
     {
         $this->blackList = $blackList;
     }
@@ -88,8 +88,8 @@ class MetadataFilter
             throw new \RuntimeException('Empty string should not be passed to parseFieldMapFromString');
         }
 
-        $fieldMap = array();
-        $wildCardChildren = array();
+        $fieldMap = [];
+        $wildCardChildren = [];
 
         $groups = \explode(':', $string);
         foreach ($groups as $group) {
@@ -106,7 +106,7 @@ class MetadataFilter
                     if (\array_key_exists($group, $fieldMap)) {
                         throw new \RuntimeException($group . ' given more than once in ' . $string);
                     }
-                    $fieldMap[$group] = array();
+                    $fieldMap[$group] = [];
                 } elseif (\in_array($group, self::$EXCLUDABLE_CHILD_FIELDS)) {
                     if (\in_array($group, $wildCardChildren)) {
                         throw new \RuntimeException($group . ' given more than once in ' . $string);
@@ -126,7 +126,7 @@ class MetadataFilter
                 if (\array_key_exists($parent, $fieldMap)) {
                     throw new \RuntimeException($parent . ' given more than once in ' . $string);
                 }
-                $children = array();
+                $children = [];
                 $childSearch = \explode(',', \substr($group, $leftParenIndex + 1, $rightParenIndex - $leftParenIndex - 1));
                 foreach ($childSearch as $child) {
                     if (!\in_array($child, self::$EXCLUDABLE_CHILD_FIELDS)) {
@@ -146,7 +146,7 @@ class MetadataFilter
         foreach ($wildCardChildren as $wildCardChild) {
             foreach (self::$EXCLUDABLE_PARENT_FIELDS as $parent) {
                 if (!\array_key_exists($parent, $fieldMap)) {
-                    $fieldMap[$parent] = array();
+                    $fieldMap[$parent] = [];
                 }
 
                 $children = $fieldMap[$parent];
@@ -186,7 +186,7 @@ class MetadataFilter
      */
     public static function computeComplement($fieldMap)
     {
-        $complement = array();
+        $complement = [];
         foreach (self::$EXCLUDABLE_PARENT_FIELDS as $parent) {
             if (!\array_key_exists($parent, $fieldMap)) {
                 $complement[$parent] = self::$EXCLUDABLE_CHILD_FIELDS;
@@ -195,7 +195,7 @@ class MetadataFilter
                 // If the other map has all the children for this parent then we don't want to include the
                 // parent as a key.
                 if (\count($otherChildren) != \count(self::$EXCLUDABLE_CHILD_FIELDS)) {
-                    $children = array();
+                    $children = [];
                     foreach (self::$EXCLUDABLE_CHILD_FIELDS as $child) {
                         if (!\in_array($child, $otherChildren)) {
                             $children[] = $child;
@@ -207,7 +207,7 @@ class MetadataFilter
         }
         foreach (self::$EXCLUDABLE_CHILDLESS_FIELDS as $childlessField) {
             if (!\array_key_exists($childlessField, $fieldMap)) {
-                $complement[$childlessField] = array();
+                $complement[$childlessField] = [];
             }
         }
 

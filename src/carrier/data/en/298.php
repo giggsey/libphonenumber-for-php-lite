@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   29821 => 'Faroese Telecom',
   29822 => 'Faroese Telecom',
   29823 => 'Faroese Telecom',
@@ -26,4 +26,4 @@ return array(
   29879 => 'Faroese Telecom',
   29891 => 'Tosa',
   29896 => 'Faroese Telecom',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2162 => 'Ooredoo',
   21640 => 'Tunisie Telecom',
   21641 => 'Tunisie Telecom',
@@ -22,4 +22,4 @@ return array(
   21647 => 'Tunisie Telecom',
   2165 => 'Orange',
   2169 => 'Tunisie Telecom',
-);
+];

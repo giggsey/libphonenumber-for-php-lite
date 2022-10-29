@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   99410 => 'Azercell',
   99436554 => 'Naxtel',
   99440 => 'FONEX',
@@ -21,4 +21,4 @@ return array(
   9946 => 'Naxtel',
   9947 => 'Nar Mobile',
   99499 => 'Bakcell',
-);
+];

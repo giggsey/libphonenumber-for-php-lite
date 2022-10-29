@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   1501 => 'Arkansas',
   1501202 => 'Little Rock, AR',
   1501205 => 'Conway, AR',
@@ -4093,4 +4093,4 @@ return array(
   1586978 => 'Sterling Heights, MI',
   1586979 => 'Sterling Heights, MI',
   1587 => 'Alberta',
-);
+];

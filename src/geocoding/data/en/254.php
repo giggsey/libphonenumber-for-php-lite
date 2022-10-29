@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   2542 => 'Nairobi',
   25440 => 'Kwale/Ukunda/Msambweni/Lungalunga',
   25441 => 'Mombasa/Mariakani/Kilifi',
@@ -38,4 +38,4 @@ return array(
   25467 => 'Kiambu/Kikuyu',
   25468 => 'Embu',
   25469 => 'Marsabit/Moyale',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   35222 => 'Luxemburg',
   35223 => 'Bad Mondorf',
   352240 => 'Luxemburg',
@@ -234,4 +234,4 @@ return array(
   35295 => 'Wiltz',
   35297 => 'Huldingen',
   35299 => 'Ulflingen',
-);
+];

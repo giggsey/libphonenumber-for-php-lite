@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   5946940 => 'SFR',
   59469408 => 'Digicel',
   59469409 => 'Digicel',
@@ -31,4 +31,4 @@ return array(
   59469446 => 'SFR',
   59469447 => 'SFR',
   5946949 => 'Digicel',
-);
+];

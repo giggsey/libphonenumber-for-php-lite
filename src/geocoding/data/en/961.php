@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   96121 => 'Beirut',
   96124 => 'Metn',
   96125 => 'Chouf',
@@ -18,4 +18,4 @@ return array(
   96127 => 'South Lebanon',
   96128 => 'Bekaa',
   96129 => 'Jbeil & Keserwan',
-);
+];

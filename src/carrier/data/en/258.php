@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   25882 => 'mcel',
   25883 => 'mcel',
   25884 => 'Vodacom',
@@ -18,4 +18,4 @@ return array(
   25886 => 'Movitel',
   25887 => 'Movitel',
   25889 => 'GMPCS',
-);
+];

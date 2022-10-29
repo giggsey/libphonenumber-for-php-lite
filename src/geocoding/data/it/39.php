@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   39010 => 'Genova',
   39011 => 'Torino',
   390121 => 'Pinerolo',
@@ -180,4 +180,4 @@ return array(
   390983 => 'Rossano',
   390984 => 'Cosenza',
   390985 => 'Scalea',
-);
+];

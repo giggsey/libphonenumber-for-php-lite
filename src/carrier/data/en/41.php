@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   417500 => 'Swisscom',
   417507 => 'Swisscom',
   417508 => 'Swisscom',
@@ -95,4 +95,4 @@ return array(
   4179978 => 'Relario AG (Bebbicell)',
   4179979 => 'Relario AG (Bebbicell)',
   417999 => 'Comfone AG',
-);
+];

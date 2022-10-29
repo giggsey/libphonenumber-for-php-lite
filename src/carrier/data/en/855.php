@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   85510 => 'Smart',
   85511 => 'Cellcard',
   85512 => 'Cellcard',
@@ -61,4 +61,4 @@ return array(
   85597 => 'Metfone',
   85598 => 'Smart',
   85599 => 'Cellcard',
-);
+];

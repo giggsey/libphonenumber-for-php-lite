@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   4122 => 'Genf',
   4126 => 'Freiburg',
   4127 => 'Sitten',
@@ -19,4 +19,4 @@ return array(
   4141 => 'Luzern',
   4143 => 'Zürich',
   4144 => 'Zürich',
-);
+];

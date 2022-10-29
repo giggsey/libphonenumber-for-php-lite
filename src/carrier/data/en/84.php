@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   843 => 'Viettel Mobile',
   8452 => 'Vietnamobile',
   8455 => 'Reddi',
@@ -42,4 +42,4 @@ return array(
   84997 => 'G-Mobile',
   84998 => 'Indochina Telecom',
   84999 => 'Indochina Telecom',
-);
+];

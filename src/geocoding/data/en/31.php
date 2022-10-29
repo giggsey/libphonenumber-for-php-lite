@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   3110 => 'Rotterdam',
   31111 => 'Zierikzee',
   31113 => 'Goes',
@@ -152,4 +152,4 @@ return array(
   3177 => 'Venlo',
   3178 => 'Dordrecht',
   3179 => 'Zoetermeer',
-);
+];

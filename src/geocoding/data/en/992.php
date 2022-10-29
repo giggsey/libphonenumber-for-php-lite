@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   9923130 => 'Tursun-Zade',
   9923131 => 'Rasht',
   9923132 => 'Jirgital',
@@ -71,4 +71,4 @@ return array(
   9923555 => 'Roshtkala',
   9923556 => 'Rushan',
   99237 => 'Dushanbe',
-);
+];

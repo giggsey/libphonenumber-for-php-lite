@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   60102 => 'DiGi',
   601030 => 'XOX',
   601031 => 'XOX',
@@ -345,4 +345,4 @@ return array(
   601892 => 'YTL',
   601893 => 'YTL',
   6019 => 'Celcom',
-);
+];

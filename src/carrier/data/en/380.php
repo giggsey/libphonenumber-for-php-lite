@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   38039 => 'Kyivstar',
   38050 => 'Vodafone',
   38063 => 'lifecell',
@@ -27,4 +27,4 @@ return array(
   38097 => 'Kyivstar',
   38098 => 'Kyivstar',
   38099 => 'Vodafone',
-);
+];

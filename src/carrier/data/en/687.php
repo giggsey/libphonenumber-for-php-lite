@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   6875 => 'OPT-NC',
   6877 => 'OPT-NC',
   68780 => 'OPT-NC',
@@ -23,4 +23,4 @@ return array(
   68787 => 'OPT-NC',
   68789 => 'OPT-NC',
   6879 => 'OPT-NC',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   4812 => 'Kraków',
   4813 => 'Krosno',
   4814 => 'Tarnów',
@@ -60,4 +60,4 @@ return array(
   4891 => 'Szczecin',
   4894 => 'Koszalin',
   4895 => 'Gorzów Wielkopolski',
-);
+];

@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   96311 => 'Damascus and rural areas',
   96312 => 'Al-Nebek',
   96313 => 'Al-Zabadani',
@@ -30,4 +30,4 @@ return array(
   96351 => 'Deir Ezzour',
   96352 => 'Alhasakah',
   96353 => 'Al-Kameshli',
-);
+];

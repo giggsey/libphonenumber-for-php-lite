@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   56211 => 'Rural Telecommunications Chile S.A.',
   562198 => 'Compania De Telecomunicaciones De Chile S.A.',
   562220 => 'Compania De Telecomunicaciones De Chile S.A.',
@@ -3153,4 +3153,4 @@ return array(
   569998 => 'Claro',
   569999 => 'Entel',
   5699990 => 'Tesacom',
-);
+];

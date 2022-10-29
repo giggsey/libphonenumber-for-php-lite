@@ -10,7 +10,7 @@
  * Do not modify this file directly!
  */
 
-return array(
+return [
   29051 => 'Sure South Atlantic Ltd',
   29052 => 'Sure South Atlantic Ltd',
   29053 => 'Sure South Atlantic Ltd',
@@ -27,4 +27,4 @@ return array(
   29066 => 'Sure South Atlantic Ltd',
   29067 => 'Sure South Atlantic Ltd',
   29068 => 'Sure South Atlantic Ltd',
-);
+];
