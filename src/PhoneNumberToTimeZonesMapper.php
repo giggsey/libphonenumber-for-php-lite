@@ -10,6 +10,9 @@ namespace libphonenumber;
 
 use libphonenumber\prefixmapper\PrefixTimeZonesMap;
 
+/**
+ * @phpstan-consistent-constructor
+ */
 class PhoneNumberToTimeZonesMapper
 {
     public const UNKNOWN_TIMEZONE = 'Etc/Unknown';

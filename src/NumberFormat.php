@@ -8,7 +8,7 @@ namespace libphonenumber;
 class NumberFormat
 {
     /**
-     * @var string
+     * @var string|null
      */
     protected $pattern;
     /**
@@ -17,7 +17,7 @@ class NumberFormat
     protected $hasPattern = false;
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $format;
 

@@ -676,7 +676,10 @@ class BuildMetadataFromXml
                 ) {
                     $desc->addPossibleLengthLocalOnly($length);
                 } else {
-                    throw new \RuntimeException("Out-of-range local-only possible length found ({$length}), parent length {$parentDesc->getPossibleLengthLocalOnly()}");
+                    throw new \RuntimeException(
+                        "Out-of-range local-only possible length found ({$length}), parent length "
+                        . \implode(',', $parentDesc->getPossibleLengthLocalOnly())
+                    );
                 }
             }
         }

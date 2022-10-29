@@ -9,11 +9,14 @@ use libphonenumber\PhoneNumberType;
 use libphonenumber\PhoneNumberUtil;
 use libphonenumber\prefixmapper\PrefixFileReader;
 
+/**
+ * @phpstan-consistent-constructor
+ */
 class PhoneNumberOfflineGeocoder
 {
     public const MAPPING_DATA_DIRECTORY = '/data';
     /**
-     * @var PhoneNumberOfflineGeocoder
+     * @var PhoneNumberOfflineGeocoder|null
      */
     protected static $instance;
     /**

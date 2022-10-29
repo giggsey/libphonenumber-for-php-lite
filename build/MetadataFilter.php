@@ -2,7 +2,7 @@
 
 namespace libphonenumber\buildtools;
 
-use Guzzle\Common\Exception\RuntimeException;
+use RuntimeException;
 use libphonenumber\PhoneMetadata;
 use libphonenumber\PhoneNumberDesc;
 
@@ -13,6 +13,7 @@ use libphonenumber\PhoneNumberDesc;
  *
  * @package libphonenumber\buildtools
  * @internal
+ * @phpstan-consistent-constructor
  */
 class MetadataFilter
 {

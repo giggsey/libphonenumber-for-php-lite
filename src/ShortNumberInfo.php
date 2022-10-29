@@ -15,7 +15,7 @@ class ShortNumberInfo
 {
     public const META_DATA_FILE_PREFIX = 'ShortNumberMetadata';
     /**
-     * @var ShortNumberInfo
+     * @var ShortNumberInfo|null
      */
     protected static $instance;
     /**

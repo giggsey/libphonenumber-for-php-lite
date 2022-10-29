@@ -15,9 +15,7 @@ use libphonenumber\Leniency\AbstractLeniency;
  * CLDR two-letter region-code format. These should be in upper-case. The list of the codes
  * can be found here:
  * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
- *
- * @author Shaopeng Jia
- * @see https://github.com/google/libphonenumber
+ * @phpstan-consistent-constructor
  */
 class PhoneNumberUtil
 {
@@ -109,7 +107,7 @@ class PhoneNumberUtil
     protected static $CAPTURING_EXTN_DIGITS;
 
     /**
-     * @var PhoneNumberUtil
+     * @var PhoneNumberUtil|null
      */
     protected static $instance;
 
@@ -474,7 +472,7 @@ class PhoneNumberUtil
      * @param int $maxLength
      * @return string
      */
-    private static function extnDigits($maxLength)
+    protected static function extnDigits($maxLength)
     {
         return '(' . self::DIGITS . '{1,' . $maxLength . '})';
     }
@@ -2959,7 +2957,7 @@ class PhoneNumberUtil
      *
      * @param string $regionCode the region that we want to get the dialling prefix for
      * @param boolean $stripNonDigits true to strip non-digits from the national dialling prefix
-     * @return string the dialling prefix for the region denoted by regionCode
+     * @return string|null the dialling prefix for the region denoted by regionCode
      */
     public function getNddPrefixForRegion($regionCode, $stripNonDigits)
     {
@@ -3164,7 +3162,7 @@ class PhoneNumberUtil
     /**
      * Gets a valid number for the specified region.
      *
-     * @param string regionCode  the region for which an example number is needed
+     * @param string $regionCode the region for which an example number is needed
      * @return PhoneNumber a valid fixed-line number for the specified region. Returns null when the metadata
      *    does not contain such information, or the region 001 is passed in. For 001 (representing
      *    non-geographical numbers), call {@link #getExampleNumberForNonGeoEntity} instead.
@@ -3326,7 +3324,7 @@ class PhoneNumberUtil
      * Gets a valid number for the specified country calling code for a non-geographical entity.
      *
      * @param int $countryCallingCode the country calling code for a non-geographical entity
-     * @return PhoneNumber a valid number for the non-geographical entity. Returns null when the metadata
+     * @return PhoneNumber|null a valid number for the non-geographical entity. Returns null when the metadata
      *    does not contain such information, or the country calling code passed in does not belong
      *    to a non-geographical entity.
      */

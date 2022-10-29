@@ -110,7 +110,7 @@ class Matcher
     }
 
     /**
-     * @return int
+     * @return int|null
      */
     public function groupCount()
     {
@@ -123,19 +123,19 @@ class Matcher
 
     /**
      * @param int $group
-     * @return string
+     * @return string|null
      */
     public function group($group = null)
     {
         if ($group === null) {
             $group = 0;
         }
-        return isset($this->groups[$group][0]) ? $this->groups[$group][0] : null;
+        return $this->groups[$group][0] ?? null;
     }
 
     /**
      * @param int|null $group
-     * @return int
+     * @return int|null
      */
     public function end($group = null)
     {

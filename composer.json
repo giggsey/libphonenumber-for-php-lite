@@ -10,11 +10,11 @@
     "geocoding",
     "geolocation"
   ],
-  "homepage": "https://github.com/giggsey/libphonenumber-for-php",
+  "homepage": "https://github.com/giggsey/libphonenumber-for-php-lite",
   "license": "Apache-2.0",
   "support": {
-    "source": "https://github.com/giggsey/libphonenumber-for-php",
-    "issues": "https://github.com/giggsey/libphonenumber-for-php/issues"
+    "source": "https://github.com/giggsey/libphonenumber-for-php-lite",
+    "issues": "https://github.com/giggsey/libphonenumber-for-php-lite/issues"
   },
   "authors": [
     {
@@ -50,18 +50,16 @@
       ".editorconfig",
       ".gitattributes",
       ".gitignore",
-      ".styleci.yml",
-      ".travis.yml",
+      ".php-cs-fixer.dist.php",
+      "phpstan.neon.dist",
       "build.xml",
-      "libphonenumber-for-php.spec",
-      "phpunit.xml.dist",
-      "phpunit"
+      "phpunit.xml.dist"
     ]
   },
   "require": {
     "php": "^8.0",
-    "symfony/polyfill-mbstring": "^1.17",
-    "giggsey/locale": "^2.3"
+    "giggsey/locale": "^2.3",
+    "symfony/polyfill-mbstring": "^1.17"
   },
   "require-dev": {
     "phing/phing": "^2.17.4",
@@ -70,7 +68,16 @@
     "pear/pear_exception": "^1.0.2",
     "symfony/console": "^6.0",
     "phpunit/phpunit": "^9.5.26",
-    "friendsofphp/php-cs-fixer": "^3.12"
+    "friendsofphp/php-cs-fixer": "^3.12",
+    "phpstan/phpstan": "^1.8",
+    "phpstan/phpstan-phpunit": "^1.2",
+    "phpstan/extension-installer": "^1.2"
+  },
+  "conflict": {
+    "giggsey/libphonenumber-for-php": "*"
+  },
+  "suggest": {
+    "giggsey/libphonenumber-for-php": "Use libphonenumber-for-php for geocoding, carriers, timezones and matching"
   },
   "extra": {
     "branch-alias": {
@@ -79,7 +86,14 @@
   },
   "scripts": {
     "cs": "vendor/bin/php-cs-fixer fix",
+    "phpstan": "vendor/bin/phpstan",
     "test": "vendor/bin/phpunit",
     "metadata": "vendor/bin/phing compile"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
   }
 }

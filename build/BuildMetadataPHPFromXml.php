@@ -58,7 +58,6 @@ EOT;
     private function writeMetadataToFile($metadataCollection, $filePrefix)
     {
         foreach ($metadataCollection as $metadata) {
-            /** @var $phoneMetadata PhoneMetadata */
             $regionCode = $metadata->getId();
             // For non-geographical country calling codes (e.g. +800), use the country calling codes
             // instead of the region code to form the file name.

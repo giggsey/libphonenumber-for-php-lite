@@ -12,6 +12,9 @@ namespace libphonenumber;
 use Giggsey\Locale\Locale;
 use libphonenumber\prefixmapper\PrefixFileReader;
 
+/**
+ * @phpstan-consistent-constructor
+ */
 class PhoneNumberToCarrierMapper
 {
     /**
