@@ -15,12 +15,12 @@ concurrency:
 
 jobs:
   tests:
-    name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
+    name: PHP ${{ matrix.php-version }} - ${{ matrix.composer }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
         php-version: ['8.0', 8.1, 8.2]
-        composer-stability: [prefer-lowest, prefer-stable]
+        composer: [highest, lowest]
 
     steps:
       - name: Checkout
@@ -36,7 +36,7 @@ jobs:
 
       - uses: "ramsey/composer-install@v2"
         with:
-          composer-options: "${{ matrix.composer-stability }}"
+          dependency-versions: "${{ matrix.composer }}"
 
       - name: composer validate
         run: composer validate --strict
