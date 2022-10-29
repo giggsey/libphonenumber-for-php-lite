@@ -19,20 +19,20 @@ class CodeCoverageTest extends TestCase
         $this->phoneUtil = PhoneNumberUtil::getInstance();
     }
 
-    //public function testNullException()
-    //{
-    //    try {
-    //        $this->phoneUtil->parse(null, null);
-    //    } catch (\Exception $e) {
-    //        if (!$e instanceof NumberParseException) {
-    //            throw $e;
-    //        }
-    //        $this->assertEquals("libphonenumber\\NumberParseException", \get_class($e));
-    //        $this->assertEquals('The phone number supplied was null.', $e->getMessage());
-    //
-    //        $this->assertEquals('Error type: 1. The phone number supplied was null.', (string)$e);
-    //    }
-    //}
+    public function testNullException()
+    {
+        try {
+            $this->phoneUtil->parse(null, null);
+        } catch (\Exception $e) {
+            if (!$e instanceof NumberParseException) {
+                throw $e;
+            }
+            $this->assertEquals("libphonenumber\\NumberParseException", \get_class($e));
+            $this->assertEquals('The phone number supplied was null.', $e->getMessage());
+
+            $this->assertEquals('Error type: 1. The phone number supplied was null.', (string)$e);
+        }
+    }
 
     public function testTooShortNumber()
     {

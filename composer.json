@@ -64,12 +64,12 @@
     "giggsey/locale": "^2.3"
   },
   "require-dev": {
-    "phing/phing": "^2.7",
+    "phing/phing": "^2.17.4",
     "pear/versioncontrol_git": "^0.5",
-    "pear/pear-core-minimal": "^1.9",
-    "pear/pear_exception": "^1.0",
-    "symfony/console": "^6.0",
-    "phpunit/phpunit": "^9.5",
+    "pear/pear-core-minimal": "^1.10.11",
+    "pear/pear_exception": "^1.0.2",
+    "symfony/console": "^6.1.7",
+    "phpunit/phpunit": "^9.5.26",
     "friendsofphp/php-cs-fixer": "^3.12"
   },
   "extra": {
