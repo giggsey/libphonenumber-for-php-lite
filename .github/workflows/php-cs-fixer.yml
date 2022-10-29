@@ -1,5 +1,4 @@
 name: PHP CS Fixer
-description: PHP CS Fixer
 on:
   push:
     branches:
