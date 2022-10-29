@@ -11,7 +11,7 @@ class Issue76Test extends TestCase
     public function testIssue76()
     {
         $this->expectException(NumberParseException::class);
-        $this->expectExceptionMessage('This string supplied did not seem to be a phone number.');
+        $this->expectExceptionMessage('The string supplied did not seem to be a phone number.');
         $this->expectExceptionCode(NumberParseException::NOT_A_NUMBER);
 
         $number = 'Abc811@hotmail.com';
