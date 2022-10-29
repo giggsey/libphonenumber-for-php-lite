@@ -11,5 +11,6 @@ return $config->setRules(
         '@PSR2' => true,
         '@PSR12' => true,
         '@PHP80Migration' => true,
+        'single_quote' => true,
     ]
 )->setFinder($finder);

@@ -71,7 +71,7 @@ class PhoneNumberUtil
     // placeholder for carrier information in some phone numbers. Full-width variants are also
     // present.
     public const VALID_PUNCTUATION = "-x\xE2\x80\x90-\xE2\x80\x95\xE2\x88\x92\xE3\x83\xBC\xEF\xBC\x8D-\xEF\xBC\x8F \xC2\xA0\xC2\xAD\xE2\x80\x8B\xE2\x81\xA0\xE3\x80\x80()\xEF\xBC\x88\xEF\xBC\x89\xEF\xBC\xBB\xEF\xBC\xBD.\\[\\]/~\xE2\x81\x93\xE2\x88\xBC";
-    public const DIGITS = "\\p{Nd}";
+    public const DIGITS = '\\p{Nd}';
 
     // Pattern that makes it easy to distinguish whether a region has a single international dialing
     // prefix or not. If a region has a single international prefix (e.g. 011 in USA), it will be
@@ -80,13 +80,13 @@ class PhoneNumberUtil
     // region, they will be represented as a regex string that always contains one or more characters
     // that are not ASCII digits or a tilde.
     public const SINGLE_INTERNATIONAL_PREFIX = "[\\d]+(?:[~\xE2\x81\x93\xE2\x88\xBC\xEF\xBD\x9E][\\d]+)?";
-    public const NON_DIGITS_PATTERN = "(\\D+)";
+    public const NON_DIGITS_PATTERN = '(\\D+)';
 
     // The FIRST_GROUP_PATTERN was originally set to $1 but there are some countries for which the
     // first group is not used in the national pattern (e.g. Argentina) so the $1 group does not match
     // correctly. Therefore, we use \d, so that the first group actually used in the pattern will be
     // matched.
-    public const FIRST_GROUP_PATTERN = "(\\$\\d)";
+    public const FIRST_GROUP_PATTERN = '(\$\\d)';
     // Constants used in the formatting rules to represent the national prefix, first group and
     // carrier code respectively.
     public const NP_STRING = '$NP';
@@ -102,7 +102,7 @@ class PhoneNumberUtil
     protected static $CAPTURING_DIGIT_PATTERN;
     protected static $VALID_START_CHAR_PATTERN;
     public static $SECOND_NUMBER_START_PATTERN = '[\\\\/] *x';
-    public static $UNWANTED_END_CHAR_PATTERN = "[[\\P{N}&&\\P{L}]&&[^#]]+$";
+    public static $UNWANTED_END_CHAR_PATTERN = '[[\\P{N}&&\\P{L}]&&[^#]]+$';
     protected static $DIALLABLE_CHAR_MAPPINGS = [];
     protected static $CAPTURING_EXTN_DIGITS;
 
@@ -501,7 +501,7 @@ class PhoneNumberUtil
         $possibleSeparatorsBetweenNumberAndExtLabel = "[ \xC2\xA0\\t,]*";
         // Optional full stop (.) or colon, followed by zero or more spaces/tabs/commas.
         $possibleCharsAfterExtLabel = "[:\\.\xEf\xBC\x8E]?[ \xC2\xA0\\t,-]*";
-        $optionalExtnSuffix = "#?";
+        $optionalExtnSuffix = '#?';
 
         // Here the extension is called out in more explicit way, i.e mentioning it obvious patterns
         // like "ext.". Canonical-equivalence doesn't seem to be an option with Android java, so we
@@ -512,7 +512,7 @@ class PhoneNumberUtil
         // or more ambiguous extension labels.
         $ambiguousExtLabels = "(?:[x\xEF\xBD\x98#\xEF\xBC\x83~\xEF\xBD\x9E]|int|\xEF\xBD\x89\xEF\xBD\x8E\xEF\xBD\x94)";
         // When extension is not separated clearly.
-        $ambiguousSeparator = "[- ]+";
+        $ambiguousSeparator = '[- ]+';
 
         $rfcExtn = static::RFC3966_EXTN_PREFIX . static::extnDigits($extLimitAfterExplicitLabel);
         $explicitExtn = $possibleSeparatorsBetweenNumberAndExtLabel . $explicitExtLabels
@@ -520,7 +520,7 @@ class PhoneNumberUtil
             . $optionalExtnSuffix;
         $ambiguousExtn = $possibleSeparatorsBetweenNumberAndExtLabel . $ambiguousExtLabels
             . $possibleCharsAfterExtLabel . static::extnDigits($extLimitAfterAmbiguousChar) . $optionalExtnSuffix;
-        $americanStyleExtnWithSuffix = $ambiguousSeparator . static::extnDigits($extLimitWhenNotSure) . "#";
+        $americanStyleExtnWithSuffix = $ambiguousSeparator . static::extnDigits($extLimitWhenNotSure) . '#';
 
         // The first regular expression covers RFC 3966 format, where the extension is added using
         // ";ext=". The second more generic where extension is mentioned with explicit labels like
@@ -531,9 +531,9 @@ class PhoneNumberUtil
         // fourth one covers the special case of American numbers where the extension is written with a
         // hash at the end, such as "- 503#".
         $extensionPattern =
-            $rfcExtn . "|"
-            . $explicitExtn . "|"
-            . $ambiguousExtn . "|"
+            $rfcExtn . '|'
+            . $explicitExtn . '|'
+            . $ambiguousExtn . '|'
             . $americanStyleExtnWithSuffix;
         // Additional pattern that is supported when parsing extensions, not when matching.
         if ($forParsing) {
@@ -543,7 +543,7 @@ class PhoneNumberUtil
             // ",," is commonly used for auto dialling the extension when connected. First comma is matched
             // through possibleSeparatorsBetweenNumberAndExtLabel, so we do not repeat it here. Semi-colon
             // works in Iphone and Android also to pop up a button with the extension number following.
-            $autoDiallingAndExtLabelsFound = "(?:,{2}|;)";
+            $autoDiallingAndExtLabelsFound = '(?:,{2}|;)';
 
             $autoDiallingExtn = $possibleSeparatorsNumberExtLabelNoComma
                 . $autoDiallingAndExtLabelsFound . $possibleCharsAfterExtLabel
@@ -555,8 +555,8 @@ class PhoneNumberUtil
             // when dialling and in this case we accept longer extensions. However, the second pattern
             // is more liberal on the number of commas that acts as extension labels, so we have a strict
             // cap on the number of digits in such extensions.
-            return $extensionPattern . "|"
-                . $autoDiallingExtn . "|"
+            return $extensionPattern . '|'
+                . $autoDiallingExtn . '|'
                 . $onlyCommasExtn;
         }
         return $extensionPattern;
@@ -2668,7 +2668,7 @@ class PhoneNumberUtil
             $newFormat = new NumberFormat();
             $newFormat->mergeFrom($formattingPattern);
             // The first group is the first group of digits that the user wrote together.
-            $newFormat->setPattern("(\\d+)(.*)");
+            $newFormat->setPattern('(\\d+)(.*)');
             // Here we just concatenate them back together after the national prefix has been fixed.
             $newFormat->setFormat('$1$2');
             // Now we format using this pattern instead of the default pattern, but with the national

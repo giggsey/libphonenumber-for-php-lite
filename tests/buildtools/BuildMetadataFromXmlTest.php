@@ -373,11 +373,11 @@ class BuildMetadataFromXmlTest extends TestCase
     public function testSetLeadingDigitsPatternsNotAddedTwiceWhenInternationalFormatsPresent(): void
     {
         $xmlInput = '<availableFormats>'
-            . "  <numberFormat pattern=\"(1)(\\d{3})\">"
+            . '  <numberFormat pattern="(1)(\\d{3})">'
             . '    <leadingDigits>1</leadingDigits>'
             . '    <format>$1</format>'
             . '  </numberFormat>'
-            . "  <numberFormat pattern=\"(2)(\\d{3})\">"
+            . '  <numberFormat pattern="(2)(\\d{3})">'
             . '    <leadingDigits>2</leadingDigits>'
             . '    <format>$1</format>'
             . '    <intlFormat>9-$1</intlFormat>'
@@ -430,7 +430,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $generalDesc = new PhoneNumberDesc();
         $generalDesc->setNationalNumberPattern('\\d{8}');
         $xmlInput = '<territory><fixedLine>'
-            . "  <nationalNumberPattern>\\d{6}</nationalNumberPattern>"
+            . '  <nationalNumberPattern>\\d{6}</nationalNumberPattern>'
             . '</fixedLine></territory>';
 
         $territoryElement = $this->parseXMLString($xmlInput);
@@ -449,15 +449,15 @@ class BuildMetadataFromXmlTest extends TestCase
             . '  <territories>'
             . '    <territory id="AM" countryCode="374" internationalPrefix="00">'
             . '      <generalDesc>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '      </generalDesc>'
             . '      <fixedLine>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '        <possibleLengths national="8" localOnly="5,6"/>'
             . '        <exampleNumber>10123456</exampleNumber>'
             . '      </fixedLine>'
             . '      <mobile>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '        <possibleLengths national="8" localOnly="5,6"/>'
             . '        <exampleNumber>10123456</exampleNumber>'
             . '      </mobile>'
@@ -495,15 +495,15 @@ class BuildMetadataFromXmlTest extends TestCase
             . '  <territories>'
             . '    <territory id="AM" countryCode="374" internationalPrefix="00">'
             . '      <generalDesc>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '      </generalDesc>'
             . '      <fixedLine>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '        <possibleLengths national="8" localOnly="5,6"/>'
             . '        <exampleNumber>10123456</exampleNumber>'
             . '      </fixedLine>'
             . '      <mobile>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '        <possibleLengths national="8" localOnly="5,6"/>'
             . '        <exampleNumber>10123456</exampleNumber>'
             . '      </mobile>'
@@ -541,15 +541,15 @@ class BuildMetadataFromXmlTest extends TestCase
             . '  <territories>'
             . '    <territory id="AM" countryCode="374" internationalPrefix="00">'
             . '      <generalDesc>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '      </generalDesc>'
             . '      <fixedLine>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '        <possibleLengths national="8" localOnly="5,6"/>'
             . '        <exampleNumber>10123456</exampleNumber>'
             . '      </fixedLine>'
             . '      <mobile>'
-            . "        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>"
+            . '        <nationalNumberPattern>[1-9]\\d{7}</nationalNumberPattern>'
             . '        <possibleLengths national="8" localOnly="5,6"/>'
             . '        <exampleNumber>10123456</exampleNumber>'
             . '      </mobile>'
@@ -617,8 +617,8 @@ class BuildMetadataFromXmlTest extends TestCase
     public function testSetRelevantDescPatternsSetsSameMobileAndFixedLinePattern(): void
     {
         $xmlInput = '<territory countryCode="33">'
-            . "  <fixedLine><nationalNumberPattern>\\d{6}</nationalNumberPattern></fixedLine>"
-            . "  <mobile><nationalNumberPattern>\\d{6}</nationalNumberPattern></mobile>"
+            . '  <fixedLine><nationalNumberPattern>\\d{6}</nationalNumberPattern></fixedLine>'
+            . '  <mobile><nationalNumberPattern>\\d{6}</nationalNumberPattern></mobile>'
             . '</territory>';
 
         $territoryElement = $this->parseXMLString($xmlInput);
@@ -631,55 +631,55 @@ class BuildMetadataFromXmlTest extends TestCase
     public function testSetRelevantDescPatternsSetsAllDescriptionsForRegularLengthNumbers(): void
     {
         $xmlInput = '<territory countryCode="33">'
-            . "  <fixedLine><nationalNumberPattern>\\d{1}</nationalNumberPattern></fixedLine>"
-            . "  <mobile><nationalNumberPattern>\\d{2}</nationalNumberPattern></mobile>"
-            . "  <pager><nationalNumberPattern>\\d{3}</nationalNumberPattern></pager>"
-            . "  <tollFree><nationalNumberPattern>\\d{4}</nationalNumberPattern></tollFree>"
-            . "  <premiumRate><nationalNumberPattern>\\d{5}</nationalNumberPattern></premiumRate>"
-            . "  <sharedCost><nationalNumberPattern>\\d{6}</nationalNumberPattern></sharedCost>"
-            . "  <personalNumber><nationalNumberPattern>\\d{7}</nationalNumberPattern></personalNumber>"
-            . "  <voip><nationalNumberPattern>\\d{8}</nationalNumberPattern></voip>"
-            . "  <uan><nationalNumberPattern>\\d{9}</nationalNumberPattern></uan>"
+            . '  <fixedLine><nationalNumberPattern>\\d{1}</nationalNumberPattern></fixedLine>'
+            . '  <mobile><nationalNumberPattern>\\d{2}</nationalNumberPattern></mobile>'
+            . '  <pager><nationalNumberPattern>\\d{3}</nationalNumberPattern></pager>'
+            . '  <tollFree><nationalNumberPattern>\\d{4}</nationalNumberPattern></tollFree>'
+            . '  <premiumRate><nationalNumberPattern>\\d{5}</nationalNumberPattern></premiumRate>'
+            . '  <sharedCost><nationalNumberPattern>\\d{6}</nationalNumberPattern></sharedCost>'
+            . '  <personalNumber><nationalNumberPattern>\\d{7}</nationalNumberPattern></personalNumber>'
+            . '  <voip><nationalNumberPattern>\\d{8}</nationalNumberPattern></voip>'
+            . '  <uan><nationalNumberPattern>\\d{9}</nationalNumberPattern></uan>'
             . '</territory>';
 
         $territoryElement = $this->parseXMLString($xmlInput);
         $metadata = new PhoneMetadata();
         BuildMetadataFromXml::setRelevantDescPatterns($metadata, $territoryElement, false /* isShortNumberMetadata */);
-        $this->assertEquals("\\d{1}", $metadata->getFixedLine()->getNationalNumberPattern());
-        $this->assertEquals("\\d{2}", $metadata->getMobile()->getNationalNumberPattern());
-        $this->assertEquals("\\d{3}", $metadata->getPager()->getNationalNumberPattern());
-        $this->assertEquals("\\d{4}", $metadata->getTollFree()->getNationalNumberPattern());
-        $this->assertEquals("\\d{5}", $metadata->getPremiumRate()->getNationalNumberPattern());
-        $this->assertEquals("\\d{6}", $metadata->getSharedCost()->getNationalNumberPattern());
-        $this->assertEquals("\\d{7}", $metadata->getPersonalNumber()->getNationalNumberPattern());
-        $this->assertEquals("\\d{8}", $metadata->getVoip()->getNationalNumberPattern());
-        $this->assertEquals("\\d{9}", $metadata->getUan()->getNationalNumberPattern());
+        $this->assertEquals('\\d{1}', $metadata->getFixedLine()->getNationalNumberPattern());
+        $this->assertEquals('\\d{2}', $metadata->getMobile()->getNationalNumberPattern());
+        $this->assertEquals('\\d{3}', $metadata->getPager()->getNationalNumberPattern());
+        $this->assertEquals('\\d{4}', $metadata->getTollFree()->getNationalNumberPattern());
+        $this->assertEquals('\\d{5}', $metadata->getPremiumRate()->getNationalNumberPattern());
+        $this->assertEquals('\\d{6}', $metadata->getSharedCost()->getNationalNumberPattern());
+        $this->assertEquals('\\d{7}', $metadata->getPersonalNumber()->getNationalNumberPattern());
+        $this->assertEquals('\\d{8}', $metadata->getVoip()->getNationalNumberPattern());
+        $this->assertEquals('\\d{9}', $metadata->getUan()->getNationalNumberPattern());
     }
 
     public function testSetRelevantDescPatternsSetsAllDescriptionsForShortNumbers(): void
     {
         $xmlInput = '<territory ID="FR">'
-            . "  <tollFree><nationalNumberPattern>\\d{1}</nationalNumberPattern></tollFree>"
-            . "  <standardRate><nationalNumberPattern>\\d{2}</nationalNumberPattern></standardRate>"
-            . "  <premiumRate><nationalNumberPattern>\\d{3}</nationalNumberPattern></premiumRate>"
-            . "  <shortCode><nationalNumberPattern>\\d{4}</nationalNumberPattern></shortCode>"
+            . '  <tollFree><nationalNumberPattern>\\d{1}</nationalNumberPattern></tollFree>'
+            . '  <standardRate><nationalNumberPattern>\\d{2}</nationalNumberPattern></standardRate>'
+            . '  <premiumRate><nationalNumberPattern>\\d{3}</nationalNumberPattern></premiumRate>'
+            . '  <shortCode><nationalNumberPattern>\\d{4}</nationalNumberPattern></shortCode>'
             . '  <carrierSpecific>'
-            . "    <nationalNumberPattern>\\d{5}</nationalNumberPattern>"
+            . '    <nationalNumberPattern>\\d{5}</nationalNumberPattern>'
             . '  </carrierSpecific>'
             . '  <smsServices>'
-            . "    <nationalNumberPattern>\\d{6}</nationalNumberPattern>"
+            . '    <nationalNumberPattern>\\d{6}</nationalNumberPattern>'
             . '  </smsServices>'
             . '</territory>';
 
         $territoryElement = $this->parseXMLString($xmlInput);
         $metadata = new PhoneMetadata();
         BuildMetadataFromXml::setRelevantDescPatterns($metadata, $territoryElement, true /* isShortNumberMetadata */);
-        $this->assertEquals("\\d{1}", $metadata->getTollFree()->getNationalNumberPattern());
-        $this->assertEquals("\\d{2}", $metadata->getStandardRate()->getNationalNumberPattern());
-        $this->assertEquals("\\d{3}", $metadata->getPremiumRate()->getNationalNumberPattern());
-        $this->assertEquals("\\d{4}", $metadata->getShortCode()->getNationalNumberPattern());
-        $this->assertEquals("\\d{5}", $metadata->getCarrierSpecific()->getNationalNumberPattern());
-        $this->assertEquals("\\d{6}", $metadata->getSmsServices()->getNationalNumberPattern());
+        $this->assertEquals('\\d{1}', $metadata->getTollFree()->getNationalNumberPattern());
+        $this->assertEquals('\\d{2}', $metadata->getStandardRate()->getNationalNumberPattern());
+        $this->assertEquals('\\d{3}', $metadata->getPremiumRate()->getNationalNumberPattern());
+        $this->assertEquals('\\d{4}', $metadata->getShortCode()->getNationalNumberPattern());
+        $this->assertEquals('\\d{5}', $metadata->getCarrierSpecific()->getNationalNumberPattern());
+        $this->assertEquals('\\d{6}', $metadata->getSmsServices()->getNationalNumberPattern());
     }
 
     public function testSetRelevantDescPatternsThrowsErrorIfTypePresentMultipleTimes(): void
@@ -688,8 +688,8 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->expectExceptionMessage('Multiple elements with type fixedLine found.');
 
         $xmlInput = '<territory countryCode="33">'
-            . "  <fixedLine><nationalNumberPattern>\\d{6}</nationalNumberPattern></fixedLine>"
-            . "  <fixedLine><nationalNumberPattern>\\d{6}</nationalNumberPattern></fixedLine>"
+            . '  <fixedLine><nationalNumberPattern>\\d{6}</nationalNumberPattern></fixedLine>'
+            . '  <fixedLine><nationalNumberPattern>\\d{6}</nationalNumberPattern></fixedLine>'
             . '</territory>';
 
         $territoryElement = $this->parseXMLString($xmlInput);
@@ -701,13 +701,13 @@ class BuildMetadataFromXmlTest extends TestCase
     {
         $xmlInput = '<territory countryCode="33">'
             . '  <availableFormats>'
-            . "    <numberFormat pattern=\"(1)(\\d{3})\">"
+            . '    <numberFormat pattern="(1)(\\d{3})">'
             . '      <leadingDigits>1</leadingDigits>'
             . '      <format>$1</format>'
             . '    </numberFormat>'
             . '  </availableFormats>'
-            . "  <fixedLine><nationalNumberPattern>\\d{1}</nationalNumberPattern></fixedLine>"
-            . "  <shortCode><nationalNumberPattern>\\d{2}</nationalNumberPattern></shortCode>"
+            . '  <fixedLine><nationalNumberPattern>\\d{1}</nationalNumberPattern></fixedLine>'
+            . '  <shortCode><nationalNumberPattern>\\d{2}</nationalNumberPattern></shortCode>'
             . '</territory>';
 
         $territoryElement = $this->parseXMLString($xmlInput);
@@ -725,16 +725,16 @@ class BuildMetadataFromXmlTest extends TestCase
         $xmlInput = '<territory countryCode="33" nationalPrefix="0"'
             . ' nationalPrefixFormattingRule="$NP$FG">'
             . '  <availableFormats>'
-            . "    <numberFormat pattern=\"(1)(\\d{3})\" nationalPrefixOptionalWhenFormatting=\"true\">"
+            . '    <numberFormat pattern="(1)(\\d{3})" nationalPrefixOptionalWhenFormatting="true">'
             . '      <leadingDigits>1</leadingDigits>'
             . '      <format>$1</format>'
             . '    </numberFormat>'
-            . "    <numberFormat pattern=\"(\\d{3})\" nationalPrefixOptionalWhenFormatting=\"false\">"
+            . '    <numberFormat pattern="(\\d{3})" nationalPrefixOptionalWhenFormatting="false">'
             . '      <leadingDigits>2</leadingDigits>'
             . '      <format>$1</format>'
             . '    </numberFormat>'
             . '  </availableFormats>'
-            . "  <fixedLine><nationalNumberPattern>\\d{1}</nationalNumberPattern></fixedLine>"
+            . '  <fixedLine><nationalNumberPattern>\\d{1}</nationalNumberPattern></fixedLine>'
             . '</territory>';
         $territoryElement = $this->parseXMLString($xmlInput);
         $metadata = BuildMetadataFromXml::loadCountryMetadata('FR', $territoryElement, false

@@ -187,8 +187,8 @@ class AsYouTypeFormatter
             self::$emptyMetadata->setInternationalPrefix('NA');
 
             self::$eligibleFormatPattern = '[' . PhoneNumberUtil::VALID_PUNCTUATION . ']*'
-                . "\\$1" . "[" . PhoneNumberUtil::VALID_PUNCTUATION . "]*(\\$\\d"
-                . "[" . PhoneNumberUtil::VALID_PUNCTUATION . "]*)*";
+                . '\$1' . '[' . PhoneNumberUtil::VALID_PUNCTUATION . ']*(\$\\d'
+                . '[' . PhoneNumberUtil::VALID_PUNCTUATION . ']*)*';
         }
     }
 
@@ -508,7 +508,10 @@ class AsYouTypeFormatter
                         return $this->inputAccruedNationalNumber();
                     }
 
-                    return $this->appendNationalNumber($tempNationalNumber);
+                    // @phpstan-ignore-next-line
+                    return $this->ableToFormat
+                        ? $this->appendNationalNumber($tempNationalNumber)
+                        : $this->accruedInput;
                 }
 
                 return $this->attemptToChooseFormattingPattern();
@@ -741,7 +744,7 @@ class AsYouTypeFormatter
      */
     private function attemptToExtractIdd()
     {
-        $internationalPrefix = "\\" . PhoneNumberUtil::PLUS_SIGN . '|' . $this->currentMetadata->getInternationalPrefix();
+        $internationalPrefix = '\\' . PhoneNumberUtil::PLUS_SIGN . '|' . $this->currentMetadata->getInternationalPrefix();
         $iddMatcher = new Matcher($internationalPrefix, $this->accruedInputWithoutFormatting);
 
         if ($iddMatcher->lookingAt()) {

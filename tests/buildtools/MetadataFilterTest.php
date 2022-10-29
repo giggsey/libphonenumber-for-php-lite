@@ -14,7 +14,7 @@ class MetadataFilterTest extends TestCase
     private static $countryCode = 374;
     private static $internationalPrefix = '0[01]';
     private static $preferredInternationalPrefix = '00';
-    private static $nationalNumberPattern = "\\d{8}";
+    private static $nationalNumberPattern = '\\d{8}';
     private static $possibleLengths = [8];
     private static $possibleLengthsLocalOnly = [5, 6];
     private static $exampleNumber = '10123456';
