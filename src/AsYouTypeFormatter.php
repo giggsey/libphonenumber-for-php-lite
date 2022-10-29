@@ -508,9 +508,7 @@ class AsYouTypeFormatter
                         return $this->inputAccruedNationalNumber();
                     }
 
-                    return $this->ableToFormat
-                        ? $this->appendNationalNumber($tempNationalNumber)
-                        : $this->accruedInput;
+                    return $this->appendNationalNumber($tempNationalNumber);
                 }
 
                 return $this->attemptToChooseFormattingPattern();

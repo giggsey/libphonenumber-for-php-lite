@@ -314,7 +314,7 @@ class PhoneMetadata
     }
 
     /**
-     * @return PhoneNumberDesc
+     * @return PhoneNumberDesc|null
      */
     public function getFixedLine()
     {

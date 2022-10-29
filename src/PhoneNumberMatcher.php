@@ -545,7 +545,7 @@ class PhoneNumberMatcher implements \Iterator
                 $region = $util->getRegionCodeForCountryCode($number->getCountryCode());
 
                 if ($util->getNddPrefixForRegion($region, true) !== null
-                    && \is_int(\mb_substr($normalizedCandidate, $fromIndex, 1))
+                    && \is_numeric(\mb_substr($normalizedCandidate, $fromIndex, 1))
                 ) {
                     // This means there is no formatting symbol after the NDC. In this case, we only
                     // accept the number if there is no formatting symbol at all in the number, except

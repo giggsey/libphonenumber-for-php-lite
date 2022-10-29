@@ -133,7 +133,7 @@ class PhoneNumberDesc
     }
 
     /**
-     * @return string
+     * @return bool
      */
     public function hasExampleNumber()
     {
