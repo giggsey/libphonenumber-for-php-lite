@@ -1,5 +1,12 @@
-on: [push, pull_request]
 name: PHP CS Fixer
+description: PHP CS Fixer
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    paths:
+      - '**.php'
 
 concurrency:
   # The concurrency group contains the workflow name and the branch name.
