@@ -33,5 +33,4 @@ jobs:
 
       - name: "Infection"
         run: |
-          git fetch --depth=1 origin $GITHUB_BASE_REF
-          vendor/bin/infection --git-diff-filter=A --logger-github
+          vendor/bin/infection
