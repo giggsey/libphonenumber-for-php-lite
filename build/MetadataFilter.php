@@ -53,11 +53,8 @@ class MetadataFilter
         'mobileNumberPortableRegion',
     ];
 
-    protected $blackList;
-
-    public function __construct($blackList = [])
+    public function __construct(protected $blackList = [])
     {
-        $this->blackList = $blackList;
     }
 
     public static function forLiteBuild()
@@ -152,7 +149,7 @@ class MetadataFilter
                 $children = $fieldMap[$parent];
 
                 if (\in_array($wildCardChild, $children)
-                    && \count($fieldMap[$parent]) != \count(self::$EXCLUDABLE_CHILD_FIELDS)
+                    && (is_countable($fieldMap[$parent]) ? \count($fieldMap[$parent]) : 0) != \count(self::$EXCLUDABLE_CHILD_FIELDS)
                 ) {
                     // The map already contains parent -> wildcardChild but not all possible children.
                     // So wildcardChild was given explicitly as a child of parent, which is a duplication
@@ -194,7 +191,7 @@ class MetadataFilter
                 $otherChildren = $fieldMap[$parent];
                 // If the other map has all the children for this parent then we don't want to include the
                 // parent as a key.
-                if (\count($otherChildren) != \count(self::$EXCLUDABLE_CHILD_FIELDS)) {
+                if ((is_countable($otherChildren) ? \count($otherChildren) : 0) != \count(self::$EXCLUDABLE_CHILD_FIELDS)) {
                     $children = [];
                     foreach (self::$EXCLUDABLE_CHILD_FIELDS as $child) {
                         if (!\in_array($child, $otherChildren)) {
@@ -323,7 +320,6 @@ class MetadataFilter
 
     /**
      * @param string $type
-     * @param PhoneNumberDesc $desc
      * @return PhoneNumberDesc
      */
     private function getFiltered($type, PhoneNumberDesc $desc)

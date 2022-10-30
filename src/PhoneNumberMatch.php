@@ -2,25 +2,17 @@
 
 namespace libphonenumber;
 
-class PhoneNumberMatch
+class PhoneNumberMatch implements \Stringable
 {
     /**
      * The start index into the text.
-     * @var int
      */
-    private $start;
+    private int $start;
 
     /**
      * The raw substring matched.
-     * @var string
      */
-    private $rawString;
-
-    /**
-     * The matched phone number.
-     * @var PhoneNumber
-     */
-    private $number;
+    private string $rawString;
 
     /**
      * Creates a new match
@@ -29,7 +21,7 @@ class PhoneNumberMatch
      * @param string $rawString The matched substring of the target text
      * @param PhoneNumber $number The matched phone number
      */
-    public function __construct($start, $rawString, PhoneNumber $number)
+    public function __construct($start, $rawString, private PhoneNumber $number)
     {
         if ($start < 0) {
             throw new \InvalidArgumentException('Start index must be >= 0.');
@@ -41,7 +33,6 @@ class PhoneNumberMatch
 
         $this->start = $start;
         $this->rawString = $rawString;
-        $this->number = $number;
     }
 
     /**
@@ -80,8 +71,8 @@ class PhoneNumberMatch
         return $this->rawString;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return "PhoneNumberMatch [{$this->start()},{$this->end()}) {$this->rawString}";
+        return (string) "PhoneNumberMatch [{$this->start()},{$this->end()}) {$this->rawString}";
     }
 }

@@ -4,7 +4,7 @@ namespace libphonenumber\Tests\Issues;
 
 use libphonenumber\geocoding\PhoneNumberOfflineGeocoder;
 use libphonenumber\PhoneNumberUtil;
-use libphonenumber\RegionCode;
+use libphonenumber\Tests\core\RegionCode;
 use PHPUnit\Framework\TestCase;
 
 class Issue23Test extends TestCase

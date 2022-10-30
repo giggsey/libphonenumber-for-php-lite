@@ -11,13 +11,13 @@ namespace libphonenumber;
 
 class MultiFileMetadataSourceImpl implements MetadataSourceInterface
 {
-    protected static $metaDataFilePrefix = PhoneNumberUtil::META_DATA_FILE_PREFIX;
+    protected static string $metaDataFilePrefix = PhoneNumberUtil::META_DATA_FILE_PREFIX;
 
     /**
      * A mapping from a region code to the PhoneMetadata for that region.
      * @var PhoneMetadata[]
      */
-    protected $regionToMetadataMap = [];
+    protected array $regionToMetadataMap = [];
 
     /**
      * A mapping from a country calling code for a non-geographical entity to the PhoneMetadata for
@@ -25,39 +25,29 @@ class MultiFileMetadataSourceImpl implements MetadataSourceInterface
      * Toll Free Service) and 808 (International Shared Cost Service).
      * @var PhoneMetadata[]
      */
-    protected $countryCodeToNonGeographicalMetadataMap = [];
+    protected array $countryCodeToNonGeographicalMetadataMap = [];
 
     /**
      * The prefix of the metadata files from which region data is loaded.
-     * @var String
      */
-    protected $currentFilePrefix;
-
+    protected ?string $currentFilePrefix;
 
     /**
-     * The metadata loader used to inject alternative metadata sources.
-     * @var MetadataLoaderInterface
-     */
-    protected $metadataLoader;
-
-    /**
-     * @param MetadataLoaderInterface $metadataLoader
      * @param string|null $currentFilePrefix
      */
-    public function __construct(MetadataLoaderInterface $metadataLoader, $currentFilePrefix = null)
+    public function __construct(protected MetadataLoaderInterface $metadataLoader, $currentFilePrefix = null)
     {
         if ($currentFilePrefix === null) {
             $currentFilePrefix = static::$metaDataFilePrefix;
         }
 
         $this->currentFilePrefix = $currentFilePrefix;
-        $this->metadataLoader = $metadataLoader;
     }
 
     /**
      * @inheritdoc
      */
-    public function getMetadataForRegion($regionCode)
+    public function getMetadataForRegion(string $regionCode): PhoneMetadata
     {
         $regionCode = strtoupper($regionCode);
 
@@ -73,7 +63,7 @@ class MultiFileMetadataSourceImpl implements MetadataSourceInterface
     /**
      * @inheritdoc
      */
-    public function getMetadataForNonGeographicalRegion($countryCallingCode)
+    public function getMetadataForNonGeographicalRegion(int $countryCallingCode): PhoneMetadata
     {
         if (!array_key_exists($countryCallingCode, $this->countryCodeToNonGeographicalMetadataMap)) {
             $this->loadMetadataFromFile($this->currentFilePrefix, PhoneNumberUtil::REGION_CODE_FOR_NON_GEO_ENTITY, $countryCallingCode, $this->metadataLoader);
@@ -87,9 +77,8 @@ class MultiFileMetadataSourceImpl implements MetadataSourceInterface
      * @param string $regionCode
      * @param int $countryCallingCode
      * @param MetadataLoaderInterface $metadataLoader
-     * @throws \RuntimeException
      */
-    public function loadMetadataFromFile($filePrefix, $regionCode, $countryCallingCode, MetadataLoaderInterface $metadataLoader)
+    public function loadMetadataFromFile(string $filePrefix, string $regionCode, int $countryCallingCode, MetadataLoaderInterface $metadataLoader): void
     {
         $regionCode = strtoupper($regionCode);
 

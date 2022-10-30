@@ -32,7 +32,7 @@ class PhoneNumberToTimeZonesMapper
     protected function __construct($phonePrefixDataDirectory)
     {
         $this->prefixTimeZonesMap = static::loadPrefixTimeZonesMapFromFile(
-            \dirname(__FILE__) . $phonePrefixDataDirectory . DIRECTORY_SEPARATOR . static::MAPPING_DATA_FILE_NAME
+            __DIR__ . $phonePrefixDataDirectory . DIRECTORY_SEPARATOR . static::MAPPING_DATA_FILE_NAME
         );
         $this->phoneUtil = PhoneNumberUtil::getInstance();
 
@@ -112,7 +112,7 @@ class PhoneNumberToTimeZonesMapper
     protected function getCountryLevelTimeZonesforNumber(PhoneNumber $number)
     {
         $timezones = $this->prefixTimeZonesMap->lookupCountryLevelTimeZonesForNumber($number);
-        return (\count($timezones) == 0) ? $this->unknownTimeZoneList : $timezones;
+        return ((is_countable($timezones) ? \count($timezones) : 0) == 0) ? $this->unknownTimeZoneList : $timezones;
     }
 
     /**
@@ -141,6 +141,6 @@ class PhoneNumberToTimeZonesMapper
     protected function getTimeZonesForGeocodableNumber(PhoneNumber $number)
     {
         $timezones = $this->prefixTimeZonesMap->lookupTimeZonesForNumber($number);
-        return (\count($timezones) == 0) ? $this->unknownTimeZoneList : $timezones;
+        return ((is_countable($timezones) ? \count($timezones) : 0) == 0) ? $this->unknownTimeZoneList : $timezones;
     }
 }

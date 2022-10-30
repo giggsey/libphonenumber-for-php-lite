@@ -103,7 +103,7 @@ class PhoneNumberMatcher implements \Iterator
 
     protected static function init()
     {
-        static::$alternateFormatsFilePrefix = \dirname(__FILE__) . '/data/' . static::META_DATA_FILE_PREFIX;
+        static::$alternateFormatsFilePrefix = __DIR__ . '/data/' . static::META_DATA_FILE_PREFIX;
 
         static::$innerMatches = [
             // Breaks on the slash - e.g. "651-234-2345/332-445-1234"
@@ -205,29 +205,10 @@ class PhoneNumberMatcher implements \Iterator
     }
 
     /**
-     * The phone number utility.
-     * @var PhoneNumberUtil
-     */
-    protected $phoneUtil;
-
-    /**
      * The text searched for phone numbers.
      * @var string
      */
     protected $text;
-
-    /**
-     * The region (country) to assume for phone numbers without an international prefix, possibly
-     * null.
-     * @var string
-     */
-    protected $preferredRegion;
-
-    /**
-     * The degrees of validation requested.
-     * @var AbstractLeniency
-     */
-    protected $leniency;
 
     /**
      * The maximum number of retires after matching an invalid number.
@@ -257,29 +238,25 @@ class PhoneNumberMatcher implements \Iterator
     protected $searchIndex = 0;
 
     /**
-     * Creates a new instance. See the factory methods in PhoneNumberUtil on how to obtain a new instance.
-     *
-     *
-     * @param PhoneNumberUtil $util The Phone Number Util to use
-     * @param string|null $text The text that we will search, null for no text
-     * @param string|null $country The country to assume for phone numbers not written in international format.
-     *  (with a leading plus, or with the international dialling prefix of the specified region).
-     *  May be null, or "ZZ" if only numbers with a leading plus should be considered.
-     * @param AbstractLeniency $leniency The leniency to use when evaluating candidate phone numbers
-     * @param int $maxTries The maximum number of invalid numbers to try before giving up on the text.
-     *  This is to cover degenerate cases where the text has a lot of false positives in it. Must be >= 0
-     * @throws \InvalidArgumentException
-     */
-    public function __construct(PhoneNumberUtil $util, $text, $country, AbstractLeniency $leniency, $maxTries)
+    * Creates a new instance. See the factory methods in PhoneNumberUtil on how to obtain a new instance.
+    *
+    *
+     * @param PhoneNumberUtil $phoneUtil The Phone Number Util to use
+    * @param string|null $text The text that we will search, null for no text
+     * @param string|null $preferredRegion The country to assume for phone numbers not written in international format.
+     (with a leading plus, or with the international dialling prefix of the specified region).
+     May be null, or "ZZ" if only numbers with a leading plus should be considered.
+    * @param AbstractLeniency $leniency The leniency to use when evaluating candidate phone numbers
+    * @param int $maxTries The maximum number of invalid numbers to try before giving up on the text.
+    *  This is to cover degenerate cases where the text has a lot of false positives in it. Must be >= 0
+    * @throws \InvalidArgumentException
+    */
+    public function __construct(protected PhoneNumberUtil $phoneUtil, $text, protected $preferredRegion, protected AbstractLeniency $leniency, $maxTries)
     {
         if ($maxTries < 0) {
             throw new \InvalidArgumentException();
         }
-
-        $this->phoneUtil = $util;
-        $this->text = ($text !== null) ? $text : '';
-        $this->preferredRegion = $country;
-        $this->leniency = $leniency;
+        $this->text = $text ?? '';
         $this->maxTries = $maxTries;
 
         if (static::$initialized === false) {
@@ -498,15 +475,13 @@ class PhoneNumberMatcher implements \Iterator
                 $number->clearPreferredDomesticCarrierCode();
                 return new PhoneNumberMatch($offset, $candidate, $number);
             }
-        } catch (NumberParseException $e) {
+        } catch (NumberParseException) {
             // ignore and continue
         }
         return null;
     }
 
     /**
-     * @param PhoneNumberUtil $util
-     * @param PhoneNumber $number
      * @param string $normalizedCandidate
      * @param string[] $formattedNumberGroups
      * @return bool
@@ -570,8 +545,6 @@ class PhoneNumberMatcher implements \Iterator
     }
 
     /**
-     * @param PhoneNumberUtil $util
-     * @param PhoneNumber $number
      * @param string $normalizedCandidate
      * @param string[] $formattedNumberGroups
      * @return bool
@@ -585,12 +558,12 @@ class PhoneNumberMatcher implements \Iterator
         $candidateGroups = \preg_split(PhoneNumberUtil::NON_DIGITS_PATTERN, $normalizedCandidate);
 
         // Set this to the last group, skipping it if the number has an extension.
-        $candidateNumberGroupIndex = $number->hasExtension() ? \count($candidateGroups) - 2 : \count($candidateGroups) - 1;
+        $candidateNumberGroupIndex = $number->hasExtension() ? (is_countable($candidateGroups) ? \count($candidateGroups) : 0) - 2 : (is_countable($candidateGroups) ? \count($candidateGroups) : 0) - 1;
 
         // First we check if the national significant number is formatted as a block.
         // We use contains and not equals, since the national significant number may be present with
         // a prefix such as a national number prefix, or the country code itself.
-        if (\count($candidateGroups) == 1
+        if ((is_countable($candidateGroups) ? \count($candidateGroups) : 0) == 1
             || \mb_strpos(
                 $candidateGroups[$candidateNumberGroupIndex],
                 $util->getNationalSignificantNumber($number)
@@ -622,9 +595,6 @@ class PhoneNumberMatcher implements \Iterator
      * Helper method to get the national-number part of a number, formatted without any national
      * prefix, and return it as a set of digit blocks that would be formatted together.
      *
-     * @param PhoneNumberUtil $util
-     * @param PhoneNumber $number
-     * @param NumberFormat $formattingPattern
      * @return string[]
      */
     protected static function getNationalNumberGroups(
@@ -657,10 +627,7 @@ class PhoneNumberMatcher implements \Iterator
     }
 
     /**
-     * @param PhoneNumber $number
      * @param string $candidate
-     * @param PhoneNumberUtil $util
-     * @param \Closure $checker
      * @return bool
      */
     public static function checkNumberGroupingIsValid(
@@ -702,7 +669,6 @@ class PhoneNumberMatcher implements \Iterator
     }
 
     /**
-     * @param PhoneNumber $number
      * @param string $candidate
      * @return bool
      */
@@ -738,9 +704,7 @@ class PhoneNumberMatcher implements \Iterator
     }
 
     /**
-     * @param PhoneNumber $number
      * @param string $candidate
-     * @param PhoneNumberUtil $util
      * @return bool
      */
     public static function containsOnlyValidXChars(PhoneNumber $number, $candidate, PhoneNumberUtil $util)
@@ -779,8 +743,6 @@ class PhoneNumberMatcher implements \Iterator
     }
 
     /**
-     * @param PhoneNumber $number
-     * @param PhoneNumberUtil $util
      * @return bool
      */
     public static function isNationalPrefixPresentIfRequired(PhoneNumber $number, PhoneNumberUtil $util)

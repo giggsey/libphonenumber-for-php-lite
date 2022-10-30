@@ -95,7 +95,6 @@ class PhoneNumberOfflineGeocoder
      * Returns the customary display name in the given language for the given territory the phone
      * number is from. If it could be from many territories, nothing is returned.
      *
-     * @param PhoneNumber $number
      * @param string $locale
      * @return string
      */
@@ -190,7 +189,7 @@ class PhoneNumberOfflineGeocoder
                 $region = $this->phoneUtil->getRegionCodeForCountryCode($number->getCountryCode());
                 try {
                     $copiedNumber = $this->phoneUtil->parse($nationalNumber, $region);
-                } catch (NumberParseException $e) {
+                } catch (NumberParseException) {
                     // If this happens, just reuse what we had.
                     $copiedNumber = $number;
                 }

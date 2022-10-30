@@ -9,12 +9,12 @@ interface MetadataSourceInterface
      * @param string $regionCode the region code.
      * @return PhoneMetadata the phone metadata for that region, or null if there is none.
      */
-    public function getMetadataForRegion($regionCode);
+    public function getMetadataForRegion(string $regionCode): PhoneMetadata;
 
     /**
      * Gets phone metadata for a non-geographical region.
      * @param int $countryCallingCode the country calling code.
      * @return PhoneMetadata the phone metadata for that region, or null if there is none.
      */
-    public function getMetadataForNonGeographicalRegion($countryCallingCode);
+    public function getMetadataForNonGeographicalRegion(int $countryCallingCode): PhoneMetadata;
 }

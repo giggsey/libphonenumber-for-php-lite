@@ -12,7 +12,6 @@ use libphonenumber\PhoneNumberUtil;
  */
 class PrefixFileReader
 {
-    protected $phonePrefixDataDirectory;
     /**
      * The mappingFileProvider knows for which combination of countryCallingCode and language a phone
      * prefix mapping file is available in the file system, so that a file can be loaded when needed.
@@ -26,9 +25,8 @@ class PrefixFileReader
      */
     protected $availablePhonePrefixMaps = [];
 
-    public function __construct($phonePrefixDataDirectory)
+    public function __construct(protected $phonePrefixDataDirectory)
     {
-        $this->phonePrefixDataDirectory = $phonePrefixDataDirectory;
         $this->loadMappingFileProvider();
     }
 
@@ -115,6 +113,6 @@ class PrefixFileReader
             $description = $defaultMap->lookup($number);
         }
 
-        return ($description !== null) ? $description : '';
+        return $description ?? '';
     }
 }

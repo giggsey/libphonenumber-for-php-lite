@@ -13,11 +13,8 @@ namespace libphonenumber\prefixmapper;
  */
 class MappingFileProvider
 {
-    protected $map;
-
-    public function __construct($map)
+    public function __construct(protected $map)
     {
-        $this->map = $map;
     }
 
     public function getFileName($countryCallingCode, $language, $script, $region)

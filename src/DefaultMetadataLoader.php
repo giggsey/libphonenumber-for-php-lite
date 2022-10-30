@@ -4,7 +4,7 @@ namespace libphonenumber;
 
 class DefaultMetadataLoader implements MetadataLoaderInterface
 {
-    public function loadMetadata($metadataFileName)
+    public function loadMetadata(string $metadataFileName): array
     {
         return include $metadataFileName;
     }

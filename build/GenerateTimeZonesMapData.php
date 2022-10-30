@@ -26,12 +26,9 @@ class GenerateTimeZonesMapData
 
 
         EOT;
-    private $inputTextFile;
 
-    public function __construct($inputFile, $outputDir)
+    public function __construct(private $inputTextFile, $outputDir)
     {
-        $this->inputTextFile = $inputFile;
-
         if (!\is_readable($this->inputTextFile)) {
             throw new \RuntimeException('The provided input text file does not exist.');
         }

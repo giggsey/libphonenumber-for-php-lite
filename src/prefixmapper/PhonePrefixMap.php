@@ -14,15 +14,13 @@ use libphonenumber\PhoneNumberUtil;
  */
 class PhonePrefixMap
 {
-    protected $phonePrefixMapStorage = [];
     /**
      * @var PhoneNumberUtil
      */
     protected $phoneUtil;
 
-    public function __construct($map)
+    public function __construct(protected $phonePrefixMapStorage)
     {
-        $this->phonePrefixMapStorage = $map;
         $this->phoneUtil = PhoneNumberUtil::getInstance();
     }
 

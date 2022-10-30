@@ -5,7 +5,7 @@ namespace libphonenumber\Leniency;
 use libphonenumber\PhoneNumber;
 use libphonenumber\PhoneNumberUtil;
 
-abstract class AbstractLeniency
+abstract class AbstractLeniency implements \Stringable
 {
     /**
      * Integer level to compare 'ENUMs'
@@ -16,9 +16,7 @@ abstract class AbstractLeniency
     /**
      * Returns true if $number is a verified number according to this leniency
      *
-     * @param PhoneNumber $number
      * @param string $candidate
-     * @param PhoneNumberUtil $util
      * @return bool
      * @codeCoverageIgnore
      */
@@ -30,7 +28,6 @@ abstract class AbstractLeniency
 
     /**
      * Compare against another Leniency
-     * @param AbstractLeniency $leniency
      * @return int
      */
     public static function compareTo(AbstractLeniency $leniency)
@@ -47,8 +44,8 @@ abstract class AbstractLeniency
         return static::$level;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return str_replace('libphonenumber\\Leniency\\', '', get_class($this));
+        return str_replace('libphonenumber\\Leniency\\', '', $this::class);
     }
 }

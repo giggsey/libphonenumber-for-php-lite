@@ -40,14 +40,12 @@ class ExactGrouping extends AbstractLeniency
             $number,
             $candidate,
             $util,
-            function (PhoneNumberUtil $util, PhoneNumber $number, $normalizedCandidate, $expectedNumberGroups) {
-                return PhoneNumberMatcher::allNumberGroupsAreExactlyPresent(
-                    $util,
-                    $number,
-                    $normalizedCandidate,
-                    $expectedNumberGroups
-                );
-            }
+            fn (PhoneNumberUtil $util, PhoneNumber $number, $normalizedCandidate, $expectedNumberGroups) => PhoneNumberMatcher::allNumberGroupsAreExactlyPresent(
+                $util,
+                $number,
+                $normalizedCandidate,
+                $expectedNumberGroups
+            )
         );
     }
 }

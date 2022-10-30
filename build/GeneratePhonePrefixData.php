@@ -30,10 +30,10 @@ class GeneratePhonePrefixData
         EOT;
 
     public $inputDir;
-    private $filesToIgnore = ['.', '..', '.svn', '.git'];
+    private array $filesToIgnore = ['.', '..', '.svn', '.git'];
     private $outputDir;
-    private $englishMaps = [];
-    private $prefixesToExpand = [
+    private array $englishMaps = [];
+    private array $prefixesToExpand = [
         861 => 5,
         12 => 2,
         13 => 2,
@@ -54,7 +54,7 @@ class GeneratePhonePrefixData
         $inputOutputMappings = $this->createInputOutputMappings($expandCountries);
         $availableDataFiles = [];
 
-        $progress = new ProgressBar($consoleOutput, \count($inputOutputMappings));
+        $progress = new ProgressBar($consoleOutput, is_countable($inputOutputMappings) ? \count($inputOutputMappings) : 0);
 
         $progress->start();
         foreach ($inputOutputMappings as $textFile => $outputFiles) {
@@ -176,7 +176,6 @@ class GeneratePhonePrefixData
      * mapping read.
      *
      * @param string $filePath
-     * @param \Closure $handler
      * @return array
      * @throws \InvalidArgumentException
      */

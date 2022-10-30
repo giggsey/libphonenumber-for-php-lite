@@ -55,7 +55,7 @@ class BuildMetadataFromXml
     public const VOICEMAIL = 'voicemail';
     public const VOIP = 'voip';
 
-    private static $phoneNumberDescsWithoutMatchingTypes = [
+    private static array $phoneNumberDescsWithoutMatchingTypes = [
         self::NO_INTERNATIONAL_DIALLING,
     ];
 
@@ -127,7 +127,6 @@ class BuildMetadataFromXml
 
     /**
      * @param string $regionCode
-     * @param \DOMElement $element
      * @param string $isShortNumberMetadata
      * @param string $isAlternateFormatsMetadata
      * @return PhoneMetadata
@@ -171,7 +170,6 @@ class BuildMetadataFromXml
     /**
      * Returns the national prefix of the provided country element.
      * @internal
-     * @param \DOMElement $element
      * @return string
      */
     public static function getNationalPrefix(\DOMElement $element)
@@ -182,7 +180,6 @@ class BuildMetadataFromXml
     /**
      *
      * @internal
-     * @param \DOMElement $element
      * @param string $nationalPrefix
      * @return string
      */
@@ -202,7 +199,6 @@ class BuildMetadataFromXml
      *
      * @internal
      * @param string $regionCode
-     * @param \DOMElement $element
      * @param string $nationalPrefix
      * @return PhoneMetadata
      */
@@ -254,8 +250,6 @@ class BuildMetadataFromXml
      * nationalPrefixOptionalWhenFormatting. The nationalPrefix, nationalPrefixFormattingRule and
      * nationalPrefixOptionalWhenFormatting values are provided from the parent (territory) element.
      * @internal
-     * @param PhoneMetadata $metadata
-     * @param \DOMElement $element
      * @param string $nationalPrefix
      * @param string $nationalPrefixFormattingRule
      * @param bool $nationalPrefixOptionalWhenFormatting
@@ -319,7 +313,6 @@ class BuildMetadataFromXml
 
     /**
      * @internal
-     * @param \DOMElement $element
      * @param string $nationalPrefix
      * @return string
      */
@@ -339,9 +332,6 @@ class BuildMetadataFromXml
      * Extracts the pattern for the national format.
      *
      * @internal
-     * @param PhoneMetadata $metadata
-     * @param \DOMElement $numberFormatElement
-     * @param NumberFormat $format
      * @throws \RuntimeException if multiple or no formats have been encountered.
      */
     public static function loadNationalFormat(
@@ -363,8 +353,6 @@ class BuildMetadataFromXml
 
     /**
      * @internal
-     * @param \DOMElement $numberFormatElement
-     * @param NumberFormat $format
      */
     public static function setLeadingDigitsPatterns(\DOMElement $numberFormatElement, NumberFormat $format)
     {
@@ -382,9 +370,6 @@ class BuildMetadataFromXml
      * national format. If the intlFormat is set to "NA" the intlFormat should be ignored.
      *
      * @internal
-     * @param PhoneMetadata $metadata
-     * @param \DOMElement $numberFormatElement
-     * @param NumberFormat $nationalFormat
      * @throws \RuntimeException if multiple intlFormats have been encountered.
      * @return bool whether an international number format is defined.
      */
@@ -423,8 +408,6 @@ class BuildMetadataFromXml
 
     /**
      * @internal
-     * @param PhoneMetadata $metadata
-     * @param \DOMElement $element
      * @param bool $isShortNumberMetadata
      */
     public static function setRelevantDescPatterns(PhoneMetadata $metadata, \DOMElement $element, $isShortNumberMetadata)
@@ -490,8 +473,8 @@ class BuildMetadataFromXml
                     . "length string {$possibleLengthString}, these should only separate numbers or ranges.");
             }
 
-            if (\substr($lengthSubstring, 0, 1) === '[') {
-                if (\substr($lengthSubstring, -1) !== ']') {
+            if (str_starts_with($lengthSubstring, '[')) {
+                if (!str_ends_with($lengthSubstring, ']')) {
                     throw new \RuntimeException("Missing end of range character in possible length string {$possibleLengthString}.");
                 }
 
@@ -575,9 +558,7 @@ class BuildMetadataFromXml
      * Sets possible lengths in the general description, derived from certain child elements
      *
      * @internal
-     * @param PhoneNumberDesc $generalDesc
      * @param string $metadataId
-     * @param \DOMElement $data
      * @param bool $isShortNumberMetadata
      */
     public static function setPossibleLengthsGeneralDesc(PhoneNumberDesc $generalDesc, $metadataId, \DOMElement $data, $isShortNumberMetadata)
@@ -592,7 +573,7 @@ class BuildMetadataFromXml
         if ($generalDescNodes->length > 0) {
             $generalDescNode = $generalDescNodes->item(0);
             self::populatePossibleLengthSets($generalDescNode, $lengths, $localOnlyLengths);
-            if (\count($lengths) > 0 || \count($localOnlyLengths) > 0) {
+            if ((is_countable($lengths) ? \count($lengths) : 0) > 0 || (is_countable($localOnlyLengths) ? \count($localOnlyLengths) : 0) > 0) {
                 // We shouldn't have anything specified at the "general desc" level: we are going to
                 // calculate this ourselves from child elements.
                 throw new \RuntimeException("Found possible lengths specified at general desc: this should be derived from child elements. Affected country: {$metadataId}");
@@ -622,11 +603,11 @@ class BuildMetadataFromXml
                 $shortCodeDesc = $shortCodeDescList->item(0);
                 self::populatePossibleLengthSets($shortCodeDesc, $lengths, $localOnlyLengths);
             }
-            if (\count($localOnlyLengths) > 0) {
+            if ((is_countable($localOnlyLengths) ? \count($localOnlyLengths) : 0) > 0) {
                 throw new \RuntimeException('Found local-only lengths in short-number metadata');
             }
         }
-        self::setPossibleLengths($lengths, $localOnlyLengths, null, $generalDesc);
+        self::setPossibleLengths($lengths, $localOnlyLengths, $generalDesc, null);
     }
 
     /**
@@ -636,10 +617,8 @@ class BuildMetadataFromXml
      *
      * @param array $lengths
      * @param array $localOnlyLengths
-     * @param PhoneNumberDesc $parentDesc
-     * @param PhoneNumberDesc $desc
      */
-    private static function setPossibleLengths($lengths, $localOnlyLengths, PhoneNumberDesc $parentDesc = null, PhoneNumberDesc $desc)
+    private static function setPossibleLengths($lengths, $localOnlyLengths, PhoneNumberDesc $desc, PhoneNumberDesc $parentDesc = null)
     {
         // We clear these fields since the metadata tends to inherit from the parent element for other
         // fields (via a mergeFrom).
@@ -697,7 +676,7 @@ class BuildMetadataFromXml
      * elements.
      *
      * @internal
-     * @param PhoneNumberDesc $parentDesc a generic phone number description that will be used to fill in missing
+     * @param PhoneNumberDesc|null $parentDesc a generic phone number description that will be used to fill in missing
      *     parts of the description, or null if this is the root node. This must be processed before
      *     this is run on any child elements.
      * @param \DOMElement $countryElement XML element representing all the country information
@@ -706,7 +685,7 @@ class BuildMetadataFromXml
      * @return PhoneNumberDesc complete description of that phone number type
      */
     public static function processPhoneNumberDescElement(
-        PhoneNumberDesc $parentDesc = null,
+        ?PhoneNumberDesc $parentDesc,
         \DOMElement $countryElement,
         $numberType
     ) {
@@ -745,7 +724,7 @@ class BuildMetadataFromXml
                 $lengths = [];
                 $localOnlyLengths = [];
                 self::populatePossibleLengthSets($element, $lengths, $localOnlyLengths);
-                self::setPossibleLengths($lengths, $localOnlyLengths, $parentDesc, $numberDesc);
+                self::setPossibleLengths($lengths, $localOnlyLengths, $numberDesc, $parentDesc);
             }
 
             $validPattern = $element->getElementsByTagName(self::NATIONAL_NUMBER_PATTERN);
@@ -764,7 +743,7 @@ class BuildMetadataFromXml
     private static function arePossibleLengthsEqual($possibleLengths, PhoneNumberDesc $desc)
     {
         $descPossibleLength = $desc->getPossibleLength();
-        if (\count($possibleLengths) != \count($descPossibleLength)) {
+        if ((is_countable($possibleLengths) ? \count($possibleLengths) : 0) != \count($descPossibleLength)) {
             return false;
         }
 

@@ -4,9 +4,8 @@ namespace libphonenumber;
 
 /**
  * Generic exception class for errors encountered when parsing phone numbers.
- * @author Lara Rennie
  */
-class NumberParseException extends \Exception
+class NumberParseException extends \Exception implements \Stringable
 {
     public const INVALID_COUNTRY_CODE = 0;
     // This generally indicates the string passed in had less than 3 digits in it. More
@@ -23,7 +22,7 @@ class NumberParseException extends \Exception
     // This indicates the string had more digits than any valid phone number could have.
     public const TOO_LONG = 4;
 
-    protected $errorType;
+    protected int $errorType;
 
     public function __construct($errorType, $message, $previous = null)
     {
@@ -35,12 +34,12 @@ class NumberParseException extends \Exception
     /**
      * Returns the error type of the exception that has been thrown.
      */
-    public function getErrorType()
+    public function getErrorType(): int
     {
         return $this->errorType;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return 'Error type: ' . $this->errorType . '. ' . $this->message;
     }

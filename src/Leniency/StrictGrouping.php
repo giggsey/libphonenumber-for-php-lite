@@ -41,14 +41,12 @@ class StrictGrouping extends AbstractLeniency
             $number,
             $candidate,
             $util,
-            function (PhoneNumberUtil $util, PhoneNumber $number, $normalizedCandidate, $expectedNumberGroups) {
-                return PhoneNumberMatcher::allNumberGroupsRemainGrouped(
-                    $util,
-                    $number,
-                    $normalizedCandidate,
-                    $expectedNumberGroups
-                );
-            }
+            fn (PhoneNumberUtil $util, PhoneNumber $number, $normalizedCandidate, $expectedNumberGroups) => PhoneNumberMatcher::allNumberGroupsRemainGrouped(
+                $util,
+                $number,
+                $normalizedCandidate,
+                $expectedNumberGroups
+            )
         );
     }
 }

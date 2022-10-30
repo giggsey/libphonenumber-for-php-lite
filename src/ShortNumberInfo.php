@@ -18,10 +18,6 @@ class ShortNumberInfo
      * @var ShortNumberInfo|null
      */
     protected static $instance;
-    /**
-     * @var MatcherAPIInterface
-     */
-    protected $matcherAPI;
     protected $currentFilePrefix;
     protected $regionToMetadataMap = [];
     protected $countryCallingCodeToRegionCodeMap = [];
@@ -32,14 +28,12 @@ class ShortNumberInfo
         'NI',
     ];
 
-    protected function __construct(MatcherAPIInterface $matcherAPI)
+    protected function __construct(protected MatcherAPIInterface $matcherAPI)
     {
-        $this->matcherAPI = $matcherAPI;
-
         // TODO: Create ShortNumberInfo for a given map
         $this->countryCallingCodeToRegionCodeMap = CountryCodeToRegionCodeMap::$countryCodeToRegionCodeMap;
 
-        $this->currentFilePrefix = dirname(__FILE__) . '/data/' . static::META_DATA_FILE_PREFIX;
+        $this->currentFilePrefix = __DIR__ . '/data/' . static::META_DATA_FILE_PREFIX;
 
         // Initialise PhoneNumberUtil to make sure regex's are setup correctly
         PhoneNumberUtil::getInstance();
@@ -80,13 +74,12 @@ class ShortNumberInfo
             $regionCodes = $this->countryCallingCodeToRegionCodeMap[$countryCallingCode];
         }
 
-        return ($regionCodes === null) ? [] : $regionCodes;
+        return $regionCodes ?? [];
     }
 
     /**
      * Helper method to check that the country calling code of the number matches the region it's
      * being dialed from.
-     * @param PhoneNumber $number
      * @param string $regionDialingFrom
      * @return bool
      */
@@ -338,17 +331,16 @@ class ShortNumberInfo
      * codes. If the list contains more than one region, the first region for which the number is
      * valid is returned.
      *
-     * @param PhoneNumber $number
      * @param $regionCodes
      * @return String|null Region Code (or null if none are found)
      */
     protected function getRegionCodeForShortNumberFromRegionList(PhoneNumber $number, $regionCodes)
     {
-        if (count($regionCodes) == 0) {
+        if ((is_countable($regionCodes) ? count($regionCodes) : 0) == 0) {
             return null;
         }
 
-        if (count($regionCodes) == 1) {
+        if ((is_countable($regionCodes) ? count($regionCodes) : 0) == 1) {
             return $regionCodes[0];
         }
 
@@ -641,7 +633,6 @@ class ShortNumberInfo
      * TODO: Once we have benchmarked ShortnumberInfo, consider if it is worth keeping
      * this performance optimization.
      * @param string $number
-     * @param PhoneNumberDesc $numberDesc
      * @return bool
      */
     protected function matchesPossibleNumberAndNationalNumber($number, PhoneNumberDesc $numberDesc)

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace libphonenumber;
+namespace libphonenumber\Tests\core;
 
 /**
  * Class containing string constants of region codes for easier testing.

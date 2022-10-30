@@ -6,7 +6,7 @@ use libphonenumber\CountryCodeToRegionCodeMapForTesting;
 use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumber;
 use libphonenumber\PhoneNumberUtil;
-use libphonenumber\RegionCode;
+use libphonenumber\Tests\core\RegionCode;
 use libphonenumber\ShortNumberCost;
 use libphonenumber\ShortNumberInfo;
 use PHPUnit\Framework\TestCase;

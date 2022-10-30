@@ -13,136 +13,85 @@ namespace libphonenumber;
  */
 class AsYouTypeFormatter
 {
-    /**
-     * @var string
-     */
-    private $currentOutput;
-    /**
-     * @var string
-     */
-    private $formattingTemplate;
+    private ?string $currentOutput = null;
+    private ?string $formattingTemplate = null;
     /**
      * The pattern from numberFormat that is currently used to create formattingTemplate.
-     * @var string
      */
-    private $currentFormattingPattern;
+    private ?string $currentFormattingPattern = null;
 
-    /**
-     * @var string
-     */
-    private $accruedInput;
+    private ?string $accruedInput = null;
 
-    /**
-     * @var string
-     */
-    private $accruedInputWithoutFormatting;
+    private ?string $accruedInputWithoutFormatting = null;
     /**
      * This indicated whether AsYouTypeFormatter is currently doing the formatting
-     * @var bool
      */
-    private $ableToFormat = true;
+    private bool $ableToFormat = true;
 
     /**
      * Set to true when users enter their own formatting. AsYouTypeFormatter will do no formatting at
      * all when this is set to true
-     * @var bool
      */
-    private $inputHasFormatting = false;
+    private bool $inputHasFormatting = false;
 
     /**
      * This is set to true when we know the user is entering a full national significant number, since
      * we have either detected a national prefix or an international dialing prefix. When this is
      * true, we will no longer use local formatting patterns.
-     * @var bool
      */
-    private $isCompleteNumber = false;
+    private bool $isCompleteNumber = false;
 
-    /**
-     * @var bool
-     */
-    private $isExpectingCountryCallingCode = false;
+    private bool $isExpectingCountryCallingCode = false;
 
-    /**
-     * @var PhoneNumberUtil
-     */
-    private $phoneUtil;
+    private PhoneNumberUtil $phoneUtil;
 
-    /**
-     * @var string
-     */
-    private $defaultCountry;
+    private string $defaultCountry;
 
-    /**
-     * @var PhoneMetadata
-     */
-    private $defaultMetadata;
-    /**
-     * @var PhoneMetadata
-     */
-    private $currentMetadata;
+    private PhoneMetadata $defaultMetadata;
+    private ?PhoneMetadata $currentMetadata;
 
     /**
      * @var NumberFormat[]
      */
-    private $possibleFormats = [];
+    private array $possibleFormats = [];
 
-    /**
-     * @var int
-     */
-    private $lastMatchPosition = 0;
+    private int $lastMatchPosition = 0;
     /**
      * The position of a digit upon which inputDigitAndRememberPosition is most recently invoked,
      * as found in the original sequence of characters the user entered.
-     * @var int
      */
-    private $originalPosition = 0;
+    private int $originalPosition = 0;
 
     /**
      * The position of a digit upon which inputDigitAndRememberPosition is most recently invoked,
      * as found in accruedInputWithoutFormatting
-     * @var int
      */
-    private $positionToRemember = 0;
+    private int $positionToRemember = 0;
 
     /**
      * This contains anything that has been entered so far preceding the national significant number,
      * and it is formatted (e.g. with space inserted). For example, this can contain IDD, country code,
      * and/or NDD, etc.
-     * @var string
      */
-    private $prefixBeforeNationalNumber = '';
+    private string $prefixBeforeNationalNumber = '';
 
-    /**
-     * @var bool
-     */
-    private $shouldAddSpaceAfterNationalPrefix = false;
+    private bool $shouldAddSpaceAfterNationalPrefix = false;
 
     /**
      * This contains the national prefix that has been extracted. It contains only digits without
      * formatting
-     * @var string
      */
-    private $extractedNationalPrefix = '';
+    private string $extractedNationalPrefix = '';
 
-    /**
-     * @var string
-     */
-    private $nationalNumber;
+    private string $nationalNumber = '';
 
-    /**
-     * @var bool
-     */
-    private static $initialised = false;
+    private static bool $initialised = false;
     /**
      * Character used when appropriate to separate a prefix, such as a long NDD or a country
      * calling code, from the national number.
-     * @var string
      */
-    private static $seperatorBeforeNationalNumber = ' ';
-    /**
-     * @var PhoneMetadata
-     */
-    private static $emptyMetadata;
+    private static string $seperatorBeforeNationalNumber = ' ';
+    private static ?PhoneMetadata $emptyMetadata = null;
 
     /**
      * A pattern that is used to determine if a numberFormat under availableFormats is eligible
@@ -151,31 +100,27 @@ class AsYouTypeFormatter
      * This prevents invalid punctuation (such as the star sign in Israeli star numbers) getting
      * into the output of the AYTF. We require that the first group is present in the output pattern to ensure
      * no data is lost while formatting; when we format as you type, this should always be the case.
-     * @var string
      */
-    private static $eligibleFormatPattern;
+    private static ?string $eligibleFormatPattern = null;
 
     /**
      * A set of characters that, if found in the national prefix formatting rules, are an indicator
      * to us that we should separate the national prefix from the numbers when formatting.
-     * @var string
      */
-    private static $nationalPrefixSeparatorsPattern = '[- ]';
+    private static string $nationalPrefixSeparatorsPattern = '[- ]';
 
     /**
      * This is the minimum length of national number accrued that is required to trigger the
      * formatter. The first element of the leadingDigitsPattern of each numberFormat contains
      * a regular expression that matches up to this number of digits.
-     * @var int
      */
-    private static $minLeadingDigitsLength = 3;
+    private static int $minLeadingDigitsLength = 3;
 
     /**
      * The digits that have not been entered yet will be represented by a \u2008, the punctuation
      * space.
-     * @var string
      */
-    private static $digitPattern = "\xE2\x80\x88";
+    private static string $digitPattern = "\xE2\x80\x88";
 
 
     private static function init()
@@ -329,7 +274,6 @@ class AsYouTypeFormatter
     }
 
     /**
-     * @param NumberFormat $format
      * @return bool
      */
     private function createFormattingTemplate(NumberFormat $format)

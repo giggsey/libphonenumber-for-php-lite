@@ -79,13 +79,13 @@ class BuildMetadataPHPFromXml
         // calling codes listed in it.
         $hasRegionCodes = false;
         foreach ($countryCodeToRegionCodeMap as $key => $listWithRegionCode) {
-            if (\count($listWithRegionCode) > 0) {
+            if ((is_countable($listWithRegionCode) ? \count($listWithRegionCode) : 0) > 0) {
                 $hasRegionCodes = true;
                 break;
             }
         }
 
-        $hasCountryCodes = (\count($countryCodeToRegionCodeMap) > 1);
+        $hasCountryCodes = ((is_countable($countryCodeToRegionCodeMap) ? \count($countryCodeToRegionCodeMap) : 0) > 1);
 
         $variableName = \lcfirst($mappingClass);
 

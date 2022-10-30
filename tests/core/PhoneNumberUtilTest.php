@@ -13,7 +13,7 @@ use libphonenumber\PhoneNumberDesc;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberType;
 use libphonenumber\PhoneNumberUtil;
-use libphonenumber\RegionCode;
+use libphonenumber\Tests\core\RegionCode;
 use libphonenumber\ValidationResult;
 use PHPUnit\Framework\TestCase;
 

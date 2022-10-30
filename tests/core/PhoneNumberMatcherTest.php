@@ -9,7 +9,7 @@ use libphonenumber\PhoneNumber;
 use libphonenumber\PhoneNumberMatch;
 use libphonenumber\PhoneNumberMatcher;
 use libphonenumber\PhoneNumberUtil;
-use libphonenumber\RegionCode;
+use libphonenumber\Tests\core\RegionCode;
 use PHPUnit\Framework\TestCase;
 
 class PhoneNumberMatcherTest extends TestCase

@@ -10,55 +10,55 @@ class NumberFormat
     /**
      * @var string|null
      */
-    protected $pattern;
+    protected ?string $pattern;
     /**
      * @var bool
      */
-    protected $hasPattern = false;
+    protected bool $hasPattern = false;
 
     /**
      * @var string|null
      */
-    protected $format;
+    protected ?string $format;
 
     /**
      * @var bool
      */
-    protected $hasFormat = false;
+    protected bool $hasFormat = false;
 
     /**
      * @var array
      */
-    protected $leadingDigitsPattern = [];
+    protected array $leadingDigitsPattern = [];
 
     /**
      * @var string
      */
-    protected $nationalPrefixFormattingRule = '';
+    protected string $nationalPrefixFormattingRule = '';
 
     /**
      * @var bool
      */
-    protected $hasNationalPrefixFormattingRule = false;
+    protected bool $hasNationalPrefixFormattingRule = false;
     /**
      * @var bool
      */
-    protected $nationalPrefixOptionalWhenFormatting = false;
+    protected bool $nationalPrefixOptionalWhenFormatting = false;
 
     /**
      * @var bool
      */
-    protected $hasNationalPrefixOptionalWhenFormatting = false;
+    protected bool $hasNationalPrefixOptionalWhenFormatting = false;
 
     /**
      * @var string
      */
-    protected $domesticCarrierCodeFormattingRule = '';
+    protected string $domesticCarrierCodeFormattingRule = '';
 
     /**
      * @var bool
      */
-    protected $hasDomesticCarrierCodeFormattingRule = false;
+    protected bool $hasDomesticCarrierCodeFormattingRule = false;
 
     public function __construct()
     {
@@ -274,7 +274,6 @@ class NumberFormat
     }
 
     /**
-     * @param NumberFormat $other
      * @return NumberFormat
      */
     public function mergeFrom(NumberFormat $other)
@@ -328,9 +327,6 @@ class NumberFormat
         return $output;
     }
 
-    /**
-     * @param array $input
-     */
     public function fromArray(array $input)
     {
         $this->setPattern($input['pattern']);

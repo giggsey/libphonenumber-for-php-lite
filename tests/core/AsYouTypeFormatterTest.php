@@ -4,7 +4,7 @@ namespace libphonenumber\Tests\core;
 
 use libphonenumber\CountryCodeToRegionCodeMapForTesting;
 use libphonenumber\PhoneNumberUtil;
-use libphonenumber\RegionCode;
+use libphonenumber\Tests\core\RegionCode;
 use PHPUnit\Framework\TestCase;
 
 class AsYouTypeFormatterTest extends TestCase
