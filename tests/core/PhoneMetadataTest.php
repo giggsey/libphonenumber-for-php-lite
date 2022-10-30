@@ -4,12 +4,14 @@ namespace libphonenumber\Tests\core;
 
 use libphonenumber\PhoneMetadata;
 use libphonenumber\PhoneNumberUtil;
-use libphonenumber\ShortNumberInfo;
 use PHPUnit\Framework\TestCase;
 
 class PhoneMetadataTest extends TestCase
 {
-    public function phoneNumberRegionList()
+    /**
+     * @return array<string[]>
+     */
+    public function phoneNumberRegionList(): array
     {
         $returnList = [];
 
@@ -22,48 +24,14 @@ class PhoneMetadataTest extends TestCase
         return $returnList;
     }
 
-    public function shortNumberRegionList()
-    {
-        $returnList = [];
-
-        ShortNumberInfo::resetInstance();
-        $shortNumber = ShortNumberInfo::getInstance();
-        foreach ($shortNumber->getSupportedRegions() as $regionCode) {
-            $returnList[] = [$regionCode];
-        }
-
-        return $returnList;
-    }
-
     /**
      * @param $region
      * @dataProvider phoneNumberRegionList
      */
-    public function testPhoneNumberMetadataToAndFromArray($region)
+    public function testPhoneNumberMetadataToAndFromArray(string $region): void
     {
         $phoneNumberUtil = PhoneNumberUtil::getInstance();
         $phoneMetadata = $phoneNumberUtil->getMetadataForRegion($region);
-
-        $array = $phoneMetadata->toArray();
-
-        /*
-         * Load a new Metadata object from Array, and compare
-         */
-
-        $newPhoneMetadata = new PhoneMetadata();
-        $newPhoneMetadata->fromArray($array);
-
-        $this->assertEquals($phoneMetadata, $newPhoneMetadata);
-    }
-
-    /**
-     * @param $region
-     * @dataProvider shortNumberRegionList
-     */
-    public function testShortCodeMetadataToAndFromArray($region)
-    {
-        $shortNumberInfo = ShortNumberInfo::getInstance();
-        $phoneMetadata = $shortNumberInfo->getMetadataForRegion($region);
 
         $array = $phoneMetadata->toArray();
 

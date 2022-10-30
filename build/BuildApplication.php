@@ -3,8 +3,6 @@
 namespace libphonenumber\buildtools;
 
 use libphonenumber\buildtools\Commands\BuildMetadataPHPFromXMLCommand;
-use libphonenumber\buildtools\Commands\GeneratePhonePrefixDataCommand;
-use libphonenumber\buildtools\Commands\GenerateTimeZonesMapDataCommand;
 use Symfony\Component\Console\Application;
 
 class BuildApplication extends Application
@@ -18,8 +16,6 @@ class BuildApplication extends Application
         $this->addCommands(
             [
                 new BuildMetadataPHPFromXMLCommand(),
-                new GeneratePhonePrefixDataCommand(),
-                new GenerateTimeZonesMapDataCommand(),
             ]
         );
     }

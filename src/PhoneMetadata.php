@@ -223,9 +223,11 @@ class PhoneMetadata
             $output['numberFormat'][] = $numberFormat->toArray();
         }
 
-        $output['intlNumberFormat'] = [];
-        foreach ($this->intlNumberFormats() as $intlNumberFormat) {
-            $output['intlNumberFormat'][] = $intlNumberFormat->toArray();
+        if (!empty($this->intlNumberFormats())) {
+            $output['intlNumberFormat'] = [];
+            foreach ($this->intlNumberFormats() as $intlNumberFormat) {
+                $output['intlNumberFormat'][] = $intlNumberFormat->toArray();
+            }
         }
 
         $output['mainCountryForCode'] = $this->getMainCountryForCode();
@@ -849,13 +851,13 @@ class PhoneMetadata
             $this->setNationalPrefixTransformRule($input['nationalPrefixTransformRule']);
         }
 
-        foreach ($input['numberFormat'] as $numberFormatElt) {
+        foreach ($input['numberFormat'] ?? [] as $numberFormatElt) {
             $numberFormat = new NumberFormat();
             $numberFormat->fromArray($numberFormatElt);
             $this->addNumberFormat($numberFormat);
         }
 
-        foreach ($input['intlNumberFormat'] as $intlNumberFormatElt) {
+        foreach ($input['intlNumberFormat'] ?? [] as $intlNumberFormatElt) {
             $numberFormat = new NumberFormat();
             $numberFormat->fromArray($intlNumberFormatElt);
             $this->addIntlNumberFormat($numberFormat);

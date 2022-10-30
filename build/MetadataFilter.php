@@ -17,7 +17,7 @@ use libphonenumber\PhoneNumberDesc;
  */
 class MetadataFilter
 {
-    public static $EXCLUDABLE_PARENT_FIELDS = [
+    public static array $EXCLUDABLE_PARENT_FIELDS = [
         'fixedLine',
         'mobile',
         'tollFree',
@@ -36,14 +36,14 @@ class MetadataFilter
         'noInternationalDialling',
     ];
 
-    public static $EXCLUDABLE_CHILD_FIELDS = [
+    public static array $EXCLUDABLE_CHILD_FIELDS = [
         'nationalNumberPattern',
         'possibleLength',
         'possibleLengthLocalOnly',
         'exampleNumber',
     ];
 
-    public static $EXCLUDABLE_CHILDLESS_FIELDS = [
+    public static array $EXCLUDABLE_CHILDLESS_FIELDS = [
         'preferredInternationalPrefix',
         'nationalPrefix',
         'preferredExtnPrefix',
@@ -53,11 +53,11 @@ class MetadataFilter
         'mobileNumberPortableRegion',
     ];
 
-    public function __construct(protected $blackList = [])
+    public function __construct(protected array $blackList = [])
     {
     }
 
-    public static function forLiteBuild()
+    public static function forLiteBuild(): static
     {
         // "exampleNumber" is a blacklist.
         return new static(self::parseFieldMapFromString('exampleNumber'));
@@ -73,15 +73,11 @@ class MetadataFilter
      * @param string $string
      * @return array
      */
-    public static function parseFieldMapFromString($string)
+    public static function parseFieldMapFromString(string $string): array
     {
-        if ($string === null) {
-            throw new \RuntimeException('Null string should not be passed to parseFieldMapFromString');
-        }
-
         // Remove whitespace
         $string = \str_replace(' ', '', $string);
-        if (\strlen($string) === 0) {
+        if ($string === '') {
             throw new \RuntimeException('Empty string should not be passed to parseFieldMapFromString');
         }
 
@@ -149,7 +145,7 @@ class MetadataFilter
                 $children = $fieldMap[$parent];
 
                 if (\in_array($wildCardChild, $children)
-                    && (is_countable($fieldMap[$parent]) ? \count($fieldMap[$parent]) : 0) != \count(self::$EXCLUDABLE_CHILD_FIELDS)
+                    && \count($fieldMap[$parent]) != \count(self::$EXCLUDABLE_CHILD_FIELDS)
                 ) {
                     // The map already contains parent -> wildcardChild but not all possible children.
                     // So wildcardChild was given explicitly as a child of parent, which is a duplication
@@ -168,7 +164,7 @@ class MetadataFilter
         return $fieldMap;
     }
 
-    public static function forSpecialBuild()
+    public static function forSpecialBuild(): MetadataFilter
     {
         // "mobile" is a whitelist.
         return new static(self::computeComplement(self::parseFieldMapFromString('mobile')));
@@ -181,7 +177,7 @@ class MetadataFilter
      * @param $fieldMap
      * @return array
      */
-    public static function computeComplement($fieldMap)
+    public static function computeComplement($fieldMap): array
     {
         $complement = [];
         foreach (self::$EXCLUDABLE_PARENT_FIELDS as $parent) {
@@ -211,7 +207,7 @@ class MetadataFilter
         return $complement;
     }
 
-    public static function emptyFilter()
+    public static function emptyFilter(): MetadataFilter
     {
         // Empty blacklist, meaning we filter nothing.
         return new MetadataFilter();
@@ -224,7 +220,7 @@ class MetadataFilter
      *
      * @param PhoneMetadata $metadata The object to be filtered
      */
-    public function filterMetadata(PhoneMetadata $metadata)
+    public function filterMetadata(PhoneMetadata $metadata): void
     {
         if ($metadata->hasFixedLine()) {
             $metadata->setFixedLine($this->getFiltered('fixedLine', $metadata->getFixedLine()));
@@ -322,7 +318,7 @@ class MetadataFilter
      * @param string $type
      * @return PhoneNumberDesc
      */
-    private function getFiltered($type, PhoneNumberDesc $desc)
+    private function getFiltered($type, PhoneNumberDesc $desc): PhoneNumberDesc
     {
         $builder = new PhoneNumberDesc();
         $builder->mergeFrom($desc);
@@ -351,7 +347,7 @@ class MetadataFilter
      * @param $child
      * @return bool
      */
-    public function shouldDrop($parent, $child = null)
+    public function shouldDrop($parent, $child = null): bool
     {
         if ($child !== null) {
             if (!\in_array($parent, self::$EXCLUDABLE_PARENT_FIELDS)) {

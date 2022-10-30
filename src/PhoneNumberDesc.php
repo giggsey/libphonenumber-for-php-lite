@@ -16,11 +16,11 @@ class PhoneNumberDesc
     /**
      * @var array
      */
-    protected array $possibleLength;
+    protected array $possibleLength = [];
     /**
      * @var array
      */
-    protected array $possibleLengthLocalOnly;
+    protected array $possibleLengthLocalOnly = [];
 
     public function __construct()
     {
@@ -162,8 +162,15 @@ class PhoneNumberDesc
             $data['ExampleNumber'] = $this->getExampleNumber();
         }
 
-        $data['PossibleLength'] = $this->getPossibleLength();
-        $data['PossibleLengthLocalOnly'] = $this->getPossibleLengthLocalOnly();
+        $possibleLength = $this->getPossibleLength();
+        if (!empty($possibleLength)) {
+            $data['PossibleLength'] = $possibleLength;
+        }
+
+        $possibleLengthLocalOnly = $this->getPossibleLengthLocalOnly();
+        if (!empty($possibleLengthLocalOnly)) {
+            $data['PossibleLengthLocalOnly'] = $possibleLengthLocalOnly;
+        }
 
         return $data;
     }
@@ -176,8 +183,12 @@ class PhoneNumberDesc
         if (isset($input['ExampleNumber']) && $input['NationalNumberPattern'] !== '') {
             $this->setExampleNumber($input['ExampleNumber']);
         }
-        $this->setPossibleLength($input['PossibleLength']);
-        $this->setPossibleLengthLocalOnly($input['PossibleLengthLocalOnly']);
+        if (isset($input['PossibleLength'])) {
+            $this->setPossibleLength($input['PossibleLength']);
+        }
+        if (isset($input['PossibleLengthLocalOnly'])) {
+            $this->setPossibleLengthLocalOnly($input['PossibleLengthLocalOnly']);
+        }
 
         return $this;
     }

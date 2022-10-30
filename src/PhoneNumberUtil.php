@@ -662,7 +662,7 @@ class PhoneNumberUtil
     /**
      * Returns all regions the library has metadata for.
      *
-     * @return array An unordered array of the two-letter region codes for every geographical region the
+     * @return string[] An unordered array of the two-letter region codes for every geographical region the
      *  library supports
      */
     public function getSupportedRegions(): array
@@ -1534,47 +1534,18 @@ class PhoneNumberUtil
     }
 
     /**
-     * Returns an iterable over all PhoneNumberMatches in $text
-     *
-     * @param string $text
-     * @param string $defaultRegion
-     * @param AbstractLeniency $leniency Defaults to Leniency::VALID()
-     * @param int $maxTries Defaults to PHP_INT_MAX
-     * @return PhoneNumberMatcher
-     */
-    public function findNumbers($text, $defaultRegion, AbstractLeniency $leniency = null, $maxTries = PHP_INT_MAX): PhoneNumberMatcher
-    {
-        if ($leniency === null) {
-            $leniency = Leniency::VALID();
-        }
-
-        return new PhoneNumberMatcher($this, $text, $defaultRegion, $leniency, $maxTries);
-    }
-
-    /**
-     * Gets an AsYouTypeFormatter for the specific region.
-     *
-     * @param string $regionCode The region where the phone number is being entered.
-     * @return AsYouTypeFormatter
-     */
-    public function getAsYouTypeFormatter($regionCode): AsYouTypeFormatter
-    {
-        return new AsYouTypeFormatter($regionCode);
-    }
-
-    /**
      * A helper function to set the values related to leading zeros in a PhoneNumber.
      * @param string $nationalNumber
      */
-    public static function setItalianLeadingZerosForPhoneNumber($nationalNumber, PhoneNumber $phoneNumber): void
+    public static function setItalianLeadingZerosForPhoneNumber(string $nationalNumber, PhoneNumber $phoneNumber): void
     {
-        if (strlen($nationalNumber) > 1 && substr($nationalNumber, 0, 1) == '0') {
+        if (strlen($nationalNumber) > 1 && str_starts_with($nationalNumber, '0')) {
             $phoneNumber->setItalianLeadingZero(true);
             $numberOfLeadingZeros = 1;
             // Note that if the national number is all "0"s, the last "0" is not counted as a leading
             // zero.
             while ($numberOfLeadingZeros < (strlen($nationalNumber) - 1) &&
-                substr($nationalNumber, $numberOfLeadingZeros, 1) == '0') {
+                substr($nationalNumber, $numberOfLeadingZeros, 1) === '0') {
                 $numberOfLeadingZeros++;
             }
 
