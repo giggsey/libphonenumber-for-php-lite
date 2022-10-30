@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class PhoneNumberMatchTest extends TestCase
 {
-    public function testValueTypeSemantics()
+    public function testValueTypeSemantics(): void
     {
         $number = new PhoneNumber();
 
@@ -24,20 +24,11 @@ class PhoneNumberMatchTest extends TestCase
         $this->assertEquals('1 800 234 45 67', $match1->rawString());
     }
 
-    public function testIllegalArguments()
+    public function testIllegalStart(): void
     {
-        try {
-            new PhoneNumberMatch(-110, '1 800 234 45 67', new PhoneNumber());
-            $this->fail();
-        } catch (\InvalidArgumentException $e) {
-            $this->addToAssertionCount(1);
-        }
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('Start index must be >= 0.');
 
-        try {
-            new PhoneNumberMatch(10, null, new PhoneNumber());
-            $this->fail();
-        } catch (\InvalidArgumentException $e) {
-            $this->addToAssertionCount(1);
-        }
+        new PhoneNumberMatch(-110, '1 800 234 45 67', new PhoneNumber());
     }
 }

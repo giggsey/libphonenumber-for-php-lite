@@ -8,10 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class Issue35Test extends TestCase
 {
-    /**
-     * @var PhoneNumberUtil
-     */
-    private $phoneUtil;
+    private PhoneNumberUtil $phoneUtil;
 
     public function setUp(): void
     {
@@ -19,7 +16,7 @@ class Issue35Test extends TestCase
         $this->phoneUtil = PhoneNumberUtil::getInstance();
     }
 
-    public function testSerializingPhoneNumber()
+    public function testSerializingPhoneNumber(): void
     {
         $number = '+441174900000';
         $region = 'GB';
@@ -32,17 +29,17 @@ class Issue35Test extends TestCase
         $this->assertTrue($phoneObject2->equals($phoneNumber));
     }
 
-    public function testSerializingPhoneNumber2()
+    public function testSerializingPhoneNumber2(): void
     {
         $phoneNumber = new PhoneNumber();
         $phoneNumber->setCountryCode(1);
-        $phoneNumber->setNationalNumber(1);
-        $phoneNumber->setExtension(1);
-        $phoneNumber->setItalianLeadingZero(1);
+        $phoneNumber->setNationalNumber('1');
+        $phoneNumber->setExtension('1');
+        $phoneNumber->setItalianLeadingZero(true);
         $phoneNumber->setNumberOfLeadingZeros(1);
-        $phoneNumber->setRawInput(1);
+        $phoneNumber->setRawInput('1');
         $phoneNumber->setCountryCodeSource(1);
-        $phoneNumber->setPreferredDomesticCarrierCode(1);
+        $phoneNumber->setPreferredDomesticCarrierCode('1');
 
         $serializedString = \serialize($phoneNumber);
         $phoneObject2 = \unserialize($serializedString);

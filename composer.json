@@ -53,7 +53,8 @@
       ".php-cs-fixer.dist.php",
       "phpstan.neon.dist",
       "build.xml",
-      "phpunit.xml.dist"
+      "phpunit.xml.dist",
+      "infection.json.dist"
     ]
   },
   "require": {
@@ -64,6 +65,7 @@
   "require-dev": {
     "ext-dom": "*",
     "friendsofphp/php-cs-fixer": "^3.12",
+    "infection/infection": "^0.26.16",
     "pear/pear-core-minimal": "^1.10.11",
     "pear/pear_exception": "^1.0.2",
     "pear/versioncontrol_git": "^0.5",
@@ -94,7 +96,8 @@
   "config": {
     "sort-packages": true,
     "allow-plugins": {
-      "phpstan/extension-installer": true
+      "phpstan/extension-installer": true,
+      "infection/extension-installer": true
     }
   }
 }

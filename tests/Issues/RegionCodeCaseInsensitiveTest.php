@@ -5,6 +5,7 @@ namespace libphonenumber\Tests\Issues;
 use libphonenumber\PhoneNumberType;
 use libphonenumber\PhoneNumberUtil;
 use PHPUnit\Framework\TestCase;
+use libphonenumber\PhoneMetadata;
 
 class RegionCodeCaseInsensitiveTest extends TestCase
 {
@@ -35,7 +36,7 @@ class RegionCodeCaseInsensitiveTest extends TestCase
     {
         $metadata = $this->phoneUtil->getMetadataForRegion('gb');
 
-        $this->assertInstanceOf('\libphonenumber\PhoneMetadata', $metadata);
+        $this->assertInstanceOf(PhoneMetadata::class, $metadata);
     }
 
     public function testGetCountryCodeForRegion(): void

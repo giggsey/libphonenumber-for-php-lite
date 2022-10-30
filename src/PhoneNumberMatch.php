@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace libphonenumber;
 
 class PhoneNumberMatch implements \Stringable
@@ -21,14 +23,10 @@ class PhoneNumberMatch implements \Stringable
      * @param string $rawString The matched substring of the target text
      * @param PhoneNumber $number The matched phone number
      */
-    public function __construct($start, $rawString, private PhoneNumber $number)
+    public function __construct(int $start, string $rawString, private PhoneNumber $number)
     {
         if ($start < 0) {
             throw new \InvalidArgumentException('Start index must be >= 0.');
-        }
-
-        if ($rawString === null) {
-            throw new \InvalidArgumentException('$rawString must be a string');
         }
 
         $this->start = $start;
@@ -39,7 +37,7 @@ class PhoneNumberMatch implements \Stringable
      * Returns the phone number matched by the receiver.
      * @return PhoneNumber
      */
-    public function number()
+    public function number(): PhoneNumber
     {
         return $this->number;
     }
@@ -48,7 +46,7 @@ class PhoneNumberMatch implements \Stringable
      * Returns the start index of the matched phone number within the searched text.
      * @return int
      */
-    public function start()
+    public function start(): int
     {
         return $this->start;
     }
@@ -57,7 +55,7 @@ class PhoneNumberMatch implements \Stringable
      * Returns the exclusive end index of the matched phone number within the searched text.
      * @return int
      */
-    public function end()
+    public function end(): int
     {
         return $this->start + \mb_strlen($this->rawString);
     }
@@ -66,13 +64,13 @@ class PhoneNumberMatch implements \Stringable
      * Returns the raw string matched as a phone number in the searched text.
      * @return string
      */
-    public function rawString()
+    public function rawString(): string
     {
         return $this->rawString;
     }
 
     public function __toString(): string
     {
-        return (string) "PhoneNumberMatch [{$this->start()},{$this->end()}) {$this->rawString}";
+        return "PhoneNumberMatch [{$this->start()},{$this->end()}) {$this->rawString}";
     }
 }

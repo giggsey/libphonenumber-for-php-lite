@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class Issue76Test extends TestCase
 {
-    public function testIssue76()
+    public function testIssue76(): void
     {
         $this->expectException(NumberParseException::class);
         $this->expectExceptionMessage('The string supplied did not seem to be a phone number.');

@@ -22,7 +22,7 @@ class MultiFileMetadataSourceImplTest extends TestCase
     public function testMissingMetadataFileThrowsRuntimeException(): void
     {
         // In normal usage we should never get a state where we are asking to load metadata that doesn't
-        // exist. However if the library is packaged incorrectly, this could happen and the best we can
+        // exist. However, if the library is packaged incorrectly, this could happen and the best we can
         // do is make sure the exception has the file name in it.
 
         try {

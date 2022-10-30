@@ -32,10 +32,7 @@ class MultiFileMetadataSourceImpl implements MetadataSourceInterface
      */
     protected ?string $currentFilePrefix;
 
-    /**
-     * @param string|null $currentFilePrefix
-     */
-    public function __construct(protected MetadataLoaderInterface $metadataLoader, $currentFilePrefix = null)
+    public function __construct(protected MetadataLoaderInterface $metadataLoader, ?string $currentFilePrefix = null)
     {
         if ($currentFilePrefix === null) {
             $currentFilePrefix = static::$metaDataFilePrefix;

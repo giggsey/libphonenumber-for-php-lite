@@ -20,10 +20,10 @@ class Issue152Test extends TestCase
         PhoneNumberUtil::resetInstance();
     }
 
-    public function testE164NumberWithExtension()
+    public function testE164NumberWithExtension(): void
     {
         $number = new PhoneNumber();
-        $number->setCountryCode(44)->setNationalNumber(1174960123)->setExtension(101);
+        $number->setCountryCode(44)->setNationalNumber('1174960123')->setExtension('101');
 
         $phoneNumberUtil = PhoneNumberUtil::getInstance();
         $this->assertEquals('+441174960123', $phoneNumberUtil->format($number, PhoneNumberFormat::E164));

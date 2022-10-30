@@ -8,16 +8,16 @@
     <coverage>
         <include>
             <directory suffix=".php">./src/</directory>
+            <directory suffix=".php">./build/</directory>
         </include>
         <exclude>
             <directory suffix=".php">./src/data/</directory>
-            <directory suffix=".php">./src/carrier/data/</directory>
-            <directory suffix=".php">./src/geocoding/data/</directory>
-            <directory suffix=".php">./src/timezone/data/</directory>
-            <file>./src/AlternateFormatsCountryCodeSet.php</file>
+            <directory suffix=".php">./build/Commands/</directory>
+            <file>./build/build.php</file>
+            <file>./build/BuildApplication.php</file>
+            <file>./build/BuildMetadataPHPFromXml.php</file>
             <file>./src/CountryCodeToRegionCodeMap.php</file>
             <file>./src/CountryCodeToRegionCodeMapForTesting.php</file>
-            <file>./src/RegionCode.php</file>
         </exclude>
     </coverage>
     <testsuites>
