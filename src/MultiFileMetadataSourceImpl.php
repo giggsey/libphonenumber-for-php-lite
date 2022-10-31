@@ -1,11 +1,6 @@
 <?php
-/**
- *
- *
- * @author joshuag
- * @created: 04/08/2015 09:03
- * @project libphonenumber-for-php
- */
+
+declare(strict_types=1);
 
 namespace libphonenumber;
 
