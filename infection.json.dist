@@ -6,10 +6,14 @@
         ]
     },
     "logs": {
-        "text": "infection.txt"
+        "text": "infection.txt",
+        "stryker": {
+            "badge": "main"
+        }
     },
     "mutators": {
-        "@default": true
+        "@default": true,
+        "ProtectedVisibility": false
     },
     "minMsi": 90,
     "minCoveredMsi": 90,
