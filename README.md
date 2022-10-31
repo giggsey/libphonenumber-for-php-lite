@@ -1,4 +1,4 @@
-# libphonenumber for PHP (Lite) [![Build Status](https://github.com/giggsey/libphonenumber-for-php-lite/workflows/Tests/badge.svg)](https://github.com/giggsey/libphonenumber-for-php-lite/actions?query=workflow%3A%22Tests%22) [![Coverage Status](https://img.shields.io/coveralls/giggsey/libphonenumber-for-php-lite.svg?style=flat-square)](https://coveralls.io/r/giggsey/libphonenumber-for-php?branch=master)
+# libphonenumber for PHP (Lite) [![Build Status](https://github.com/giggsey/libphonenumber-for-php-lite/workflows/Tests/badge.svg)](https://github.com/giggsey/libphonenumber-for-php-lite/actions?query=workflow%3A%22Tests%22) [![codecov](https://codecov.io/gh/giggsey/libphonenumber-for-php-lite/branch/main/graph/badge.svg?token=S0TV2TAXOQ)](https://codecov.io/gh/giggsey/libphonenumber-for-php-lite)
 
 [![Total Downloads](https://poser.pugx.org/giggsey/libphonenumber-for-php-lite/downloads?format=flat-square)](https://packagist.org/packages/giggsey/libphonenumber-for-php-lite)
 [![Downloads per month](https://img.shields.io/packagist/dm/giggsey/libphonenumber-for-php-lite.svg?style=flat-square)](https://packagist.org/packages/giggsey/libphonenumber-for-php-lite)
