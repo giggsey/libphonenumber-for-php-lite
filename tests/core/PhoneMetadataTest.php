@@ -8,6 +8,14 @@ use PHPUnit\Framework\TestCase;
 
 class PhoneMetadataTest extends TestCase
 {
+    private PhoneNumberUtil $phoneUtil;
+
+    protected function setUp(): void
+    {
+        PhoneNumberUtil::resetInstance();
+        $this->phoneUtil = PhoneNumberUtil::getInstance();
+    }
+
     /**
      * @return array<string[]>
      */
@@ -25,13 +33,11 @@ class PhoneMetadataTest extends TestCase
     }
 
     /**
-     * @param $region
      * @dataProvider phoneNumberRegionList
      */
     public function testPhoneNumberMetadataToAndFromArray(string $region): void
     {
-        $phoneNumberUtil = PhoneNumberUtil::getInstance();
-        $phoneMetadata = $phoneNumberUtil->getMetadataForRegion($region);
+        $phoneMetadata = $this->phoneUtil->getMetadataForRegion($region);
 
         $array = $phoneMetadata->toArray();
 

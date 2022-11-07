@@ -2,14 +2,19 @@
     "$schema": "https://raw.githubusercontent.com/infection/infection/0.26.16/resources/schema.json",
     "source": {
         "directories": [
-            "build",
             "src"
         ]
     },
     "logs": {
-        "text": "infection.txt"
+        "text": "infection.txt",
+        "stryker": {
+            "badge": "main"
+        }
     },
     "mutators": {
-        "@default": true
-    }
+        "@default": true,
+        "ProtectedVisibility": false
+    },
+    "minMsi": 80,
+    "minCoveredMsi": 80,
 }
