@@ -1711,7 +1711,7 @@ class PhoneNumberUtil
      */
     protected function buildNationalNumberForParsing(string $numberToParse, string &$nationalNumber): void
     {
-        $indexOfPhoneContext = strpos($numberToParse, (string) static::RFC3966_PHONE_CONTEXT);
+        $indexOfPhoneContext = strpos($numberToParse, static::RFC3966_PHONE_CONTEXT);
         if ($indexOfPhoneContext !== false) {
             $phoneContextStart = $indexOfPhoneContext + mb_strlen(static::RFC3966_PHONE_CONTEXT);
             // If the phone context contains a phone number prefix, we need to capture it, whereas domains
@@ -1749,7 +1749,7 @@ class PhoneNumberUtil
 
         // Delete the isdn-subaddress and everything after it if it is present. Note extension won't
         // appear at the same time with isdn-subaddress according to paragraph 5.3 of the RFC3966 spec,
-        $indexOfIsdn = strpos($nationalNumber, (string) static::RFC3966_ISDN_SUBADDRESS);
+        $indexOfIsdn = strpos($nationalNumber, static::RFC3966_ISDN_SUBADDRESS);
         if ($indexOfIsdn > 0) {
             $nationalNumber = substr($nationalNumber, 0, $indexOfIsdn);
         }
