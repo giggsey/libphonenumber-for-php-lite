@@ -1713,7 +1713,7 @@ class PhoneNumberUtil
     {
         $indexOfPhoneContext = strpos($numberToParse, static::RFC3966_PHONE_CONTEXT);
         if ($indexOfPhoneContext !== false) {
-            $phoneContextStart = $indexOfPhoneContext + mb_strlen(static::RFC3966_PHONE_CONTEXT);
+            $phoneContextStart = $indexOfPhoneContext + strlen(static::RFC3966_PHONE_CONTEXT);
             // If the phone context contains a phone number prefix, we need to capture it, whereas domains
             // will be ignored.
             if ($phoneContextStart < (strlen($numberToParse) - 1)
@@ -1857,7 +1857,7 @@ class PhoneNumberUtil
         string &$nationalNumber,
         bool $keepRawInput,
         PhoneNumber $phoneNumber
-    ) {
+    ): int {
         if ($number === '') {
             return 0;
         }
@@ -2067,13 +2067,13 @@ class PhoneNumberUtil
      * @return int
      * @internal
      */
-    public function extractCountryCode(string $fullNumber, string &$nationalNumber): int
+    protected function extractCountryCode(string $fullNumber, string &$nationalNumber): int
     {
         if (($fullNumber === '') || ($fullNumber[0] === '0')) {
             // Country codes do not begin with a '0'.
             return 0;
         }
-        $numberLength = mb_strlen($fullNumber);
+        $numberLength = strlen($fullNumber);
         for ($i = 1; $i <= static::MAX_LENGTH_COUNTRY_CODE && $i <= $numberLength; $i++) {
             $potentialCountryCode = (int)substr($fullNumber, 0, $i);
             if (isset($this->countryCallingCodeToRegionCodeMap[$potentialCountryCode])) {
@@ -2095,9 +2095,8 @@ class PhoneNumberUtil
      */
     public function maybeStripNationalPrefixAndCarrierCode(string &$number, PhoneMetadata $metadata, ?string &$carrierCode): bool
     {
-        $numberLength = mb_strlen($number);
         $possibleNationalPrefix = $metadata->getNationalPrefixForParsing();
-        if ($numberLength === 0 || $possibleNationalPrefix === null || $possibleNationalPrefix === '') {
+        if ($number === '' || $possibleNationalPrefix === null || $possibleNationalPrefix === '') {
             // Early return for numbers of zero length.
             return false;
         }
@@ -2137,6 +2136,7 @@ class PhoneNumberUtil
             // Check that the resultant number is still viable. If not, return. Check this by copying
             // the string and making the transformation on the copy first.
             $transformedNumber = $number;
+            $numberLength = mb_strlen($number);
             $transformedNumber = substr_replace(
                 $transformedNumber,
                 $prefixMatcher->replaceFirst($transformRule),
@@ -2545,7 +2545,7 @@ class PhoneNumberUtil
         // trim anything at all. Similarly, if the national number was less than three digits, we don't
         // trim anything at all.
         $nationalNumber = $this->getNationalSignificantNumber($number);
-        if (mb_strlen($nationalNumber) > 3) {
+        if (strlen($nationalNumber) > 3) {
             $firstNationalNumberDigit = strpos($rawInput, substr($nationalNumber, 0, 3));
             if ($firstNationalNumberDigit !== false) {
                 $rawInput = substr($rawInput, $firstNationalNumberDigit);

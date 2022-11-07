@@ -28,4 +28,11 @@ class CodeCoverageTest extends TestCase
             $this->assertEquals('Error type: 3. The string supplied is too short to be a phone number.', (string)$e);
         }
     }
+
+    public function testNormalizeDigits(): void
+    {
+        $result = PhoneNumberUtil::normalizeDigits('12 345-GOOG', true);
+
+        self::assertSame('12 345-GOOG', $result);
+    }
 }
