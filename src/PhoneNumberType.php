@@ -45,7 +45,10 @@ class PhoneNumberType
     // Standard Rate
     public const STANDARD_RATE = 30;
 
-    public static function values()
+    /**
+     * @return array<int,string>
+     */
+    public static function values(): array
     {
         return [
             self::FIXED_LINE => 'FIXED_LINE',

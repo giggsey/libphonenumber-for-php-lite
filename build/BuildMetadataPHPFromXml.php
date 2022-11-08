@@ -33,7 +33,7 @@ class BuildMetadataPHPFromXml
     public const REGION_CODE_SET_COMMENT =
         "  // A set of all region codes for which data is available.\n";
 
-    public function start($inputFile, $outputDir, $filePrefix, $mappingClass, $mappingClassLocation, $liteBuild)
+    public function start(string $inputFile, string $outputDir, string $filePrefix, string $mappingClass, string $mappingClassLocation, bool $liteBuild): void
     {
         $savePath = $outputDir . $filePrefix;
 
@@ -47,16 +47,16 @@ class BuildMetadataPHPFromXml
     }
 
     /**
-     * @param $metadataCollection PhoneMetadata[]
-     * @param $filePrefix
+     * @param PhoneMetadata[] $metadataCollection
+     * @param string $filePrefix
      */
-    private function writeMetadataToFile($metadataCollection, $filePrefix)
+    private function writeMetadataToFile(array $metadataCollection, string $filePrefix): void
     {
         foreach ($metadataCollection as $metadata) {
             $regionCode = $metadata->getId();
             // For non-geographical country calling codes (e.g. +800), use the country calling codes
             // instead of the region code to form the file name.
-            if ($regionCode === '001' || $regionCode == '') {
+            if ($regionCode === '001' || $regionCode === '') {
                 $regionCode = $metadata->getCountryCode();
             }
 
@@ -68,7 +68,13 @@ class BuildMetadataPHPFromXml
         }
     }
 
-    private function writeCountryCallingCodeMappingToFile($countryCodeToRegionCodeMap, $outputDir, $mappingClass)
+    /**
+     * @param array<int,array<string>> $countryCodeToRegionCodeMap
+     * @param string $outputDir
+     * @param string $mappingClass
+     * @return void
+     */
+    private function writeCountryCallingCodeMappingToFile(array $countryCodeToRegionCodeMap, string $outputDir, string $mappingClass): void
     {
         // Find out whether the countryCodeToRegionCodeMap has any region codes or country
         // calling codes listed in it.
@@ -80,9 +86,9 @@ class BuildMetadataPHPFromXml
             }
         }
 
-        $hasCountryCodes = ((is_countable($countryCodeToRegionCodeMap) ? \count($countryCodeToRegionCodeMap) : 0) > 1);
+        $hasCountryCodes = \count($countryCodeToRegionCodeMap) > 1;
 
-        $variableName = \lcfirst($mappingClass);
+        $constName = \strtoupper(preg_replace('/(?<!^)[A-Z]/', '_$0', $mappingClass));
 
         $data = '<?php' . PHP_EOL .
             self::GENERATION_COMMENT . PHP_EOL .
@@ -92,19 +98,19 @@ class BuildMetadataPHPFromXml
 
         if ($hasRegionCodes && $hasCountryCodes) {
             $data .= self::MAP_COMMENT . PHP_EOL;
-            $data .= "   public static \${$variableName} = " . \var_export(
+            $data .= "   public const {$constName} = " . \var_export(
                 $countryCodeToRegionCodeMap,
                 true
             ) . ';' . PHP_EOL;
         } elseif ($hasCountryCodes) {
             $data .= self::COUNTRY_CODE_SET_COMMENT . PHP_EOL;
-            $data .= "   public static \${$variableName} = " . \var_export(
+            $data .= "   public const {$constName} = " . \var_export(
                 \array_keys($countryCodeToRegionCodeMap),
                 true
             ) . ';' . PHP_EOL;
         } else {
             $data .= self::REGION_CODE_SET_COMMENT . PHP_EOL;
-            $data .= "   public static \${$variableName} = " . \var_export(
+            $data .= "   public const {$constName} = " . \var_export(
                 $countryCodeToRegionCodeMap[0],
                 true
             ) . ';' . PHP_EOL;

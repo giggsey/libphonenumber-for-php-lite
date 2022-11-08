@@ -15,7 +15,7 @@ class CountryCodeToRegionCodeMapForTesting
     // countries sharing a calling code, such as the NANPA countries, the one
     // indicated with "isMainCountryForCode" in the metadata should be first.
 
-    public static $countryCodeToRegionCodeMapForTesting = [
+    public const COUNTRY_CODE_TO_REGION_CODE_MAP_FOR_TESTING = [
   1 =>
   [
      0 => 'US',

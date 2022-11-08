@@ -45,6 +45,9 @@ class ExampleNumbersTest extends TestCase
         return $returnList;
     }
 
+    /**
+     * @return array<array<int>>
+     */
     public function numberTypes(): array
     {
         return [
@@ -65,7 +68,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testFixedLine($region): void
+    public function testFixedLine(string $region): void
     {
         $fixedLineTypes = [PhoneNumberType::FIXED_LINE, PhoneNumberType::FIXED_LINE_OR_MOBILE];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::FIXED_LINE, $fixedLineTypes, $region);
@@ -74,16 +77,22 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testFixedLineOrMobile($region): void
+    public function testFixedLineOrMobile(string $region): void
     {
         $numberTypes = [PhoneNumberType::FIXED_LINE, PhoneNumberType::FIXED_LINE_OR_MOBILE];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::FIXED_LINE_OR_MOBILE, $numberTypes, $region);
     }
 
+    /**
+     * @param int $exampleNumberRequestedType
+     * @param array<int> $possibleExpectedTypes
+     * @param string $regionCode
+     * @return void
+     */
     private function checkNumbersValidAndCorrectType(
-        $exampleNumberRequestedType,
-        $possibleExpectedTypes,
-        $regionCode
+        int $exampleNumberRequestedType,
+        array $possibleExpectedTypes,
+        string $regionCode
     ): void {
         $exampleNumber = $this->phoneNumberUtil->getExampleNumberForType($regionCode, $exampleNumberRequestedType);
         if ($exampleNumber !== null) {
@@ -101,7 +110,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testMobile($region): void
+    public function testMobile(string $region): void
     {
         $mobileTypes = [PhoneNumberType::MOBILE, PhoneNumberType::FIXED_LINE_OR_MOBILE];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::MOBILE, $mobileTypes, $region);
@@ -110,7 +119,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testTollFree($region): void
+    public function testTollFree(string $region): void
     {
         $tollFreeTypes = [PhoneNumberType::TOLL_FREE];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::TOLL_FREE, $tollFreeTypes, $region);
@@ -119,7 +128,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testPremiumRate($region): void
+    public function testPremiumRate(string $region): void
     {
         $premiumRateTypes = [PhoneNumberType::PREMIUM_RATE];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::PREMIUM_RATE, $premiumRateTypes, $region);
@@ -128,7 +137,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testVoip($region): void
+    public function testVoip(string $region): void
     {
         $voipTypes = [PhoneNumberType::VOIP];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::VOIP, $voipTypes, $region);
@@ -137,7 +146,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testPager($region): void
+    public function testPager(string $region): void
     {
         $pagerTypes = [PhoneNumberType::PAGER];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::PAGER, $pagerTypes, $region);
@@ -146,7 +155,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testUan($region): void
+    public function testUan(string $region): void
     {
         $uanTypes = [PhoneNumberType::UAN];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::UAN, $uanTypes, $region);
@@ -155,7 +164,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testVoicemail($region): void
+    public function testVoicemail(string $region): void
     {
         $voicemailTypes = [PhoneNumberType::VOICEMAIL];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::VOICEMAIL, $voicemailTypes, $region);
@@ -164,7 +173,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testPersonalNumber($region): void
+    public function testPersonalNumber(string $region): void
     {
         $numberTypes = [PhoneNumberType::PERSONAL_NUMBER];
         $this->checkNumbersValidAndCorrectType(PhoneNumberType::PERSONAL_NUMBER, $numberTypes, $region);
@@ -182,7 +191,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider regionList
      */
-    public function testCanBeInternationallyDialled($regionCode): void
+    public function testCanBeInternationallyDialled(string $regionCode): void
     {
         $exampleNumber = null;
         $desc = $this->phoneNumberUtil->getMetadataForRegion($regionCode)->getNoInternationalDialling();
@@ -198,6 +207,9 @@ class ExampleNumbersTest extends TestCase
         }
     }
 
+    /**
+     * @return array<array<int>>
+     */
     public function supportedGlobalNetworkCallingCodes(): array
     {
         $returnList = [];
@@ -214,7 +226,7 @@ class ExampleNumbersTest extends TestCase
     /**
      * @dataProvider supportedGlobalNetworkCallingCodes
      */
-    public function testGlobalNetworkNumbers($callingCode): void
+    public function testGlobalNetworkNumbers(int $callingCode): void
     {
         $exampleNumber = $this->phoneNumberUtil->getExampleNumberForNonGeoEntity($callingCode);
         $this->assertNotNull($exampleNumber, 'No example phone number for calling code ' . $callingCode);

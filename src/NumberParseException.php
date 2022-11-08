@@ -26,7 +26,7 @@ class NumberParseException extends \Exception implements \Stringable
 
     protected int $errorType;
 
-    public function __construct($errorType, $message, $previous = null)
+    public function __construct(int $errorType, string $message, ?\Throwable $previous = null)
     {
         parent::__construct($message, $errorType, $previous);
         $this->message = $message;

@@ -6,6 +6,8 @@ namespace libphonenumber;
 
 /**
  * Phone Number Description
+ * @interal
+ * @phpstan-type PhoneNumberDescArray array{NationalNumberPattern?:string,ExampleNumber?:string,PossibleLength?:int[],PossibleLengthLocalOnly?:int[]}
  */
 class PhoneNumberDesc
 {
@@ -14,11 +16,11 @@ class PhoneNumberDesc
     protected bool $hasExampleNumber = false;
     protected string $exampleNumber = '';
     /**
-     * @var array
+     * @var int[]
      */
     protected array $possibleLength = [];
     /**
-     * @var array
+     * @var int[]
      */
     protected array $possibleLengthLocalOnly = [];
 
@@ -37,17 +39,23 @@ class PhoneNumberDesc
         return $this;
     }
 
+    /**
+     * @return int[]
+     */
     public function getPossibleLength(): array
     {
         return $this->possibleLength;
     }
 
+    /**
+     * @param int[] $possibleLength
+     */
     public function setPossibleLength(array $possibleLength): void
     {
         $this->possibleLength = $possibleLength;
     }
 
-    public function addPossibleLength($possibleLength): void
+    public function addPossibleLength(int $possibleLength): void
     {
         if (!in_array($possibleLength, $this->possibleLength)) {
             $this->possibleLength[] = $possibleLength;
@@ -59,17 +67,23 @@ class PhoneNumberDesc
         $this->possibleLength = [];
     }
 
+    /**
+     * @return int[]
+     */
     public function getPossibleLengthLocalOnly(): array
     {
         return $this->possibleLengthLocalOnly;
     }
 
+    /**
+     * @param int[] $possibleLengthLocalOnly
+     */
     public function setPossibleLengthLocalOnly(array $possibleLengthLocalOnly): void
     {
         $this->possibleLengthLocalOnly = $possibleLengthLocalOnly;
     }
 
-    public function addPossibleLengthLocalOnly($possibleLengthLocalOnly): void
+    public function addPossibleLengthLocalOnly(int $possibleLengthLocalOnly): void
     {
         if (!in_array($possibleLengthLocalOnly, $this->possibleLengthLocalOnly)) {
             $this->possibleLengthLocalOnly[] = $possibleLengthLocalOnly;
@@ -152,6 +166,9 @@ class PhoneNumberDesc
         $this->exampleNumber === $other->exampleNumber;
     }
 
+    /**
+     * @return PhoneNumberDescArray
+     */
     public function toArray(): array
     {
         $data = [];
@@ -175,6 +192,10 @@ class PhoneNumberDesc
         return $data;
     }
 
+    /**
+     * @param PhoneNumberDescArray $input
+     * @return $this
+     */
     public function fromArray(array $input): static
     {
         if (isset($input['NationalNumberPattern']) && $input['NationalNumberPattern'] !== '') {

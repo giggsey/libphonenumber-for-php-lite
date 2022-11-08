@@ -17,10 +17,9 @@ class PHP7Test extends TestCase
     }
 
     /**
-     * @param $number
      * @dataProvider validPolishNumbers
      */
-    public function testValidPolishNumbers($number): void
+    public function testValidPolishNumbers(string $number): void
     {
         $phoneNumber = $this->phoneUtil->parse($number, 'PL');
 

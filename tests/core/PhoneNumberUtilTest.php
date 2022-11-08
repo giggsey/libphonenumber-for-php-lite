@@ -20,55 +20,49 @@ use PHPUnit\Framework\TestCase;
 class PhoneNumberUtilTest extends TestCase
 {
     public const TEST_META_DATA_FILE_PREFIX = '../../tests/core/data/PhoneNumberMetadataForTesting';
-    private static $bsNumber;
-    private static $coFixedLine;
-    private static $internationalTollFree;
-    private static $sgNumber;
-    private static $usShortByOneNumber;
-    private static $usTollFree;
-    private static $usNumber;
-    private static $usLocalNumber;
-    private static $usLongNumber;
-    /**
-     * @var PhoneNumber
-     */
-    private static $nzNumber;
-    private static $usPremium;
-    private static $usSpoof;
-    private static $usSpoofWithRawInput;
-    private static $uzFixedLine;
-    private static $uzMobile;
-    private static $gbMobile;
-    private static $bsMobile;
-    private static $gbNumber;
-    private static $deShortNumber;
-    private static $itMobile;
-    private static $itNumber;
-    private static $auNumber;
-    private static $arMobile;
-    private static $arNumber;
-    private static $mxMobile1;
-    private static $mxNumber1;
-    private static $mxMobile2;
-    private static $mxNumber2;
-    private static $deNumber;
-    private static $jpStarNumber;
-    private static $internationalTollFreeTooLong;
-    private static $universalPremiumRate;
-    private static $alphaNumericNumber;
-    private static $aeUAN;
-    private static $unknownCountryCodeNoRawInput;
-    /**
-     * @var PhoneNumberUtil
-     */
-    protected $phoneUtil;
+    private static PhoneNumber $bsNumber;
+    private static PhoneNumber $coFixedLine;
+    private static PhoneNumber $internationalTollFree;
+    private static PhoneNumber $sgNumber;
+    private static PhoneNumber $usShortByOneNumber;
+    private static PhoneNumber $usTollFree;
+    private static PhoneNumber $usNumber;
+    private static PhoneNumber $usLocalNumber;
+    private static PhoneNumber $usLongNumber;
+    private static PhoneNumber $nzNumber;
+    private static PhoneNumber $usPremium;
+    private static PhoneNumber $usSpoof;
+    private static PhoneNumber $usSpoofWithRawInput;
+    private static PhoneNumber $uzFixedLine;
+    private static PhoneNumber $uzMobile;
+    private static PhoneNumber $gbMobile;
+    private static PhoneNumber $bsMobile;
+    private static PhoneNumber $gbNumber;
+    private static PhoneNumber $deShortNumber;
+    private static PhoneNumber $itMobile;
+    private static PhoneNumber $itNumber;
+    private static PhoneNumber $auNumber;
+    private static PhoneNumber $arMobile;
+    private static PhoneNumber $arNumber;
+    private static PhoneNumber $mxMobile1;
+    private static PhoneNumber $mxNumber1;
+    private static PhoneNumber $mxMobile2;
+    private static PhoneNumber $mxNumber2;
+    private static PhoneNumber $deNumber;
+    private static PhoneNumber $jpStarNumber;
+    private static PhoneNumber $internationalTollFreeTooLong;
+    private static PhoneNumber $universalPremiumRate;
+    private static PhoneNumber $alphaNumericNumber;
+    private static PhoneNumber $aeUAN;
+    private static PhoneNumber $unknownCountryCodeNoRawInput;
+    protected PhoneNumberUtil $phoneUtil;
 
     public function setUp(): void
     {
         $this->phoneUtil = self::initializePhoneUtilForTesting();
     }
 
-    private static function initializePhoneUtilForTesting(): ?PhoneNumberUtil
+    private static function initializePhoneUtilForTesting(): PhoneNumberUtil
     {
         self::$bsNumber = new PhoneNumber();
         self::$bsNumber->setCountryCode(1)->setNationalNumber('2423651234');
@@ -147,7 +141,7 @@ class PhoneNumberUtilTest extends TestCase
         PhoneNumberUtil::resetInstance();
         return PhoneNumberUtil::getInstance(
             self::TEST_META_DATA_FILE_PREFIX,
-            CountryCodeToRegionCodeMapForTesting::$countryCodeToRegionCodeMapForTesting
+            CountryCodeToRegionCodeMapForTesting::COUNTRY_CODE_TO_REGION_CODE_MAP_FOR_TESTING
         );
     }
 
