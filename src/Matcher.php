@@ -19,7 +19,7 @@ class Matcher
     protected string $subject = '';
 
     /**
-     * @var array
+     * @var array<array{string,int}>
      */
     protected array $groups = [];
 
@@ -35,7 +35,12 @@ class Matcher
         $this->subject = $subject;
     }
 
-    protected function doMatch($type = 'find', int $offset = 0): bool
+    /**
+     * @param string $type
+     * @param int $offset
+     * @return bool
+     */
+    protected function doMatch(string $type = 'find', int $offset = 0): bool
     {
         $final_pattern = '(?:' . $this->pattern . ')';
         switch ($type) {
@@ -123,11 +128,8 @@ class Matcher
         return $this->groups[$group][1] + mb_strlen($this->groups[$group][0]);
     }
 
-    public function start(?int $group = null)
+    public function start(int $group = 0): ?int
     {
-        if ($group === null) {
-            $group = 0;
-        }
         if (!isset($this->groups[$group])) {
             return null;
         }

@@ -9,8 +9,6 @@ use libphonenumber\PhoneNumberDesc;
 
 /**
  * Library to build phone number metadata from the XML format.
- *
- * @author Davide Mendolia
  * @internal
  */
 class BuildMetadataFromXml
@@ -56,17 +54,14 @@ class BuildMetadataFromXml
     public const VOICEMAIL = 'voicemail';
     public const VOIP = 'voip';
 
+    /**
+     * @var string[]
+     */
     private static array $phoneNumberDescsWithoutMatchingTypes = [
         self::NO_INTERNATIONAL_DIALLING,
     ];
 
-    /**
-     * @internal
-     * @param string $regex
-     * @param bool $removeWhitespace
-     * @return string
-     */
-    public static function validateRE($regex, $removeWhitespace = false)
+    public static function validateRE(string $regex, bool $removeWhitespace = false): string
     {
         $compressedRegex = $removeWhitespace ? \preg_replace('/\\s/', '', $regex) : $regex;
         // Match regex against an empty string to check the regex is valid
@@ -133,6 +128,7 @@ class BuildMetadataFromXml
 
     /**
      * @param string $regionCode
+     * @param DOMElement $element
      * @param bool $isShortNumberMetadata
      * @param bool $isAlternateFormatsMetadata
      * @return PhoneMetadata
@@ -158,7 +154,7 @@ class BuildMetadataFromXml
      * @param bool $specialBuild
      * @return MetadataFilter
      */
-    public static function getMetadataFilter($liteBuild, $specialBuild)
+    public static function getMetadataFilter($liteBuild, $specialBuild): MetadataFilter
     {
         if ($specialBuild) {
             if ($liteBuild) {
@@ -178,7 +174,7 @@ class BuildMetadataFromXml
      * @internal
      * @return string
      */
-    public static function getNationalPrefix(DOMElement $element)
+    public static function getNationalPrefix(DOMElement $element): string
     {
         return $element->hasAttribute(self::NATIONAL_PREFIX) ? $element->getAttribute(self::NATIONAL_PREFIX) : '';
     }
@@ -189,7 +185,7 @@ class BuildMetadataFromXml
      * @param string $nationalPrefix
      * @return string
      */
-    public static function getNationalPrefixFormattingRuleFromElement(DOMElement $element, $nationalPrefix)
+    public static function getNationalPrefixFormattingRuleFromElement(DOMElement $element, $nationalPrefix): string
     {
         $nationalPrefixFormattingRule = $element->getAttribute(self::NATIONAL_PREFIX_FORMATTING_RULE);
         // Replace $NP with national prefix and $FG with the first group ($1).
@@ -212,7 +208,7 @@ class BuildMetadataFromXml
         $regionCode,
         DOMElement $element,
         $nationalPrefix
-    ) {
+    ): PhoneMetadata {
         $metadata = new PhoneMetadata();
         $metadata->setId($regionCode);
         $metadata->setCountryCode((int)$element->getAttribute(self::COUNTRY_CODE));
@@ -266,7 +262,7 @@ class BuildMetadataFromXml
         $nationalPrefix,
         $nationalPrefixFormattingRule,
         $nationalPrefixOptionalWhenFormatting
-    ) {
+    ): void {
         $carrierCodeFormattingRule = '';
         if ($element->hasAttribute(self::CARRIER_CODE_FORMATTING_RULE)) {
             $carrierCodeFormattingRule = self::validateRE(self::getDomesticCarrierCodeFormattingRuleFromElement($element, $nationalPrefix));
@@ -322,7 +318,7 @@ class BuildMetadataFromXml
      * @param string $nationalPrefix
      * @return string
      */
-    public static function getDomesticCarrierCodeFormattingRuleFromElement(DOMElement $element, $nationalPrefix)
+    public static function getDomesticCarrierCodeFormattingRuleFromElement(DOMElement $element, $nationalPrefix): string
     {
         $carrierCodeFormattingRule = $element->getAttribute(self::CARRIER_CODE_FORMATTING_RULE);
         // Replace $FG with the first group ($1) and $NP with the national prefix.
@@ -344,7 +340,7 @@ class BuildMetadataFromXml
         PhoneMetadata $metadata,
         DOMElement $numberFormatElement,
         NumberFormat $format
-    ) {
+    ): void {
         self::setLeadingDigitsPatterns($numberFormatElement, $format);
         $format->setPattern(self::validateRE($numberFormatElement->getAttribute(self::PATTERN)));
 
@@ -360,7 +356,7 @@ class BuildMetadataFromXml
     /**
      * @internal
      */
-    public static function setLeadingDigitsPatterns(DOMElement $numberFormatElement, NumberFormat $format)
+    public static function setLeadingDigitsPatterns(DOMElement $numberFormatElement, NumberFormat $format): void
     {
         $leadingDigitsPatternNodes = $numberFormatElement->getElementsByTagName(self::LEADING_DIGITS);
         $numOfLeadingDigitsPatterns = $leadingDigitsPatternNodes->length;
@@ -383,7 +379,7 @@ class BuildMetadataFromXml
         PhoneMetadata $metadata,
         DOMElement $numberFormatElement,
         NumberFormat $nationalFormat
-    ) {
+    ): bool {
         $intlFormat = new NumberFormat();
         $intlFormatPattern = $numberFormatElement->getElementsByTagName(self::INTL_FORMAT);
         $hasExplicitIntlFormatDefined = false;
@@ -416,7 +412,7 @@ class BuildMetadataFromXml
      * @internal
      * @param bool $isShortNumberMetadata
      */
-    public static function setRelevantDescPatterns(PhoneMetadata $metadata, DOMElement $element, bool $isShortNumberMetadata)
+    public static function setRelevantDescPatterns(PhoneMetadata $metadata, DOMElement $element, bool $isShortNumberMetadata): void
     {
         $generalDesc = self::processPhoneNumberDescElement(null, $element, self::GENERAL_DESC);
         $metadata->setGeneralDesc($generalDesc);
@@ -459,11 +455,11 @@ class BuildMetadataFromXml
      * this syntax: ranges or elements are separated by commas, and ranges are specified in
      * [min-max] notation, inclusive. For example, [3-5],7,9,[11-14] should be parsed to
      * 3,4,5,7,9,11,12,13,14
-     * @return array
+     * @return int[]
      */
-    private static function parsePossibleLengthStringToSet($possibleLengthString)
+    private static function parsePossibleLengthStringToSet(string $possibleLengthString): array
     {
-        if (\strlen($possibleLengthString) === 0) {
+        if ($possibleLengthString === '') {
             throw new \RuntimeException('Empty possibleLength string found.');
         }
 
@@ -474,7 +470,7 @@ class BuildMetadataFromXml
         $lengthLength = \count($lengths);
         for ($i = 0; $i < $lengthLength; $i++) {
             $lengthSubstring = $lengths[$i];
-            if (\strlen($lengthSubstring) === 0) {
+            if ($lengthSubstring === '') {
                 throw new \RuntimeException('Leading, trailing or adjacent commas in possible '
                     . "length string {$possibleLengthString}, these should only separate numbers or ranges.");
             }
@@ -522,11 +518,11 @@ class BuildMetadataFromXml
      *
      *
      * @param DOMElement $data One or more phone number descriptions
-     * @param array $lengths An array in which to add possible lengths of full phone numbers
-     * @param array $localOnlyLengths An array in which to add possible lengths of phone numbers only diallable
+     * @param int[] $lengths An array in which to add possible lengths of full phone numbers
+     * @param int[] $localOnlyLengths An array in which to add possible lengths of phone numbers only diallable
      *  locally (e.g. within a province)
      */
-    private static function populatePossibleLengthSets(DOMElement $data, &$lengths, &$localOnlyLengths)
+    private static function populatePossibleLengthSets(DOMElement $data, array &$lengths, array &$localOnlyLengths): void
     {
         $possibleLengths = $data->getElementsByTagName(self::POSSIBLE_LENGTHS);
 
@@ -567,7 +563,7 @@ class BuildMetadataFromXml
      * @param string $metadataId
      * @param bool $isShortNumberMetadata
      */
-    public static function setPossibleLengthsGeneralDesc(PhoneNumberDesc $generalDesc, $metadataId, DOMElement $data, $isShortNumberMetadata)
+    public static function setPossibleLengthsGeneralDesc(PhoneNumberDesc $generalDesc, $metadataId, DOMElement $data, $isShortNumberMetadata): void
     {
         $lengths = [];
         $localOnlyLengths = [];
@@ -621,10 +617,10 @@ class BuildMetadataFromXml
      * the length is covered by the "parent" phone number description element if one is present, and
      * if the lengths are exactly the same as this, they are not filled in for efficiency reasons.
      *
-     * @param array $lengths
-     * @param array $localOnlyLengths
+     * @param int[] $lengths
+     * @param int[] $localOnlyLengths
      */
-    private static function setPossibleLengths($lengths, $localOnlyLengths, PhoneNumberDesc $desc, PhoneNumberDesc $parentDesc = null)
+    private static function setPossibleLengths(array $lengths, array $localOnlyLengths, PhoneNumberDesc $desc, PhoneNumberDesc $parentDesc = null): void
     {
         // We clear these fields since the metadata tends to inherit from the parent element for other
         // fields (via a mergeFrom).
@@ -694,7 +690,7 @@ class BuildMetadataFromXml
         ?PhoneNumberDesc $parentDesc,
         DOMElement $countryElement,
         $numberType
-    ) {
+    ): PhoneNumberDesc {
         $phoneNumberDescList = $countryElement->getElementsByTagName($numberType);
         $numberDesc = new PhoneNumberDesc();
         if ($phoneNumberDescList->length == 0) {
@@ -746,17 +742,22 @@ class BuildMetadataFromXml
         return $numberDesc;
     }
 
-    private static function arePossibleLengthsEqual($possibleLengths, PhoneNumberDesc $desc)
+    /**
+     * @param int[] $possibleLengths
+     * @param PhoneNumberDesc $desc
+     * @return bool
+     */
+    private static function arePossibleLengthsEqual(array $possibleLengths, PhoneNumberDesc $desc): bool
     {
         $descPossibleLength = $desc->getPossibleLength();
-        if ((is_countable($possibleLengths) ? \count($possibleLengths) : 0) != \count($descPossibleLength)) {
+        if (\count($possibleLengths) !== \count($descPossibleLength)) {
             return false;
         }
 
         // Note that both should be sorted already, and we know they are the same length.
         $i = 0;
         foreach ($possibleLengths as $length) {
-            if ($length != $descPossibleLength[$i]) {
+            if ($length !== $descPossibleLength[$i]) {
                 return false;
             }
             $i++;
@@ -766,9 +767,9 @@ class BuildMetadataFromXml
 
     /**
      * @param PhoneMetadata[] $metadataCollection
-     * @return array
+     * @return array<int,array<string>>
      */
-    public static function buildCountryCodeToRegionCodeMap($metadataCollection)
+    public static function buildCountryCodeToRegionCodeMap(array $metadataCollection): array
     {
         $countryCodeToRegionCodeMap = [];
 
@@ -784,7 +785,7 @@ class BuildMetadataFromXml
             } else {
                 // For most countries, there will be only one region code for the country calling code.
                 $listWithRegionCode = [];
-                if ($regionCode != '') { // For alternate formats, there are no region codes at all.
+                if ($regionCode !== '') { // For alternate formats, there are no region codes at all.
                     $listWithRegionCode[] = $regionCode;
                 }
                 $countryCodeToRegionCodeMap[$countryCode] = $listWithRegionCode;

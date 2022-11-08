@@ -543,6 +543,9 @@ class PhoneNumber implements \Serializable, \Stringable
         return serialize($this->__serialize());
     }
 
+    /**
+     * @return array{int,?string,?string,?bool,int,?string,int,?string}
+     */
     public function __serialize(): array
     {
         return [
@@ -565,7 +568,10 @@ class PhoneNumber implements \Serializable, \Stringable
         $this->__unserialize(unserialize($data, ['allowed_classes' => [__CLASS__]]));
     }
 
-    public function __unserialize($data): void
+    /**
+     * @param array{int,?string,?string,?bool,int,?string,int,?string} $data
+     */
+    public function __unserialize(array $data): void
     {
         [
             $this->countryCode,

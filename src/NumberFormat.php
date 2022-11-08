@@ -6,6 +6,8 @@ namespace libphonenumber;
 
 /**
  * Number Format
+ * @interal
+ * @phpstan-type NumberFormatArray array{pattern:string,format:string,leadingDigitsPatterns:string[],nationalPrefixFormattingRule?:string,domesticCarrierCodeFormattingRule?:string,nationalPrefixOptionalWhenFormatting?:bool}
  */
 class NumberFormat
 {
@@ -13,6 +15,9 @@ class NumberFormat
     protected bool $hasPattern = false;
     protected ?string $format;
     protected bool $hasFormat = false;
+    /**
+     * @var array<string>
+     */
     protected array $leadingDigitsPattern = [];
     protected string $nationalPrefixFormattingRule = '';
     protected bool $hasNationalPrefixFormattingRule = false;
@@ -196,6 +201,9 @@ class NumberFormat
         return $this;
     }
 
+    /**
+     * @return NumberFormatArray
+     */
     public function toArray(): array
     {
         $output = [];
@@ -219,6 +227,9 @@ class NumberFormat
         return $output;
     }
 
+    /**
+     * @param NumberFormatArray $input
+     */
     public function fromArray(array $input): void
     {
         $this->setPattern($input['pattern']);

@@ -81,11 +81,7 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->assertEquals('00', BuildMetadataFromXml::getNationalPrefix($territoryElement));
     }
 
-    /**
-     * @param $xmlString
-     * @return \DOMElement
-     */
-    private function parseXMLString($xmlString): \DOMElement
+    private function parseXMLString(string $xmlString): \DOMElement
     {
         $domDocument = new \DOMDocument();
         $domDocument->loadXML($xmlString);

@@ -18,7 +18,7 @@ class UKNumbersTest extends TestCase
         PhoneNumberUtil::resetInstance();
         $this->phoneUtil = PhoneNumberUtil::getInstance(
             self::META_DATA_FILE_PREFIX,
-            CountryCodeToRegionCodeMap::$countryCodeToRegionCodeMap
+            CountryCodeToRegionCodeMap::COUNTRY_CODE_TO_REGION_CODE_MAP
         );
     }
 

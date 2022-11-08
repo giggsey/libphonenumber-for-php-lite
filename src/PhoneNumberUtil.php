@@ -108,7 +108,7 @@ class PhoneNumberUtil
     protected static string $SECOND_NUMBER_START_PATTERN = '[\\\\/] *x';
     protected static string $UNWANTED_END_CHAR_PATTERN = '[[\\P{N}&&\\P{L}]&&[^#]]+$';
     /**
-     * @var array<string,string>
+     * @var array<int|string,int|string>
      */
     protected static array $DIALLABLE_CHAR_MAPPINGS = [];
 
@@ -163,7 +163,7 @@ class PhoneNumberUtil
      * carrier indicator, and beyond that are geographically assigned: this carrier indicator is not
      * considered to be an area code.
      *
-     * @var array
+     * @var int[]
      */
     protected static array $GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES;
 
@@ -174,14 +174,14 @@ class PhoneNumberUtil
      * fixed-line or mobile numbers, are not listed here, since we consider FIXED_LINE_OR_MOBILE to be
      * a possibly geographically-related type anyway (like FIXED_LINE).
      *
-     * @var array
+     * @var int[]
      */
     protected static array $GEO_MOBILE_COUNTRIES;
 
     /**
      * For performance reasons, amalgamate both into one map.
      *
-     * @var array
+     * @var array<string,string>
      */
     protected static array $ALPHA_PHONE_MAPPINGS;
 
@@ -189,7 +189,7 @@ class PhoneNumberUtil
      * Separate map of all symbols that we wish to retain when formatting alpha numbers. This
      * includes digits, ASCII letters and number grouping symbols such as "-" and " ".
      *
-     * @var array
+     * @var array<string,string>
      */
     protected static array $ALL_PLUS_NUMBER_GROUPING_SYMBOLS;
 
@@ -197,7 +197,7 @@ class PhoneNumberUtil
      * Simple ASCII digits map used to populate ALPHA_PHONE_MAPPINGS and
      * ALL_PLUS_NUMBER_GROUPING_SYMBOLS.
      *
-     * @var array
+     * @var array<numeric,numeric>
      */
     protected static array $asciiDigitMappings = [
         '0' => '0',
@@ -221,9 +221,9 @@ class PhoneNumberUtil
      */
     protected static string $EXTN_PATTERNS_FOR_PARSING;
     protected static string $EXTN_PATTERNS_FOR_MATCHING;
-    protected static $EXTN_PATTERN;
+    protected static string $EXTN_PATTERN;
     protected static string $VALID_PHONE_NUMBER_PATTERN;
-    protected static $MIN_LENGTH_PHONE_NUMBER_PATTERN;
+    protected static string $MIN_LENGTH_PHONE_NUMBER_PATTERN;
     /**
      *  Regular expression of viable phone numbers. This is location independent. Checks we have at
      * least three leading digits, and only valid punctuation, alpha characters and
@@ -245,6 +245,9 @@ class PhoneNumberUtil
      * @var string
      */
     protected static string $VALID_PHONE_NUMBER;
+    /**
+     * @var array<string,int>
+     */
     protected static array $numericCharacters = [
         "\xef\xbc\x90" => 0,
         "\xef\xbc\x91" => 1,
@@ -294,13 +297,13 @@ class PhoneNumberUtil
     /**
      * The set of county calling codes that map to the non-geo entity region ("001").
      *
-     * @var array
+     * @var int[]
      */
     protected array $countryCodesForNonGeographicalRegion = [];
     /**
      * The set of regions the library supports.
      *
-     * @var array
+     * @var string[]
      */
     protected array $supportedRegions = [];
 
@@ -316,7 +319,7 @@ class PhoneNumberUtil
     /**
      * The set of regions that share country calling code 1.
      *
-     * @var array
+     * @var string[]
      */
     protected array $nanpaRegions = [];
 
@@ -327,7 +330,7 @@ class PhoneNumberUtil
     /**
      * This class implements a singleton, so the only constructor is protected.
      * @param MetadataSourceInterface $metadataSource
-     * @param array $countryCallingCodeToRegionCodeMap
+     * @param array<int,string[]> $countryCallingCodeToRegionCodeMap
      */
     protected function __construct(MetadataSourceInterface $metadataSource, array $countryCallingCodeToRegionCodeMap)
     {
@@ -392,20 +395,24 @@ class PhoneNumberUtil
      * parsing or validation. The instance is loaded with phone number metadata for a number of most
      * commonly used regions.
      *
-     * <p>The {@link PhoneNumberUtil} is implemented as a singleton. Therefore calling getInstance
+     * <p>The {@link PhoneNumberUtil} is implemented as a singleton. Therefore, calling getInstance
      * multiple times will only result in one instance being created.
      *
      * @param string $baseFileLocation
-     * @param array|null $countryCallingCodeToRegionCodeMap
+     * @param array<int,array<int|string>>|null $countryCallingCodeToRegionCodeMap
      * @param MetadataLoaderInterface|null $metadataLoader
      * @param MetadataSourceInterface|null $metadataSource
      * @return PhoneNumberUtil instance
      */
-    public static function getInstance($baseFileLocation = self::META_DATA_FILE_PREFIX, array $countryCallingCodeToRegionCodeMap = null, MetadataLoaderInterface $metadataLoader = null, MetadataSourceInterface $metadataSource = null): ?PhoneNumberUtil
-    {
+    public static function getInstance(
+        string $baseFileLocation = self::META_DATA_FILE_PREFIX,
+        array $countryCallingCodeToRegionCodeMap = null,
+        MetadataLoaderInterface $metadataLoader = null,
+        MetadataSourceInterface $metadataSource = null
+    ): PhoneNumberUtil {
         if (static::$instance === null) {
             if ($countryCallingCodeToRegionCodeMap === null) {
-                $countryCallingCodeToRegionCodeMap = CountryCodeToRegionCodeMap::$countryCodeToRegionCodeMap;
+                $countryCallingCodeToRegionCodeMap = CountryCodeToRegionCodeMap::COUNTRY_CODE_TO_REGION_CODE_MAP;
             }
 
             if ($metadataLoader === null) {
@@ -610,7 +617,7 @@ class PhoneNumberUtil
      * removeNonMatches is true.
      *
      * @param string $number a string of characters representing a phone number
-     * @param array $normalizationReplacements a mapping of characters to what they should be replaced by in
+     * @param array<string,string> $normalizationReplacements a mapping of characters to what they should be replaced by in
      * the normalized version of the phone number.
      * @param bool $removeNonMatches indicates whether characters that are not able to be replaced.
      * should be stripped from the number. If this is false, they will be left unchanged in the number.
@@ -661,7 +668,7 @@ class PhoneNumberUtil
     /**
      * Returns all global network calling codes the library has metadata for.
      *
-     * @return array An unordered array of the country calling codes for every non-geographical entity
+     * @return int[] An unordered array of the country calling codes for every non-geographical entity
      *  the library supports
      */
     public function getSupportedGlobalNetworkCallingCodes(): array
@@ -675,7 +682,7 @@ class PhoneNumberUtil
      * used to populate a drop-down box of country calling codes for a phone-number widget, for
      * instance.
      *
-     * @return array An unordered array of the country calling codes for every geographical and
+     * @return int[] An unordered array of the country calling codes for every geographical and
      *      non-geographical entity the library supports
      */
     public function getSupportedCallingCodes(): array
@@ -715,7 +722,7 @@ class PhoneNumberUtil
     /**
      * Returns the types we have metadata for based on the PhoneMetadata object passed in.
      *
-     * @return array
+     * @return array<int>
      */
     private function getSupportedTypesForMetadata(PhoneMetadata $metadata): array
     {
@@ -743,7 +750,7 @@ class PhoneNumberUtil
      * No types will be returned for invalid or unknown region codes.
      *
      * @param string $regionCode
-     * @return array
+     * @return array<int> Array of PhoneNumberType's
      */
     public function getSupportedTypesForRegion(string $regionCode): array
     {
@@ -761,6 +768,7 @@ class PhoneNumberUtil
      * has metadata for. Will not include FIXED_LINE_OR_MOBILE (if numbers for this non-geographical
      * entity could be classified as FIXED_LINE_OR_MOBILE, both FIXED_LINE and MOBILE would be
      * present) and UNKNOWN.
+     * @return array<int> Array of PhoneNumberType's
      */
     public function getSupportedTypesForNonGeoEntity(int $countryCallingCode): array
     {
@@ -889,7 +897,7 @@ class PhoneNumberUtil
     /**
      * Returns the region code for a number from the list of region codes passing in.
      *
-     * @return null|string
+     * @param string[] $regionCodes
      */
     protected function getRegionCodeForNumberFromRegionList(PhoneNumber $number, array $regionCodes): ?string
     {

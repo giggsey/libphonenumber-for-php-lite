@@ -17,7 +17,7 @@ use libphonenumber\PhoneNumberDesc;
  */
 class MetadataFilter
 {
-    public static array $EXCLUDABLE_PARENT_FIELDS = [
+    public const EXCLUDABLE_PARENT_FIELDS = [
         'fixedLine',
         'mobile',
         'tollFree',
@@ -36,14 +36,14 @@ class MetadataFilter
         'noInternationalDialling',
     ];
 
-    public static array $EXCLUDABLE_CHILD_FIELDS = [
+    public const EXCLUDABLE_CHILD_FIELDS = [
         'nationalNumberPattern',
         'possibleLength',
         'possibleLengthLocalOnly',
         'exampleNumber',
     ];
 
-    public static array $EXCLUDABLE_CHILDLESS_FIELDS = [
+    public const EXCLUDABLE_CHILDLESS_FIELDS = [
         'preferredInternationalPrefix',
         'nationalPrefix',
         'preferredExtnPrefix',
@@ -53,6 +53,9 @@ class MetadataFilter
         'mobileNumberPortableRegion',
     ];
 
+    /**
+     * @param array<string[]> $blackList
+     */
     public function __construct(protected array $blackList = [])
     {
     }
@@ -71,7 +74,7 @@ class MetadataFilter
      * the sets of excludable fields. We also throw RuntimeException for empty strings since such
      * strings should be treated as a special case by the flag checking code and not passed here.
      * @param string $string
-     * @return array
+     * @return array<string,string[]>
      */
     public static function parseFieldMapFromString(string $string): array
     {
@@ -90,17 +93,17 @@ class MetadataFilter
             $rightParenIndex = \strpos($group, ')');
 
             if ($leftParenIndex === false && $rightParenIndex === false) {
-                if (\in_array($group, self::$EXCLUDABLE_PARENT_FIELDS)) {
+                if (\in_array($group, self::EXCLUDABLE_PARENT_FIELDS)) {
                     if (\array_key_exists($group, $fieldMap)) {
                         throw new \RuntimeException($group . ' given more than once in ' . $string);
                     }
-                    $fieldMap[$group] = self::$EXCLUDABLE_CHILD_FIELDS;
-                } elseif (\in_array($group, self::$EXCLUDABLE_CHILDLESS_FIELDS)) {
+                    $fieldMap[$group] = self::EXCLUDABLE_CHILD_FIELDS;
+                } elseif (\in_array($group, self::EXCLUDABLE_CHILDLESS_FIELDS)) {
                     if (\array_key_exists($group, $fieldMap)) {
                         throw new \RuntimeException($group . ' given more than once in ' . $string);
                     }
                     $fieldMap[$group] = [];
-                } elseif (\in_array($group, self::$EXCLUDABLE_CHILD_FIELDS)) {
+                } elseif (\in_array($group, self::EXCLUDABLE_CHILD_FIELDS)) {
                     if (\in_array($group, $wildCardChildren)) {
                         throw new \RuntimeException($group . ' given more than once in ' . $string);
                     }
@@ -108,11 +111,11 @@ class MetadataFilter
                 } else {
                     throw new \RuntimeException($group . ' is not a valid token');
                 }
-            } elseif ($leftParenIndex > 0 && $rightParenIndex == \strlen($group) - 1) {
+            } elseif ($leftParenIndex > 0 && $rightParenIndex === \strlen($group) - 1) {
                 // We don't check for duplicate parentheses or illegal characters since these will be caught
                 // as not being part of valid field tokens.
                 $parent = \substr($group, 0, $leftParenIndex);
-                if (!\in_array($parent, self::$EXCLUDABLE_PARENT_FIELDS)) {
+                if (!\in_array($parent, self::EXCLUDABLE_PARENT_FIELDS)) {
                     throw new \RuntimeException($parent . ' is not a valid parent token');
                 }
 
@@ -122,7 +125,7 @@ class MetadataFilter
                 $children = [];
                 $childSearch = \explode(',', \substr($group, $leftParenIndex + 1, $rightParenIndex - $leftParenIndex - 1));
                 foreach ($childSearch as $child) {
-                    if (!\in_array($child, self::$EXCLUDABLE_CHILD_FIELDS)) {
+                    if (!\in_array($child, self::EXCLUDABLE_CHILD_FIELDS)) {
                         throw new \RuntimeException($child . ' is not a valid child token');
                     }
                     if (\in_array($child, $children)) {
@@ -137,7 +140,7 @@ class MetadataFilter
         }
 
         foreach ($wildCardChildren as $wildCardChild) {
-            foreach (self::$EXCLUDABLE_PARENT_FIELDS as $parent) {
+            foreach (self::EXCLUDABLE_PARENT_FIELDS as $parent) {
                 if (!\array_key_exists($parent, $fieldMap)) {
                     $fieldMap[$parent] = [];
                 }
@@ -145,7 +148,7 @@ class MetadataFilter
                 $children = $fieldMap[$parent];
 
                 if (\in_array($wildCardChild, $children)
-                    && \count($fieldMap[$parent]) != \count(self::$EXCLUDABLE_CHILD_FIELDS)
+                    && \count($fieldMap[$parent]) != \count(self::EXCLUDABLE_CHILD_FIELDS)
                 ) {
                     // The map already contains parent -> wildcardChild but not all possible children.
                     // So wildcardChild was given explicitly as a child of parent, which is a duplication
@@ -174,22 +177,22 @@ class MetadataFilter
      * Does not check that legal tokens are used, assuming that $fieldMap is constructed using
      * parseFieldMapFromString which does check. If $fieldMap contains illegal tokens or parent
      * fields with no children or other unexpected state, the behavior of this function is undefined.
-     * @param $fieldMap
-     * @return array
+     * @param array<string,string[]> $fieldMap
+     * @return array<string,string[]>
      */
-    public static function computeComplement($fieldMap): array
+    public static function computeComplement(array $fieldMap): array
     {
         $complement = [];
-        foreach (self::$EXCLUDABLE_PARENT_FIELDS as $parent) {
+        foreach (self::EXCLUDABLE_PARENT_FIELDS as $parent) {
             if (!\array_key_exists($parent, $fieldMap)) {
-                $complement[$parent] = self::$EXCLUDABLE_CHILD_FIELDS;
+                $complement[$parent] = self::EXCLUDABLE_CHILD_FIELDS;
             } else {
                 $otherChildren = $fieldMap[$parent];
                 // If the other map has all the children for this parent then we don't want to include the
                 // parent as a key.
-                if ((is_countable($otherChildren) ? \count($otherChildren) : 0) != \count(self::$EXCLUDABLE_CHILD_FIELDS)) {
+                if (\count($otherChildren) !== \count(self::EXCLUDABLE_CHILD_FIELDS)) {
                     $children = [];
-                    foreach (self::$EXCLUDABLE_CHILD_FIELDS as $child) {
+                    foreach (self::EXCLUDABLE_CHILD_FIELDS as $child) {
                         if (!\in_array($child, $otherChildren)) {
                             $children[] = $child;
                         }
@@ -198,7 +201,7 @@ class MetadataFilter
                 }
             }
         }
-        foreach (self::$EXCLUDABLE_CHILDLESS_FIELDS as $childlessField) {
+        foreach (self::EXCLUDABLE_CHILDLESS_FIELDS as $childlessField) {
             if (!\array_key_exists($childlessField, $fieldMap)) {
                 $complement[$childlessField] = [];
             }
@@ -347,14 +350,14 @@ class MetadataFilter
      * @param $child
      * @return bool
      */
-    public function shouldDrop($parent, $child = null): bool
+    public function shouldDrop(string $parent, ?string $child = null): bool
     {
         if ($child !== null) {
-            if (!\in_array($parent, self::$EXCLUDABLE_PARENT_FIELDS)) {
+            if (!\in_array($parent, self::EXCLUDABLE_PARENT_FIELDS)) {
                 throw new RuntimeException($parent . ' is not an excludable parent field');
             }
 
-            if (!\in_array($child, self::$EXCLUDABLE_CHILD_FIELDS)) {
+            if (!\in_array($child, self::EXCLUDABLE_CHILD_FIELDS)) {
                 throw new RuntimeException($parent . ' is not an excludable child field');
             }
 
@@ -362,7 +365,7 @@ class MetadataFilter
         }
 
         $childlessField = $parent;
-        if (!\in_array($childlessField, self::$EXCLUDABLE_CHILDLESS_FIELDS)) {
+        if (!\in_array($childlessField, self::EXCLUDABLE_CHILDLESS_FIELDS)) {
             throw new \RuntimeException($childlessField . ' is not an excludable childless field');
         }
 
