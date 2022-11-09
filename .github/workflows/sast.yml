@@ -1,17 +1,14 @@
-name: "Tests"
+name: "SAST"
 
 on:
   push:
+    branches:
+      - 'main'
     paths-ignore:
       - 'docs/**'
   pull_request:
     paths-ignore:
       - 'docs/**'
-
-concurrency:
-  # The concurrency group contains the workflow name and the branch name.
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   phpstan:
