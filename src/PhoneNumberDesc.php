@@ -201,7 +201,7 @@ class PhoneNumberDesc
         if (isset($input['NationalNumberPattern']) && $input['NationalNumberPattern'] !== '') {
             $this->setNationalNumberPattern($input['NationalNumberPattern']);
         }
-        if (isset($input['ExampleNumber']) && $input['NationalNumberPattern'] !== '') {
+        if (isset($input['ExampleNumber']) && $input['ExampleNumber'] !== '') {
             $this->setExampleNumber($input['ExampleNumber']);
         }
         if (isset($input['PossibleLength'])) {

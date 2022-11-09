@@ -10,7 +10,7 @@ namespace libphonenumber;
  * @internal Used internally, and can change at any time
  * @phpstan-import-type PhoneNumberDescArray from PhoneNumberDesc
  * @phpstan-import-type NumberFormatArray from NumberFormat
- * @phpstan-type PhoneMetadataArray array{generalDesc?:PhoneNumberDescArray,fixedLine?:PhoneNumberDescArray,mobile?:PhoneNumberDescArray,tollFree?:PhoneNumberDescArray,premiumRate?:PhoneNumberDescArray,sharedCost?:PhoneNumberDescArray,personalNumber?:PhoneNumberDescArray,voip?:PhoneNumberDescArray,pager?:PhoneNumberDescArray,uan?:PhoneNumberDescArray,emergency?:PhoneNumberDescArray,voicemail?:PhoneNumberDescArray,shortCode?:PhoneNumberDescArray,standardRate?:PhoneNumberDescArray,carrierSpecific?:PhoneNumberDescArray,smsServices?:PhoneNumberDescArray,noInternationalDialling?:PhoneNumberDescArray,id:string,countryCode:int,internationalPrefix:string,preferredInternationalPrefix?:string,nationalPrefix?:string,preferredExtnPrefix?:string,nationalPrefixForParsing?:string,nationalPrefixTransformRule?:string,numberFormat?:NumberFormatArray[],mainCountryForCode:bool,leadingDigits?:string,mobileNumberPortableRegion?:bool}
+ * @phpstan-type PhoneMetadataArray array{generalDesc?:PhoneNumberDescArray,fixedLine?:PhoneNumberDescArray,mobile?:PhoneNumberDescArray,tollFree?:PhoneNumberDescArray,premiumRate?:PhoneNumberDescArray,sharedCost?:PhoneNumberDescArray,personalNumber?:PhoneNumberDescArray,voip?:PhoneNumberDescArray,pager?:PhoneNumberDescArray,uan?:PhoneNumberDescArray,emergency?:PhoneNumberDescArray,voicemail?:PhoneNumberDescArray,shortCode?:PhoneNumberDescArray,standardRate?:PhoneNumberDescArray,carrierSpecific?:PhoneNumberDescArray,smsServices?:PhoneNumberDescArray,noInternationalDialling?:PhoneNumberDescArray,id:string|null,countryCode?:int,internationalPrefix?:string,preferredInternationalPrefix?:string,nationalPrefix?:string,preferredExtnPrefix?:string,nationalPrefixForParsing?:string,nationalPrefixTransformRule?:string,sameMobileAndFixedLinePattern?:bool,numberFormat:NumberFormatArray[],intlNumberFormat?:NumberFormatArray[],mainCountryForCode:bool,leadingDigits?:string,mobileNumberPortableRegion?:bool}
  */
 class PhoneMetadata
 {
@@ -135,10 +135,6 @@ class PhoneMetadata
 
         if ($this->hasTollFree()) {
             $output['tollFree'] = $this->getTollFree()->toArray();
-        }
-
-        if ($this->hasPremiumRate()) {
-            $output['premiumRate'] = $this->getPremiumRate()->toArray();
         }
 
         if ($this->hasPremiumRate()) {
@@ -534,6 +530,7 @@ class PhoneMetadata
         return $this;
     }
 
+    /** @phpstan-assert-if-true !null $this->getCountryCode() */
     public function hasCountryCode(): bool
     {
         return isset($this->countryCode);
@@ -566,6 +563,7 @@ class PhoneMetadata
         return $this;
     }
 
+    /** @phpstan-assert-if-true !null $this->getPreferredInternationalPrefix() */
     public function hasPreferredInternationalPrefix(): bool
     {
         return isset($this->preferredInternationalPrefix);
@@ -582,6 +580,7 @@ class PhoneMetadata
         return $this;
     }
 
+    /** @phpstan-assert-if-true !null $this->getNationalPrefix() */
     public function hasNationalPrefix(): bool
     {
         return isset($this->nationalPrefix);
@@ -598,6 +597,7 @@ class PhoneMetadata
         return $this;
     }
 
+    /** @phpstan-assert-if-true !null $this->getPreferredExtnPrefix() */
     public function hasPreferredExtnPrefix(): bool
     {
         return isset($this->preferredExtnPrefix);
@@ -614,6 +614,7 @@ class PhoneMetadata
         return $this;
     }
 
+    /** @phpstan-assert-if-true !null $this->getNationalPrefixForParsing() */
     public function hasNationalPrefixForParsing(): bool
     {
         return isset($this->nationalPrefixForParsing);
@@ -630,6 +631,7 @@ class PhoneMetadata
         return $this;
     }
 
+    /** @phpstan-assert-if-true !null $this->getNationalPrefixTransformRule() */
     public function hasNationalPrefixTransformRule(): bool
     {
         return isset($this->nationalPrefixTransformRule);
@@ -837,8 +839,14 @@ class PhoneMetadata
         }
 
         $this->setId($input['id']);
-        $this->setCountryCode($input['countryCode']);
-        $this->setInternationalPrefix($input['internationalPrefix']);
+
+        if (isset($input['countryCode'])) {
+            $this->setCountryCode($input['countryCode']);
+        }
+
+        if (isset($input['internationalPrefix'])) {
+            $this->setInternationalPrefix($input['internationalPrefix']);
+        }
 
         if (isset($input['preferredInternationalPrefix'])) {
             $this->setPreferredInternationalPrefix($input['preferredInternationalPrefix']);

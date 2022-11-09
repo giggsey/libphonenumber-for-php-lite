@@ -544,7 +544,7 @@ class PhoneNumber implements \Serializable, \Stringable
     }
 
     /**
-     * @return array{int,?string,?string,?bool,int,?string,int,?string}
+     * @return array{?int,?string,?string,?bool,int,?string,int,?string}
      */
     public function __serialize(): array
     {

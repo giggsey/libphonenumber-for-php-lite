@@ -776,6 +776,11 @@ class BuildMetadataFromXml
         foreach ($metadataCollection as $metadata) {
             $regionCode = $metadata->getId();
             $countryCode = $metadata->getCountryCode();
+
+            if ($countryCode === null) {
+                continue;
+            }
+
             if (\array_key_exists($countryCode, $countryCodeToRegionCodeMap)) {
                 if ($metadata->getMainCountryForCode()) {
                     \array_unshift($countryCodeToRegionCodeMap[$countryCode], $regionCode);

@@ -39,4 +39,4 @@ jobs:
 
       - name: "Infection"
         run: |
-          vendor/bin/infection
+          vendor/bin/infection --threads=max

@@ -7,7 +7,7 @@ namespace libphonenumber;
 /**
  * Number Format
  * @interal
- * @phpstan-type NumberFormatArray array{pattern:string,format:string,leadingDigitsPatterns:string[],nationalPrefixFormattingRule?:string,domesticCarrierCodeFormattingRule?:string,nationalPrefixOptionalWhenFormatting?:bool}
+ * @phpstan-type NumberFormatArray array{pattern:string|null,format:string|null,leadingDigitsPatterns:array<string>,nationalPrefixFormattingRule?:string,domesticCarrierCodeFormattingRule?:string,nationalPrefixOptionalWhenFormatting?:bool}
  */
 class NumberFormat
 {

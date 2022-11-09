@@ -101,25 +101,24 @@ class PhoneNumberUtil
     // only, i.e, does not start with the national prefix. Note that the pattern explicitly allows
     // for unbalanced parentheses.
     protected const FIRST_GROUP_ONLY_PREFIX_PATTERN = '\\(?\\$1\\)?';
-    protected static string $PLUS_CHARS_PATTERN;
-    protected static string $SEPARATOR_PATTERN;
-    protected static string $CAPTURING_DIGIT_PATTERN;
-    protected static string $VALID_START_CHAR_PATTERN;
-    protected static string $SECOND_NUMBER_START_PATTERN = '[\\\\/] *x';
-    protected static string $UNWANTED_END_CHAR_PATTERN = '[[\\P{N}&&\\P{L}]&&[^#]]+$';
-    /**
-     * @var array<int|string,int|string>
-     */
-    protected static array $DIALLABLE_CHAR_MAPPINGS = [];
+    protected const PLUS_CHARS_PATTERN = '[' . self::PLUS_CHARS . ']+';
+    protected const SEPARATOR_PATTERN = '[' . self::VALID_PUNCTUATION . ']+';
+    protected const CAPTURING_DIGIT_PATTERN = '(' . self::DIGITS . ')';
+    protected const VALID_START_CHAR_PATTERN = '[' . self::PLUS_CHARS . self::DIGITS . ']';
+    protected const SECOND_NUMBER_START_PATTERN = '[\\\\/] *x';
+    //protected const UNWANTED_END_CHAR_PATTERN = '[[\\P{N}&&\\P{L}]&&[^#]]+$';
+    protected const UNWANTED_END_CHAR_PATTERN = '[^' . self::DIGITS . self::VALID_ALPHA . '#]+$';
+    protected const DIALLABLE_CHAR_MAPPINGS = self::ASCII_DIGIT_MAPPINGS
+    + [self::PLUS_SIGN => self::PLUS_SIGN]
+    + ['*' => '*', '#' => '#'];
+
 
     protected static ?PhoneNumberUtil $instance;
 
     /**
      * Only upper-case variants of alpha characters are stored.
-     *
-     * @var array<string,string>
      */
-    protected static array $ALPHA_MAPPINGS = [
+    protected const ALPHA_MAPPINGS = [
         'A' => '2',
         'B' => '2',
         'C' => '2',
@@ -152,20 +151,20 @@ class PhoneNumberUtil
      * Map of country calling codes that use a mobile token before the area code. One example of when
      * this is relevant is when determining the length of the national destination code, which should
      * be the length of the area code plus the length of the mobile token.
-     *
-     * @var array<string,string>
      */
-    protected static array $MOBILE_TOKEN_MAPPINGS = [];
+    protected const MOBILE_TOKEN_MAPPINGS = [
+        '54' => '9',
+    ];
 
     /**
      * Set of country codes that have geographically assigned mobile numbers (see GEO_MOBILE_COUNTRIES
      * below) which are not based on *area codes*. For example, in China mobile numbers start with a
      * carrier indicator, and beyond that are geographically assigned: this carrier indicator is not
      * considered to be an area code.
-     *
-     * @var int[]
      */
-    protected static array $GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES;
+    protected const GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES = [
+        86, // China
+    ];
 
     /**
      * Set of country calling codes that have geographically assigned mobile numbers. This may not be
@@ -173,17 +172,18 @@ class PhoneNumberUtil
      * from user reports. Note that countries like the US, where we can't distinguish between
      * fixed-line or mobile numbers, are not listed here, since we consider FIXED_LINE_OR_MOBILE to be
      * a possibly geographically-related type anyway (like FIXED_LINE).
-     *
-     * @var int[]
      */
-    protected static array $GEO_MOBILE_COUNTRIES;
+    protected const GEO_MOBILE_COUNTRIES = [
+        52, // Mexico
+        54, // Argentina
+        55, // Brazil
+        62, // Indonesia: some prefixes only (fixed CMDA wireless)
+    ] + self::GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES;
 
     /**
      * For performance reasons, amalgamate both into one map.
-     *
-     * @var array<string,string>
      */
-    protected static array $ALPHA_PHONE_MAPPINGS;
+    protected const ALPHA_PHONE_MAPPINGS = self::ALPHA_MAPPINGS + self::ASCII_DIGIT_MAPPINGS;
 
     /**
      * Separate map of all symbols that we wish to retain when formatting alpha numbers. This
@@ -196,10 +196,8 @@ class PhoneNumberUtil
     /**
      * Simple ASCII digits map used to populate ALPHA_PHONE_MAPPINGS and
      * ALL_PLUS_NUMBER_GROUPING_SYMBOLS.
-     *
-     * @var array<numeric,numeric>
      */
-    protected static array $asciiDigitMappings = [
+    protected const ASCII_DIGIT_MAPPINGS = [
         '0' => '0',
         '1' => '1',
         '2' => '2',
@@ -216,8 +214,6 @@ class PhoneNumberUtil
      * Regexp of all possible ways to write extensions, for use when parsing. This will be run as a
      * case-insensitive regexp match. Wide character versions are also provided after each ASCII
      * version.
-     *
-     * @var String
      */
     protected static string $EXTN_PATTERNS_FOR_PARSING;
     protected static string $EXTN_PATTERNS_FOR_MATCHING;
@@ -248,7 +244,7 @@ class PhoneNumberUtil
     /**
      * @var array<string,int>
      */
-    protected static array $numericCharacters = [
+    protected const NUMERIC_CHARACTERS = [
         "\xef\xbc\x90" => 0,
         "\xef\xbc\x91" => 1,
         "\xef\xbc\x92" => 2,
@@ -340,20 +336,14 @@ class PhoneNumberUtil
         $this->matcherAPI = RegexBasedMatcher::create();
         static::initExtnPatterns();
         static::initExtnPattern();
-        static::$PLUS_CHARS_PATTERN = '[' . static::PLUS_CHARS . ']+';
-        static::$SEPARATOR_PATTERN = '[' . static::VALID_PUNCTUATION . ']+';
-        static::$CAPTURING_DIGIT_PATTERN = '(' . static::DIGITS . ')';
-        static::initValidStartCharPattern();
-        static::initAlphaPhoneMappings();
-        static::initDiallableCharMappings();
 
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS = [];
         // Put (lower letter -> upper letter) and (upper letter -> upper letter) mappings.
-        foreach (static::$ALPHA_MAPPINGS as $c => $value) {
+        foreach (static::ALPHA_MAPPINGS as $c => $value) {
             static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS[strtolower($c)] = $c;
-            static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS[$c] = $c;
+            static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS[(string)$c] = (string)$c;
         }
-        static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS += static::$asciiDigitMappings;
+        static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS += static::ASCII_DIGIT_MAPPINGS;
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS['-'] = '-';
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS["\xEF\xBC\x8D"] = '-';
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS["\xE2\x80\x90"] = '-';
@@ -371,23 +361,7 @@ class PhoneNumberUtil
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS['.'] = '.';
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS["\xEF\xBC\x8E"] = '.';
 
-
         static::initValidPhoneNumberPatterns();
-
-        static::$UNWANTED_END_CHAR_PATTERN = '[^' . static::DIGITS . static::VALID_ALPHA . '#]+$';
-
-        static::initMobileTokenMappings();
-
-        static::$GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES = [];
-        static::$GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES[] = 86; // China
-
-        static::$GEO_MOBILE_COUNTRIES = [];
-        static::$GEO_MOBILE_COUNTRIES[] = 52; // Mexico
-        static::$GEO_MOBILE_COUNTRIES[] = 54; // Argentina
-        static::$GEO_MOBILE_COUNTRIES[] = 55; // Brazil
-        static::$GEO_MOBILE_COUNTRIES[] = 62; // Indonesia: some prefixes only (fixed CMDA wireless)
-
-        static::$GEO_MOBILE_COUNTRIES = array_merge(static::$GEO_MOBILE_COUNTRIES, static::$GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES);
     }
 
     /**
@@ -566,30 +540,6 @@ class PhoneNumberUtil
         static::$VALID_PHONE_NUMBER_PATTERN = '%^' . static::$MIN_LENGTH_PHONE_NUMBER_PATTERN . '$|^' . static::$VALID_PHONE_NUMBER . '(?:' . static::$EXTN_PATTERNS_FOR_PARSING . ')?$%' . static::REGEX_FLAGS;
     }
 
-    protected static function initAlphaPhoneMappings(): void
-    {
-        static::$ALPHA_PHONE_MAPPINGS = static::$ALPHA_MAPPINGS + static::$asciiDigitMappings;
-    }
-
-    protected static function initValidStartCharPattern(): void
-    {
-        static::$VALID_START_CHAR_PATTERN = '[' . static::PLUS_CHARS . static::DIGITS . ']';
-    }
-
-    protected static function initMobileTokenMappings(): void
-    {
-        static::$MOBILE_TOKEN_MAPPINGS = [];
-        static::$MOBILE_TOKEN_MAPPINGS['54'] = '9';
-    }
-
-    protected static function initDiallableCharMappings(): void
-    {
-        static::$DIALLABLE_CHAR_MAPPINGS = static::$asciiDigitMappings;
-        static::$DIALLABLE_CHAR_MAPPINGS[static::PLUS_SIGN] = static::PLUS_SIGN;
-        static::$DIALLABLE_CHAR_MAPPINGS['*'] = '*';
-        static::$DIALLABLE_CHAR_MAPPINGS['#'] = '#';
-    }
-
     /**
      * Used for testing purposes only to reset the PhoneNumberUtil singleton to null.
      */
@@ -604,11 +554,7 @@ class PhoneNumberUtil
      */
     public static function convertAlphaCharactersInNumber(string $number): string
     {
-        if (!isset(static::$ALPHA_PHONE_MAPPINGS)) {
-            static::initAlphaPhoneMappings();
-        }
-
-        return static::normalizeHelper($number, static::$ALPHA_PHONE_MAPPINGS, false);
+        return static::normalizeHelper($number, static::ALPHA_PHONE_MAPPINGS, false);
     }
 
     /**
@@ -838,7 +784,7 @@ class PhoneNumberUtil
             // Note this is a rough heuristic; it doesn't cover Indonesia well, for example, where area
             // codes are present for some mobile phones but not for others. We have no better way of
             // representing this in the metadata at this point.
-            && in_array($countryCallingCode, self::$GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES)
+            && in_array($countryCallingCode, self::GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES)
         ) {
             return 0;
         }
@@ -1041,7 +987,7 @@ class PhoneNumberUtil
         return $phoneNumberObjOrType === PhoneNumberType::FIXED_LINE
             || $phoneNumberObjOrType === PhoneNumberType::FIXED_LINE_OR_MOBILE
             || (
-                in_array($countryCallingCode, static::$GEO_MOBILE_COUNTRIES)
+                in_array($countryCallingCode, static::GEO_MOBILE_COUNTRIES)
                 && $phoneNumberObjOrType === PhoneNumberType::MOBILE
             );
     }
@@ -1351,7 +1297,7 @@ class PhoneNumberUtil
         }
         if ($numberFormat === PhoneNumberFormat::RFC3966) {
             // Strip any leading punctuation.
-            $matcher = new Matcher(static::$SEPARATOR_PATTERN, $formattedNationalNumber);
+            $matcher = new Matcher(static::SEPARATOR_PATTERN, $formattedNationalNumber);
             if ($matcher->lookingAt()) {
                 $formattedNationalNumber = $matcher->replaceFirst('');
             }
@@ -1393,14 +1339,7 @@ class PhoneNumberUtil
      */
     public static function getCountryMobileToken(int $countryCallingCode): string
     {
-        if (count(static::$MOBILE_TOKEN_MAPPINGS) === 0) {
-            static::initMobileTokenMappings();
-        }
-
-        if (array_key_exists($countryCallingCode, static::$MOBILE_TOKEN_MAPPINGS)) {
-            return static::$MOBILE_TOKEN_MAPPINGS[$countryCallingCode];
-        }
-        return '';
+        return static::MOBILE_TOKEN_MAPPINGS[$countryCallingCode] ?? '';
     }
 
     /**
@@ -1595,7 +1534,7 @@ class PhoneNumberUtil
                 $phoneNumber
             );
         } catch (NumberParseException $e) {
-            $matcher = new Matcher(static::$PLUS_CHARS_PATTERN, $nationalNumber);
+            $matcher = new Matcher(static::PLUS_CHARS_PATTERN, $nationalNumber);
             if ($e->getErrorType() === NumberParseException::INVALID_COUNTRY_CODE && $matcher->lookingAt()) {
                 // Strip the plus-char, and try again.
                 $countryCode = $this->maybeExtractCountryCode(
@@ -1784,22 +1723,18 @@ class PhoneNumberUtil
      */
     public static function extractPossibleNumber(string $number): string
     {
-        if (!isset(static::$VALID_START_CHAR_PATTERN)) {
-            static::initValidStartCharPattern();
-        }
-
         $matches = [];
-        $match = preg_match('/' . static::$VALID_START_CHAR_PATTERN . '/ui', $number, $matches, PREG_OFFSET_CAPTURE);
+        $match = preg_match('/' . static::VALID_START_CHAR_PATTERN . '/ui', $number, $matches, PREG_OFFSET_CAPTURE);
         if ($match > 0) {
             $number = substr($number, $matches[0][1]);
             // Remove trailing non-alpha non-numerical characters.
-            $trailingCharsMatcher = new Matcher(static::$UNWANTED_END_CHAR_PATTERN, $number);
+            $trailingCharsMatcher = new Matcher(static::UNWANTED_END_CHAR_PATTERN, $number);
             if ($trailingCharsMatcher->find() && $trailingCharsMatcher->start() > 0) {
                 $number = substr($number, 0, $trailingCharsMatcher->start());
             }
 
             // Check for extra numbers at the end.
-            $match = preg_match('%' . static::$SECOND_NUMBER_START_PATTERN . '%', $number, $matches, PREG_OFFSET_CAPTURE);
+            $match = preg_match('%' . static::SECOND_NUMBER_START_PATTERN . '%', $number, $matches, PREG_OFFSET_CAPTURE);
             if ($match > 0) {
                 $number = substr($number, 0, $matches[0][1]);
             }
@@ -1819,7 +1754,7 @@ class PhoneNumberUtil
     {
         if (!$this->isValidRegionCode($defaultRegion)) {
             // If the number is null or empty, we can't infer the region.
-            $plusCharsPatternMatcher = new Matcher(static::$PLUS_CHARS_PATTERN, $numberToParse);
+            $plusCharsPatternMatcher = new Matcher(static::PLUS_CHARS_PATTERN, $numberToParse);
             if ($numberToParse === null || $numberToParse === '' || !$plusCharsPatternMatcher->lookingAt()) {
                 return false;
             }
@@ -1959,7 +1894,7 @@ class PhoneNumberUtil
         }
         $matches = [];
         // Check to see if the number begins with one or more plus signs.
-        $match = preg_match('/^' . static::$PLUS_CHARS_PATTERN . '/' . static::REGEX_FLAGS, $number, $matches, PREG_OFFSET_CAPTURE);
+        $match = preg_match('/^' . static::PLUS_CHARS_PATTERN . '/' . static::REGEX_FLAGS, $number, $matches, PREG_OFFSET_CAPTURE);
         if ($match > 0) {
             $number = mb_substr($number, $matches[0][1] + mb_strlen($matches[0][0]));
             // Can now normalize the rest of the number since we've consumed the "+" sign at the start.
@@ -1993,13 +1928,9 @@ class PhoneNumberUtil
      */
     public static function normalize(string $number): string
     {
-        if (!isset(static::$ALPHA_PHONE_MAPPINGS)) {
-            static::initAlphaPhoneMappings();
-        }
-
         $m = new Matcher(static::VALID_ALPHA_PHONE_PATTERN, $number);
         if ($m->matches()) {
-            return static::normalizeHelper($number, static::$ALPHA_PHONE_MAPPINGS, true);
+            return static::normalizeHelper($number, static::ALPHA_PHONE_MAPPINGS, true);
         }
 
         return static::normalizeDigitsOnly($number);
@@ -2026,10 +1957,13 @@ class PhoneNumberUtil
     {
         $normalizedDigits = '';
         $numberAsArray = preg_split('/(?<!^)(?!$)/u', $number);
+        if ($numberAsArray === false) {
+            return $normalizedDigits;
+        }
         foreach ($numberAsArray as $character) {
             // Check if we are in the unicode number range
-            if (array_key_exists($character, static::$numericCharacters)) {
-                $normalizedDigits .= static::$numericCharacters[$character];
+            if (array_key_exists($character, static::NUMERIC_CHARACTERS)) {
+                $normalizedDigits .= static::NUMERIC_CHARACTERS[$character];
             } elseif (is_numeric($character)) {
                 $normalizedDigits .= $character;
             } elseif ($keepNonDigits) {
@@ -2053,7 +1987,7 @@ class PhoneNumberUtil
             $matchEnd = $m->end();
             // Only strip this if the first digit after the match is not a 0, since country calling codes
             // cannot begin with 0.
-            $digitMatcher = new Matcher(static::$CAPTURING_DIGIT_PATTERN, substr($number, $matchEnd));
+            $digitMatcher = new Matcher(static::CAPTURING_DIGIT_PATTERN, substr($number, $matchEnd));
             if ($digitMatcher->find()) {
                 $normalizedGroup = static::normalizeDigitsOnly($digitMatcher->group(1));
                 if ($normalizedGroup === '0') {
@@ -2500,11 +2434,7 @@ class PhoneNumberUtil
      */
     public static function normalizeDiallableCharsOnly(string $number): string
     {
-        if (count(static::$DIALLABLE_CHAR_MAPPINGS) === 0) {
-            static::initDiallableCharMappings();
-        }
-
-        return static::normalizeHelper($number, static::$DIALLABLE_CHAR_MAPPINGS, true /* remove non matches */);
+        return static::normalizeHelper($number, static::DIALLABLE_CHAR_MAPPINGS, true /* remove non matches */);
     }
 
     /**
@@ -3183,6 +3113,11 @@ class PhoneNumberUtil
                 }
             }
             // There are no example numbers of this type for any country in the library.
+            return null;
+        }
+
+        if (is_int($regionCodeOrType)) {
+            // This should be a string by now
             return null;
         }
 
