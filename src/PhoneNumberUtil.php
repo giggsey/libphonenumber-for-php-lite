@@ -113,7 +113,7 @@ class PhoneNumberUtil
     + ['*' => '*', '#' => '#'];
 
 
-    protected static ?PhoneNumberUtil $instance;
+    protected static ?PhoneNumberUtil $instance = null;
 
     /**
      * Only upper-case variants of alpha characters are stored.
