@@ -15,6 +15,6 @@
         "@default": true,
         "ProtectedVisibility": false
     },
-    "minMsi": 80,
-    "minCoveredMsi": 80,
+    "minMsi": 75,
+    "minCoveredMsi": 75,
 }
