@@ -1796,7 +1796,7 @@ class PhoneNumberUtil
      */
     public function maybeExtractCountryCode(
         string $number,
-        ?PhoneMetadata $defaultRegionMetadata = null,
+        ?PhoneMetadata $defaultRegionMetadata,
         string &$nationalNumber,
         bool $keepRawInput,
         PhoneNumber $phoneNumber
