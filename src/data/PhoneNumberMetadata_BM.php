@@ -30,7 +30,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '441(?:[2378]\\d|5[0-39])\\d{5}',
+    'NationalNumberPattern' => '441(?:[2378]\\d|5[0-39]|92)\\d{5}',
     'ExampleNumber' => '4413701234',
     'PossibleLengthLocalOnly' =>
     [
@@ -98,7 +98,7 @@ return [
   'countryCode' => 1,
   'internationalPrefix' => '011',
   'nationalPrefix' => '1',
-  'nationalPrefixForParsing' => '1|([2-8]\\d{6})$',
+  'nationalPrefixForParsing' => '1|([2-9]\\d{6})$',
   'nationalPrefixTransformRule' => '441$1',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>

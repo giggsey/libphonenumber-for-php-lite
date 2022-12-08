@@ -30,7 +30,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '684(?:2(?:48|5[2468]|72)|7(?:3[13]|70|82))\\d{4}',
+    'NationalNumberPattern' => '684(?:2(?:48|5[2468]|7[26])|7(?:3[13]|70|82))\\d{4}',
     'ExampleNumber' => '6847331234',
     'PossibleLengthLocalOnly' =>
     [
