@@ -154,6 +154,18 @@ return [
   [
     0 =>
     [
+      'pattern' => '(\\d{4})',
+      'format' => '$1',
+      'leadingDigitsPatterns' =>
+      [
+        0 => '14',
+      ],
+      'nationalPrefixFormattingRule' => '',
+      'domesticCarrierCodeFormattingRule' => '',
+      'nationalPrefixOptionalWhenFormatting' => false,
+    ],
+    1 =>
+    [
       'pattern' => '(\\d)(\\d{3,12})',
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
@@ -164,7 +176,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    1 =>
+    2 =>
     [
       'pattern' => '(\\d{3})(\\d{2})',
       'format' => '$1 $2',
@@ -176,7 +188,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    2 =>
+    3 =>
     [
       'pattern' => '(\\d{2})(\\d{3,5})',
       'format' => '$1 $2',
@@ -188,7 +200,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    3 =>
+    4 =>
     [
       'pattern' => '(\\d{6})',
       'format' => '$1',
@@ -200,7 +212,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    4 =>
+    5 =>
     [
       'pattern' => '(\\d{3})(\\d{3,10})',
       'format' => '$1 $2',
@@ -212,7 +224,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    5 =>
+    6 =>
     [
       'pattern' => '(\\d{4})(\\d{3,9})',
       'format' => '$1 $2',
@@ -224,7 +236,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    6 =>
+    7 =>
     [
       'pattern' => '(\\d{2})(\\d{3})(\\d{3,4})',
       'format' => '$1 $2 $3',
@@ -236,7 +248,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    7 =>
+    8 =>
     [
       'pattern' => '(\\d{2})(\\d{4})(\\d{4,7})',
       'format' => '$1 $2 $3',
