@@ -9,12 +9,14 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '2\\d{9}(?:\\d{2})?|51\\d{7}|(?:370|51\\d)\\d{9}',
+    'NationalNumberPattern' => '(?:[1-4]\\d|51)\\d{6,10}',
     'PossibleLength' =>
     [
-      0 => 9,
-      1 => 10,
-      2 => 12,
+      0 => 8,
+      1 => 9,
+      2 => 10,
+      3 => 11,
+      4 => 12,
     ],
   ],
   'fixedLine' =>
@@ -61,7 +63,7 @@ return [
   ],
   'voip' =>
   [
-    'NationalNumberPattern' => '(?:2(?:00\\d\\d|10)|(?:370[1-9]|51[013]0)\\d)\\d{7}|5100\\d{5}',
+    'NationalNumberPattern' => '(?:2(?:00\\d\\d|10)|(?:370[1-9]|51\\d0)\\d)\\d{7}|51(?:00\\d{5}|[24-9]0\\d{4,7})|(?:1[013-79]|2[24-689]|3[02-689]|4[0-4])0\\d{5,9}',
     'ExampleNumber' => '510012345',
   ],
   'pager' =>
@@ -100,6 +102,18 @@ return [
   [
     0 =>
     [
+      'pattern' => '(\\d{3})(\\d{3})(\\d{2,8})',
+      'format' => '$1 $2 $3',
+      'leadingDigitsPatterns' =>
+      [
+        0 => '[14]|2[24-689]|3[02-689]|51[24-9]',
+      ],
+      'nationalPrefixFormattingRule' => '',
+      'domesticCarrierCodeFormattingRule' => '',
+      'nationalPrefixOptionalWhenFormatting' => false,
+    ],
+    1 =>
+    [
       'pattern' => '(\\d{3})(\\d{3})(\\d{3})',
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
@@ -110,7 +124,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    1 =>
+    2 =>
     [
       'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -122,7 +136,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    2 =>
+    3 =>
     [
       'pattern' => '(\\d{4})(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -134,7 +148,7 @@ return [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    3 =>
+    4 =>
     [
       'pattern' => '(\\d{3})(\\d{3})(\\d{3})(\\d{3})',
       'format' => '$1 $2 $3 $4',
