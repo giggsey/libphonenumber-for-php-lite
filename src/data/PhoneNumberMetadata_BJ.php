@@ -9,7 +9,7 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '(?:[25689]\\d|40)\\d{6}',
+    'NationalNumberPattern' => '[24-689]\\d{7}',
     'PossibleLength' =>
     [
       0 => 8,
@@ -22,7 +22,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '(?:40|5[1-9]|6\\d|9[013-9])\\d{6}',
+    'NationalNumberPattern' => '(?:4[01]|5[1-9]|6\\d|9[013-9])\\d{6}',
     'ExampleNumber' => '90011234',
   ],
   'tollFree' =>

@@ -9,7 +9,7 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '[2-489]\\d{7}',
+    'NationalNumberPattern' => '(?:[2-489]\\d|55)\\d{6}',
     'PossibleLength' =>
     [
       0 => 8,
@@ -22,7 +22,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '[34]\\d{7}',
+    'NationalNumberPattern' => '(?:[34]\\d|55)\\d{6}',
     'ExampleNumber' => '34101234',
   ],
   'tollFree' =>
@@ -96,7 +96,7 @@ return [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
       [
-        0 => '[2-489]',
+        0 => '[2-589]',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
