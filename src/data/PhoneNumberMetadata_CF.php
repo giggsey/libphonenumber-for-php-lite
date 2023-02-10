@@ -22,7 +22,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '7[02457]\\d{6}',
+    'NationalNumberPattern' => '7[024-7]\\d{6}',
     'ExampleNumber' => '70012345',
   ],
   'tollFree' =>
