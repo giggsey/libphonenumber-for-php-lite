@@ -36,7 +36,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '(?:20(?:[239]\\d|5[24-9]|7[6-8]|88)|302\\d)\\d{6}',
+    'NationalNumberPattern' => '(?:20(?:[2359]\\d|7[6-8]|88)|302\\d)\\d{6}',
     'ExampleNumber' => '2023123456',
     'PossibleLength' =>
     [
