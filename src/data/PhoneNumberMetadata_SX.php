@@ -98,7 +98,7 @@ return [
   'countryCode' => 1,
   'internationalPrefix' => '011',
   'nationalPrefix' => '1',
-  'nationalPrefixForParsing' => '1|(5\\d{6})$',
+  'nationalPrefixForParsing' => '(5\\d{6})$|1',
   'nationalPrefixTransformRule' => '721$1',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>

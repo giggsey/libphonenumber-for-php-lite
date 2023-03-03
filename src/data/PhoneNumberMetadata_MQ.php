@@ -9,7 +9,7 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '(?:69|80)\\d{7}|(?:59|97)6\\d{6}',
+    'NationalNumberPattern' => '596\\d{6}|(?:69|80|9\\d)\\d{7}',
     'PossibleLength' =>
     [
       0 => 9,
@@ -53,7 +53,7 @@ return [
   ],
   'voip' =>
   [
-    'NationalNumberPattern' => '976(?:6\\d|7[0-367])\\d{4}',
+    'NationalNumberPattern' => '9(?:(?:39|47)7[01]|76(?:6\\d|7[0-367]))\\d{4}',
     'ExampleNumber' => '976612345',
   ],
   'pager' =>
