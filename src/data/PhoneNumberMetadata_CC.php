@@ -122,7 +122,7 @@ return [
   'internationalPrefix' => '001[14-689]|14(?:1[14]|34|4[17]|[56]6|7[47]|88)0011',
   'preferredInternationalPrefix' => '0011',
   'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0|([59]\\d{7})$',
+  'nationalPrefixForParsing' => '([59]\\d{7})$|0',
   'nationalPrefixTransformRule' => '8$1',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>

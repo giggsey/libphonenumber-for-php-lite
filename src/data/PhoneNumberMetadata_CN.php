@@ -139,7 +139,7 @@ return [
   'internationalPrefix' => '00|1(?:[12]\\d|79)\\d\\d00',
   'preferredInternationalPrefix' => '00',
   'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0|(1(?:[12]\\d|79)\\d\\d)',
+  'nationalPrefixForParsing' => '(1(?:[12]\\d|79)\\d\\d)|0',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>
   [

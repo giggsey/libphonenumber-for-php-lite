@@ -90,7 +90,7 @@ return [
   'countryCode' => 44,
   'internationalPrefix' => '00',
   'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0|([25-8]\\d{5})$',
+  'nationalPrefixForParsing' => '([25-8]\\d{5})$|0',
   'nationalPrefixTransformRule' => '1624$1',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>
