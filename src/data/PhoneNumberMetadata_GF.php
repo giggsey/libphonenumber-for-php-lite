@@ -9,7 +9,7 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '(?:[56]94|80\\d|976)\\d{6}',
+    'NationalNumberPattern' => '[56]94\\d{6}|(?:80|9\\d)\\d{7}',
     'PossibleLength' =>
     [
       0 => 9,
@@ -53,7 +53,7 @@ return [
   ],
   'voip' =>
   [
-    'NationalNumberPattern' => '976\\d{6}',
+    'NationalNumberPattern' => '9(?:396|76\\d)\\d{5}',
     'ExampleNumber' => '976012345',
   ],
   'pager' =>
@@ -98,7 +98,7 @@ return [
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
       [
-        0 => '[569]',
+        0 => '[56]|97',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
@@ -110,7 +110,7 @@ return [
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
       [
-        0 => '8',
+        0 => '[89]',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',

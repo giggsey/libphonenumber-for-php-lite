@@ -57,7 +57,7 @@ return [
   ],
   'uan' =>
   [
-    'NationalNumberPattern' => '70(?:7\\d|8[17])\\d{5}',
+    'NationalNumberPattern' => '70(?:38[01]|596|(?:7\\d|8[17])\\d)\\d{4}',
     'ExampleNumber' => '707123456',
   ],
   'voicemail' =>

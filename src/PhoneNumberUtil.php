@@ -217,6 +217,18 @@ class PhoneNumberUtil
      */
     protected static string $EXTN_PATTERNS_FOR_PARSING;
     protected static string $EXTN_PATTERNS_FOR_MATCHING;
+    // Regular expression of valid global-number-digits for the phone-context parameter, following the
+    // syntax defined in RFC3966.
+    protected static string $RFC3966_VISUAL_SEPARATOR = '[\\-\\.\\(\\)]?';
+    protected static string $RFC3966_PHONE_DIGIT;
+    protected static string $RFC3966_GLOBAL_NUMBER_DIGITS;
+
+    // Regular expression of valid domainname for the phone-context parameter, following the syntax
+    // defined in RFC3966.
+    protected static string $ALPHANUM;
+    protected static string $RFC3966_DOMAINLABEL;
+    protected static string $RFC3966_TOPLABEL;
+    protected static string $RFC3966_DOMAINNAME;
     protected static string $EXTN_PATTERN;
     protected static string $VALID_PHONE_NUMBER_PATTERN;
     protected static string $MIN_LENGTH_PHONE_NUMBER_PATTERN;
@@ -336,6 +348,7 @@ class PhoneNumberUtil
         $this->matcherAPI = RegexBasedMatcher::create();
         static::initExtnPatterns();
         static::initExtnPattern();
+        static::initRFC3966Patterns();
 
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS = [];
         // Put (lower letter -> upper letter) and (upper letter -> upper letter) mappings.
@@ -434,6 +447,17 @@ class PhoneNumberUtil
     {
         static::$EXTN_PATTERNS_FOR_PARSING = static::createExtnPattern(true);
         static::$EXTN_PATTERNS_FOR_MATCHING = static::createExtnPattern(false);
+    }
+
+    protected static function initRFC3966Patterns(): void
+    {
+        static::$RFC3966_PHONE_DIGIT = '(' . static::DIGITS . '|' . static::$RFC3966_VISUAL_SEPARATOR . ')';
+        static::$RFC3966_GLOBAL_NUMBER_DIGITS = '^\\' . static::PLUS_SIGN . static::$RFC3966_PHONE_DIGIT . '*' . static::DIGITS . static::$RFC3966_PHONE_DIGIT . '*$';
+
+        static::$ALPHANUM = static::VALID_ALPHA . static::DIGITS;
+        static::$RFC3966_DOMAINLABEL = '[' . static::$ALPHANUM . ']+((\\-)*[' . static::$ALPHANUM . '])*';
+        static::$RFC3966_TOPLABEL = '[' . static::VALID_ALPHA . ']+((\\-)*[' . static::$ALPHANUM . '])*';
+        static::$RFC3966_DOMAINNAME = '^(' . static::$RFC3966_DOMAINLABEL . '\\.)*' . static::$RFC3966_TOPLABEL . '\\.?$';
     }
 
     /**
@@ -1628,6 +1652,54 @@ class PhoneNumberUtil
     }
 
     /**
+     * Extracts the value of the phone-context parameter of numberToExtractFrom where the index of
+     * ";phone-context=" is the parameter indexOfPhoneContext, following the syntax defined in
+     * RFC3966.
+     * @return string|null the extracted string (possibly empty), or null if no phone-context parameter is found.
+     */
+    protected function extractPhoneContext(string $numberToExtractFrom, int|false $indexOfPhoneContext): ?string
+    {
+        // If no phone-context parameter is present
+        if ($indexOfPhoneContext === false) {
+            return null;
+        }
+
+        $phoneContextStart = $indexOfPhoneContext + strlen(static::RFC3966_PHONE_CONTEXT);
+        // If phone-context parameter is empty
+        if ($phoneContextStart >= mb_strlen($numberToExtractFrom)) {
+            return '';
+        }
+
+        $phoneContextEnd = strpos($numberToExtractFrom, ';', $phoneContextStart);
+        // If phone-context is not the last parameter
+        if ($phoneContextEnd !== false) {
+            return substr($numberToExtractFrom, $phoneContextStart, $phoneContextEnd - $phoneContextStart);
+        }
+
+        return substr($numberToExtractFrom, $phoneContextStart);
+    }
+
+    /**
+     * Returns whether the value of phoneContext follows the syntax defined in RFC3966.
+     */
+    protected function isPhoneContextValid(?string $phoneContext): bool
+    {
+        if ($phoneContext === null) {
+            return true;
+        }
+
+        if ($phoneContext === '') {
+            return false;
+        }
+
+        $numberDigitsPattern = '/' . static::$RFC3966_GLOBAL_NUMBER_DIGITS . '/' . static::REGEX_FLAGS;
+        $domainNamePattern = '/' . static::$RFC3966_DOMAINNAME . '/' . static::REGEX_FLAGS;
+
+        // Does phone-context value match pattern of global-number-digits or domainname
+        return preg_match($numberDigitsPattern, $phoneContext) || preg_match($domainNamePattern, $phoneContext);
+    }
+
+    /**
      * Returns a new phone number containing only the fields needed to uniquely identify a phone
      * number, rather than any fields that capture the context in which  the phone number was created.
      * These fields correspond to those set in parse() rather than parseAndKeepRawInput()
@@ -1655,25 +1727,25 @@ class PhoneNumberUtil
      * written in RFC3966; otherwise extract a possible number out of it and write to nationalNumber.
      * @param string $numberToParse
      * @param string $nationalNumber
+     * @throws NumberParseException
      */
     protected function buildNationalNumberForParsing(string $numberToParse, string &$nationalNumber): void
     {
         $indexOfPhoneContext = strpos($numberToParse, static::RFC3966_PHONE_CONTEXT);
-        if ($indexOfPhoneContext !== false) {
-            $phoneContextStart = $indexOfPhoneContext + strlen(static::RFC3966_PHONE_CONTEXT);
+        $phoneContext = $this->extractPhoneContext($numberToParse, $indexOfPhoneContext);
+
+        if (!$this->isPhoneContextValid($phoneContext)) {
+            throw new NumberParseException(NumberParseException::NOT_A_NUMBER, 'The phone-context valid is invalid.');
+        }
+
+        if ($phoneContext !== null) {
             // If the phone context contains a phone number prefix, we need to capture it, whereas domains
             // will be ignored.
-            if ($phoneContextStart < (strlen($numberToParse) - 1)
-                && substr($numberToParse, $phoneContextStart, 1) === static::PLUS_SIGN) {
+            if (str_starts_with($phoneContext, self::PLUS_SIGN)) {
                 // Additional parameters might follow the phone context. If so, we will remove them here
-                // because the parameters after phone context are not important for parsing the
-                // phone number.
-                $phoneContextEnd = strpos($numberToParse, ';', $phoneContextStart);
-                if ($phoneContextEnd > 0) {
-                    $nationalNumber .= substr($numberToParse, $phoneContextStart, $phoneContextEnd - $phoneContextStart);
-                } else {
-                    $nationalNumber .= substr($numberToParse, $phoneContextStart);
-                }
+                // because the parameters after phone context are not important for parsing the phone
+                // number.
+                $nationalNumber .= $phoneContext;
             }
 
             // Now append everything between the "tel:" prefix and the phone-context. This should include
