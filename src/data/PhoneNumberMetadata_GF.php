@@ -53,7 +53,7 @@ return [
   ],
   'voip' =>
   [
-    'NationalNumberPattern' => '9(?:396|76\\d)\\d{5}',
+    'NationalNumberPattern' => '9(?:(?:396|76\\d)\\d|476[01])\\d{4}',
     'ExampleNumber' => '976012345',
   ],
   'pager' =>
@@ -98,7 +98,7 @@ return [
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
       [
-        0 => '[56]|97',
+        0 => '[56]|9[47]',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
