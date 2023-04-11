@@ -53,7 +53,7 @@ return [
   ],
   'voip' =>
   [
-    'NationalNumberPattern' => '9(?:395|76[018])\\d{5}',
+    'NationalNumberPattern' => '9(?:(?:395|76[018])\\d|475[01])\\d{4}',
     'ExampleNumber' => '976012345',
   ],
   'pager' =>
