@@ -9,7 +9,7 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '(?:(?:(?:26|63)9|80\\d)\\d\\d|93980)\\d{4}',
+    'NationalNumberPattern' => '(?:(?:(?:26|63)9|80\\d)\\d|9398)\\d{5}',
     'PossibleLength' =>
     [
       0 => 9,
@@ -22,7 +22,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '(?:639(?:0[0-79]|1[019]|[267]\\d|3[09]|40|5[05-9]|9[04-79])|93980)\\d{4}',
+    'NationalNumberPattern' => '(?:639(?:0[0-79]|1[019]|[267]\\d|3[09]|40|5[05-9]|9[04-79])|9398[01])\\d{4}',
     'ExampleNumber' => '639012345',
   ],
   'tollFree' =>
