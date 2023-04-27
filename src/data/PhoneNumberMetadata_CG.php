@@ -34,7 +34,7 @@ return [
   ],
   'premiumRate' =>
   [
-    'NationalNumberPattern' => '80(?:0\\d\\d|120)\\d{4}',
+    'NationalNumberPattern' => '80[0-2]\\d{6}',
     'ExampleNumber' => '800123456',
   ],
   'sharedCost' =>
