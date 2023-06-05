@@ -119,7 +119,7 @@ return [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
       [
-        0 => '[489]|59',
+        0 => '8',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
@@ -131,7 +131,7 @@ return [
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
       [
-        0 => '[235-7]',
+        0 => '[2-79]',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
