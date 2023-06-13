@@ -19,7 +19,7 @@ return [
   ],
   'fixedLine' =>
   [
-    'NationalNumberPattern' => '2[2-6]\\d{6}',
+    'NationalNumberPattern' => '2[1-6]\\d{6}',
     'ExampleNumber' => '23123456',
     'PossibleLength' =>
     [
