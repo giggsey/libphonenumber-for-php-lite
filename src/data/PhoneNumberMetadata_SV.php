@@ -19,7 +19,7 @@ return [
   ],
   'fixedLine' =>
   [
-    'NationalNumberPattern' => '2(?:[1-6]\\d{3}|[79]90[034]|890[0245])\\d{3}',
+    'NationalNumberPattern' => '2(?:(?:[1-6]\\d\\d|990)\\d|790[034]|890[0245])\\d{3}',
     'ExampleNumber' => '21234567',
     'PossibleLength' =>
     [
