@@ -22,7 +22,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '(?:23|7[04]|[89]\\d)\\d{6}',
+    'NationalNumberPattern' => '(?:23|7[047]|[89]\\d)\\d{6}',
     'ExampleNumber' => '93123456',
   ],
   'tollFree' =>
@@ -108,7 +108,7 @@ return [
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
       [
-        0 => '[089]|2[013]|7[04]',
+        0 => '[089]|2[013]|7[047]',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
