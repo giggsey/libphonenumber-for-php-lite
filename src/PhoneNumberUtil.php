@@ -40,7 +40,7 @@ class PhoneNumberUtil
     /**
      * @internal
      */
-    public const META_DATA_FILE_PREFIX = 'PhoneNumberMetadata';
+    public const META_DATA_FILE_PREFIX = __DIR__ . '/data/PhoneNumberMetadata';
 
     // Region-code for the unknown region.
     protected const UNKNOWN_REGION = 'ZZ';
@@ -407,7 +407,7 @@ class PhoneNumberUtil
             }
 
             if ($metadataSource === null) {
-                $metadataSource = new MultiFileMetadataSourceImpl($metadataLoader, __DIR__ . '/data/' . $baseFileLocation);
+                $metadataSource = new MultiFileMetadataSourceImpl($metadataLoader, $baseFileLocation);
             }
 
             static::$instance = new static($metadataSource, $countryCallingCodeToRegionCodeMap);

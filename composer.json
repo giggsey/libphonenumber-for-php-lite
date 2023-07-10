@@ -54,7 +54,8 @@
       "phpstan.neon.dist",
       "build.xml",
       "phpunit.xml.dist",
-      "infection.json.dist"
+      "infection.json.dist",
+      "src/CountryCodeToRegionCodeMapForTesting.php"
     ]
   },
   "require": {
