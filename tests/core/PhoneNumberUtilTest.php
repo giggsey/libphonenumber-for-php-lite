@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 
 class PhoneNumberUtilTest extends TestCase
 {
-    public const TEST_META_DATA_FILE_PREFIX = '../../tests/core/data/PhoneNumberMetadataForTesting';
+    public const TEST_META_DATA_FILE_PREFIX = __DIR__ . '/data/PhoneNumberMetadataForTesting';
     private static PhoneNumber $bsNumber;
     private static PhoneNumber $coFixedLine;
     private static PhoneNumber $internationalTollFree;

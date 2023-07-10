@@ -10,16 +10,12 @@ use PHPUnit\Framework\TestCase;
 
 class UKNumbersTest extends TestCase
 {
-    public const META_DATA_FILE_PREFIX = 'PhoneNumberMetadata';
     protected PhoneNumberUtil $phoneUtil;
 
     public function setUp(): void
     {
         PhoneNumberUtil::resetInstance();
-        $this->phoneUtil = PhoneNumberUtil::getInstance(
-            self::META_DATA_FILE_PREFIX,
-            CountryCodeToRegionCodeMap::COUNTRY_CODE_TO_REGION_CODE_MAP
-        );
+        $this->phoneUtil = PhoneNumberUtil::getInstance();
     }
 
     public function testMobileNumber(): void

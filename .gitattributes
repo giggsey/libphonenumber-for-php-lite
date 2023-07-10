@@ -10,5 +10,6 @@ build.xml export-ignore
 phpunit.xml.dist export-ignore
 infection.json.dist export-ignore
 .github/ export-ignore
+src/CountryCodeToRegionCodeMapForTesting.php export-ignore
 
 * text=auto
