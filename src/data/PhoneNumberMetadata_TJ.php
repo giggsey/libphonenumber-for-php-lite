@@ -36,7 +36,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '41[18]\\d{6}|(?:0[0-27]|1[017]|2[02]|[34]0|5[05]|7[0178]|8[078]|9\\d)\\d{7}',
+    'NationalNumberPattern' => '(?:0[348]0|41[18]|81[1-9])\\d{6}|(?:0[0-27]|1[017]|2[02]|[34]0|5[05]|7[0178]|8[078]|9\\d)\\d{7}',
     'ExampleNumber' => '917123456',
   ],
   'tollFree' =>
@@ -128,7 +128,7 @@ return [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
       [
-        0 => '[34]7|91[78]',
+        0 => '[34]7',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
