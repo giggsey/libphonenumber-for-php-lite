@@ -9,7 +9,7 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '8\\d{9}|(?:[235-8]\\d|99)\\d{7}',
+    'NationalNumberPattern' => '8\\d{9}|[235-9]\\d{8}',
     'PossibleLength' =>
     [
       0 => 9,
@@ -37,7 +37,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '312(?:58\\d|973)\\d{3}|(?:2(?:0[0-35]|2\\d)|5[0-24-7]\\d|600|7(?:[07]\\d|55)|88[08]|99[05-9])\\d{6}',
+    'NationalNumberPattern' => '312(?:58\\d|973)\\d{3}|(?:2(?:0[0-35]|2\\d)|5[0-24-7]\\d|600|7(?:[07]\\d|55)|88[08]|9(?:12|9[05-9]))\\d{6}',
     'ExampleNumber' => '700123456',
     'PossibleLength' =>
     [

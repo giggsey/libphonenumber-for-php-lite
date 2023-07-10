@@ -18,7 +18,7 @@ return [
   ],
   'fixedLine' =>
   [
-    'NationalNumberPattern' => '(?:4[1-356]|50)\\d{4}',
+    'NationalNumberPattern' => '(?:4[1-35-7]|5[01])\\d{4}',
     'ExampleNumber' => '430123',
     'PossibleLength' =>
     [
