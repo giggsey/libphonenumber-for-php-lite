@@ -17,7 +17,7 @@ return [
   ],
   'fixedLine' =>
   [
-    'NationalNumberPattern' => '590(?:0[1-68]|[14][0-24-9]|2[0-68]|3[1289]|5[3-579]|[68][0-689]|7[08]|9\\d)\\d{4}',
+    'NationalNumberPattern' => '590(?:0[1-68]|[14][0-24-9]|2[0-68]|3[1-9]|5[3-579]|[68][0-689]|7[08]|9\\d)\\d{4}',
     'ExampleNumber' => '590201234',
   ],
   'mobile' =>
@@ -53,7 +53,7 @@ return [
   ],
   'voip' =>
   [
-    'NationalNumberPattern' => '9(?:(?:395|76[018])\\d|475[0-2])\\d{4}',
+    'NationalNumberPattern' => '9(?:(?:395|76[018])\\d|475[0-5])\\d{4}',
     'ExampleNumber' => '976012345',
   ],
   'pager' =>
