@@ -49,7 +49,7 @@ return [
   ],
   'voip' =>
   [
-    'NationalNumberPattern' => '9(?:399[0-3]|479[0-5]|76(?:2[27]|3[0-37]|9\\d))\\d{4}',
+    'NationalNumberPattern' => '9(?:399[0-3]|479[0-5]|76(?:2[27]|3[0-37]))\\d{4}',
     'ExampleNumber' => '939901234',
   ],
   'pager' =>

@@ -176,7 +176,7 @@ return [
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
       [
-        0 => '[69]',
+        0 => '6',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
@@ -188,7 +188,7 @@ return [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
       [
-        0 => '[3578]',
+        0 => '[357-9]',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
@@ -251,7 +251,7 @@ return [
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
       [
-        0 => '[69]',
+        0 => '6',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
@@ -263,7 +263,7 @@ return [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
       [
-        0 => '[3578]',
+        0 => '[357-9]',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',

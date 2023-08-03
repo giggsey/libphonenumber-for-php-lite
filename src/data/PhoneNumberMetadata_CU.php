@@ -9,7 +9,7 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '[27]\\d{6,7}|[34]\\d{5,7}|(?:5|8\\d\\d)\\d{7}',
+    'NationalNumberPattern' => '[27]\\d{6,7}|[34]\\d{5,7}|63\\d{6}|(?:5|8\\d\\d)\\d{7}',
     'PossibleLength' =>
     [
       0 => 6,
@@ -35,7 +35,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '5\\d{7}',
+    'NationalNumberPattern' => '(?:5\\d|63)\\d{6}',
     'ExampleNumber' => '51234567',
     'PossibleLength' =>
     [
@@ -147,7 +147,7 @@ return [
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
       [
-        0 => '5',
+        0 => '[56]',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
