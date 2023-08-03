@@ -28,7 +28,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '8(?:07[01]|95[0-2])\\d{4}|(?:8(?:0[1-6]|[1-8]\\d|9[0-4])|9[0-8]\\d)\\d{5}',
+    'NationalNumberPattern' => '8(?:08[01]|95[0-2])\\d{4}|(?:8(?:0[1-7]|[1-8]\\d|9[0-4])|9[0-8]\\d)\\d{5}',
     'ExampleNumber' => '81234567',
     'PossibleLength' =>
     [
@@ -132,7 +132,7 @@ return [
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
       [
-        0 => '[369]|8(?:0[1-7]|[1-9])',
+        0 => '[369]|8(?:0[1-8]|[1-9])',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
@@ -183,7 +183,7 @@ return [
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
       [
-        0 => '[369]|8(?:0[1-7]|[1-9])',
+        0 => '[369]|8(?:0[1-8]|[1-9])',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',

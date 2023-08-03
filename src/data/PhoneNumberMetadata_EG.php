@@ -151,7 +151,19 @@ return [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
       [
-        0 => '[189]',
+        0 => '[89]',
+      ],
+      'nationalPrefixFormattingRule' => '0$1',
+      'domesticCarrierCodeFormattingRule' => '',
+      'nationalPrefixOptionalWhenFormatting' => false,
+    ],
+    3 =>
+    [
+      'pattern' => '(\\d{2})(\\d{8})',
+      'format' => '$1 $2',
+      'leadingDigitsPatterns' =>
+      [
+        0 => '1',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
