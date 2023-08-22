@@ -24,7 +24,7 @@ return [
   ],
   'fixedLine' =>
   [
-    'NationalNumberPattern' => '(?:3(?:1[3-5]|2[245]|3[12]|4[24-7]|5[25]|72)|4(?:46|74|87))\\d{6}',
+    'NationalNumberPattern' => '(?:3(?:1[3-5]|2[245]|3[12]|4[24-7]|5[25]|72)|4(?:4[046]|74|87))\\d{6}',
     'ExampleNumber' => '372123456',
     'PossibleLengthLocalOnly' =>
     [
@@ -36,7 +36,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '(?:0[348]0|41[18]|81[1-9])\\d{6}|(?:0[0-27]|1[017]|2[02]|[34]0|5[05]|7[0178]|8[078]|9\\d)\\d{7}',
+    'NationalNumberPattern' => '(?:41[18]|81[1-9])\\d{6}|(?:0[0-57-9]|1[017]|2[02]|[34]0|5[05]|7[0178]|8[078]|9\\d)\\d{7}',
     'ExampleNumber' => '917123456',
   ],
   'tollFree' =>
@@ -128,7 +128,7 @@ return [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
       [
-        0 => '[34]7',
+        0 => '44[04]|[34]7',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',

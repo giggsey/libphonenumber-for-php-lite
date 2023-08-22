@@ -17,7 +17,7 @@ return [
   ],
   'fixedLine' =>
   [
-    'NationalNumberPattern' => '596(?:[03-7]\\d|10|2[7-9]|8[0-39]|9[4-9])\\d{4}',
+    'NationalNumberPattern' => '596(?:[03-7]\\d|10|2[7-9]|8[0-39]|9[04-9])\\d{4}',
     'ExampleNumber' => '596301234',
   ],
   'mobile' =>

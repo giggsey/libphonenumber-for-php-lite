@@ -384,7 +384,7 @@ class PhoneNumberUtilTest extends TestCase
 
         // A mobile number from China is geographical, but does not have an area code: however it still
         // can be considered to have a national destination code.
-        $cnMobile= new PhoneNumber();
+        $cnMobile = new PhoneNumber();
         $cnMobile->setCountryCode(86)->setNationalNumber('18912341234');
 
         $this->assertEquals(3, $this->phoneUtil->getLengthOfNationalDestinationCode($cnMobile));
