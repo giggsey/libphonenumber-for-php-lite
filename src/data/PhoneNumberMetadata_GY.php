@@ -9,7 +9,7 @@
 return [
   'generalDesc' =>
   [
-    'NationalNumberPattern' => '9008\\d{3}|(?:[2-467]\\d\\d|862)\\d{4}',
+    'NationalNumberPattern' => '9008\\d{3}|(?:[2-467]\\d\\d|510|862)\\d{4}',
     'PossibleLength' =>
     [
       0 => 7,
@@ -22,7 +22,7 @@ return [
   ],
   'mobile' =>
   [
-    'NationalNumberPattern' => '(?:6\\d\\d|70[0-35-7])\\d{4}',
+    'NationalNumberPattern' => '(?:510|6\\d\\d|7(?:0\\d|1[0-8]|25|49))\\d{4}',
     'ExampleNumber' => '6091234',
   ],
   'tollFree' =>
@@ -96,7 +96,7 @@ return [
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
       [
-        0 => '[2-46-9]',
+        0 => '[2-9]',
       ],
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
