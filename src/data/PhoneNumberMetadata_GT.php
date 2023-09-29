@@ -6,98 +6,98 @@
  * @internal
  */
 
-return [
+return  [
   'generalDesc' =>
-  [
+   [
     'NationalNumberPattern' => '(?:1\\d{3}|[2-7])\\d{7}',
     'PossibleLength' =>
-    [
+     [
       0 => 8,
       1 => 11,
     ],
   ],
   'fixedLine' =>
-  [
+   [
     'NationalNumberPattern' => '[267][2-9]\\d{6}',
     'ExampleNumber' => '22456789',
     'PossibleLength' =>
-    [
+     [
       0 => 8,
     ],
   ],
   'mobile' =>
-  [
+   [
     'NationalNumberPattern' => '[3-5]\\d{7}',
     'ExampleNumber' => '51234567',
     'PossibleLength' =>
-    [
+     [
       0 => 8,
     ],
   ],
   'tollFree' =>
-  [
+   [
     'NationalNumberPattern' => '18[01]\\d{8}',
     'ExampleNumber' => '18001112222',
     'PossibleLength' =>
-    [
+     [
       0 => 11,
     ],
   ],
   'premiumRate' =>
-  [
+   [
     'NationalNumberPattern' => '19\\d{9}',
     'ExampleNumber' => '19001112222',
     'PossibleLength' =>
-    [
+     [
       0 => 11,
     ],
   ],
   'sharedCost' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'personalNumber' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'voip' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'pager' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'uan' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'voicemail' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'noInternationalDialling' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
@@ -106,13 +106,13 @@ return [
   'internationalPrefix' => '00',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>
-  [
+   [
     0 =>
-    [
+     [
       'pattern' => '(\\d{4})(\\d{4})',
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
-      [
+       [
         0 => '[2-7]',
       ],
       'nationalPrefixFormattingRule' => '',
@@ -120,11 +120,11 @@ return [
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
     1 =>
-    [
+     [
       'pattern' => '(\\d{4})(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
-      [
+       [
         0 => '1',
       ],
       'nationalPrefixFormattingRule' => '',

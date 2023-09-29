@@ -6,98 +6,98 @@
  * @internal
  */
 
-return [
+return  [
   'generalDesc' =>
-  [
+   [
     'NationalNumberPattern' => '(?:[2378]\\d|90)\\d{7}|[23]\\d{5}',
     'PossibleLength' =>
-    [
+     [
       0 => 6,
       1 => 9,
     ],
   ],
   'fixedLine' =>
-  [
+   [
     'NationalNumberPattern' => '[23][13-6]\\d{7}|(?:2(?:19\\d|[3-6]\\d9)|31\\d\\d)\\d\\d',
     'ExampleNumber' => '211234567',
   ],
   'mobile' =>
-  [
+   [
     'NationalNumberPattern' => '7020\\d{5}|7(?:0[013-9]|1[0-3]|[2-7]\\d|8[03-8]|9[0-29])\\d{6}',
     'ExampleNumber' => '712034567',
     'PossibleLength' =>
-    [
+     [
       0 => 9,
     ],
   ],
   'tollFree' =>
-  [
+   [
     'NationalNumberPattern' => '800\\d{6}',
     'ExampleNumber' => '800123456',
     'PossibleLength' =>
-    [
+     [
       0 => 9,
     ],
   ],
   'premiumRate' =>
-  [
+   [
     'NationalNumberPattern' => '90[0136]\\d{6}',
     'ExampleNumber' => '900123456',
     'PossibleLength' =>
-    [
+     [
       0 => 9,
     ],
   ],
   'sharedCost' =>
-  [
+   [
     'NationalNumberPattern' => '801\\d{6}',
     'ExampleNumber' => '801123456',
     'PossibleLength' =>
-    [
+     [
       0 => 9,
     ],
   ],
   'personalNumber' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'voip' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'pager' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'uan' =>
-  [
+   [
     'NationalNumberPattern' => '(?:37\\d|80[578])\\d{6}',
     'ExampleNumber' => '372123456',
     'PossibleLength' =>
-    [
+     [
       0 => 9,
     ],
   ],
   'voicemail' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'noInternationalDialling' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
@@ -109,13 +109,13 @@ return [
   'nationalPrefixForParsing' => '0',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>
-  [
+   [
     0 =>
-    [
+     [
       'pattern' => '(\\d{3})(\\d{3})',
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
-      [
+       [
         0 => '2[3-6]',
         1 => '2[3-6]\\d9',
       ],
@@ -124,11 +124,11 @@ return [
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
     1 =>
-    [
+     [
       'pattern' => '(\\d{2})(\\d{4})',
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
-      [
+       [
         0 => '219|31',
       ],
       'nationalPrefixFormattingRule' => '0$1',
@@ -136,11 +136,11 @@ return [
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
     2 =>
-    [
+     [
       'pattern' => '(\\d{2})(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
-      [
+       [
         0 => '[23]1',
       ],
       'nationalPrefixFormattingRule' => '0$1',
@@ -148,11 +148,11 @@ return [
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
     3 =>
-    [
+     [
       'pattern' => '(\\d{3})(\\d{3})(\\d{3})',
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
-      [
+       [
         0 => '[237-9]',
       ],
       'nationalPrefixFormattingRule' => '0$1',

@@ -6,94 +6,94 @@
  * @internal
  */
 
-return [
+return  [
   'generalDesc' =>
-  [
+   [
     'NationalNumberPattern' => '(?:[47]|888\\d)\\d{3}',
     'PossibleLength' =>
-    [
+     [
       0 => 4,
       1 => 7,
     ],
   ],
   'fixedLine' =>
-  [
+   [
     'NationalNumberPattern' => '[47]\\d{3}',
     'ExampleNumber' => '7012',
     'PossibleLength' =>
-    [
+     [
       0 => 4,
     ],
   ],
   'mobile' =>
-  [
+   [
     'NationalNumberPattern' => '888[4-9]\\d{3}',
     'ExampleNumber' => '8884012',
     'PossibleLength' =>
-    [
+     [
       0 => 7,
     ],
   ],
   'tollFree' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'premiumRate' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'sharedCost' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'personalNumber' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'voip' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'pager' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'uan' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'voicemail' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
   'noInternationalDialling' =>
-  [
+   [
     'PossibleLength' =>
-    [
+     [
       0 => -1,
     ],
   ],
@@ -102,13 +102,13 @@ return [
   'internationalPrefix' => '00',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>
-  [
+   [
     0 =>
-    [
+     [
       'pattern' => '(\\d{3})(\\d{4})',
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
-      [
+       [
         0 => '8',
       ],
       'nationalPrefixFormattingRule' => '',
