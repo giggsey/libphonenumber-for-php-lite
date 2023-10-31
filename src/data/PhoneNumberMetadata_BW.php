@@ -69,7 +69,7 @@ return  [
   ],
   'voip' =>
    [
-    'NationalNumberPattern' => '79(?:1(?:[01]\\d|2[0-7])|2[0-7]\\d)\\d{3}',
+    'NationalNumberPattern' => '79(?:1(?:[01]\\d|2[0-8])|2[0-7]\\d)\\d{3}',
     'ExampleNumber' => '79101234',
     'PossibleLength' =>
      [

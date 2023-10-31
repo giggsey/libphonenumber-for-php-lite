@@ -262,5 +262,5 @@ return  [
   ],
   'mainCountryForCode' => true,
   'leadingDigits' => '3[04-689]|[489]',
-  'mobileNumberPortableRegion' => false,
+  'mobileNumberPortableRegion' => true,
 ];
