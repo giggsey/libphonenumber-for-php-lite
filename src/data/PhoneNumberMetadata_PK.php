@@ -44,7 +44,7 @@ return  [
   ],
   'mobile' =>
    [
-    'NationalNumberPattern' => '3(?:[0-24]\\d|3[0-79]|55|64)\\d{7}',
+    'NationalNumberPattern' => '3(?:[0-247]\\d|3[0-79]|55|64)\\d{7}',
     'ExampleNumber' => '3012345678',
     'PossibleLength' =>
      [

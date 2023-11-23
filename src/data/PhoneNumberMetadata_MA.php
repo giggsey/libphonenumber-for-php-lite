@@ -17,7 +17,7 @@ return  [
   ],
   'fixedLine' =>
    [
-    'NationalNumberPattern' => '5293[01]\\d{4}|5(?:2(?:[0-25-7]\\d|3[1-578]|4[02-46-8]|8[0235-7]|9[0-289])|3(?:[0-47]\\d|5[02-9]|6[02-8]|8[0189]|9[3-9])|(?:4[067]|5[03])\\d)\\d{5}',
+    'NationalNumberPattern' => '5(?:2(?:[0-25-79]\\d|3[1-578]|4[02-46-8]|8[0235-7])|3(?:[0-47]\\d|5[02-9]|6[02-8]|8[014-9]|9[3-9])|(?:4[067]|5[03])\\d)\\d{5}',
     'ExampleNumber' => '520123456',
   ],
   'mobile' =>
@@ -27,7 +27,7 @@ return  [
   ],
   'tollFree' =>
    [
-    'NationalNumberPattern' => '80\\d{7}',
+    'NationalNumberPattern' => '80[0-7]\\d{6}',
     'ExampleNumber' => '801234567',
   ],
   'premiumRate' =>
@@ -51,7 +51,7 @@ return  [
   ],
   'voip' =>
    [
-    'NationalNumberPattern' => '592(?:4[0-2]|93)\\d{4}',
+    'NationalNumberPattern' => '(?:592(?:4[0-2]|93)|80[89]\\d\\d)\\d{4}',
     'ExampleNumber' => '592401234',
   ],
   'pager' =>
@@ -92,20 +92,6 @@ return  [
    [
     0 =>
      [
-      'pattern' => '(\\d{5})(\\d{4})',
-      'format' => '$1-$2',
-      'leadingDigitsPatterns' =>
-       [
-        0 => '5(?:29|38)',
-        1 => '5(?:29[1289]|389)',
-        2 => '529(?:1[1-46-9]|2[013-8]|90)|5(?:298|389)[0-46-9]',
-      ],
-      'nationalPrefixFormattingRule' => '0$1',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => false,
-    ],
-    1 =>
-     [
       'pattern' => '(\\d{3})(\\d{2})(\\d{2})(\\d{2})',
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
@@ -116,20 +102,20 @@ return  [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    2 =>
+    1 =>
      [
       'pattern' => '(\\d{4})(\\d{5})',
       'format' => '$1-$2',
       'leadingDigitsPatterns' =>
        [
-        0 => '5(?:2[2-489]|3[5-9]|9)|892',
-        1 => '5(?:2(?:[2-49]|8[235-9])|3[5-9]|9)|892',
+        0 => '5(?:2[2-489]|3[5-9]|9)|8(?:0[89]|92)',
+        1 => '5(?:2(?:[2-49]|8[235-9])|3[5-9]|9)|8(?:0[89]|92)',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    3 =>
+    2 =>
      [
       'pattern' => '(\\d{2})(\\d{7})',
       'format' => '$1-$2',
@@ -141,7 +127,7 @@ return  [
       'domesticCarrierCodeFormattingRule' => '',
       'nationalPrefixOptionalWhenFormatting' => false,
     ],
-    4 =>
+    3 =>
      [
       'pattern' => '(\\d{3})(\\d{6})',
       'format' => '$1-$2',
