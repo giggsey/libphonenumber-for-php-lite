@@ -27,7 +27,7 @@ return  [
   ],
   'tollFree' =>
    [
-    'NationalNumberPattern' => '80\\d{7}',
+    'NationalNumberPattern' => '80[0-7]\\d{6}',
     'ExampleNumber' => '801234567',
   ],
   'premiumRate' =>
@@ -51,7 +51,7 @@ return  [
   ],
   'voip' =>
    [
-    'NationalNumberPattern' => '592(?:4[0-2]|93)\\d{4}',
+    'NationalNumberPattern' => '(?:592(?:4[0-2]|93)|80[89]\\d\\d)\\d{4}',
     'ExampleNumber' => '592401234',
   ],
   'pager' =>

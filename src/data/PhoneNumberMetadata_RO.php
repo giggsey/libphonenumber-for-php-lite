@@ -9,7 +9,7 @@
 return  [
   'generalDesc' =>
    [
-    'NationalNumberPattern' => '(?:[2378]\\d|90)\\d{7}|[23]\\d{5}',
+    'NationalNumberPattern' => '(?:[2378]\\d|62|90)\\d{7}|[23]\\d{5}',
     'PossibleLength' =>
      [
       0 => 6,
@@ -23,7 +23,7 @@ return  [
   ],
   'mobile' =>
    [
-    'NationalNumberPattern' => '7020\\d{5}|7(?:0[013-9]|1[0-3]|[2-7]\\d|8[03-8]|9[0-29])\\d{6}',
+    'NationalNumberPattern' => '7020\\d{5}|(?:62\\d|7(?:0[013-9]|1[0-3]|[2-7]\\d|8[03-8]|9[0-39]))\\d{6}',
     'ExampleNumber' => '712034567',
     'PossibleLength' =>
      [
@@ -153,7 +153,7 @@ return  [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
        [
-        0 => '[237-9]',
+        0 => '[236-9]',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
