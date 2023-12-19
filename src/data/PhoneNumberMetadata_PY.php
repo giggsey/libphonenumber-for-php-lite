@@ -42,7 +42,7 @@ return  [
   ],
   'mobile' =>
    [
-    'NationalNumberPattern' => '9(?:51|6[129]|[78][1-6]|9[1-5])\\d{6}',
+    'NationalNumberPattern' => '9(?:51|6[129]|7[1-6]|8[1-7]|9[1-5])\\d{6}',
     'ExampleNumber' => '961456789',
     'PossibleLength' =>
      [
@@ -197,7 +197,7 @@ return  [
       'format' => '$1 $2',
       'leadingDigitsPatterns' =>
        [
-        0 => '9(?:[5-79]|8[1-6])',
+        0 => '9(?:[5-79]|8[1-7])',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
