@@ -17,12 +17,12 @@ return  [
   ],
   'fixedLine' =>
    [
-    'NationalNumberPattern' => '(?:247|45[78]|528|625)\\d{4}',
+    'NationalNumberPattern' => '(?:247|528|625)\\d{4}',
     'ExampleNumber' => '2471234',
   ],
   'mobile' =>
    [
-    'NationalNumberPattern' => '(?:(?:23|54)5|329|45[356])\\d{4}',
+    'NationalNumberPattern' => '(?:(?:23|54)5|329|45[35-8])\\d{4}',
     'ExampleNumber' => '2351234',
   ],
   'tollFree' =>
