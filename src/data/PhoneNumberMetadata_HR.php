@@ -169,7 +169,7 @@ return  [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
        [
-        0 => '[67]',
+        0 => '6|7[245]',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
@@ -193,7 +193,7 @@ return  [
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' =>
        [
-        0 => '[2-5]',
+        0 => '[2-57]',
       ],
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
