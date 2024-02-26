@@ -28,7 +28,7 @@ return  [
   ],
   'mobile' =>
    [
-    'NationalNumberPattern' => '1505\\d{4}|(?:7(?:[1289]\\d|6[7-9]|7[0-5])|9(?:0[1-9]|[1-9]\\d))\\d{5}',
+    'NationalNumberPattern' => '(?:1505|90[1-9]\\d)\\d{4}|(?:7[126-9]|9[1-9])\\d{6}',
     'ExampleNumber' => '92123456',
     'PossibleLength' =>
      [
