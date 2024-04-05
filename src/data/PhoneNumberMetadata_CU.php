@@ -9,7 +9,7 @@
 return  [
   'generalDesc' =>
    [
-    'NationalNumberPattern' => '[27]\\d{6,7}|[34]\\d{5,7}|63\\d{6}|(?:5|8\\d\\d)\\d{7}',
+    'NationalNumberPattern' => '(?:[2-7]|8\\d\\d)\\d{7}|[2-47]\\d{6}|[34]\\d{5}',
     'PossibleLength' =>
      [
       0 => 6,
@@ -35,7 +35,7 @@ return  [
   ],
   'mobile' =>
    [
-    'NationalNumberPattern' => '(?:5\\d|63)\\d{6}',
+    'NationalNumberPattern' => '(?:5\\d|6[2-4])\\d{6}',
     'ExampleNumber' => '51234567',
     'PossibleLength' =>
      [
