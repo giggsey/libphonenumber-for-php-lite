@@ -76,6 +76,9 @@
     "phpunit/phpunit": "^9.5.26",
     "symfony/console": "^6.0"
   },
+  "conflict": {
+    "giggsey/libphonenumber-for-php": "<8.13.35"
+  },
   "suggest": {
     "giggsey/libphonenumber-for-php": "Use libphonenumber-for-php for geocoding, carriers, timezones and matching"
   },
