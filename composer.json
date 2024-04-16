@@ -77,7 +77,7 @@
     "symfony/console": "^6.0"
   },
   "conflict": {
-    "giggsey/libphonenumber-for-php": "<8.13.35"
+    "giggsey/libphonenumber-for-php": "*"
   },
   "suggest": {
     "giggsey/libphonenumber-for-php": "Use libphonenumber-for-php for geocoding, carriers, timezones and matching"
