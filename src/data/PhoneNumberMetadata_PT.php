@@ -22,7 +22,7 @@ return  [
   ],
   'mobile' =>
    [
-    'NationalNumberPattern' => '6(?:[06]92(?:30|9\\d)|[35]92(?:3[034]|9\\d))\\d{3}|(?:(?:16|6[0356])93|9(?:[1-36]\\d\\d|480))\\d{5}',
+    'NationalNumberPattern' => '6(?:[06]92(?:30|9\\d)|[35]92(?:[049]\\d|3[034]))\\d{3}|(?:(?:16|6[0356])93|9(?:[1-36]\\d\\d|480))\\d{5}',
     'ExampleNumber' => '912345678',
   ],
   'tollFree' =>
@@ -62,7 +62,7 @@ return  [
   ],
   'voicemail' =>
    [
-    'NationalNumberPattern' => '600\\d{6}|6[06]923[34]\\d{3}',
+    'NationalNumberPattern' => '600\\d{6}|6[06]92(?:0\\d|3[349]|49)\\d{3}',
     'ExampleNumber' => '600110000',
   ],
   'noInternationalDialling' =>
