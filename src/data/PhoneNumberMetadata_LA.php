@@ -36,11 +36,12 @@ return  [
   ],
   'mobile' =>
    [
-    'NationalNumberPattern' => '2088\\d{6}|(?:20[23579]|302)\\d{7}',
+    'NationalNumberPattern' => '(?:20(?:[23579]\\d|88)|30(?:2\\d|4))\\d{6}',
     'ExampleNumber' => '2023123456',
     'PossibleLength' =>
      [
-      0 => 10,
+      0 => 9,
+      1 => 10,
     ],
   ],
   'tollFree' =>
@@ -87,7 +88,7 @@ return  [
   ],
   'uan' =>
    [
-    'NationalNumberPattern' => '30[013-9]\\d{6}',
+    'NationalNumberPattern' => '30[0135-9]\\d{6}',
     'ExampleNumber' => '301234567',
     'PossibleLength' =>
      [
