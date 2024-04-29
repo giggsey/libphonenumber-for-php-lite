@@ -214,10 +214,6 @@ class ShortNumberInfo
     }
 
     /**
-     * @param string $number
-     * @param string $regionCode
-     * @param bool $allowPrefixMatch
-     * @return bool
      */
     protected function matchesEmergencyNumberHelper(string $number, string $regionCode, bool $allowPrefixMatch): bool
     {
@@ -328,7 +324,6 @@ class ShortNumberInfo
      * codes. If the list contains more than one region, the first region for which the number is
      * valid is returned.
      *
-     * @param PhoneNumber $number
      * @param string[] $regionCodes
      * @return string|null Region Code (or null if none are found)
      */
@@ -637,9 +632,6 @@ class ShortNumberInfo
     /**
      * TODO: Once we have benchmarked ShortnumberInfo, consider if it is worth keeping
      * this performance optimization.
-     * @param string $number
-     * @param PhoneNumberDesc $numberDesc
-     * @return bool
      */
     protected function matchesPossibleNumberAndNationalNumber(string $number, PhoneNumberDesc $numberDesc): bool
     {

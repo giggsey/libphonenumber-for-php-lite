@@ -320,7 +320,6 @@ class MetadataFilterTest extends TestCase
     /**
      * Need to sort some of the results, as PHP arrays are ordered by when they were added
      * @param array<mixed> $array
-     * @return bool
      */
     private function recursive_ksort(array $array): bool
     {
@@ -961,7 +960,6 @@ class MetadataFilterTest extends TestCase
 
     /**
      * @param bool $generalDesc
-     * @return PhoneNumberDesc
      */
     private function getFakeArmeniaPhoneNumberDesc($generalDesc): PhoneNumberDesc
     {

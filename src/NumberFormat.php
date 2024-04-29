@@ -32,7 +32,6 @@ class NumberFormat
     }
 
     /**
-     * @return NumberFormat
      */
     public function clear(): NumberFormat
     {

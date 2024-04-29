@@ -90,8 +90,6 @@ class PhoneMetadata
     }
 
     /**
-     * @param int $index
-     * @return NumberFormat
      */
     public function getNumberFormat(int $index): NumberFormat
     {
