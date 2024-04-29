@@ -3,7 +3,6 @@
 namespace libphonenumber\buildtools\Commands;
 
 use libphonenumber\buildtools\BuildMetadataPHPFromXml;
-use PHPStan\Parallel\Process;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -36,7 +35,7 @@ class BuildMetadataPHPFromXMLCommand extends Command
             $input->getArgument('DataPrefix'),
             $input->getArgument('MappingClass'),
             $input->getArgument('MappingClassLocation'),
-            ($input->getArgument('LiteBuild') === 'true') ? true : false
+            $input->getArgument('LiteBuild') === 'true'
         );
 
         return self::SUCCESS;

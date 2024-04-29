@@ -79,12 +79,8 @@ class BuildMetadataFromXml
     }
 
     /**
-     *
-     * @param DOMElement|string $inputXmlFile
      * @param boolean $liteBuild
      * @param boolean $specialBuild
-     * @param bool $isShortNumberMetadata
-     * @param bool $isAlternateFormatsMetadata
      * @return PhoneMetadata[]
      */
     public static function buildPhoneMetadataCollection(
@@ -127,11 +123,6 @@ class BuildMetadataFromXml
     }
 
     /**
-     * @param string $regionCode
-     * @param DOMElement $element
-     * @param bool $isShortNumberMetadata
-     * @param bool $isAlternateFormatsMetadata
-     * @return PhoneMetadata
      */
     public static function loadCountryMetadata(string $regionCode, DOMElement $element, bool $isShortNumberMetadata, bool $isAlternateFormatsMetadata): PhoneMetadata
     {
@@ -150,11 +141,8 @@ class BuildMetadataFromXml
     /**
      * Processes the custom build flags and gets a MetadataFilter which may be used to
      * filter PhoneMetadata objects. Incompatible flag combinations throw RuntimeException.
-     * @param bool $liteBuild
-     * @param bool $specialBuild
-     * @return MetadataFilter
      */
-    public static function getMetadataFilter($liteBuild, $specialBuild): MetadataFilter
+    public static function getMetadataFilter(bool $liteBuild, bool $specialBuild): MetadataFilter
     {
         if ($specialBuild) {
             if ($liteBuild) {
@@ -172,42 +160,27 @@ class BuildMetadataFromXml
     /**
      * Returns the national prefix of the provided country element.
      * @internal
-     * @return string
      */
     public static function getNationalPrefix(DOMElement $element): string
     {
         return $element->hasAttribute(self::NATIONAL_PREFIX) ? $element->getAttribute(self::NATIONAL_PREFIX) : '';
     }
 
-    /**
-     *
-     * @internal
-     * @param string $nationalPrefix
-     * @return string
-     */
-    public static function getNationalPrefixFormattingRuleFromElement(DOMElement $element, $nationalPrefix): string
+    public static function getNationalPrefixFormattingRuleFromElement(DOMElement $element, string $nationalPrefix): string
     {
         $nationalPrefixFormattingRule = $element->getAttribute(self::NATIONAL_PREFIX_FORMATTING_RULE);
         // Replace $NP with national prefix and $FG with the first group ($1).
-        $nationalPrefixFormattingRule = \str_replace(
+        return \str_replace(
             ['$NP', '$FG'],
             [$nationalPrefix, '$1'],
             $nationalPrefixFormattingRule
         );
-        return $nationalPrefixFormattingRule;
     }
 
-    /**
-     *
-     * @internal
-     * @param string $regionCode
-     * @param string $nationalPrefix
-     * @return PhoneMetadata
-     */
     public static function loadTerritoryTagMetadata(
-        $regionCode,
+        string $regionCode,
         DOMElement $element,
-        $nationalPrefix
+        string $nationalPrefix
     ): PhoneMetadata {
         $metadata = new PhoneMetadata();
         $metadata->setId($regionCode);
@@ -228,7 +201,7 @@ class BuildMetadataFromXml
                 $metadata->setNationalPrefixTransformRule(self::validateRE($element->getAttribute(self::NATIONAL_PREFIX_TRANSFORM_RULE)));
             }
         }
-        if ($nationalPrefix != '') {
+        if ($nationalPrefix !== '') {
             $metadata->setNationalPrefix($nationalPrefix);
             if (!$metadata->hasNationalPrefixForParsing()) {
                 $metadata->setNationalPrefixForParsing($nationalPrefix);
@@ -252,16 +225,13 @@ class BuildMetadataFromXml
      * nationalPrefixOptionalWhenFormatting. The nationalPrefix, nationalPrefixFormattingRule and
      * nationalPrefixOptionalWhenFormatting values are provided from the parent (territory) element.
      * @internal
-     * @param string $nationalPrefix
-     * @param string $nationalPrefixFormattingRule
-     * @param bool $nationalPrefixOptionalWhenFormatting
      */
     public static function loadAvailableFormats(
         PhoneMetadata $metadata,
         DOMElement $element,
-        $nationalPrefix,
-        $nationalPrefixFormattingRule,
-        $nationalPrefixOptionalWhenFormatting
+        string $nationalPrefix,
+        string $nationalPrefixFormattingRule,
+        bool $nationalPrefixOptionalWhenFormatting
     ): void {
         $carrierCodeFormattingRule = '';
         if ($element->hasAttribute(self::CARRIER_CODE_FORMATTING_RULE)) {
@@ -285,7 +255,7 @@ class BuildMetadataFromXml
                     $format->setNationalPrefixFormattingRule($nationalPrefixFormattingRule);
                 }
                 if ($numberFormatElement->hasAttribute(self::NATIONAL_PREFIX_OPTIONAL_WHEN_FORMATTING)) {
-                    $format->setNationalPrefixOptionalWhenFormatting($numberFormatElement->getAttribute(self::NATIONAL_PREFIX_OPTIONAL_WHEN_FORMATTING) === 'true' ? true : false);
+                    $format->setNationalPrefixOptionalWhenFormatting($numberFormatElement->getAttribute(self::NATIONAL_PREFIX_OPTIONAL_WHEN_FORMATTING) === 'true');
                 } else {
                     $format->setNationalPrefixOptionalWhenFormatting($nationalPrefixOptionalWhenFormatting);
                 }
@@ -314,20 +284,16 @@ class BuildMetadataFromXml
     }
 
     /**
-     * @internal
-     * @param string $nationalPrefix
-     * @return string
      */
-    public static function getDomesticCarrierCodeFormattingRuleFromElement(DOMElement $element, $nationalPrefix): string
+    public static function getDomesticCarrierCodeFormattingRuleFromElement(DOMElement $element, string $nationalPrefix): string
     {
         $carrierCodeFormattingRule = $element->getAttribute(self::CARRIER_CODE_FORMATTING_RULE);
         // Replace $FG with the first group ($1) and $NP with the national prefix.
-        $carrierCodeFormattingRule = \str_replace(
+        return \str_replace(
             ['$NP', '$FG'],
             [$nationalPrefix, '$1'],
             $carrierCodeFormattingRule
         );
-        return $carrierCodeFormattingRule;
     }
 
     /**
@@ -345,8 +311,8 @@ class BuildMetadataFromXml
         $format->setPattern(self::validateRE($numberFormatElement->getAttribute(self::PATTERN)));
 
         $formatPattern = $numberFormatElement->getElementsByTagName(self::FORMAT);
-        if ($formatPattern->length != 1) {
-            $countryId = $metadata->getId() != '' ? $metadata->getId() : $metadata->getCountryCode();
+        if ($formatPattern->length !== 1) {
+            $countryId = $metadata->getId() !== '' ? $metadata->getId() : $metadata->getCountryCode();
             throw new \RuntimeException('Invalid number of format patterns for country: ' . $countryId);
         }
         $nationalFormat = $formatPattern->item(0)->firstChild->nodeValue;
@@ -410,7 +376,6 @@ class BuildMetadataFromXml
 
     /**
      * @internal
-     * @param bool $isShortNumberMetadata
      */
     public static function setRelevantDescPatterns(PhoneMetadata $metadata, DOMElement $element, bool $isShortNumberMetadata): void
     {
@@ -744,8 +709,6 @@ class BuildMetadataFromXml
 
     /**
      * @param int[] $possibleLengths
-     * @param PhoneNumberDesc $desc
-     * @return bool
      */
     private static function arePossibleLengthsEqual(array $possibleLengths, PhoneNumberDesc $desc): bool
     {

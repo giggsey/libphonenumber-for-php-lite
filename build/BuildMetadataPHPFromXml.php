@@ -48,7 +48,6 @@ class BuildMetadataPHPFromXml
 
     /**
      * @param PhoneMetadata[] $metadataCollection
-     * @param string $filePrefix
      */
     private function writeMetadataToFile(array $metadataCollection, string $filePrefix): void
     {
@@ -70,9 +69,6 @@ class BuildMetadataPHPFromXml
 
     /**
      * @param array<int,array<string>> $countryCodeToRegionCodeMap
-     * @param string $outputDir
-     * @param string $mappingClass
-     * @return void
      */
     private function writeCountryCallingCodeMappingToFile(array $countryCodeToRegionCodeMap, string $outputDir, string $mappingClass): void
     {

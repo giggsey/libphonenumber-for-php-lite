@@ -73,7 +73,6 @@ class MetadataFilter
      * duplicates, malformed strings, or strings where field tokens do not correspond to strings in
      * the sets of excludable fields. We also throw RuntimeException for empty strings since such
      * strings should be treated as a special case by the flag checking code and not passed here.
-     * @param string $string
      * @return array<string,string[]>
      */
     public static function parseFieldMapFromString(string $string): array
@@ -319,7 +318,6 @@ class MetadataFilter
 
     /**
      * @param string $type
-     * @return PhoneNumberDesc
      */
     private function getFiltered($type, PhoneNumberDesc $desc): PhoneNumberDesc
     {
@@ -346,9 +344,6 @@ class MetadataFilter
     }
 
     /**
-     * @param $parent
-     * @param $child
-     * @return bool
      */
     public function shouldDrop(string $parent, ?string $child = null): bool
     {

@@ -81,10 +81,7 @@ class ExampleNumbersTest extends TestCase
     }
 
     /**
-     * @param int $exampleNumberRequestedType
      * @param array<int> $possibleExpectedTypes
-     * @param string $regionCode
-     * @return void
      */
     private function checkNumbersValidAndCorrectType(
         int $exampleNumberRequestedType,

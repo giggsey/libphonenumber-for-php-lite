@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * @author giggsey
  * @package libphonenumber-for-php
  */
@@ -12,7 +11,6 @@ use libphonenumber\buildtools\MetadataFilter;
 use libphonenumber\NumberFormat;
 use libphonenumber\PhoneMetadata;
 use libphonenumber\PhoneNumberDesc;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
 

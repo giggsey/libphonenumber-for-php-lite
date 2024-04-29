@@ -46,9 +46,6 @@ class MatcherTest extends TestCase
     /**
      * Helper method to set national number fields in the PhoneNumberDesc proto. Empty fields won't be
      * set.
-     *
-     * @param string $nationalNumberPattern
-     * @return PhoneNumberDesc
      */
     private function createDesc(string $nationalNumberPattern): PhoneNumberDesc
     {
