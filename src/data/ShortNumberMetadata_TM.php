@@ -6,65 +6,47 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '0\\d',
-    'PossibleLength' =>
-     [
-      0 => 2,
+return [
+    'id' => 'TM',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '0\\d',
+        'posLength' => [
+            2,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '0[1-49]',
-    'ExampleNumber' => '01',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '0[1-49]',
+        'example' => '01',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '0[1-3]',
-    'ExampleNumber' => '01',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '0[1-49]',
-    'ExampleNumber' => '01',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '0[1-3]',
+        'example' => '01',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '0[1-49]',
+        'example' => '01',
     ],
-  ],
-  'id' => 'TM',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

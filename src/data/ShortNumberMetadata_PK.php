@@ -6,67 +6,49 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '1\\d{1,3}',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 4,
+return [
+    'id' => 'PK',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '1\\d{1,3}',
+        'posLength' => [
+            2,
+            3,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:1(?:2\\d?|5)|[56])',
-    'ExampleNumber' => '15',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '1(?:1(?:2\\d?|5)|[56])',
+        'example' => '15',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:1(?:22?|5)|[56])',
-    'ExampleNumber' => '15',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:122|3[014]|[56])|11[2457-9]',
-    'ExampleNumber' => '15',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '1(?:1(?:22?|5)|[56])',
+        'example' => '15',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:122|3[014]|[56])|11[2457-9]',
+        'example' => '15',
     ],
-  ],
-  'id' => 'PK',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

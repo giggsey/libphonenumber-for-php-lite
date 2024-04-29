@@ -6,90 +6,70 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[12]\\d{1,5}',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 4,
-      3 => 5,
-      4 => 6,
+return [
+    'id' => 'SN',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[12]\\d{1,5}',
+        'posLength' => [
+            2,
+            3,
+            4,
+            5,
+            6,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:515|[78])|2(?:00|1)\\d{3}',
-    'ExampleNumber' => '17',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 4,
-      2 => 5,
-      3 => 6,
+    'tollFree' => [
+        'pattern' => '1(?:515|[78])|2(?:00|1)\\d{3}',
+        'example' => '17',
+        'posLength' => [
+            2,
+            4,
+            5,
+            6,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '2(?:0[246]|[468])\\d{3}',
-    'ExampleNumber' => '24000',
-    'PossibleLength' =>
-     [
-      0 => 5,
-      1 => 6,
+    'premiumRate' => [
+        'pattern' => '2(?:0[246]|[468])\\d{3}',
+        'example' => '24000',
+        'posLength' => [
+            5,
+            6,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1[78]',
-    'ExampleNumber' => '17',
-    'PossibleLength' =>
-     [
-      0 => 2,
+    'emergency' => [
+        'pattern' => '1[78]',
+        'example' => '17',
+        'posLength' => [
+            2,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:1[69]|(?:[246]\\d|51)\\d)|2(?:0[0-246]|[12468])\\d{3}|1[278]',
-    'ExampleNumber' => '12',
-  ],
-  'standardRate' =>
-   [
-    'NationalNumberPattern' => '2(?:01|2)\\d{3}',
-    'ExampleNumber' => '22000',
-    'PossibleLength' =>
-     [
-      0 => 5,
-      1 => 6,
+    'shortCode' => [
+        'pattern' => '1(?:1[69]|(?:[246]\\d|51)\\d)|2(?:0[0-246]|[12468])\\d{3}|1[278]',
+        'example' => '12',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '1[46]\\d\\d',
-    'ExampleNumber' => '1400',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'standardRate' => [
+        'pattern' => '2(?:01|2)\\d{3}',
+        'example' => '22000',
+        'posLength' => [
+            5,
+            6,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '2[468]\\d{3}',
-    'ExampleNumber' => '24000',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'pattern' => '1[46]\\d\\d',
+        'example' => '1400',
+        'posLength' => [
+            4,
+        ],
     ],
-  ],
-  'id' => 'SN',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '2[468]\\d{3}',
+        'example' => '24000',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

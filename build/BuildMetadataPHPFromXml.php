@@ -3,6 +3,7 @@
 namespace libphonenumber\buildtools;
 
 use libphonenumber\PhoneMetadata;
+use Symfony\Component\VarExporter\VarExporter;
 
 /**
  * Tool to convert phone number metadata from the XML format to protocol buffer format.
@@ -61,7 +62,7 @@ class BuildMetadataPHPFromXml
 
             $data = '<?php' . PHP_EOL
                 . self::GENERATION_COMMENT . PHP_EOL
-                . 'return ' . \var_export($metadata->toArray(), true) . ';' . PHP_EOL;
+                . 'return ' . VarExporter::export($metadata->toArray()) . ';' . PHP_EOL;
 
             \file_put_contents($filePrefix . '_' . $regionCode . '.php', $data);
         }
@@ -94,22 +95,13 @@ class BuildMetadataPHPFromXml
 
         if ($hasRegionCodes && $hasCountryCodes) {
             $data .= self::MAP_COMMENT . PHP_EOL;
-            $data .= "   public const {$constName} = " . \var_export(
-                $countryCodeToRegionCodeMap,
-                true
-            ) . ';' . PHP_EOL;
+            $data .= "   public const {$constName} = " . VarExporter::export($countryCodeToRegionCodeMap) . ';' . PHP_EOL;
         } elseif ($hasCountryCodes) {
             $data .= self::COUNTRY_CODE_SET_COMMENT . PHP_EOL;
-            $data .= "   public const {$constName} = " . \var_export(
-                \array_keys($countryCodeToRegionCodeMap),
-                true
-            ) . ';' . PHP_EOL;
+            $data .= "   public const {$constName} = " . VarExporter::export(\array_keys($countryCodeToRegionCodeMap)) . ';' . PHP_EOL;
         } else {
             $data .= self::REGION_CODE_SET_COMMENT . PHP_EOL;
-            $data .= "   public const {$constName} = " . \var_export(
-                $countryCodeToRegionCodeMap[0],
-                true
-            ) . ';' . PHP_EOL;
+            $data .= "   public const {$constName} = " . VarExporter::export($countryCodeToRegionCodeMap[0]) . ';' . PHP_EOL;
         }
 
         $data .= PHP_EOL .

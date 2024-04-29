@@ -6,81 +6,61 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[1479]\\d{2,4}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
-      2 => 5,
+return [
+    'id' => 'IQ',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[1479]\\d{2,4}',
+        'posLength' => [
+            3,
+            4,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:0[04]|15|22)',
-    'ExampleNumber' => '100',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '1(?:0[04]|15|22)',
+        'example' => '100',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:0[04]|15|22)',
-    'ExampleNumber' => '100',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '1(?:0[04]|15|22)',
+        'example' => '100',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:0[04]|15|22)|4432|71117|9988',
-    'ExampleNumber' => '100',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:0[04]|15|22)|4432|71117|9988',
+        'example' => '100',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '(?:443|711\\d|998)\\d',
-    'ExampleNumber' => '4430',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '(?:443|711\\d|998)\\d',
-    'ExampleNumber' => '4430',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
+    'carrierSpecific' => [
+        'pattern' => '(?:443|711\\d|998)\\d',
+        'example' => '4430',
+        'posLength' => [
+            4,
+            5,
+        ],
     ],
-  ],
-  'id' => 'IQ',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '(?:443|711\\d|998)\\d',
+        'example' => '4430',
+        'posLength' => [
+            4,
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

@@ -6,76 +6,57 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[0189]\\d\\d(?:\\d{2})?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
+return [
+    'id' => 'BH',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[0189]\\d\\d(?:\\d{2})?',
+        'posLength' => [
+            3,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '(?:0[167]|81)\\d{3}|[19]99',
-    'ExampleNumber' => '199',
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '9[148]\\d{3}',
-    'ExampleNumber' => '91000',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'tollFree' => [
+        'pattern' => '(?:0[167]|81)\\d{3}|[19]99',
+        'example' => '199',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '[19]99',
-    'ExampleNumber' => '199',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'premiumRate' => [
+        'pattern' => '9[148]\\d{3}',
+        'example' => '91000',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:[02]\\d|12|4[01]|51|8[18]|9[169])|99[02489]|(?:0[167]|8[158]|9[148])\\d{3}',
-    'ExampleNumber' => '100',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '[19]99',
+        'example' => '199',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '0[67]\\d{3}|88000|98555',
-    'ExampleNumber' => '06000',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'shortCode' => [
+        'pattern' => '1(?:[02]\\d|12|4[01]|51|8[18]|9[169])|99[02489]|(?:0[167]|8[158]|9[148])\\d{3}',
+        'example' => '100',
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '88000|98555',
-    'ExampleNumber' => '88000',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'BH',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'carrierSpecific' => [
+        'pattern' => '0[67]\\d{3}|88000|98555',
+        'example' => '06000',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'smsServices' => [
+        'pattern' => '88000|98555',
+        'example' => '88000',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

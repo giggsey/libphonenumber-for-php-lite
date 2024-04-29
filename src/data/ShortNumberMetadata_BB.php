@@ -6,63 +6,46 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[2-689]\\d\\d',
-    'PossibleLength' =>
-     [
-      0 => 3,
+return [
+    'id' => 'BB',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[2-689]\\d\\d',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '988|[2359]11',
-    'ExampleNumber' => '211',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '988|[2359]11',
+        'example' => '211',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '[2359]11',
-    'ExampleNumber' => '211',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '988|[2-689]11',
-    'ExampleNumber' => '211',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '[468]11',
-    'ExampleNumber' => '411',
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '[2359]11',
+        'example' => '211',
     ],
-  ],
-  'id' => 'BB',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'shortCode' => [
+        'pattern' => '988|[2-689]11',
+        'example' => '211',
+    ],
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'pattern' => '[468]11',
+        'example' => '411',
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

@@ -6,82 +6,62 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[01389]\\d{1,4}',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 4,
-      3 => 5,
+return [
+    'id' => 'AR',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[01389]\\d{1,4}',
+        'posLength' => [
+            2,
+            3,
+            4,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '000|1(?:0[0-35-7]|1[0245]|2[015]|3[47]|4[478]|9)|911',
-    'ExampleNumber' => '19',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'tollFree' => [
+        'pattern' => '000|1(?:0[0-35-7]|1[0245]|2[015]|3[47]|4[478]|9)|911',
+        'example' => '19',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '10[017]|911',
-    'ExampleNumber' => '100',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '10[017]|911',
+        'example' => '100',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '000|1(?:0[0-35-7]|1[02-5]|2[015]|3[47]|4[478]|9)|3372|89338|911',
-    'ExampleNumber' => '19',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '000|1(?:0[0-35-7]|1[02-5]|2[015]|3[47]|4[478]|9)|3372|89338|911',
+        'example' => '19',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '893\\d\\d',
-    'ExampleNumber' => '89300',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '(?:337|893\\d)\\d',
-    'ExampleNumber' => '3370',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
+    'carrierSpecific' => [
+        'pattern' => '893\\d\\d',
+        'example' => '89300',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'id' => 'AR',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '(?:337|893\\d)\\d',
+        'example' => '3370',
+        'posLength' => [
+            4,
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

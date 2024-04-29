@@ -6,76 +6,57 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[19]\\d\\d(?:\\d{2,3})?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
-      2 => 6,
+return [
+    'id' => 'CN',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[19]\\d\\d(?:\\d{2,3})?',
+        'posLength' => [
+            3,
+            5,
+            6,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:1[09]|2(?:[02]|[13]\\d\\d))',
-    'ExampleNumber' => '110',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
+    'tollFree' => [
+        'pattern' => '1(?:1[09]|2(?:[02]|[13]\\d\\d))',
+        'example' => '110',
+        'posLength' => [
+            3,
+            5,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:1[09]|20)',
-    'ExampleNumber' => '110',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '1(?:1[09]|20)',
+        'example' => '110',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:00\\d\\d|1[029]|2(?:[02]|110|395))|95\\d{3,4}',
-    'ExampleNumber' => '110',
-  ],
-  'standardRate' =>
-   [
-    'NationalNumberPattern' => '1(?:00\\d\\d|12)|95\\d{3,4}',
-    'ExampleNumber' => '112',
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:00\\d\\d|1[029]|2(?:[02]|110|395))|95\\d{3,4}',
+        'example' => '110',
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '121\\d\\d',
-    'ExampleNumber' => '12100',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'pattern' => '1(?:00\\d\\d|12)|95\\d{3,4}',
+        'example' => '112',
     ],
-  ],
-  'id' => 'CN',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'pattern' => '121\\d\\d',
+        'example' => '12100',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

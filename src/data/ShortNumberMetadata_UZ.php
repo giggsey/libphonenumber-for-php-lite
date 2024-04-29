@@ -6,81 +6,61 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[04]\\d(?:\\d(?:\\d{2})?)?',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 5,
+return [
+    'id' => 'UZ',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[04]\\d(?:\\d(?:\\d{2})?)?',
+        'posLength' => [
+            2,
+            3,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '0(?:0[1-3]|[1-3]|50)',
-    'ExampleNumber' => '01',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'tollFree' => [
+        'pattern' => '0(?:0[1-3]|[1-3]|50)',
+        'example' => '01',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '0(?:0[1-3]|[1-3]|50)',
-    'ExampleNumber' => '01',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'emergency' => [
+        'pattern' => '0(?:0[1-3]|[1-3]|50)',
+        'example' => '01',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '0(?:0[1-3]|[1-3]|50)|45400',
-    'ExampleNumber' => '01',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '0(?:0[1-3]|[1-3]|50)|45400',
+        'example' => '01',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '454\\d\\d',
-    'ExampleNumber' => '45400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '454\\d\\d',
-    'ExampleNumber' => '45400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'pattern' => '454\\d\\d',
+        'example' => '45400',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'id' => 'UZ',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '454\\d\\d',
+        'example' => '45400',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

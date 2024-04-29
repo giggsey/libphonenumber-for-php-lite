@@ -6,66 +6,48 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[01]\\d\\d?',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+return [
+    'id' => 'RU',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[01]\\d\\d?',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '112|(?:0|10)[1-3]',
-    'ExampleNumber' => '01',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '112|(?:0|10)[1-3]',
+        'example' => '01',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '112|(?:0|10)[1-3]',
-    'ExampleNumber' => '01',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '112|(?:0|10)[1-4]',
-    'ExampleNumber' => '01',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '112|(?:0|10)[1-3]',
+        'example' => '01',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '112|(?:0|10)[1-4]',
+        'example' => '01',
     ],
-  ],
-  'id' => 'RU',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

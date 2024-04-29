@@ -6,87 +6,67 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[19]\\d{1,5}',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 4,
-      3 => 5,
-      4 => 6,
+return [
+    'id' => 'HR',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[19]\\d{1,5}',
+        'posLength' => [
+            2,
+            3,
+            4,
+            5,
+            6,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:12|9[2-4])|9[34]|1(?:16\\d|39)\\d\\d',
-    'ExampleNumber' => '93',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 5,
-      3 => 6,
+    'tollFree' => [
+        'pattern' => '1(?:12|9[2-4])|9[34]|1(?:16\\d|39)\\d\\d',
+        'example' => '93',
+        'posLength' => [
+            2,
+            3,
+            5,
+            6,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '118\\d\\d',
-    'ExampleNumber' => '11800',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'premiumRate' => [
+        'pattern' => '118\\d\\d',
+        'example' => '11800',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:12|9[2-4])|9[34]',
-    'ExampleNumber' => '93',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'emergency' => [
+        'pattern' => '1(?:12|9[2-4])|9[34]',
+        'example' => '93',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:1(?:2|6(?:00[06]|1(?:1[17]|23))|8\\d\\d)|3977|9(?:[2-5]|87))|9[34]',
-    'ExampleNumber' => '93',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:1(?:2|6(?:00[06]|1(?:1[17]|23))|8\\d\\d)|3977|9(?:[2-5]|87))|9[34]',
+        'example' => '93',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '139\\d\\d',
-    'ExampleNumber' => '13900',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '139\\d\\d',
-    'ExampleNumber' => '13900',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'pattern' => '139\\d\\d',
+        'example' => '13900',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'id' => 'HR',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '139\\d\\d',
+        'example' => '13900',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

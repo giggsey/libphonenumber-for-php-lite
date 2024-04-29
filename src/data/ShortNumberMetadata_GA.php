@@ -6,66 +6,48 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '1\\d(?:\\d{2})?',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 4,
+return [
+    'id' => 'GA',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '1\\d(?:\\d{2})?',
+        'posLength' => [
+            2,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '18|1(?:3\\d|73)\\d',
-    'ExampleNumber' => '18',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '18|1(?:3\\d|73)\\d',
+        'example' => '18',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:3\\d\\d|730|8)',
-    'ExampleNumber' => '18',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:3\\d\\d|730|8)',
-    'ExampleNumber' => '18',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '1(?:3\\d\\d|730|8)',
+        'example' => '18',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:3\\d\\d|730|8)',
+        'example' => '18',
     ],
-  ],
-  'id' => 'GA',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

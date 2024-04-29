@@ -6,101 +6,74 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '(242|8(00|66|77|88)|900)\\d{7}',
-    'PossibleLength' =>
-     [
-      0 => 10,
+return [
+    'id' => 'BS',
+    'countryCode' => 1,
+    'generalDesc' => [
+        'pattern' => '(242|8(00|66|77|88)|900)\\d{7}',
+        'posLength' => [
+            10,
+        ],
+        'posLengthLocal' => [
+            7,
+        ],
     ],
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 7,
+    'fixedLine' => [
+        'pattern' => '242(?:3(?:02|[236][1-9]|4[0-24-9]|5[0-68]|7[3-57]|9[2-5])|4(?:2[237]|51|64|77)|502|636|702)\\d{4}',
+        'example' => '2425027890',
+        'posLengthLocal' => [
+            7,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'NationalNumberPattern' => '242(?:3(?:02|[236][1-9]|4[0-24-9]|5[0-68]|7[3-57]|9[2-5])|4(?:2[237]|51|64|77)|502|636|702)\\d{4}',
-    'ExampleNumber' => '2425027890',
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 7,
+    'mobile' => [
+        'pattern' => '242(357|359|457|557)\\d{4}',
+        'example' => '2423577890',
     ],
-  ],
-  'mobile' =>
-   [
-    'NationalNumberPattern' => '242(357|359|457|557)\\d{4}',
-    'ExampleNumber' => '2423577890',
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '8(00|66|77|88)\\d{7}',
-    'ExampleNumber' => '8001234567',
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '900\\d{7}',
-    'ExampleNumber' => '9001234567',
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '8(00|66|77|88)\\d{7}',
+        'example' => '8001234567',
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'pattern' => '900\\d{7}',
+        'example' => '9001234567',
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'BS',
-  'countryCode' => 1,
-  'internationalPrefix' => '011',
-  'nationalPrefix' => '1',
-  'nationalPrefixForParsing' => '1',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '011',
+    'nationalPrefix' => '1',
+    'nationalPrefixForParsing' => '1',
+    'numberFormat' => [],
 ];

@@ -6,81 +6,61 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[18]\\d{1,3}',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 4,
+return [
+    'id' => 'CM',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[18]\\d{1,3}',
+        'posLength' => [
+            2,
+            3,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:1[37]|[37])',
-    'ExampleNumber' => '13',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'tollFree' => [
+        'pattern' => '1(?:1[37]|[37])',
+        'example' => '13',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:1[37]|[37])',
-    'ExampleNumber' => '13',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'emergency' => [
+        'pattern' => '1(?:1[37]|[37])',
+        'example' => '13',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:1[37]|[37])|8711',
-    'ExampleNumber' => '13',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:1[37]|[37])|8711',
+        'example' => '13',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '871\\d',
-    'ExampleNumber' => '8710',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '871\\d',
-    'ExampleNumber' => '8710',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'carrierSpecific' => [
+        'pattern' => '871\\d',
+        'example' => '8710',
+        'posLength' => [
+            4,
+        ],
     ],
-  ],
-  'id' => 'CM',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '871\\d',
+        'example' => '8710',
+        'posLength' => [
+            4,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];
