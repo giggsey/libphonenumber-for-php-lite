@@ -14,6 +14,7 @@ use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberType;
 use libphonenumber\PhoneNumberUtil;
 use libphonenumber\ValidationResult;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class PhoneNumberUtilTest extends TestCase
@@ -3754,7 +3755,7 @@ class PhoneNumberUtilTest extends TestCase
     /**
      * @return array<array<string>>
      */
-    public function dataForInvalidPhoneContext(): array
+    public static function dataForInvalidPhoneContext(): array
     {
         return [
             ['tel:033316005;phone-context='],
@@ -3769,10 +3770,7 @@ class PhoneNumberUtilTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider dataForInvalidPhoneContext
-     * @param string $numberToParse
-     */
+    #[DataProvider('dataForInvalidPhoneContext')]
     public function testThrowForInvalidPhoneContext(string $numberToParse): void
     {
         $this->expectExceptionCode(NumberParseException::NOT_A_NUMBER); // This is the same as getErrorType()

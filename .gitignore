@@ -6,3 +6,4 @@ build/logs/
 /.php-cs-fixer.cache
 /.phpunit.result.cache
 /infection.txt
+/.phpunit.cache
