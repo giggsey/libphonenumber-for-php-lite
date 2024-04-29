@@ -27,7 +27,7 @@
     </target>
 
     <target name="compile" description="Build all Data"
-            depends="cleanup-data,compile-test-data,build-phone-metadata,cs-fixer">
+            depends="cleanup-data,compile-test-data,build-phone-metadata,build-short-metadata,cs-fixer">
     </target>
 
     <target name="cleanup-test-data" description="Cleanup old built test data"
@@ -103,6 +103,18 @@
             <arg value="${data.coreData}"/>
             <arg value="PhoneNumberMetadata"/>
             <arg value="CountryCodeToRegionCodeMap"/>
+            <arg value="src/"/>
+            <arg value="false"/>
+        </exec>
+    </target>
+
+    <target name="build-short-metadata" depends="git-pull">
+        <exec executable="${build.script}" passthru="true">
+            <arg value="BuildMetadataPHPFromXML"/>
+            <arg value="${git.path}/resources/ShortNumberMetadata.xml"/>
+            <arg value="${data.coreData}"/>
+            <arg value="ShortNumberMetadata"/>
+            <arg value="ShortNumbersRegionCodeSet"/>
             <arg value="src/"/>
             <arg value="false"/>
         </exec>
