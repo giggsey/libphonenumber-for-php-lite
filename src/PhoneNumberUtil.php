@@ -101,7 +101,10 @@ class PhoneNumberUtil
     // only, i.e, does not start with the national prefix. Note that the pattern explicitly allows
     // for unbalanced parentheses.
     protected const FIRST_GROUP_ONLY_PREFIX_PATTERN = '\\(?\\$1\\)?';
-    protected const PLUS_CHARS_PATTERN = '[' . self::PLUS_CHARS . ']+';
+    /**
+     * @internal
+     */
+    public const PLUS_CHARS_PATTERN = '[' . self::PLUS_CHARS . ']+';
     protected const SEPARATOR_PATTERN = '[' . self::VALID_PUNCTUATION . ']+';
     protected const CAPTURING_DIGIT_PATTERN = '(' . self::DIGITS . ')';
     protected const VALID_START_CHAR_PATTERN = '[' . self::PLUS_CHARS . self::DIGITS . ']';
