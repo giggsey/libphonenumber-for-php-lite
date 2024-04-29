@@ -4,6 +4,7 @@ namespace libphonenumber\Tests\core;
 
 use libphonenumber\PhoneMetadata;
 use libphonenumber\PhoneNumberUtil;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class PhoneMetadataTest extends TestCase
@@ -19,7 +20,7 @@ class PhoneMetadataTest extends TestCase
     /**
      * @return array<string[]>
      */
-    public function phoneNumberRegionList(): array
+    public static function phoneNumberRegionList(): array
     {
         $returnList = [];
 
@@ -32,9 +33,7 @@ class PhoneMetadataTest extends TestCase
         return $returnList;
     }
 
-    /**
-     * @dataProvider phoneNumberRegionList
-     */
+    #[DataProvider('phoneNumberRegionList')]
     public function testPhoneNumberMetadataToAndFromArray(string $region): void
     {
         $phoneMetadata = $this->phoneUtil->getMetadataForRegion($region);

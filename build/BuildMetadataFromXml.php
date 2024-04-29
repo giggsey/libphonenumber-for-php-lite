@@ -65,8 +65,8 @@ class BuildMetadataFromXml
     {
         $compressedRegex = $removeWhitespace ? \preg_replace('/\\s/', '', $regex) : $regex;
         // Match regex against an empty string to check the regex is valid
-        if (\preg_match('/' . $compressedRegex . '/', '') === false) {
-            throw new \RuntimeException('Regex error: ' . \preg_last_error());
+        if (@preg_match('/' . $compressedRegex . '/', '') === false) {
+            throw new \RuntimeException('Regex error: ' . \preg_last_error_msg());
         }
         // We don't ever expect to see | followed by a ) in our metadata - this would be an indication
         // of a bug. If one wants to make something optional, we prefer ? to using an empty group.

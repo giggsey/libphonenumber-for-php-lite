@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
-         bootstrap="./tests/bootstrap.php"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd" bootstrap="./tests/bootstrap.php"
          beStrictAboutTestsThatDoNotTestAnything="false"
-         convertDeprecationsToExceptions="true"
          executionOrder="random"
-         colors="true">
-    <coverage>
+         colors="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         failOnDeprecation="true"
+         failOnEmptyTestSuite="true"
+         failOnIncomplete="true"
+         failOnNotice="true"
+         failOnSkipped="true"
+         displayDetailsOnIncompleteTests="true"
+         displayDetailsOnSkippedTests="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerNotices="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         cacheDirectory=".phpunit.cache">
+    <testsuites>
+        <testsuite name="Unit Tests">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <source>
         <include>
             <directory suffix=".php">./src/</directory>
             <directory suffix=".php">./build/</directory>
@@ -20,10 +37,5 @@
             <file>./src/CountryCodeToRegionCodeMap.php</file>
             <file>./src/CountryCodeToRegionCodeMapForTesting.php</file>
         </exclude>
-    </coverage>
-    <testsuites>
-        <testsuite name="Unit Tests">
-            <directory>./tests/</directory>
-        </testsuite>
-    </testsuites>
+    </source>
 </phpunit>

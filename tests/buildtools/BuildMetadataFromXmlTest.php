@@ -12,6 +12,8 @@ use libphonenumber\buildtools\MetadataFilter;
 use libphonenumber\NumberFormat;
 use libphonenumber\PhoneMetadata;
 use libphonenumber\PhoneNumberDesc;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
 
 class BuildMetadataFromXmlTest extends TestCase
@@ -25,46 +27,30 @@ class BuildMetadataFromXmlTest extends TestCase
         $this->assertEquals(' hello world ', BuildMetadataFromXml::validateRE($input, false));
     }
 
-    public function testValidateREThrowsException(): void
+    #[TestWith([false])]
+    #[TestWith([true])]
+    public function testValidateREThrowsException(bool $removeWhitespace): void
     {
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('Regex error: Internal error');
+
         $invalidPattern = '[';
         // Should throw an exception when an invalid pattern is provided independently of the last
         // parameter (remove white spaces).
-        try {
-            BuildMetadataFromXml::validateRE($invalidPattern, false);
-            $this->fail();
-        } catch (\Exception $e) {
-            // Test passed.
-            $this->addToAssertionCount(1);
-        }
+        BuildMetadataFromXml::validateRE($invalidPattern, $removeWhitespace);
+    }
 
-        try {
-            BuildMetadataFromXml::validateRE($invalidPattern, true);
-            $this->fail();
-        } catch (\Exception $e) {
-            // Test passed.
-            $this->addToAssertionCount(1);
-        }
+    #[TestWith(['|)'])]
+    #[TestWith(["|\n)"])]
+    public function testValidateREThrowsExceptionWithPatterns(string $pattern): void
+    {
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('Regex error: Internal error');
 
         // We don't allow | to be followed by ) because it introduces bugs, since we typically use it at
         // the end of each line and when a line is deleted, if the pipe from the previous line is not
         // removed, we end up erroneously accepting an empty group as well.
-        $patternWithPipeFollowedByClosingParentheses = '|)';
-        try {
-            BuildMetadataFromXml::validateRE($patternWithPipeFollowedByClosingParentheses, true);
-            $this->fail();
-        } catch (\Exception $e) {
-            // Test passed.
-            $this->addToAssertionCount(1);
-        }
-        $patternWithPipeFollowedByNewLineAndClosingParentheses = "|\n)";
-        try {
-            BuildMetadataFromXml::validateRE($patternWithPipeFollowedByNewLineAndClosingParentheses, true);
-            $this->fail();
-        } catch (\Exception $e) {
-            // Test passed.
-            $this->addToAssertionCount(1);
-        }
+        BuildMetadataFromXml::validateRE($pattern, true);
     }
 
     public function testValidateRE(): void
