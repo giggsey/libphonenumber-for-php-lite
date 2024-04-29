@@ -2,6 +2,7 @@
 
 namespace libphonenumber\Tests\Issues;
 
+use libphonenumber\PhoneNumber;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberType;
 use libphonenumber\PhoneNumberUtil;
@@ -158,5 +159,14 @@ class UKNumbersTest extends TestCase
 
         $valid = $this->phoneUtil->isValidNumber($phoneObject);
         $this->assertFalse($valid, 'Checking phone number is invalid');
+    }
+
+    public function testFormattingNumberWithNoCountryCode(): void
+    {
+        $number = new PhoneNumber();
+        $number->setNationalNumber('999');
+
+        $formatted = $this->phoneUtil->format($number, PhoneNumberFormat::E164);
+        $this->assertEquals('+0999', $formatted);
     }
 }
