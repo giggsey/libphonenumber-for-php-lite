@@ -22,7 +22,7 @@ This is a lite version that only includes the core Phone Number Utils. To make f
 
 ## Installation
 
-PHP versions 8.0 and above are supported.
+PHP versions 8.1 and above are supported.
 
 The PECL [mbstring](http://php.net/mbstring) extension is required.
 
