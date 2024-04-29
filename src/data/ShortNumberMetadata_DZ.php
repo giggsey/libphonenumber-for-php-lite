@@ -6,76 +6,57 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[17]\\d{1,3}',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 4,
+return [
+    'id' => 'DZ',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[17]\\d{1,3}',
+        'posLength' => [
+            2,
+            3,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:12|[47]|54\\d)',
-    'ExampleNumber' => '14',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '1(?:12|[47]|54\\d)',
+        'example' => '14',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:12|[47])',
-    'ExampleNumber' => '14',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:055|12|[47]|548)|730',
-    'ExampleNumber' => '14',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '1(?:12|[47])',
+        'example' => '14',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '730',
-    'ExampleNumber' => '730',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'shortCode' => [
+        'pattern' => '1(?:055|12|[47]|548)|730',
+        'example' => '14',
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '730',
-    'ExampleNumber' => '730',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'DZ',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'carrierSpecific' => [
+        'pattern' => '730',
+        'example' => '730',
+        'posLength' => [
+            3,
+        ],
+    ],
+    'smsServices' => [
+        'pattern' => '730',
+        'example' => '730',
+        'posLength' => [
+            3,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

@@ -6,65 +6,47 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '9\\d\\d',
-    'PossibleLength' =>
-     [
-      0 => 3,
+return [
+    'id' => 'BN',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '9\\d\\d',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '99[135]',
-    'ExampleNumber' => '991',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '99[135]',
+        'example' => '991',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '99[135]',
-    'ExampleNumber' => '991',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '99[135]',
-    'ExampleNumber' => '991',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '99[135]',
+        'example' => '991',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '99[135]',
+        'example' => '991',
     ],
-  ],
-  'id' => 'BN',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

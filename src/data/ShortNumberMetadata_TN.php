@@ -6,65 +6,47 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '1\\d\\d',
-    'PossibleLength' =>
-     [
-      0 => 3,
+return [
+    'id' => 'TN',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '1\\d\\d',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '19[078]',
-    'ExampleNumber' => '190',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '19[078]',
+        'example' => '190',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '19[078]',
-    'ExampleNumber' => '190',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '19[078]',
-    'ExampleNumber' => '190',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '19[078]',
+        'example' => '190',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '19[078]',
+        'example' => '190',
     ],
-  ],
-  'id' => 'TN',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

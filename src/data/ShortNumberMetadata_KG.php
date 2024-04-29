@@ -6,78 +6,58 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[14]\\d{2,3}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
+return [
+    'id' => 'KG',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[14]\\d{2,3}',
+        'posLength' => [
+            3,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '10[1-3]',
-    'ExampleNumber' => '101',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '10[1-3]',
+        'example' => '101',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '10[1-3]',
-    'ExampleNumber' => '101',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '10[1-3]',
+        'example' => '101',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '10[1-3]|4040',
-    'ExampleNumber' => '101',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '10[1-3]|4040',
+        'example' => '101',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '404\\d',
-    'ExampleNumber' => '4040',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '404\\d',
-    'ExampleNumber' => '4040',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'carrierSpecific' => [
+        'pattern' => '404\\d',
+        'example' => '4040',
+        'posLength' => [
+            4,
+        ],
     ],
-  ],
-  'id' => 'KG',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '404\\d',
+        'example' => '4040',
+        'posLength' => [
+            4,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

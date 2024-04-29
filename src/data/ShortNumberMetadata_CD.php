@@ -6,78 +6,58 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[14]\\d\\d(?:\\d{2})?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
+return [
+    'id' => 'CD',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[14]\\d\\d(?:\\d{2})?',
+        'posLength' => [
+            3,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:1[348]|77|88)',
-    'ExampleNumber' => '113',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '1(?:1[348]|77|88)',
+        'example' => '113',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:1[348]|77|88)',
-    'ExampleNumber' => '113',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '1(?:1[348]|77|88)',
+        'example' => '113',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:1[348]|23|77|88)|40404',
-    'ExampleNumber' => '113',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:1[348]|23|77|88)|40404',
+        'example' => '113',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '404\\d\\d',
-    'ExampleNumber' => '40400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '404\\d\\d',
-    'ExampleNumber' => '40400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'pattern' => '404\\d\\d',
+        'example' => '40400',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'id' => 'CD',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '404\\d\\d',
+        'example' => '40400',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

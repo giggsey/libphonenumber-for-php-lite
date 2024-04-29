@@ -6,78 +6,58 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[014]\\d\\d(?:\\d{2})?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
+return [
+    'id' => 'GE',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[014]\\d\\d(?:\\d{2})?',
+        'posLength' => [
+            3,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '0(?:11|33)|11[1-3]|[01]22',
-    'ExampleNumber' => '011',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '0(?:11|33)|11[1-3]|[01]22',
+        'example' => '011',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '0(?:11|33)|11[1-3]|[01]22',
-    'ExampleNumber' => '011',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '0(?:11|33)|11[1-3]|[01]22',
+        'example' => '011',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '0(?:11|33)|11[1-3]|40404|[01]22',
-    'ExampleNumber' => '011',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '0(?:11|33)|11[1-3]|40404|[01]22',
+        'example' => '011',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '404\\d\\d',
-    'ExampleNumber' => '40400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '404\\d\\d',
-    'ExampleNumber' => '40400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'pattern' => '404\\d\\d',
+        'example' => '40400',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'id' => 'GE',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '404\\d\\d',
+        'example' => '40400',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

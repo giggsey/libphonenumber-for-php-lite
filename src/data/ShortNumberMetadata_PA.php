@@ -6,65 +6,47 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[19]\\d\\d',
-    'PossibleLength' =>
-     [
-      0 => 3,
+return [
+    'id' => 'PA',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[19]\\d\\d',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '911',
-    'ExampleNumber' => '911',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '911',
+        'example' => '911',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '911',
-    'ExampleNumber' => '911',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '10[2-4]|911',
-    'ExampleNumber' => '102',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '911',
+        'example' => '911',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '10[2-4]|911',
+        'example' => '102',
     ],
-  ],
-  'id' => 'PA',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

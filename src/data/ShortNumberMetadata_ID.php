@@ -6,79 +6,59 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[178]\\d\\d(?:\\d{2,3})?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
-      2 => 6,
+return [
+    'id' => 'ID',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[178]\\d\\d(?:\\d{2,3})?',
+        'posLength' => [
+            3,
+            5,
+            6,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '11[02389]',
-    'ExampleNumber' => '110',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '11[02389]',
+        'example' => '110',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '11[02389]',
-    'ExampleNumber' => '110',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '11[02389]',
+        'example' => '110',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:1[02389]|40\\d\\d|50264)|71400|89887',
-    'ExampleNumber' => '110',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:1[02389]|40\\d\\d|50264)|71400|89887',
+        'example' => '110',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '(?:714|898)\\d\\d',
-    'ExampleNumber' => '71400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '714\\d\\d',
-    'ExampleNumber' => '71400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'pattern' => '(?:714|898)\\d\\d',
+        'example' => '71400',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'id' => 'ID',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '714\\d\\d',
+        'example' => '71400',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

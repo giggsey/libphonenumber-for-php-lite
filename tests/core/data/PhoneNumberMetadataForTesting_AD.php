@@ -6,97 +6,69 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '\\d{6}',
-    'PossibleLength' =>
-     [
-      0 => 6,
+return [
+    'id' => 'AD',
+    'countryCode' => 376,
+    'generalDesc' => [
+        'pattern' => '\\d{6}',
+        'posLength' => [
+            6,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'NationalNumberPattern' => '\\d{6}',
-    'ExampleNumber' => '123456',
-  ],
-  'mobile' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'fixedLine' => [
+        'pattern' => '\\d{6}',
+        'example' => '123456',
     ],
-  ],
-  'tollFree' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'mobile' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'AD',
-  'countryCode' => 376,
-  'internationalPrefix' => '00',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '00',
+    'numberFormat' => [],
 ];

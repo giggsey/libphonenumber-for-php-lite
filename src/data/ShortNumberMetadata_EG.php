@@ -6,78 +6,58 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[13]\\d\\d(?:\\d{2})?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
+return [
+    'id' => 'EG',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[13]\\d\\d(?:\\d{2})?',
+        'posLength' => [
+            3,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:2[23]|80)',
-    'ExampleNumber' => '122',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '1(?:2[23]|80)',
+        'example' => '122',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:2[23]|80)',
-    'ExampleNumber' => '122',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '1(?:2[23]|80)',
+        'example' => '122',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:2[23]|[679]\\d{3}|80)|34400',
-    'ExampleNumber' => '122',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:2[23]|[679]\\d{3}|80)|34400',
+        'example' => '122',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '344\\d\\d',
-    'ExampleNumber' => '34400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '344\\d\\d',
-    'ExampleNumber' => '34400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'pattern' => '344\\d\\d',
+        'example' => '34400',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'id' => 'EG',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '344\\d\\d',
+        'example' => '34400',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

@@ -6,76 +6,56 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[49]\\d\\d(?:\\d{2})?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
+return [
+    'id' => 'AS',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[49]\\d\\d(?:\\d{2})?',
+        'posLength' => [
+            3,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '9(?:11|88)',
-    'ExampleNumber' => '911',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '9(?:11|88)',
+        'example' => '911',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '911',
-    'ExampleNumber' => '911',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '911',
+        'example' => '911',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '40404|9(?:11|88)',
-    'ExampleNumber' => '911',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '40404|9(?:11|88)',
+        'example' => '911',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '404\\d\\d',
-    'ExampleNumber' => '40400',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'AS',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '404\\d\\d',
+        'example' => '40400',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

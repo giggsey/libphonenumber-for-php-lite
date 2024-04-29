@@ -6,153 +6,116 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[289]\\d{7,9}|[3-7]\\d{7}',
-    'PossibleLength' =>
-     [
-      0 => 7,
-      1 => 8,
-      2 => 9,
-      3 => 10,
+return [
+    'id' => 'NZ',
+    'countryCode' => 64,
+    'generalDesc' => [
+        'pattern' => '[289]\\d{7,9}|[3-7]\\d{7}',
+        'posLength' => [
+            7,
+            8,
+            9,
+            10,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'NationalNumberPattern' => '24099\\d{3}|(?:3[2-79]|[479][2-689]|6[235-9])\\d{6}',
-    'ExampleNumber' => '24099123',
-    'PossibleLength' =>
-     [
-      0 => 7,
-      1 => 8,
+    'fixedLine' => [
+        'pattern' => '24099\\d{3}|(?:3[2-79]|[479][2-689]|6[235-9])\\d{6}',
+        'example' => '24099123',
+        'posLength' => [
+            7,
+            8,
+        ],
     ],
-  ],
-  'mobile' =>
-   [
-    'NationalNumberPattern' => '2(?:[027]\\d{7}|9\\d{6,7}|1(?:0\\d{5,7}|[12]\\d{5,6}|[3-9]\\d{5})|4[1-9]\\d{6}|8\\d{7,8})',
-    'ExampleNumber' => '201234567',
-    'PossibleLength' =>
-     [
-      0 => 8,
-      1 => 9,
-      2 => 10,
+    'mobile' => [
+        'pattern' => '2(?:[027]\\d{7}|9\\d{6,7}|1(?:0\\d{5,7}|[12]\\d{5,6}|[3-9]\\d{5})|4[1-9]\\d{6}|8\\d{7,8})',
+        'example' => '201234567',
+        'posLength' => [
+            8,
+            9,
+            10,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '800\\d{6,7}',
-    'ExampleNumber' => '8001234567',
-    'PossibleLength' =>
-     [
-      0 => 9,
-      1 => 10,
+    'tollFree' => [
+        'pattern' => '800\\d{6,7}',
+        'example' => '8001234567',
+        'posLength' => [
+            9,
+            10,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '900\\d{6,7}',
-    'ExampleNumber' => '9001234567',
-    'PossibleLength' =>
-     [
-      0 => 9,
-      1 => 10,
+    'premiumRate' => [
+        'pattern' => '900\\d{6,7}',
+        'example' => '9001234567',
+        'posLength' => [
+            9,
+            10,
+        ],
     ],
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'NZ',
-  'countryCode' => 64,
-  'internationalPrefix' => '00',
-  'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-    0 =>
-     [
-      'pattern' => '(\\d)(\\d{3})(\\d{4})',
-      'format' => '$1-$2 $3',
-      'leadingDigitsPatterns' =>
-       [
-        0 => '24|[34679]',
-      ],
-      'nationalPrefixFormattingRule' => '0$1',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => false,
+    'internationalPrefix' => '00',
+    'nationalPrefix' => '0',
+    'nationalPrefixForParsing' => '0',
+    'numberFormat' => [
+        [
+            'pattern' => '(\\d)(\\d{3})(\\d{4})',
+            'format' => '$1-$2 $3',
+            'leadingDigitsPatterns' => [
+                '24|[34679]',
+            ],
+            'nationalPrefixFormattingRule' => '0$1',
+            'domesticCarrierCodeFormattingRule' => '',
+        ],
+        [
+            'pattern' => '(\\d)(\\d{3})(\\d{3,5})',
+            'format' => '$1-$2 $3',
+            'leadingDigitsPatterns' => [
+                '2[179]',
+            ],
+            'nationalPrefixFormattingRule' => '0$1',
+            'domesticCarrierCodeFormattingRule' => '',
+        ],
+        [
+            'pattern' => '(\\d{3})(\\d{3})(\\d{3,4})',
+            'format' => '$1 $2 $3',
+            'leadingDigitsPatterns' => [
+                '[89]',
+            ],
+            'nationalPrefixFormattingRule' => '0$1',
+            'domesticCarrierCodeFormattingRule' => '',
+        ],
     ],
-    1 =>
-     [
-      'pattern' => '(\\d)(\\d{3})(\\d{3,5})',
-      'format' => '$1-$2 $3',
-      'leadingDigitsPatterns' =>
-       [
-        0 => '2[179]',
-      ],
-      'nationalPrefixFormattingRule' => '0$1',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => false,
-    ],
-    2 =>
-     [
-      'pattern' => '(\\d{3})(\\d{3})(\\d{3,4})',
-      'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' =>
-       [
-        0 => '[89]',
-      ],
-      'nationalPrefixFormattingRule' => '0$1',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => false,
-    ],
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
 ];

@@ -6,65 +6,47 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '1\\d\\d',
-    'PossibleLength' =>
-     [
-      0 => 3,
+return [
+    'id' => 'SJ',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '1\\d\\d',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '11[023]',
-    'ExampleNumber' => '110',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '11[023]',
+        'example' => '110',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '11[023]',
-    'ExampleNumber' => '110',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '11[023]',
-    'ExampleNumber' => '110',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '11[023]',
+        'example' => '110',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '11[023]',
+        'example' => '110',
     ],
-  ],
-  'id' => 'SJ',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

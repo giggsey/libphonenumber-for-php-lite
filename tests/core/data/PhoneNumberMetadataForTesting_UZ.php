@@ -6,118 +6,87 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[69]\\d{8}',
-    'PossibleLength' =>
-     [
-      0 => 9,
+return [
+    'id' => 'UZ',
+    'countryCode' => 998,
+    'generalDesc' => [
+        'pattern' => '[69]\\d{8}',
+        'posLength' => [
+            9,
+        ],
+        'posLengthLocal' => [
+            7,
+        ],
     ],
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 7,
+    'fixedLine' => [
+        'pattern' => '6122\\d{5}',
+        'example' => '662345678',
+        'posLengthLocal' => [
+            7,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'NationalNumberPattern' => '6122\\d{5}',
-    'ExampleNumber' => '662345678',
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 7,
+    'mobile' => [
+        'pattern' => '9[0-57-9]\\d{7}',
+        'example' => '912345678',
     ],
-  ],
-  'mobile' =>
-   [
-    'NationalNumberPattern' => '9[0-57-9]\\d{7}',
-    'ExampleNumber' => '912345678',
-  ],
-  'tollFree' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'UZ',
-  'countryCode' => 998,
-  'internationalPrefix' => '810',
-  'preferredInternationalPrefix' => '8~10',
-  'nationalPrefix' => '8',
-  'nationalPrefixForParsing' => '8',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-    0 =>
-     [
-      'pattern' => '(\\d{2})(\\d{3})(\\d{2})(\\d{2})',
-      'format' => '$1 $2 $3 $4',
-      'leadingDigitsPatterns' =>
-       [
-        0 => '[679]',
-      ],
-      'nationalPrefixFormattingRule' => '8 $1',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => false,
+    'internationalPrefix' => '810',
+    'preferredInternationalPrefix' => '8~10',
+    'nationalPrefix' => '8',
+    'nationalPrefixForParsing' => '8',
+    'numberFormat' => [
+        [
+            'pattern' => '(\\d{2})(\\d{3})(\\d{2})(\\d{2})',
+            'format' => '$1 $2 $3 $4',
+            'leadingDigitsPatterns' => [
+                '[679]',
+            ],
+            'nationalPrefixFormattingRule' => '8 $1',
+            'domesticCarrierCodeFormattingRule' => '',
+        ],
     ],
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
 ];

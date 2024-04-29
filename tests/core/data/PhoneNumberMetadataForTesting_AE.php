@@ -6,97 +6,70 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[1-9]\\d{8}',
-    'PossibleLength' =>
-     [
-      0 => 9,
+return [
+    'id' => 'AE',
+    'countryCode' => 971,
+    'generalDesc' => [
+        'pattern' => '[1-9]\\d{8}',
+        'posLength' => [
+            9,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'fixedLine' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'mobile' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'mobile' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'NationalNumberPattern' => '600\\d{6}',
-    'ExampleNumber' => '600123456',
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'uan' => [
+        'pattern' => '600\\d{6}',
+        'example' => '600123456',
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'AE',
-  'countryCode' => 971,
-  'internationalPrefix' => '00',
-  'sameMobileAndFixedLinePattern' => true,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '00',
+    'sameMobileAndFixedLinePattern' => true,
+    'numberFormat' => [],
 ];

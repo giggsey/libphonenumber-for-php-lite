@@ -6,79 +6,59 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[19]\\d{1,5}',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 4,
-      3 => 5,
-      4 => 6,
+return [
+    'id' => 'RS',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[19]\\d{1,5}',
+        'posLength' => [
+            2,
+            3,
+            4,
+            5,
+            6,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '112|9[2-4]',
-    'ExampleNumber' => '92',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'tollFree' => [
+        'pattern' => '112|9[2-4]',
+        'example' => '92',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '112|9[2-4]',
-    'ExampleNumber' => '92',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'emergency' => [
+        'pattern' => '112|9[2-4]',
+        'example' => '92',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1[189]\\d{1,4}|9[2-4]',
-    'ExampleNumber' => '92',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1[189]\\d{1,4}|9[2-4]',
+        'example' => '92',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'RS',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

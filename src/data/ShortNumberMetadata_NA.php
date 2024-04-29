@@ -6,75 +6,55 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[19]\\d{2,4}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
-      2 => 5,
+return [
+    'id' => 'NA',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[19]\\d{2,4}',
+        'posLength' => [
+            3,
+            4,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '10111',
-    'ExampleNumber' => '10111',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'tollFree' => [
+        'pattern' => '10111',
+        'example' => '10111',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '10111',
-    'ExampleNumber' => '10111',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'emergency' => [
+        'pattern' => '10111',
+        'example' => '10111',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '(?:10|93)111|(?:1\\d|9)\\d\\d',
-    'ExampleNumber' => '900',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '(?:10|93)111|(?:1\\d|9)\\d\\d',
+        'example' => '900',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'NA',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

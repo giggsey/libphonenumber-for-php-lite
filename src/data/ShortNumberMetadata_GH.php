@@ -6,81 +6,61 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[14589]\\d{2,4}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
-      2 => 5,
+return [
+    'id' => 'GH',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[14589]\\d{2,4}',
+        'posLength' => [
+            3,
+            4,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '19[1-3]|999',
-    'ExampleNumber' => '191',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '19[1-3]|999',
+        'example' => '191',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '19[1-3]|999',
-    'ExampleNumber' => '191',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '19[1-3]|999',
+        'example' => '191',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '19[1-3]|40404|(?:54|83)00|999',
-    'ExampleNumber' => '191',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '19[1-3]|40404|(?:54|83)00|999',
+        'example' => '191',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '404\\d\\d|(?:54|83)0\\d',
-    'ExampleNumber' => '5400',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '404\\d\\d|(?:54|83)0\\d',
-    'ExampleNumber' => '5400',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
+    'carrierSpecific' => [
+        'pattern' => '404\\d\\d|(?:54|83)0\\d',
+        'example' => '5400',
+        'posLength' => [
+            4,
+            5,
+        ],
     ],
-  ],
-  'id' => 'GH',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '404\\d\\d|(?:54|83)0\\d',
+        'example' => '5400',
+        'posLength' => [
+            4,
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

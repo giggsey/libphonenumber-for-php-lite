@@ -6,77 +6,57 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[19]\\d{2,5}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
-      2 => 5,
-      3 => 6,
+return [
+    'id' => 'MD',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[19]\\d{2,5}',
+        'posLength' => [
+            3,
+            4,
+            5,
+            6,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '11(?:2|6(?:000|1(?:11|2\\d)))|90[1-3]',
-    'ExampleNumber' => '112',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 6,
+    'tollFree' => [
+        'pattern' => '11(?:2|6(?:000|1(?:11|2\\d)))|90[1-3]',
+        'example' => '112',
+        'posLength' => [
+            3,
+            6,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '112|90[1-3]',
-    'ExampleNumber' => '112',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '112|90[1-3]',
+        'example' => '112',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:1(?:2|6(?:00[06]|1(?:1[17]|23))|8\\d\\d?|99)|90[04-9])|90[1-3]|1(?:4\\d\\d|6[0-389]|9[1-4])\\d',
-    'ExampleNumber' => '112',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:1(?:2|6(?:00[06]|1(?:1[17]|23))|8\\d\\d?|99)|90[04-9])|90[1-3]|1(?:4\\d\\d|6[0-389]|9[1-4])\\d',
+        'example' => '112',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'MD',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

@@ -6,76 +6,56 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[179]\\d{2,3}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
+return [
+    'id' => 'KI',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[179]\\d{2,3}',
+        'posLength' => [
+            3,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '19[2-5]|99[2-4]',
-    'ExampleNumber' => '192',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '19[2-5]|99[2-4]',
+        'example' => '192',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '19[2-5]|99[2-4]',
-    'ExampleNumber' => '192',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '19[2-5]|99[2-4]',
+        'example' => '192',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:05[0-259]|88|9[2-5])|777|99[2-4]|10[0-8]',
-    'ExampleNumber' => '100',
-  ],
-  'standardRate' =>
-   [
-    'NationalNumberPattern' => '103',
-    'ExampleNumber' => '103',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'shortCode' => [
+        'pattern' => '1(?:05[0-259]|88|9[2-5])|777|99[2-4]|10[0-8]',
+        'example' => '100',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'standardRate' => [
+        'pattern' => '103',
+        'example' => '103',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'KI',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

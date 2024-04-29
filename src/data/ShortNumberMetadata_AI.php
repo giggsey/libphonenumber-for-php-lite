@@ -6,61 +6,45 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[19]\\d\\d',
-    'PossibleLength' =>
-     [
-      0 => 3,
+return [
+    'id' => 'AI',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[19]\\d\\d',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '9(?:11|88)',
-    'ExampleNumber' => '911',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '9(?:11|88)',
+        'example' => '911',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '911',
-    'ExampleNumber' => '911',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '176|9(?:11|88)',
-    'ExampleNumber' => '176',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '176',
-    'ExampleNumber' => '176',
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '176',
-    'ExampleNumber' => '176',
-  ],
-  'id' => 'AI',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'emergency' => [
+        'pattern' => '911',
+        'example' => '911',
+    ],
+    'shortCode' => [
+        'pattern' => '176|9(?:11|88)',
+        'example' => '176',
+    ],
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'pattern' => '176',
+        'example' => '176',
+    ],
+    'smsServices' => [
+        'pattern' => '176',
+        'example' => '176',
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

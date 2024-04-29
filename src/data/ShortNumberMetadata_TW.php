@@ -6,70 +6,52 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '1\\d{2,3}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
+return [
+    'id' => 'TW',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '1\\d{2,3}',
+        'posLength' => [
+            3,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '11[0289]|1(?:81|92)\\d',
-    'ExampleNumber' => '110',
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '10[56]',
-    'ExampleNumber' => '105',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '11[0289]|1(?:81|92)\\d',
+        'example' => '110',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '11[029]',
-    'ExampleNumber' => '110',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'premiumRate' => [
+        'pattern' => '10[56]',
+        'example' => '105',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:0[04-6]|1[0237-9]|3[389]|6[05-8]|7[07]|8(?:0|11)|9(?:19|22|5[057]|68|8[05]|9[15689]))',
-    'ExampleNumber' => '100',
-  ],
-  'standardRate' =>
-   [
-    'NationalNumberPattern' => '1(?:65|9(?:1\\d|50|85|98))',
-    'ExampleNumber' => '165',
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '11[029]',
+        'example' => '110',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:0[04-6]|1[0237-9]|3[389]|6[05-8]|7[07]|8(?:0|11)|9(?:19|22|5[057]|68|8[05]|9[15689]))',
+        'example' => '100',
     ],
-  ],
-  'id' => 'TW',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'pattern' => '1(?:65|9(?:1\\d|50|85|98))',
+        'example' => '165',
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

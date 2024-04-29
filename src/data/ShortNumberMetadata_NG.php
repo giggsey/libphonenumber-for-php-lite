@@ -6,78 +6,58 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[14]\\d\\d(?:\\d{2})?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
+return [
+    'id' => 'NG',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[14]\\d\\d(?:\\d{2})?',
+        'posLength' => [
+            3,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '199',
-    'ExampleNumber' => '199',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '199',
+        'example' => '199',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '199',
-    'ExampleNumber' => '199',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '199',
+        'example' => '199',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '199|40700',
-    'ExampleNumber' => '199',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '199|40700',
+        'example' => '199',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '407\\d\\d',
-    'ExampleNumber' => '40700',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '407\\d\\d',
-    'ExampleNumber' => '40700',
-    'PossibleLength' =>
-     [
-      0 => 5,
+    'carrierSpecific' => [
+        'pattern' => '407\\d\\d',
+        'example' => '40700',
+        'posLength' => [
+            5,
+        ],
     ],
-  ],
-  'id' => 'NG',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '407\\d\\d',
+        'example' => '40700',
+        'posLength' => [
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

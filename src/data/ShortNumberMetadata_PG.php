@@ -6,82 +6,62 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[01]\\d{2,6}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
-      2 => 5,
-      3 => 6,
-      4 => 7,
+return [
+    'id' => 'PG',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[01]\\d{2,6}',
+        'posLength' => [
+            3,
+            4,
+            5,
+            6,
+            7,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '000|11[01]',
-    'ExampleNumber' => '000',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '000|11[01]',
+        'example' => '000',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '000|11[01]',
-    'ExampleNumber' => '000',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '000|11[01]',
+        'example' => '000',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '000|1(?:1[01]|5\\d\\d|6\\d{2,5})',
-    'ExampleNumber' => '000',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '000|1(?:1[01]|5\\d\\d|6\\d{2,5})',
+        'example' => '000',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '16\\d{2,5}',
-    'ExampleNumber' => '1600',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
-      2 => 6,
-      3 => 7,
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'PG',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '16\\d{2,5}',
+        'example' => '1600',
+        'posLength' => [
+            4,
+            5,
+            6,
+            7,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

@@ -6,78 +6,58 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[3489]\\d{2,3}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
+return [
+    'id' => 'LR',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[3489]\\d{2,3}',
+        'posLength' => [
+            3,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '355|911',
-    'ExampleNumber' => '355',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '355|911',
+        'example' => '355',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '355|911',
-    'ExampleNumber' => '355',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '355|911',
+        'example' => '355',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '355|4040|8(?:400|933)|911',
-    'ExampleNumber' => '355',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '355|4040|8(?:400|933)|911',
+        'example' => '355',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '(?:404|8(?:40|93))\\d',
-    'ExampleNumber' => '4040',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '(?:404|8(?:40|93))\\d',
-    'ExampleNumber' => '4040',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'carrierSpecific' => [
+        'pattern' => '(?:404|8(?:40|93))\\d',
+        'example' => '4040',
+        'posLength' => [
+            4,
+        ],
     ],
-  ],
-  'id' => 'LR',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '(?:404|8(?:40|93))\\d',
+        'example' => '4040',
+        'posLength' => [
+            4,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

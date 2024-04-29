@@ -6,63 +6,46 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[019]\\d\\d',
-    'PossibleLength' =>
-     [
-      0 => 3,
+return [
+    'id' => 'NU',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[019]\\d\\d',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '999',
-    'ExampleNumber' => '999',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '999',
+        'example' => '999',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '999',
-    'ExampleNumber' => '999',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '01[05]|101|999',
-    'ExampleNumber' => '010',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '010',
-    'ExampleNumber' => '010',
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '999',
+        'example' => '999',
     ],
-  ],
-  'id' => 'NU',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'shortCode' => [
+        'pattern' => '01[05]|101|999',
+        'example' => '010',
+    ],
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'pattern' => '010',
+        'example' => '010',
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

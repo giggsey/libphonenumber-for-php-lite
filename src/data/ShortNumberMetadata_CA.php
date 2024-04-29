@@ -6,82 +6,62 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[1-9]\\d\\d(?:\\d\\d(?:\\d(?:\\d{2})?)?)?',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
-      2 => 6,
-      3 => 8,
+return [
+    'id' => 'CA',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[1-9]\\d\\d(?:\\d\\d(?:\\d(?:\\d{2})?)?)?',
+        'posLength' => [
+            3,
+            5,
+            6,
+            8,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '112|988|[29]11',
-    'ExampleNumber' => '112',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '112|988|[29]11',
+        'example' => '112',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '112|911',
-    'ExampleNumber' => '112',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '112|911',
+        'example' => '112',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '112|30000\\d{3}|[1-35-9]\\d{4,5}|[2-8]11|9(?:11|88)',
-    'ExampleNumber' => '112',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '112|30000\\d{3}|[1-35-9]\\d{4,5}|[2-8]11|9(?:11|88)',
+        'example' => '112',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '[235-7]11',
-    'ExampleNumber' => '211',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '300\\d{5}|[1-35-9]\\d{4,5}',
-    'ExampleNumber' => '10000',
-    'PossibleLength' =>
-     [
-      0 => 5,
-      1 => 6,
-      2 => 8,
+    'carrierSpecific' => [
+        'pattern' => '[235-7]11',
+        'example' => '211',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'id' => 'CA',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '300\\d{5}|[1-35-9]\\d{4,5}',
+        'example' => '10000',
+        'posLength' => [
+            5,
+            6,
+            8,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

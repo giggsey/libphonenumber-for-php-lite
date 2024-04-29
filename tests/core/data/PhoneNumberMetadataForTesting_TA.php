@@ -6,107 +6,78 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '8\\d{3,7}',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 6,
-      2 => 8,
+return [
+    'id' => 'TA',
+    'countryCode' => 290,
+    'generalDesc' => [
+        'pattern' => '8\\d{3,7}',
+        'posLength' => [
+            4,
+            6,
+            8,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'NationalNumberPattern' => '8\\d{5}',
-    'ExampleNumber' => '812345',
-    'PossibleLength' =>
-     [
-      0 => 6,
+    'fixedLine' => [
+        'pattern' => '8\\d{5}',
+        'example' => '812345',
+        'posLength' => [
+            6,
+        ],
     ],
-  ],
-  'mobile' =>
-   [
-    'NationalNumberPattern' => '8\\d{3}',
-    'ExampleNumber' => '8123',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'mobile' => [
+        'pattern' => '8\\d{3}',
+        'example' => '8123',
+        'posLength' => [
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '8\\d{7}',
-    'ExampleNumber' => '81234567',
-    'PossibleLength' =>
-     [
-      0 => 8,
+    'tollFree' => [
+        'pattern' => '8\\d{7}',
+        'example' => '81234567',
+        'posLength' => [
+            8,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'TA',
-  'countryCode' => 290,
-  'internationalPrefix' => '00',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'internationalPrefix' => '00',
+    'numberFormat' => [],
 ];

@@ -6,61 +6,45 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[19]\\d\\d',
-    'PossibleLength' =>
-     [
-      0 => 3,
+return [
+    'id' => 'JM',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[19]\\d\\d',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '11[029]|9(?:11|88)',
-    'ExampleNumber' => '110',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '11[029]|9(?:11|88)',
+        'example' => '110',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '11[029]|911',
-    'ExampleNumber' => '110',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:1[029]|76)|9(?:11|88)',
-    'ExampleNumber' => '110',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '176',
-    'ExampleNumber' => '176',
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '176',
-    'ExampleNumber' => '176',
-  ],
-  'id' => 'JM',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'emergency' => [
+        'pattern' => '11[029]|911',
+        'example' => '110',
+    ],
+    'shortCode' => [
+        'pattern' => '1(?:1[029]|76)|9(?:11|88)',
+        'example' => '110',
+    ],
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'pattern' => '176',
+        'example' => '176',
+    ],
+    'smsServices' => [
+        'pattern' => '176',
+        'example' => '176',
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

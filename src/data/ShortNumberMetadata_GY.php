@@ -6,78 +6,58 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[019]\\d{2,3}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
+return [
+    'id' => 'GY',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[019]\\d{2,3}',
+        'posLength' => [
+            3,
+            4,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '91[1-3]',
-    'ExampleNumber' => '911',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'tollFree' => [
+        'pattern' => '91[1-3]',
+        'example' => '911',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '91[1-3]',
-    'ExampleNumber' => '911',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '91[1-3]',
+        'example' => '911',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '0(?:02|(?:17|80)1|444|7(?:[67]7|9)|9(?:0[78]|[2-47]))|1(?:443|5[568])|91[1-3]',
-    'ExampleNumber' => '002',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '0(?:02|(?:17|80)1|444|7(?:[67]7|9)|9(?:0[78]|[2-47]))|1(?:443|5[568])|91[1-3]',
+        'example' => '002',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '144\\d',
-    'ExampleNumber' => '1440',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '144\\d',
-    'ExampleNumber' => '1440',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'carrierSpecific' => [
+        'pattern' => '144\\d',
+        'example' => '1440',
+        'posLength' => [
+            4,
+        ],
     ],
-  ],
-  'id' => 'GY',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '144\\d',
+        'example' => '1440',
+        'posLength' => [
+            4,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

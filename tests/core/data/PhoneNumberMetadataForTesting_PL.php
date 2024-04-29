@@ -6,106 +6,77 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[1-9]\\d{8}',
-    'PossibleLength' =>
-     [
-      0 => 9,
+return [
+    'id' => 'PL',
+    'countryCode' => 48,
+    'generalDesc' => [
+        'pattern' => '[1-9]\\d{8}',
+        'posLength' => [
+            9,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'fixedLine' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'mobile' =>
-   [
-    'NationalNumberPattern' => '(?:5[01]|6[069]|7[289]|88)\\d{7}',
-    'ExampleNumber' => '501234567',
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '800\\d{6}',
-    'ExampleNumber' => '800123456',
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '70\\d{7}',
-    'ExampleNumber' => '701234567',
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'mobile' => [
+        'pattern' => '(?:5[01]|6[069]|7[289]|88)\\d{7}',
+        'example' => '501234567',
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '800\\d{6}',
+        'example' => '800123456',
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'pattern' => '70\\d{7}',
+        'example' => '701234567',
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'PL',
-  'countryCode' => 48,
-  'internationalPrefix' => '00',
-  'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-    0 =>
-     [
-      'pattern' => '(\\d{2})(\\d{3})(\\d{2})(\\d{2})',
-      'format' => '$1 $2 $3 $4',
-      'leadingDigitsPatterns' =>
-       [
-      ],
-      'nationalPrefixFormattingRule' => '0$1',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => false,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '00',
+    'nationalPrefix' => '0',
+    'nationalPrefixForParsing' => '0',
+    'numberFormat' => [
+        [
+            'pattern' => '(\\d{2})(\\d{3})(\\d{2})(\\d{2})',
+            'format' => '$1 $2 $3 $4',
+            'leadingDigitsPatterns' => [],
+            'nationalPrefixFormattingRule' => '0$1',
+            'domesticCarrierCodeFormattingRule' => '',
+        ],
+    ],
 ];

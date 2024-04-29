@@ -6,96 +6,70 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[268]\\d{8}',
-    'PossibleLength' =>
-     [
-      0 => 9,
+return [
+    'id' => 'YT',
+    'countryCode' => 262,
+    'generalDesc' => [
+        'pattern' => '[268]\\d{8}',
+        'posLength' => [
+            9,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'NationalNumberPattern' => '2696[0-4]\\d{4}',
-    'ExampleNumber' => '269601234',
-  ],
-  'mobile' =>
-   [
-    'NationalNumberPattern' => '639\\d{6}',
-    'ExampleNumber' => '639123456',
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '80\\d{7}',
-    'ExampleNumber' => '801234567',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'fixedLine' => [
+        'pattern' => '2696[0-4]\\d{4}',
+        'example' => '269601234',
     ],
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'mobile' => [
+        'pattern' => '639\\d{6}',
+        'example' => '639123456',
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '80\\d{7}',
+        'example' => '801234567',
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'id' => 'YT',
-  'countryCode' => 262,
-  'internationalPrefix' => '00',
-  'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'leadingDigits' => '269|639',
-  'mobileNumberPortableRegion' => false,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '00',
+    'nationalPrefix' => '0',
+    'nationalPrefixForParsing' => '0',
+    'numberFormat' => [],
+    'leadingDigits' => '269|639',
 ];

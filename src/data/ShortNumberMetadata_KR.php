@@ -6,79 +6,59 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '1\\d{2,4}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
-      2 => 5,
+return [
+    'id' => 'KR',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '1\\d{2,4}',
+        'posLength' => [
+            3,
+            4,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:1[27-9]|28|330|82)',
-    'ExampleNumber' => '112',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
+    'tollFree' => [
+        'pattern' => '1(?:1[27-9]|28|330|82)',
+        'example' => '112',
+        'posLength' => [
+            3,
+            4,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '11[29]',
-    'ExampleNumber' => '112',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '11[29]',
+        'example' => '112',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:[016-9]114|3(?:0[01]|2|3[0-35-9]|45?|5[057]|6[569]|7[79]|8[2589]|9[0189]))|1(?:0[015]|1\\d|2[01357-9]|41|8[28])',
-    'ExampleNumber' => '100',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:[016-9]114|3(?:0[01]|2|3[0-35-9]|45?|5[057]|6[569]|7[79]|8[2589]|9[0189]))|1(?:0[015]|1\\d|2[01357-9]|41|8[28])',
+        'example' => '100',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '1(?:0[01]|1[4-6]|41)|1(?:[06-9]1\\d|111)\\d',
-    'ExampleNumber' => '100',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'carrierSpecific' => [
+        'pattern' => '1(?:0[01]|1[4-6]|41)|1(?:[06-9]1\\d|111)\\d',
+        'example' => '100',
+        'posLength' => [
+            3,
+            5,
+        ],
     ],
-  ],
-  'id' => 'KR',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

@@ -6,66 +6,48 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '9\\d\\d?',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+return [
+    'id' => 'BZ',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '9\\d\\d?',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '9(?:0|11|22|66|77|9[09])',
-    'ExampleNumber' => '90',
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'pattern' => '9(?:0|11|22|66|77|9[09])',
+        'example' => '90',
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '9(?:0|11|90)',
-    'ExampleNumber' => '90',
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '9(?:0|11|22|66|77|9[09])',
-    'ExampleNumber' => '90',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'emergency' => [
+        'pattern' => '9(?:0|11|90)',
+        'example' => '90',
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '9(?:0|11|22|66|77|9[09])',
+        'example' => '90',
     ],
-  ],
-  'id' => 'BZ',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'carrierSpecific' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

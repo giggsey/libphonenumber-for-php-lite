@@ -201,6 +201,7 @@ class NumberFormat
     }
 
     /**
+     * @internal
      * @return NumberFormatArray
      */
     public function toArray(): array
@@ -219,7 +220,7 @@ class NumberFormat
             $output['domesticCarrierCodeFormattingRule'] = $this->getDomesticCarrierCodeFormattingRule();
         }
 
-        if ($this->hasNationalPrefixOptionalWhenFormatting()) {
+        if ($this->hasNationalPrefixOptionalWhenFormatting() && $this->getNationalPrefixOptionalWhenFormatting() !== false) {
             $output['nationalPrefixOptionalWhenFormatting'] = $this->getNationalPrefixOptionalWhenFormatting();
         }
 
@@ -227,6 +228,7 @@ class NumberFormat
     }
 
     /**
+     * @internal
      * @param NumberFormatArray $input
      */
     public function fromArray(array $input): void

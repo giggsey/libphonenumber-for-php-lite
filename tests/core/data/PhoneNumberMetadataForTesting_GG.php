@@ -6,105 +6,75 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '\\d{6,10}',
-    'PossibleLength' =>
-     [
-      0 => 10,
+return [
+    'id' => 'GG',
+    'countryCode' => 44,
+    'generalDesc' => [
+        'pattern' => '\\d{6,10}',
+        'posLength' => [
+            10,
+        ],
+        'posLengthLocal' => [
+            6,
+        ],
     ],
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 6,
+    'fixedLine' => [
+        'pattern' => '\\d{6,10}',
+        'example' => '7033456789',
+        'posLengthLocal' => [
+            6,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'NationalNumberPattern' => '\\d{6,10}',
-    'ExampleNumber' => '7033456789',
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 6,
+    'mobile' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'mobile' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'tollFree' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'noInternationalDialling' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
-    ],
-  ],
-  'id' => 'GG',
-  'countryCode' => 44,
-  'internationalPrefix' => '00',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'internationalPrefix' => '00',
+    'numberFormat' => [],
 ];

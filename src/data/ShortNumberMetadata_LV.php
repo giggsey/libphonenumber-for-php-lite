@@ -6,87 +6,67 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[018]\\d{1,5}',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 4,
-      3 => 5,
-      4 => 6,
+return [
+    'id' => 'LV',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[018]\\d{1,5}',
+        'posLength' => [
+            2,
+            3,
+            4,
+            5,
+            6,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '0[1-3]|11(?:[023]|6\\d{3})',
-    'ExampleNumber' => '01',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
-      2 => 6,
+    'tollFree' => [
+        'pattern' => '0[1-3]|11(?:[023]|6\\d{3})',
+        'example' => '01',
+        'posLength' => [
+            2,
+            3,
+            6,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '1180|821\\d\\d',
-    'ExampleNumber' => '1180',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
+    'premiumRate' => [
+        'pattern' => '1180|821\\d\\d',
+        'example' => '1180',
+        'posLength' => [
+            4,
+            5,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '0[1-3]|11[023]',
-    'ExampleNumber' => '01',
-    'PossibleLength' =>
-     [
-      0 => 2,
-      1 => 3,
+    'emergency' => [
+        'pattern' => '0[1-3]|11[023]',
+        'example' => '01',
+        'posLength' => [
+            2,
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '0[1-4]|1(?:1(?:[02-4]|6(?:000|111)|8[0189])|(?:5|65)5|77)|821[57]4',
-    'ExampleNumber' => '01',
-  ],
-  'standardRate' =>
-   [
-    'NationalNumberPattern' => '1181',
-    'ExampleNumber' => '1181',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'shortCode' => [
+        'pattern' => '0[1-4]|1(?:1(?:[02-4]|6(?:000|111)|8[0189])|(?:5|65)5|77)|821[57]4',
+        'example' => '01',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '165\\d',
-    'ExampleNumber' => '1650',
-    'PossibleLength' =>
-     [
-      0 => 4,
+    'standardRate' => [
+        'pattern' => '1181',
+        'example' => '1181',
+        'posLength' => [
+            4,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'carrierSpecific' => [
+        'pattern' => '165\\d',
+        'example' => '1650',
+        'posLength' => [
+            4,
+        ],
     ],
-  ],
-  'id' => 'LV',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'posLength' => [
+            -1,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];

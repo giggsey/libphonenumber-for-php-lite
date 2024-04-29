@@ -6,140 +6,106 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[13-689]\\d{9}|2[0-35-9]\\d{8}',
-    'PossibleLength' =>
-     [
-      0 => 10,
+return [
+    'id' => 'US',
+    'countryCode' => 1,
+    'generalDesc' => [
+        'pattern' => '[13-689]\\d{9}|2[0-35-9]\\d{8}',
+        'posLength' => [
+            10,
+        ],
+        'posLengthLocal' => [
+            7,
+        ],
     ],
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 7,
+    'fixedLine' => [
+        'pattern' => '[13-689]\\d{9}|2[0-35-9]\\d{8}',
+        'example' => '1234567890',
+        'posLengthLocal' => [
+            7,
+        ],
     ],
-  ],
-  'fixedLine' =>
-   [
-    'NationalNumberPattern' => '[13-689]\\d{9}|2[0-35-9]\\d{8}',
-    'ExampleNumber' => '1234567890',
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 7,
+    'mobile' => [
+        'pattern' => '[13-689]\\d{9}|2[0-35-9]\\d{8}',
+        'example' => '1234567890',
+        'posLengthLocal' => [
+            7,
+        ],
     ],
-  ],
-  'mobile' =>
-   [
-    'NationalNumberPattern' => '[13-689]\\d{9}|2[0-35-9]\\d{8}',
-    'ExampleNumber' => '1234567890',
-    'PossibleLengthLocalOnly' =>
-     [
-      0 => 7,
+    'tollFree' => [
+        'pattern' => '8(?:00|66|77|88)\\d{7}',
+        'example' => '8004567890',
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '8(?:00|66|77|88)\\d{7}',
-    'ExampleNumber' => '8004567890',
-  ],
-  'premiumRate' =>
-   [
-    'NationalNumberPattern' => '900\\d{7}',
-    'ExampleNumber' => '9004567890',
-  ],
-  'sharedCost' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'pattern' => '900\\d{7}',
+        'example' => '9004567890',
     ],
-  ],
-  'personalNumber' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'sharedCost' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voip' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'personalNumber' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'pager' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'voip' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'uan' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'pager' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'voicemail' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'uan' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'noInternationalDialling' =>
-   [
-    'NationalNumberPattern' => '800\\d{7}',
-    'ExampleNumber' => '8004567890',
-  ],
-  'id' => 'US',
-  'countryCode' => 1,
-  'internationalPrefix' => '011',
-  'nationalPrefix' => '1',
-  'preferredExtnPrefix' => ' extn. ',
-  'nationalPrefixForParsing' => '1',
-  'sameMobileAndFixedLinePattern' => true,
-  'numberFormat' =>
-   [
-    0 =>
-     [
-      'pattern' => '(\\d{3})(\\d{4})',
-      'format' => '$1 $2',
-      'leadingDigitsPatterns' =>
-       [
-      ],
-      'nationalPrefixFormattingRule' => '',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => false,
+    'voicemail' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-    1 =>
-     [
-      'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
-      'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' =>
-       [
-      ],
-      'nationalPrefixFormattingRule' => '',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => true,
+    'noInternationalDialling' => [
+        'pattern' => '800\\d{7}',
+        'example' => '8004567890',
     ],
-  ],
-  'intlNumberFormat' =>
-   [
-    0 =>
-     [
-      'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
-      'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' =>
-       [
-      ],
-      'nationalPrefixFormattingRule' => '',
-      'domesticCarrierCodeFormattingRule' => '',
-      'nationalPrefixOptionalWhenFormatting' => true,
+    'internationalPrefix' => '011',
+    'nationalPrefix' => '1',
+    'preferredExtnPrefix' => ' extn. ',
+    'nationalPrefixForParsing' => '1',
+    'sameMobileAndFixedLinePattern' => true,
+    'numberFormat' => [
+        [
+            'pattern' => '(\\d{3})(\\d{4})',
+            'format' => '$1 $2',
+            'leadingDigitsPatterns' => [],
+            'nationalPrefixFormattingRule' => '',
+            'domesticCarrierCodeFormattingRule' => '',
+        ],
+        [
+            'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
+            'format' => '$1 $2 $3',
+            'leadingDigitsPatterns' => [],
+            'nationalPrefixFormattingRule' => '',
+            'domesticCarrierCodeFormattingRule' => '',
+            'nationalPrefixOptionalWhenFormatting' => true,
+        ],
     ],
-  ],
-  'mainCountryForCode' => true,
-  'mobileNumberPortableRegion' => true,
+    'intlNumberFormat' => [
+        [
+            'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
+            'format' => '$1 $2 $3',
+            'leadingDigitsPatterns' => [],
+            'nationalPrefixFormattingRule' => '',
+            'domesticCarrierCodeFormattingRule' => '',
+            'nationalPrefixOptionalWhenFormatting' => true,
+        ],
+    ],
+    'mainCountryForCode' => true,
+    'mobileNumberPortableRegion' => true,
 ];

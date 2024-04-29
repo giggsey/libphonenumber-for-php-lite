@@ -6,82 +6,62 @@
  * @internal
  */
 
-return  [
-  'generalDesc' =>
-   [
-    'NationalNumberPattern' => '[1-4]\\d{2,4}',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
-      2 => 5,
+return [
+    'id' => 'KZ',
+    'countryCode' => 0,
+    'generalDesc' => [
+        'pattern' => '[1-4]\\d{2,4}',
+        'posLength' => [
+            3,
+            4,
+            5,
+        ],
     ],
-  ],
-  'tollFree' =>
-   [
-    'NationalNumberPattern' => '1(?:0[1-3]|12)|212\\d',
-    'ExampleNumber' => '101',
-    'PossibleLength' =>
-     [
-      0 => 3,
-      1 => 4,
+    'tollFree' => [
+        'pattern' => '1(?:0[1-3]|12)|212\\d',
+        'example' => '101',
+        'posLength' => [
+            3,
+            4,
+        ],
     ],
-  ],
-  'premiumRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'premiumRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'emergency' =>
-   [
-    'NationalNumberPattern' => '1(?:0[1-3]|12)',
-    'ExampleNumber' => '101',
-    'PossibleLength' =>
-     [
-      0 => 3,
+    'emergency' => [
+        'pattern' => '1(?:0[1-3]|12)',
+        'example' => '101',
+        'posLength' => [
+            3,
+        ],
     ],
-  ],
-  'shortCode' =>
-   [
-    'NationalNumberPattern' => '1(?:0[1-4]|12)|2121|(?:3040|404)0',
-    'ExampleNumber' => '101',
-  ],
-  'standardRate' =>
-   [
-    'PossibleLength' =>
-     [
-      0 => -1,
+    'shortCode' => [
+        'pattern' => '1(?:0[1-4]|12)|2121|(?:3040|404)0',
+        'example' => '101',
     ],
-  ],
-  'carrierSpecific' =>
-   [
-    'NationalNumberPattern' => '(?:304\\d|404)\\d',
-    'ExampleNumber' => '4040',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
+    'standardRate' => [
+        'posLength' => [
+            -1,
+        ],
     ],
-  ],
-  'smsServices' =>
-   [
-    'NationalNumberPattern' => '(?:304\\d|404)\\d',
-    'ExampleNumber' => '4040',
-    'PossibleLength' =>
-     [
-      0 => 4,
-      1 => 5,
+    'carrierSpecific' => [
+        'pattern' => '(?:304\\d|404)\\d',
+        'example' => '4040',
+        'posLength' => [
+            4,
+            5,
+        ],
     ],
-  ],
-  'id' => 'KZ',
-  'countryCode' => 0,
-  'internationalPrefix' => '',
-  'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' =>
-   [
-  ],
-  'mainCountryForCode' => false,
-  'mobileNumberPortableRegion' => false,
+    'smsServices' => [
+        'pattern' => '(?:304\\d|404)\\d',
+        'example' => '4040',
+        'posLength' => [
+            4,
+            5,
+        ],
+    ],
+    'internationalPrefix' => '',
+    'numberFormat' => [],
 ];
