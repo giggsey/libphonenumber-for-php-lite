@@ -24,7 +24,7 @@ return [
         ],
     ],
     'mobile' => [
-        'pattern' => '7[35-9]\\d{7}',
+        'pattern' => '(?:6[89]|7[235-9])\\d{7}',
         'example' => '781234567',
         'posLength' => [
             9,
