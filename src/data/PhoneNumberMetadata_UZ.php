@@ -68,10 +68,7 @@ return [
             -1,
         ],
     ],
-    'internationalPrefix' => '810',
-    'preferredInternationalPrefix' => '8~10',
-    'nationalPrefix' => '8',
-    'nationalPrefixForParsing' => '8',
+    'internationalPrefix' => '00',
     'numberFormat' => [
         [
             'pattern' => '(\\d{2})(\\d{3})(\\d{2})(\\d{2})',
@@ -79,7 +76,7 @@ return [
             'leadingDigitsPatterns' => [
                 '[235-9]',
             ],
-            'nationalPrefixFormattingRule' => '8 $1',
+            'nationalPrefixFormattingRule' => '',
             'domesticCarrierCodeFormattingRule' => '',
         ],
     ],

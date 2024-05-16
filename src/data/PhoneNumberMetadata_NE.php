@@ -20,7 +20,7 @@ return [
         'example' => '20201234',
     ],
     'mobile' => [
-        'pattern' => '(?:23|7[047]|[89]\\d)\\d{6}',
+        'pattern' => '(?:23|7[0467]|[89]\\d)\\d{6}',
         'example' => '93123456',
     ],
     'tollFree' => [
@@ -81,7 +81,7 @@ return [
             'pattern' => '(\\d{2})(\\d{2})(\\d{2})(\\d{2})',
             'format' => '$1 $2 $3 $4',
             'leadingDigitsPatterns' => [
-                '[089]|2[013]|7[047]',
+                '[089]|2[013]|7[0467]',
             ],
             'nationalPrefixFormattingRule' => '',
             'domesticCarrierCodeFormattingRule' => '',
