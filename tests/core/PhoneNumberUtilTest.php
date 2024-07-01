@@ -330,6 +330,9 @@ class PhoneNumberUtilTest extends TestCase
         // Italian numbers - there is no national prefix, but it still has an area code.
         $this->assertEquals(2, $this->phoneUtil->getLengthOfGeographicalAreaCode(self::$itNumber));
 
+        // Mexico numbers - there is no national prefix, but it still has an area code.
+        $this->assertEquals(2, $this->phoneUtil->getLengthOfGeographicalAreaCode(self::$mxNumber1));
+
         // Google Singapore. Singapore has no area code and no national prefix.
         $this->assertEquals(0, $this->phoneUtil->getLengthOfGeographicalAreaCode(self::$sgNumber));
 
