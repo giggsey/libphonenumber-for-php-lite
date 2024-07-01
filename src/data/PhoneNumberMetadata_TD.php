@@ -10,7 +10,7 @@ return [
     'id' => 'TD',
     'countryCode' => 235,
     'generalDesc' => [
-        'pattern' => '(?:22|[69]\\d|77)\\d{6}',
+        'pattern' => '(?:22|[689]\\d|77)\\d{6}',
         'posLength' => [
             8,
         ],
@@ -20,7 +20,7 @@ return [
         'example' => '22501234',
     ],
     'mobile' => [
-        'pattern' => '(?:6[0-689]|77|9\\d)\\d{6}',
+        'pattern' => '(?:[69]\\d|77|8[56])\\d{6}',
         'example' => '63012345',
     ],
     'tollFree' => [
@@ -75,7 +75,7 @@ return [
             'pattern' => '(\\d{2})(\\d{2})(\\d{2})(\\d{2})',
             'format' => '$1 $2 $3 $4',
             'leadingDigitsPatterns' => [
-                '[2679]',
+                '[26-9]',
             ],
             'nationalPrefixFormattingRule' => '',
             'domesticCarrierCodeFormattingRule' => '',
