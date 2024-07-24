@@ -118,9 +118,9 @@ return [
             'pattern' => '(\\d{5,6})',
             'format' => '$1',
             'leadingDigitsPatterns' => [
-                '1(?:00|2[13])|95',
-                '1(?:00|2(?:11|39))|95',
-                '1(?:00|2(?:110|395))|95',
+                '1(?:00|2[13])|9[56]',
+                '1(?:00|2(?:1|39))|9[56]',
+                '1(?:00|2(?:1|395))|9[56]',
             ],
             'nationalPrefixFormattingRule' => '',
             'domesticCarrierCodeFormattingRule' => '',
@@ -129,7 +129,7 @@ return [
             'pattern' => '(\\d{5,6})',
             'format' => '$1',
             'leadingDigitsPatterns' => [
-                '10|96',
+                '10',
             ],
             'nationalPrefixFormattingRule' => '',
             'domesticCarrierCodeFormattingRule' => '',
