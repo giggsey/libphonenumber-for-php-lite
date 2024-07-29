@@ -10,7 +10,7 @@ return [
     'id' => 'BO',
     'countryCode' => 591,
     'generalDesc' => [
-        'pattern' => '(?:[2-467]\\d\\d|8001)\\d{5}',
+        'pattern' => '8001\\d{5}|(?:[2-467]\\d|50)\\d{6}',
         'posLength' => [
             8,
             9,
@@ -59,8 +59,13 @@ return [
         ],
     ],
     'voip' => [
+        'pattern' => '50\\d{6}',
+        'example' => '50123456',
         'posLength' => [
-            -1,
+            8,
+        ],
+        'posLengthLocal' => [
+            7,
         ],
     ],
     'pager' => [
@@ -92,7 +97,7 @@ return [
             'pattern' => '(\\d)(\\d{7})',
             'format' => '$1 $2',
             'leadingDigitsPatterns' => [
-                '[23]|4[46]',
+                '[235]|4[46]',
             ],
             'nationalPrefixFormattingRule' => '',
             'domesticCarrierCodeFormattingRule' => '0$CC $1',

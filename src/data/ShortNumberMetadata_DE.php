@@ -10,9 +10,10 @@ return [
     'id' => 'DE',
     'countryCode' => 0,
     'generalDesc' => [
-        'pattern' => '1\\d\\d(?:\\d{2,3})?',
+        'pattern' => '[13]\\d{2,5}',
         'posLength' => [
             3,
+            4,
             5,
             6,
         ],
@@ -38,7 +39,7 @@ return [
         ],
     ],
     'shortCode' => [
-        'pattern' => '11(?:[025]|6(?:00[06]|1(?:1[167]|23))|800\\d)|118\\d\\d',
+        'pattern' => '11(?:[025]|6(?:00[06]|1(?:1[167]|23))|800\\d)|3311|118\\d\\d',
         'example' => '110',
     ],
     'standardRate' => [
@@ -47,8 +48,10 @@ return [
         ],
     ],
     'carrierSpecific' => [
+        'pattern' => '331\\d',
+        'example' => '3310',
         'posLength' => [
-            -1,
+            4,
         ],
     ],
     'smsServices' => [

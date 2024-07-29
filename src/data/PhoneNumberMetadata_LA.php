@@ -31,10 +31,9 @@ return [
         ],
     ],
     'mobile' => [
-        'pattern' => '(?:20(?:[23579]\\d|88)|30(?:2\\d|4))\\d{6}',
+        'pattern' => '208[78]\\d{6}|(?:20[23579]|30[24])\\d{7}',
         'example' => '2023123456',
         'posLength' => [
-            9,
             10,
         ],
     ],
@@ -102,7 +101,7 @@ return [
             'pattern' => '(\\d{2})(\\d{2})(\\d{2})(\\d{3})',
             'format' => '$1 $2 $3 $4',
             'leadingDigitsPatterns' => [
-                '30[013-9]',
+                '30[0135-9]',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '',

@@ -10,7 +10,7 @@ return [
     'id' => 'SC',
     'countryCode' => 248,
     'generalDesc' => [
-        'pattern' => '800\\d{4}|(?:[249]\\d|64)\\d{5}',
+        'pattern' => '(?:[2489]\\d|64)\\d{5}',
         'posLength' => [
             7,
         ],
@@ -28,9 +28,8 @@ return [
         'example' => '8000000',
     ],
     'premiumRate' => [
-        'posLength' => [
-            -1,
-        ],
+        'pattern' => '85\\d{5}',
+        'example' => '8512345',
     ],
     'sharedCost' => [
         'posLength' => [

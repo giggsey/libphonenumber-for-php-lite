@@ -53,7 +53,7 @@ return [
         ],
     ],
     'tollFree' => [
-        'pattern' => '00(?:308\\d{6,7}|798\\d{7,9})|(?:00368|80)\\d{7}',
+        'pattern' => '00(?:308\\d{6,7}|798\\d{7,9})|(?:00368|[38]0)\\d{7}',
         'example' => '801234567',
         'posLength' => [
             9,
@@ -165,7 +165,7 @@ return [
             'pattern' => '(\\d{2})(\\d{3})(\\d{4})',
             'format' => '$1-$2-$3',
             'leadingDigitsPatterns' => [
-                '60|8',
+                '[36]0|8',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '0$CC-$1',
@@ -258,7 +258,7 @@ return [
             'pattern' => '(\\d{2})(\\d{3})(\\d{4})',
             'format' => '$1-$2-$3',
             'leadingDigitsPatterns' => [
-                '60|8',
+                '[36]0|8',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '0$CC-$1',
