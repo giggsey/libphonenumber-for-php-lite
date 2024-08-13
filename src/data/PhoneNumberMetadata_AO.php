@@ -20,7 +20,7 @@ return [
         'example' => '222123456',
     ],
     'mobile' => [
-        'pattern' => '9[1-579]\\d{7}',
+        'pattern' => '9[1-79]\\d{7}',
         'example' => '923123456',
     ],
     'tollFree' => [
