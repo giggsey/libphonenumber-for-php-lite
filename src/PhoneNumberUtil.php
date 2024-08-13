@@ -361,7 +361,7 @@ class PhoneNumberUtil
         // Put (lower letter -> upper letter) and (upper letter -> upper letter) mappings.
         foreach (static::ALPHA_MAPPINGS as $c => $value) {
             static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS[strtolower($c)] = $c;
-            static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS[(string)$c] = (string)$c;
+            static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS[(string) $c] = (string) $c;
         }
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS += static::ASCII_DIGIT_MAPPINGS;
         static::$ALL_PLUS_NUMBER_GROUPING_SYMBOLS['-'] = '-';
@@ -1628,7 +1628,7 @@ class PhoneNumberUtil
          *
          * We have to remove the leading zeroes ourself though
          */
-        if ((int)$normalizedNationalNumber === 0) {
+        if ((int) $normalizedNationalNumber === 0) {
             $normalizedNationalNumber = '0';
         } else {
             $normalizedNationalNumber = ltrim($normalizedNationalNumber, '0');
@@ -1896,7 +1896,7 @@ class PhoneNumberUtil
             // so, we remove the country calling code, and do some checks on the validity of the number
             // before and after.
             $defaultCountryCode = $defaultRegionMetadata->getCountryCode();
-            $defaultCountryCodeString = (string)$defaultCountryCode;
+            $defaultCountryCodeString = (string) $defaultCountryCode;
             $normalizedNumber = $fullNumber;
             if (str_starts_with($normalizedNumber, $defaultCountryCodeString)) {
                 $potentialNationalNumber = substr($normalizedNumber, mb_strlen($defaultCountryCodeString));
@@ -2062,7 +2062,7 @@ class PhoneNumberUtil
         }
         $numberLength = strlen($fullNumber);
         for ($i = 1; $i <= static::MAX_LENGTH_COUNTRY_CODE && $i <= $numberLength; $i++) {
-            $potentialCountryCode = (int)substr($fullNumber, 0, $i);
+            $potentialCountryCode = (int) substr($fullNumber, 0, $i);
             if (isset($this->countryCallingCodeToRegionCodeMap[$potentialCountryCode])) {
                 $nationalNumber .= substr($fullNumber, $i);
                 return $potentialCountryCode;
@@ -3364,8 +3364,8 @@ class PhoneNumberUtil
      */
     protected function isNationalNumberSuffixOfTheOther(PhoneNumber $firstNumber, PhoneNumber $secondNumber): bool
     {
-        $firstNumberNationalNumber = trim((string)$firstNumber->getNationalNumber());
-        $secondNumberNationalNumber = trim((string)$secondNumber->getNationalNumber());
+        $firstNumberNationalNumber = trim((string) $firstNumber->getNationalNumber());
+        $secondNumberNationalNumber = trim((string) $secondNumber->getNationalNumber());
         return str_ends_with($firstNumberNationalNumber, $secondNumberNationalNumber) ||
         str_ends_with($secondNumberNationalNumber, $firstNumberNationalNumber);
     }

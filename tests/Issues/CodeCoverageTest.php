@@ -25,7 +25,7 @@ class CodeCoverageTest extends TestCase
             $this->assertEquals('The string supplied is too short to be a phone number.', $e->getMessage());
             $this->assertEquals(3, $e->getCode());
 
-            $this->assertEquals('Error type: 3. The string supplied is too short to be a phone number.', (string)$e);
+            $this->assertEquals('Error type: 3. The string supplied is too short to be a phone number.', (string) $e);
         }
     }
 

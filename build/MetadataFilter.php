@@ -56,9 +56,7 @@ class MetadataFilter
     /**
      * @param array<string[]> $blackList
      */
-    public function __construct(protected array $blackList = [])
-    {
-    }
+    public function __construct(protected array $blackList = []) {}
 
     public static function forLiteBuild(): static
     {
