@@ -184,7 +184,7 @@ class BuildMetadataFromXml
     ): PhoneMetadata {
         $metadata = new PhoneMetadata();
         $metadata->setId($regionCode);
-        $metadata->setCountryCode((int)$element->getAttribute(self::COUNTRY_CODE));
+        $metadata->setCountryCode((int) $element->getAttribute(self::COUNTRY_CODE));
         if ($element->hasAttribute(self::LEADING_DIGITS)) {
             $metadata->setLeadingDigits(self::validateRE($element->getAttribute(self::LEADING_DIGITS)));
         }
@@ -450,8 +450,8 @@ class BuildMetadataFromXml
                 if (\count($minMax) !== 2) {
                     throw new \RuntimeException("Ranges must have exactly one - character: missing for {$possibleLengthString}.");
                 }
-                $min = (int)$minMax[0];
-                $max = (int)$minMax[1];
+                $min = (int) $minMax[0];
+                $max = (int) $minMax[1];
                 // We don't even accept [6-7] since we prefer the shorter 6,7 variant; for a range to be in
                 // use the hyphen needs to replace at least one digit.
                 if ($max - $min < 2) {
@@ -471,7 +471,7 @@ class BuildMetadataFromXml
                 if (!\is_numeric($length)) {
                     throw new \RuntimeException("For input string \"{$length}\"");
                 }
-                $lengthSet[] = (int)$length;
+                $lengthSet[] = (int) $length;
             }
         }
         return $lengthSet;
