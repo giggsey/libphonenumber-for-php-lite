@@ -10,12 +10,11 @@ return [
     'id' => 'CA',
     'countryCode' => 0,
     'generalDesc' => [
-        'pattern' => '[1-9]\\d\\d(?:\\d\\d(?:\\d(?:\\d{2})?)?)?',
+        'pattern' => '[1-9]\\d\\d(?:\\d{2,3})?',
         'posLength' => [
             3,
             5,
             6,
-            8,
         ],
     ],
     'tollFree' => [
@@ -38,7 +37,7 @@ return [
         ],
     ],
     'shortCode' => [
-        'pattern' => '112|30000\\d{3}|[1-35-9]\\d{4,5}|[2-8]11|9(?:11|88)',
+        'pattern' => '[1-35-9]\\d{4,5}|112|[2-8]11|9(?:11|88)',
         'example' => '112',
     ],
     'standardRate' => [
@@ -54,12 +53,11 @@ return [
         ],
     ],
     'smsServices' => [
-        'pattern' => '300\\d{5}|[1-35-9]\\d{4,5}',
+        'pattern' => '[1-35-9]\\d{4,5}',
         'example' => '10000',
         'posLength' => [
             5,
             6,
-            8,
         ],
     ],
     'internationalPrefix' => '',
