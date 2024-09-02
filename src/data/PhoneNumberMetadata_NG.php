@@ -10,9 +10,8 @@ return [
     'id' => 'NG',
     'countryCode' => 234,
     'generalDesc' => [
-        'pattern' => '2[0-24-9]\\d{8}|[78]\\d{10,13}|[7-9]\\d{9}|[1-9]\\d{7}|[124-7]\\d{6}',
+        'pattern' => '38\\d{6}|[78]\\d{9,13}|(?:20|9\\d)\\d{8}',
         'posLength' => [
-            7,
             8,
             10,
             11,
@@ -21,21 +20,20 @@ return [
             14,
         ],
         'posLengthLocal' => [
-            5,
             6,
+            7,
         ],
     ],
     'fixedLine' => [
-        'pattern' => '20(?:[1259]\\d|3[013-9]|4[1-8]|6[024-689]|7[1-79]|8[2-9])\\d{6}|(?:(?:[1-356]\\d|4[02-8]|8[2-9])\\d|9(?:0[3-9]|[1-9]\\d))\\d{5}|7(?:0(?:[013-689]\\d|2[0-24-9])\\d{3,4}|[1-79]\\d{6})|(?:[12]\\d|4[147]|5[14579]|6[1578]|7[1-3578])\\d{5}',
-        'example' => '18040123',
+        'pattern' => '(?:20(?:[1259]\\d|3[013-9]|4[1-8]|6[024-689]|7[1-79]|8[2-9])|38)\\d{6}',
+        'example' => '2033123456',
         'posLength' => [
-            7,
             8,
             10,
         ],
         'posLengthLocal' => [
-            5,
             6,
+            7,
         ],
     ],
     'mobile' => [
@@ -107,28 +105,10 @@ return [
     'nationalPrefixForParsing' => '0',
     'numberFormat' => [
         [
-            'pattern' => '(\\d{2})(\\d{2})(\\d{3})',
-            'format' => '$1 $2 $3',
-            'leadingDigitsPatterns' => [
-                '78',
-            ],
-            'nationalPrefixFormattingRule' => '0$1',
-            'domesticCarrierCodeFormattingRule' => '',
-        ],
-        [
-            'pattern' => '(\\d)(\\d{3})(\\d{3,4})',
-            'format' => '$1 $2 $3',
-            'leadingDigitsPatterns' => [
-                '[12]|9(?:0[3-9]|[1-9])',
-            ],
-            'nationalPrefixFormattingRule' => '0$1',
-            'domesticCarrierCodeFormattingRule' => '',
-        ],
-        [
             'pattern' => '(\\d{2})(\\d{3})(\\d{2,3})',
             'format' => '$1 $2 $3',
             'leadingDigitsPatterns' => [
-                '[3-6]|7(?:0[0-689]|[1-79])|8[2-9]',
+                '3',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '',
