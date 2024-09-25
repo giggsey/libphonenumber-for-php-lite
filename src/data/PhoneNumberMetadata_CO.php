@@ -10,7 +10,7 @@ return [
     'id' => 'CO',
     'countryCode' => 57,
     'generalDesc' => [
-        'pattern' => '(?:60\\d\\d|9101)\\d{6}|(?:1\\d|3)\\d{9}',
+        'pattern' => '60\\d{8}|(?:1\\d|[39])\\d{9}',
         'posLength' => [
             10,
             11,
@@ -44,11 +44,8 @@ return [
         ],
     ],
     'premiumRate' => [
-        'pattern' => '19(?:0[01]|4[78])\\d{7}',
+        'pattern' => '(?:19(?:0[01]|4[78])|901)\\d{7}',
         'example' => '19001234567',
-        'posLength' => [
-            11,
-        ],
     ],
     'sharedCost' => [
         'posLength' => [
@@ -93,7 +90,7 @@ return [
             'pattern' => '(\\d{3})(\\d{7})',
             'format' => '$1 $2',
             'leadingDigitsPatterns' => [
-                '6',
+                '6|90',
             ],
             'nationalPrefixFormattingRule' => '($1)',
             'domesticCarrierCodeFormattingRule' => '0$CC $1',
@@ -122,7 +119,7 @@ return [
             'pattern' => '(\\d{3})(\\d{7})',
             'format' => '$1 $2',
             'leadingDigitsPatterns' => [
-                '6',
+                '6|90',
             ],
             'nationalPrefixFormattingRule' => '($1)',
             'domesticCarrierCodeFormattingRule' => '0$CC $1',

@@ -10,10 +10,11 @@ return [
     'id' => 'UY',
     'countryCode' => 0,
     'generalDesc' => [
-        'pattern' => '[19]\\d{2,3}',
+        'pattern' => '[129]\\d{2,4}',
         'posLength' => [
             3,
             4,
+            5,
         ],
     ],
     'tollFree' => [
@@ -36,7 +37,7 @@ return [
         ],
     ],
     'shortCode' => [
-        'pattern' => '1(?:0[4-9]|1[2368]|2[0-3568]|787)|911',
+        'pattern' => '1(?:0[4-9]|1[2368]|2[0-3568]|787|997\\d?)|21997|911',
         'example' => '104',
     ],
     'standardRate' => [
