@@ -10,14 +10,18 @@ return [
     'id' => 'SJ',
     'countryCode' => 0,
     'generalDesc' => [
-        'pattern' => '1\\d\\d',
+        'pattern' => '[01]\\d\\d(?:\\d{2})?',
         'posLength' => [
             3,
+            5,
         ],
     ],
     'tollFree' => [
         'pattern' => '11[023]',
         'example' => '110',
+        'posLength' => [
+            3,
+        ],
     ],
     'premiumRate' => [
         'posLength' => [
@@ -27,9 +31,12 @@ return [
     'emergency' => [
         'pattern' => '11[023]',
         'example' => '110',
+        'posLength' => [
+            3,
+        ],
     ],
     'shortCode' => [
-        'pattern' => '11[023]',
+        'pattern' => '04\\d{3}|11[023]',
         'example' => '110',
     ],
     'standardRate' => [
@@ -43,8 +50,10 @@ return [
         ],
     ],
     'smsServices' => [
+        'pattern' => '04\\d{3}',
+        'example' => '04000',
         'posLength' => [
-            -1,
+            5,
         ],
     ],
     'internationalPrefix' => '',
