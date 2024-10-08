@@ -397,9 +397,9 @@ class PhoneNumberUtil
      */
     public static function getInstance(
         string $baseFileLocation = self::META_DATA_FILE_PREFIX,
-        array $countryCallingCodeToRegionCodeMap = null,
-        MetadataLoaderInterface $metadataLoader = null,
-        MetadataSourceInterface $metadataSource = null
+        ?array $countryCallingCodeToRegionCodeMap = null,
+        ?MetadataLoaderInterface $metadataLoader = null,
+        ?MetadataSourceInterface $metadataSource = null
     ): PhoneNumberUtil {
         if (static::$instance === null) {
             if ($countryCallingCodeToRegionCodeMap === null) {
@@ -2969,7 +2969,7 @@ class PhoneNumberUtil
      *                               and the number is not in international format (does not start
      *                               with +)
      */
-    public function parse(string $numberToParse, ?string $defaultRegion = null, PhoneNumber $phoneNumber = null, bool $keepRawInput = false): PhoneNumber
+    public function parse(string $numberToParse, ?string $defaultRegion = null, ?PhoneNumber $phoneNumber = null, bool $keepRawInput = false): PhoneNumber
     {
         if ($phoneNumber === null) {
             $phoneNumber = new PhoneNumber();

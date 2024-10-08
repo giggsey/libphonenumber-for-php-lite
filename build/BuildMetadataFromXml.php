@@ -585,7 +585,7 @@ class BuildMetadataFromXml
      * @param int[] $lengths
      * @param int[] $localOnlyLengths
      */
-    private static function setPossibleLengths(array $lengths, array $localOnlyLengths, PhoneNumberDesc $desc, PhoneNumberDesc $parentDesc = null): void
+    private static function setPossibleLengths(array $lengths, array $localOnlyLengths, PhoneNumberDesc $desc, ?PhoneNumberDesc $parentDesc = null): void
     {
         // We clear these fields since the metadata tends to inherit from the parent element for other
         // fields (via a mergeFrom).
