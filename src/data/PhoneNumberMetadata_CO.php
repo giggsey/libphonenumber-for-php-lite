@@ -10,22 +10,26 @@ return [
     'id' => 'CO',
     'countryCode' => 57,
     'generalDesc' => [
-        'pattern' => '60\\d{8}|(?:1\\d|[39])\\d{9}',
+        'pattern' => '(?:46|60\\d\\d)\\d{6}|(?:1\\d|[39])\\d{9}',
         'posLength' => [
+            8,
             10,
             11,
         ],
         'posLengthLocal' => [
+            4,
             7,
         ],
     ],
     'fixedLine' => [
-        'pattern' => '601055(?:[0-4]\\d|50)\\d\\d|6010(?:[0-4]\\d|5[0-4])\\d{4}|60(?:[124-7][2-9]|8[1-9])\\d{6}',
+        'pattern' => '601055(?:[0-4]\\d|50)\\d\\d|6010(?:[0-4]\\d|5[0-4])\\d{4}|(?:46|60(?:[124-7][2-9]|8[1-9]))\\d{6}',
         'example' => '6012345678',
         'posLength' => [
+            8,
             10,
         ],
         'posLengthLocal' => [
+            4,
             7,
         ],
     ],
@@ -46,6 +50,10 @@ return [
     'premiumRate' => [
         'pattern' => '(?:19(?:0[01]|4[78])|901)\\d{7}',
         'example' => '19001234567',
+        'posLength' => [
+            10,
+            11,
+        ],
     ],
     'sharedCost' => [
         'posLength' => [
@@ -87,6 +95,15 @@ return [
     'nationalPrefixForParsing' => '0([3579]|4(?:[14]4|56))?',
     'numberFormat' => [
         [
+            'pattern' => '(\\d{4})(\\d{4})',
+            'format' => '$1 $2',
+            'leadingDigitsPatterns' => [
+                '46',
+            ],
+            'nationalPrefixFormattingRule' => '',
+            'domesticCarrierCodeFormattingRule' => '',
+        ],
+        [
             'pattern' => '(\\d{3})(\\d{7})',
             'format' => '$1 $2',
             'leadingDigitsPatterns' => [
@@ -115,6 +132,15 @@ return [
         ],
     ],
     'intlNumberFormat' => [
+        [
+            'pattern' => '(\\d{4})(\\d{4})',
+            'format' => '$1 $2',
+            'leadingDigitsPatterns' => [
+                '46',
+            ],
+            'nationalPrefixFormattingRule' => '',
+            'domesticCarrierCodeFormattingRule' => '',
+        ],
         [
             'pattern' => '(\\d{3})(\\d{7})',
             'format' => '$1 $2',
