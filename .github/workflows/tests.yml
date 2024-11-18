@@ -43,4 +43,4 @@ jobs:
         run: "./vendor/bin/phpunit --colors=always --coverage-clover build/logs/clover.xml --coverage-text"
 
       - name: Publish coverage report to Codecov
-        uses: "codecov/codecov-action@v4"
+        uses: "codecov/codecov-action@v5"
