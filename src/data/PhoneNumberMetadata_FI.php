@@ -23,7 +23,7 @@ return [
         ],
     ],
     'fixedLine' => [
-        'pattern' => '1[35-7][1-8]\\d{3,6}|(?:1[49][1-8]|[23568][1-8]\\d|9(?:00|[1-8]\\d))\\d{2,6}',
+        'pattern' => '1[3-7][1-8]\\d{3,6}|(?:19[1-8]|[23568][1-8]\\d|9(?:00|[1-8]\\d))\\d{2,6}',
         'example' => '131234567',
         'posLength' => [
             5,
@@ -156,7 +156,7 @@ return [
             'pattern' => '(\\d)(\\d{4,9})',
             'format' => '$1 $2',
             'leadingDigitsPatterns' => [
-                '(?:1[49]|[2568])[1-8]|3(?:0[1-9]|[1-9])|9',
+                '(?:19|[2568])[1-8]|3(?:0[1-9]|[1-9])|9',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '',
@@ -203,7 +203,7 @@ return [
             'pattern' => '(\\d)(\\d{4,9})',
             'format' => '$1 $2',
             'leadingDigitsPatterns' => [
-                '(?:1[49]|[2568])[1-8]|3(?:0[1-9]|[1-9])|9',
+                '(?:19|[2568])[1-8]|3(?:0[1-9]|[1-9])|9',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '',
