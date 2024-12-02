@@ -1,4 +1,5 @@
 <?php
+
 /**
  * libphonenumber-for-php-lite data file
  * This file has been @generated from libphonenumber data
@@ -10,7 +11,7 @@ return [
     'id' => 'RE',
     'countryCode' => 262,
     'generalDesc' => [
-        'pattern' => '(?:26|[689]\\d)\\d{7}',
+        'pattern' => '709\\d{6}|(?:26|[689]\\d)\\d{7}',
         'posLength' => [
             9,
         ],
@@ -20,7 +21,7 @@ return [
         'example' => '262161234',
     ],
     'mobile' => [
-        'pattern' => '69(?:2\\d\\d|3(?:[06][0-6]|1[013]|2[0-2]|3[0-39]|4\\d|5[0-5]|7[0-37]|8[0-8]|9[0-479]))\\d{4}',
+        'pattern' => '(?:69(?:2\\d\\d|3(?:[06][0-6]|1[013]|2[0-2]|3[0-39]|4\\d|5[0-5]|7[0-37]|8[0-8]|9[0-479]))|7092[0-3])\\d{4}',
         'example' => '692123456',
     ],
     'tollFree' => [
@@ -72,7 +73,7 @@ return [
             'pattern' => '(\\d{3})(\\d{2})(\\d{2})(\\d{2})',
             'format' => '$1 $2 $3 $4',
             'leadingDigitsPatterns' => [
-                '[2689]',
+                '[26-9]',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '',

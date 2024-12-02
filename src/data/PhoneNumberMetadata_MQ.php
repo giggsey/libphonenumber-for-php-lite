@@ -1,4 +1,5 @@
 <?php
+
 /**
  * libphonenumber-for-php-lite data file
  * This file has been @generated from libphonenumber data
@@ -10,7 +11,7 @@ return [
     'id' => 'MQ',
     'countryCode' => 596,
     'generalDesc' => [
-        'pattern' => '596\\d{6}|(?:69|[89]\\d)\\d{7}',
+        'pattern' => '(?:596\\d|7091)\\d{5}|(?:69|[89]\\d)\\d{7}',
         'posLength' => [
             9,
         ],
@@ -20,7 +21,7 @@ return [
         'example' => '596301234',
     ],
     'mobile' => [
-        'pattern' => '69[67]\\d{6}',
+        'pattern' => '(?:69[67]\\d\\d|7091[0-3])\\d{4}',
         'example' => '696201234',
     ],
     'tollFree' => [
@@ -73,7 +74,7 @@ return [
             'pattern' => '(\\d{3})(\\d{2})(\\d{2})(\\d{2})',
             'format' => '$1 $2 $3 $4',
             'leadingDigitsPatterns' => [
-                '[569]|8(?:0[6-9]|[36])',
+                '[5-79]|8(?:0[6-9]|[36])',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '',

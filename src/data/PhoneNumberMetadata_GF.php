@@ -1,4 +1,5 @@
 <?php
+
 /**
  * libphonenumber-for-php-lite data file
  * This file has been @generated from libphonenumber data
@@ -10,7 +11,7 @@ return [
     'id' => 'GF',
     'countryCode' => 594,
     'generalDesc' => [
-        'pattern' => '[56]94\\d{6}|(?:80|9\\d)\\d{7}',
+        'pattern' => '(?:[56]94\\d|7093)\\d{5}|(?:80|9\\d)\\d{7}',
         'posLength' => [
             9,
         ],
@@ -20,7 +21,7 @@ return [
         'example' => '594101234',
     ],
     'mobile' => [
-        'pattern' => '694(?:[0-249]\\d|3[0-8])\\d{4}',
+        'pattern' => '(?:694(?:[0-249]\\d|3[0-8])|7093[0-3])\\d{4}',
         'example' => '694201234',
     ],
     'tollFree' => [
@@ -74,7 +75,7 @@ return [
             'pattern' => '(\\d{3})(\\d{2})(\\d{2})(\\d{2})',
             'format' => '$1 $2 $3 $4',
             'leadingDigitsPatterns' => [
-                '[56]|9[47]',
+                '[5-7]|9[47]',
             ],
             'nationalPrefixFormattingRule' => '0$1',
             'domesticCarrierCodeFormattingRule' => '',

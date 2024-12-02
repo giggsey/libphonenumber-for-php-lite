@@ -1,4 +1,5 @@
 <?php
+
 /**
  * libphonenumber-for-php-lite data file
  * This file has been @generated from libphonenumber data
@@ -10,7 +11,7 @@ return [
     'id' => '001',
     'countryCode' => 870,
     'generalDesc' => [
-        'pattern' => '7\\d{11}|[35-7]\\d{8}',
+        'pattern' => '7\\d{11}|[235-7]\\d{8}',
         'posLength' => [
             9,
             12,
@@ -46,8 +47,10 @@ return [
         ],
     ],
     'voip' => [
+        'pattern' => '2\\d{8}',
+        'example' => '201234567',
         'posLength' => [
-            -1,
+            9,
         ],
     ],
     'pager' => [
@@ -76,7 +79,7 @@ return [
             'pattern' => '(\\d{3})(\\d{3})(\\d{3})',
             'format' => '$1 $2 $3',
             'leadingDigitsPatterns' => [
-                '[35-7]',
+                '[235-7]',
             ],
             'nationalPrefixFormattingRule' => '',
             'domesticCarrierCodeFormattingRule' => '',
