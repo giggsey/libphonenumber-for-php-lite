@@ -1,4 +1,5 @@
 <?php
+
 /**
  * libphonenumber-for-php-lite data file
  * This file has been @generated from libphonenumber data
@@ -10,7 +11,7 @@ return [
     'id' => 'YT',
     'countryCode' => 262,
     'generalDesc' => [
-        'pattern' => '(?:80|9\\d)\\d{7}|(?:26|63)9\\d{6}',
+        'pattern' => '7093\\d{5}|(?:80|9\\d)\\d{7}|(?:26|63)9\\d{6}',
         'posLength' => [
             9,
         ],
@@ -20,7 +21,7 @@ return [
         'example' => '269601234',
     ],
     'mobile' => [
-        'pattern' => '639(?:0[0-79]|1[019]|[267]\\d|3[09]|40|5[05-9]|9[04-79])\\d{4}',
+        'pattern' => '(?:639(?:0[0-79]|1[019]|[267]\\d|3[09]|40|5[05-9]|9[04-79])|7093[5-7])\\d{4}',
         'example' => '639012345',
     ],
     'tollFree' => [
