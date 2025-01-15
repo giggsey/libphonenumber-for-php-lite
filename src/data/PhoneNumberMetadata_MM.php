@@ -69,7 +69,7 @@ return [
         ],
     ],
     'voip' => [
-        'pattern' => '1333\\d{4}|[12]468\\d{4}',
+        'pattern' => '1333\\d{4}',
         'example' => '13331234',
         'posLength' => [
             8,
