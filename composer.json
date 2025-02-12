@@ -55,6 +55,7 @@
       "build.xml",
       "phpunit.xml.dist",
       "infection.json.dist",
+      "METADATA-VERSION.php",
       "src/CountryCodeToRegionCodeMapForTesting.php"
     ]
   },
