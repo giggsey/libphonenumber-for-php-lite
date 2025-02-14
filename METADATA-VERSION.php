@@ -6,4 +6,4 @@
  * For more information, look at the phing tasks in build.xml
  * @internal
  */
-return 'v8.13.54';
+return 'v8.13.55';
