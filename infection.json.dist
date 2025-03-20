@@ -3,7 +3,13 @@
     "source": {
         "directories": [
             "src"
-        ]
+        ],
+        "excludes": [
+            "data/",
+            "CountryCodeToRegionMap.php",
+            "CountryCodeToRegionCodeMapForTesting.php",
+            "RegionCode.php",
+        ],
     },
     "logs": {
         "text": "infection.txt",
@@ -15,6 +21,6 @@
         "@default": true,
         "ProtectedVisibility": false
     },
-    "minMsi": 75,
-    "minCoveredMsi": 75,
+    "minMsi": 76,
+    "minCoveredMsi": 82,
 }
