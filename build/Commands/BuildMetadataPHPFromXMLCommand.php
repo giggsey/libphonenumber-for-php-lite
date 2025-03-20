@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace libphonenumber\buildtools\Commands;
 
 use libphonenumber\buildtools\BuildMetadataPHPFromXml;
@@ -8,6 +10,9 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * @internal
+ */
 class BuildMetadataPHPFromXMLCommand extends Command
 {
     protected function configure(): void
@@ -21,7 +26,6 @@ class BuildMetadataPHPFromXMLCommand extends Command
                 new InputArgument('DataPrefix', InputArgument::REQUIRED, 'The start of the filename to store the files (e.g. dataPrefix_GB.php'),
                 new InputArgument('MappingClass', InputArgument::REQUIRED, 'The name of the mapping class generated'),
                 new InputArgument('MappingClassLocation', InputArgument::REQUIRED, 'The directory where the mapping class is stored'),
-                new InputArgument('LiteBuild', InputArgument::OPTIONAL, 'Whether to generate the lite-version of the metadata. When set to true, certain metadata will be omitted. AT this moment, example numbers information is omitted', false),
             ]
         );
     }
@@ -35,7 +39,6 @@ class BuildMetadataPHPFromXMLCommand extends Command
             $input->getArgument('DataPrefix'),
             $input->getArgument('MappingClass'),
             $input->getArgument('MappingClassLocation'),
-            $input->getArgument('LiteBuild') === 'true'
         );
 
         return self::SUCCESS;

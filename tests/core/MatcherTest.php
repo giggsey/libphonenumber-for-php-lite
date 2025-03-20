@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace libphonenumber\Tests\core;
 
 use libphonenumber\MatcherAPIInterface;
@@ -11,7 +13,7 @@ class MatcherTest extends TestCase
 {
     public function testRegexBasedMatcher(): void
     {
-        $this->checkMatcherBehavesAsExpected(RegexBasedMatcher::create());
+        $this->checkMatcherBehavesAsExpected(new RegexBasedMatcher());
     }
 
     private function checkMatcherBehavesAsExpected(MatcherAPIInterface $matcher): void
@@ -59,20 +61,20 @@ class MatcherTest extends TestCase
 
     private function assertMatched(MatcherAPIInterface $matcher, string $number, PhoneNumberDesc $desc): void
     {
-        $this->assertTrue($matcher->matchNationalNumber($number, $desc, false), "{$number} should have matched {$this->descToString($desc)}");
-        $this->assertTrue($matcher->matchNationalNumber($number, $desc, true), "{$number} should have matched {$this->descToString($desc)}");
+        self::assertTrue($matcher->matchNationalNumber($number, $desc, false), "{$number} should have matched {$this->descToString($desc)}");
+        self::assertTrue($matcher->matchNationalNumber($number, $desc, true), "{$number} should have matched {$this->descToString($desc)}");
     }
 
     private function assertInvalid(MatcherAPIInterface $matcher, string $number, PhoneNumberDesc $desc): void
     {
-        $this->assertFalse($matcher->matchNationalNumber($number, $desc, false), "{$number} should not have matched {$this->descToString($desc)}");
-        $this->assertFalse($matcher->matchNationalNumber($number, $desc, true), "{$number} should  not have matched {$this->descToString($desc)}");
+        self::assertFalse($matcher->matchNationalNumber($number, $desc, false), "{$number} should not have matched {$this->descToString($desc)}");
+        self::assertFalse($matcher->matchNationalNumber($number, $desc, true), "{$number} should  not have matched {$this->descToString($desc)}");
     }
 
     private function assertTooLong(MatcherAPIInterface $matcher, string $number, PhoneNumberDesc $desc): void
     {
-        $this->assertFalse($matcher->matchNationalNumber($number, $desc, false), "{$number} should have been too long for {$this->descToString($desc)}");
-        $this->assertTrue($matcher->matchNationalNumber($number, $desc, true), "{$number} should have been too long for {$this->descToString($desc)}");
+        self::assertFalse($matcher->matchNationalNumber($number, $desc, false), "{$number} should have been too long for {$this->descToString($desc)}");
+        self::assertTrue($matcher->matchNationalNumber($number, $desc, true), "{$number} should have been too long for {$this->descToString($desc)}");
     }
 
     private function descToString(PhoneNumberDesc $desc): string

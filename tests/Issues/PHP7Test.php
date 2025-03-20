@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace libphonenumber\Tests\Issues;
 
 use libphonenumber\PhoneNumberFormat;
@@ -22,8 +24,8 @@ class PHP7Test extends TestCase
     {
         $phoneNumber = $this->phoneUtil->parse($number, 'PL');
 
-        $this->assertTrue($this->phoneUtil->isValidNumber($phoneNumber));
-        $this->assertEquals($number, $this->phoneUtil->format($phoneNumber, PhoneNumberFormat::NATIONAL));
+        self::assertTrue($this->phoneUtil->isValidNumber($phoneNumber));
+        self::assertEquals($number, $this->phoneUtil->format($phoneNumber, PhoneNumberFormat::NATIONAL));
     }
 
     /**

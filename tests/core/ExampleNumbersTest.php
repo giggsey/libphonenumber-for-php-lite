@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace libphonenumber\Tests\core;
 
 use libphonenumber\NumberParseException;
@@ -47,7 +49,7 @@ class ExampleNumbersTest extends TestCase
     }
 
     /**
-     * @return array<array<int>>
+     * @return array<array{PhoneNumberType}>
      */
     public static function numberTypes(): array
     {
@@ -81,23 +83,23 @@ class ExampleNumbersTest extends TestCase
     }
 
     /**
-     * @param array<int> $possibleExpectedTypes
+     * @param PhoneNumberType[] $possibleExpectedTypes
      */
     private function checkNumbersValidAndCorrectType(
-        int $exampleNumberRequestedType,
+        PhoneNumberType $exampleNumberRequestedType,
         array $possibleExpectedTypes,
         string $regionCode
     ): void {
         $exampleNumber = $this->phoneNumberUtil->getExampleNumberForType($regionCode, $exampleNumberRequestedType);
         if ($exampleNumber !== null) {
-            $this->assertTrue(
+            self::assertTrue(
                 $this->phoneNumberUtil->isValidNumber($exampleNumber),
                 "Failed validation for {$exampleNumber}"
             );
 
             // We know the number is valid, now we check the type.
             $exampleNumberType = $this->phoneNumberUtil->getNumberType($exampleNumber);
-            $this->assertContains($exampleNumberType, $possibleExpectedTypes, "Wrong type for {$exampleNumber}");
+            self::assertContains($exampleNumberType, $possibleExpectedTypes, "Wrong type for {$exampleNumber}");
         }
     }
 
@@ -177,7 +179,7 @@ class ExampleNumbersTest extends TestCase
         }
 
         if ($exampleNumber !== null && $this->phoneNumberUtil->canBeInternationallyDialled($exampleNumber)) {
-            $this->fail("Number {$exampleNumber} should not be internationally diallable");
+            self::fail("Number {$exampleNumber} should not be internationally diallable");
         }
     }
 
@@ -201,9 +203,9 @@ class ExampleNumbersTest extends TestCase
     public function testGlobalNetworkNumbers(int $callingCode): void
     {
         $exampleNumber = $this->phoneNumberUtil->getExampleNumberForNonGeoEntity($callingCode);
-        $this->assertNotNull($exampleNumber, 'No example phone number for calling code ' . $callingCode);
+        self::assertNotNull($exampleNumber, 'No example phone number for calling code ' . $callingCode);
         if (!$this->phoneNumberUtil->isValidNumber($exampleNumber)) {
-            $this->fail('Failed validation for ' . $exampleNumber);
+            self::fail('Failed validation for ' . $exampleNumber);
         }
     }
 
@@ -211,7 +213,7 @@ class ExampleNumbersTest extends TestCase
     public function testEveryRegionHasAnExampleNumber(string $regionCode): void
     {
         $exampleNumber = $this->phoneNumberUtil->getExampleNumber($regionCode);
-        $this->assertNotNull($exampleNumber, 'No example number found for region ' . $regionCode);
+        self::assertNotNull($exampleNumber, 'No example number found for region ' . $regionCode);
 
         /*
          * Check the number is valid
@@ -221,23 +223,23 @@ class ExampleNumbersTest extends TestCase
 
         $phoneObject = $this->phoneNumberUtil->parse($e164, 'ZZ');
 
-        $this->assertEquals($phoneObject, $exampleNumber);
+        self::assertEquals($phoneObject, $exampleNumber);
 
-        $this->assertTrue($this->phoneNumberUtil->isValidNumber($phoneObject));
-        $this->assertTrue($this->phoneNumberUtil->isValidNumberForRegion($phoneObject, $regionCode));
+        self::assertTrue($this->phoneNumberUtil->isValidNumber($phoneObject));
+        self::assertTrue($this->phoneNumberUtil->isValidNumberForRegion($phoneObject, $regionCode));
     }
 
     #[DataProvider('regionList')]
     public function testEveryRegionHasAnInvalidExampleNumber(string $regionCode): void
     {
         $exampleNumber = $this->phoneNumberUtil->getInvalidExampleNumber($regionCode);
-        $this->assertNotNull($exampleNumber, 'No invalid example number found for region ' . $regionCode);
+        self::assertNotNull($exampleNumber, 'No invalid example number found for region ' . $regionCode);
     }
 
     #[DataProvider('numberTypes')]
-    public function testEveryTypeHasAnExampleNumber(int $numberType): void
+    public function testEveryTypeHasAnExampleNumber(PhoneNumberType $numberType): void
     {
         $exampleNumber = $this->phoneNumberUtil->getExampleNumberForType($numberType);
-        $this->assertNotNull($exampleNumber, 'No example number found for type ' . $numberType);
+        self::assertNotNull($exampleNumber, 'No example number found for type ' . $numberType->name);
     }
 }

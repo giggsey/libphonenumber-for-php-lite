@@ -7,78 +7,49 @@
  * @internal
  */
 
-return [
-    'id' => '001',
-    'countryCode' => 979,
-    'generalDesc' => [
-        'pattern' => '\\d{9}',
-        'posLength' => [
-            9,
-        ],
-    ],
-    'fixedLine' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'mobile' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'tollFree' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'premiumRate' => [
-        'pattern' => '\\d{9}',
-        'example' => '123456789',
-    ],
-    'sharedCost' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'personalNumber' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'voip' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'pager' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'uan' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'voicemail' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'noInternationalDialling' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'internationalPrefix' => '',
-    'sameMobileAndFixedLinePattern' => true,
-    'numberFormat' => [
-        [
-            'pattern' => '(\\d)(\\d{4})(\\d{4})',
-            'format' => '$1 $2 $3',
-            'leadingDigitsPatterns' => [],
-            'nationalPrefixFormattingRule' => '',
-            'domesticCarrierCodeFormattingRule' => '',
-        ],
-    ],
-];
+declare(strict_types=1);
+
+namespace libphonenumber\Tests\core\data;
+
+use libphonenumber\NumberFormat;
+use libphonenumber\PhoneMetadata;
+use libphonenumber\PhoneNumberDesc;
+
+/**
+ * @internal
+ */
+class PhoneNumberMetadataForTesting_979 extends PhoneMetadata
+{
+    protected const ID = '001';
+    protected const COUNTRY_CODE = 979;
+
+    protected ?string $internationalPrefix = '';
+    protected bool $sameMobileAndFixedLinePattern = true;
+
+    public function __construct()
+    {
+        $this->generalDesc = (new PhoneNumberDesc())
+            ->setNationalNumberPattern('\d{9}')
+            ->setPossibleLength([9]);
+        $this->mobile = PhoneNumberDesc::empty();
+        $this->premiumRate = (new PhoneNumberDesc())
+            ->setNationalNumberPattern('\d{9}')
+            ->setExampleNumber('123456789');
+        $this->fixedLine = PhoneNumberDesc::empty();
+        $this->numberFormat = [
+            (new NumberFormat())
+                ->setPattern('(\d)(\d{4})(\d{4})')
+                ->setFormat('$1 $2 $3')
+                ->setLeadingDigitsPattern([])
+                ->setNationalPrefixOptionalWhenFormatting(false),
+        ];
+        $this->tollFree = PhoneNumberDesc::empty();
+        $this->sharedCost = PhoneNumberDesc::empty();
+        $this->personalNumber = PhoneNumberDesc::empty();
+        $this->voip = PhoneNumberDesc::empty();
+        $this->pager = PhoneNumberDesc::empty();
+        $this->uan = PhoneNumberDesc::empty();
+        $this->voicemail = PhoneNumberDesc::empty();
+        $this->noInternationalDialling = PhoneNumberDesc::empty();
+    }
+}

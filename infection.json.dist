@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/infection/infection/0.26.16/resources/schema.json",
+    "$schema": "vendor/infection/infection/resources/schema.json",
     "source": {
         "directories": [
             "src"
