@@ -8,7 +8,7 @@ $finder = PhpCsFixer\Finder::create()
 $config = new PhpCsFixer\Config();
 return $config->setRules(
     [
-        '@PER-CS' => true,
+        '@PER-CS2.0' => true,
         '@PHP81Migration' => true,
         'single_quote' => true,
         'no_unused_imports' => true,
@@ -18,5 +18,19 @@ return $config->setRules(
             'remove_inheritdoc' => true,
         ],
         'phpdoc_trim' => true,
+        'declare_strict_types' => true,
+        'php_unit_attributes' => true,
+        '@PHPUnit100Migration:risky' => true,
+        'global_namespace_import' => [
+            'import_classes' => true,
+            'import_constants' => true,
+            'import_functions' => true,
+        ],
+        'no_empty_phpdoc' => true,
+        'phpdoc_align' => ['align' => 'left'],
+        'phpdoc_types' => true,
     ]
-)->setFinder($finder);
+)
+    ->setRiskyAllowed(true)
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
+    ->setFinder($finder);

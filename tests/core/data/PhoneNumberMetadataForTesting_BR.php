@@ -7,75 +7,42 @@
  * @internal
  */
 
-return [
-    'id' => 'BR',
-    'countryCode' => 55,
-    'generalDesc' => [
-        'pattern' => '\\d{8,10}',
-        'posLength' => [
-            10,
-        ],
-        'posLengthLocal' => [
-            8,
-        ],
-    ],
-    'fixedLine' => [
-        'pattern' => '\\d{8,10}',
-        'example' => '12345678',
-        'posLengthLocal' => [
-            8,
-        ],
-    ],
-    'mobile' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'tollFree' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'premiumRate' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'sharedCost' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'personalNumber' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'voip' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'pager' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'uan' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'voicemail' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'noInternationalDialling' => [
-        'posLength' => [
-            -1,
-        ],
-    ],
-    'internationalPrefix' => '00',
-    'numberFormat' => [],
-];
+declare(strict_types=1);
+
+namespace libphonenumber\Tests\core\data;
+
+use libphonenumber\PhoneMetadata;
+use libphonenumber\PhoneNumberDesc;
+
+/**
+ * @internal
+ */
+class PhoneNumberMetadataForTesting_BR extends PhoneMetadata
+{
+    protected const ID = 'BR';
+    protected const COUNTRY_CODE = 55;
+
+    protected ?string $internationalPrefix = '00';
+
+    public function __construct()
+    {
+        $this->generalDesc = (new PhoneNumberDesc())
+            ->setNationalNumberPattern('\d{8,10}')
+            ->setPossibleLengthLocalOnly([8])
+            ->setPossibleLength([10]);
+        $this->mobile = PhoneNumberDesc::empty();
+        $this->premiumRate = PhoneNumberDesc::empty();
+        $this->fixedLine = (new PhoneNumberDesc())
+            ->setNationalNumberPattern('\d{8,10}')
+            ->setExampleNumber('12345678')
+            ->setPossibleLengthLocalOnly([8]);
+        $this->tollFree = PhoneNumberDesc::empty();
+        $this->sharedCost = PhoneNumberDesc::empty();
+        $this->personalNumber = PhoneNumberDesc::empty();
+        $this->voip = PhoneNumberDesc::empty();
+        $this->pager = PhoneNumberDesc::empty();
+        $this->uan = PhoneNumberDesc::empty();
+        $this->voicemail = PhoneNumberDesc::empty();
+        $this->noInternationalDialling = PhoneNumberDesc::empty();
+    }
+}

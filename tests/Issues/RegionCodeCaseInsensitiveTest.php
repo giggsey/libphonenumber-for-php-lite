@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace libphonenumber\Tests\Issues;
 
 use libphonenumber\PhoneNumberType;
@@ -22,39 +24,39 @@ class RegionCodeCaseInsensitiveTest extends TestCase
         $number = '07987458147';
         $phoneObject = $this->phoneUtil->parse($number, 'gb');
 
-        $this->assertTrue($this->phoneUtil->isValidNumber($phoneObject));
+        self::assertTrue($this->phoneUtil->isValidNumber($phoneObject));
 
-        $this->assertTrue($this->phoneUtil->isValidNumberForRegion($phoneObject, 'gb'));
+        self::assertTrue($this->phoneUtil->isValidNumberForRegion($phoneObject, 'gb'));
     }
 
     public function testIsNANPACountry(): void
     {
-        $this->assertTrue($this->phoneUtil->isNANPACountry('us'));
+        self::assertTrue($this->phoneUtil->isNANPACountry('us'));
     }
 
     public function testGetMetadataForRegion(): void
     {
         $metadata = $this->phoneUtil->getMetadataForRegion('gb');
 
-        $this->assertInstanceOf(PhoneMetadata::class, $metadata);
+        self::assertInstanceOf(PhoneMetadata::class, $metadata);
     }
 
     public function testGetCountryCodeForRegion(): void
     {
-        $this->assertEquals(44, $this->phoneUtil->getCountryCodeForRegion('gb'));
+        self::assertEquals(44, $this->phoneUtil->getCountryCodeForRegion('gb'));
     }
 
     public function testExampleNumber(): void
     {
-        $this->assertSame(
+        self::assertSame(
             (string) $this->phoneUtil->parse('+441212345678'),
             (string) $this->phoneUtil->getExampleNumber('gb')
         );
-        $this->assertSame(
+        self::assertSame(
             (string) $this->phoneUtil->parse('+44121234567'),
             (string) $this->phoneUtil->getInvalidExampleNumber('gb')
         );
-        $this->assertSame(
+        self::assertSame(
             (string) $this->phoneUtil->parse('+447400123456'),
             (string) $this->phoneUtil->getExampleNumberForType('gb', PhoneNumberType::MOBILE)
         );

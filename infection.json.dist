@@ -1,9 +1,15 @@
 {
-    "$schema": "https://raw.githubusercontent.com/infection/infection/0.26.16/resources/schema.json",
+    "$schema": "vendor/infection/infection/resources/schema.json",
     "source": {
         "directories": [
             "src"
-        ]
+        ],
+        "excludes": [
+            "data/",
+            "CountryCodeToRegionMap.php",
+            "CountryCodeToRegionCodeMapForTesting.php",
+            "RegionCode.php",
+        ],
     },
     "logs": {
         "text": "infection.txt",
@@ -15,6 +21,6 @@
         "@default": true,
         "ProtectedVisibility": false
     },
-    "minMsi": 75,
-    "minCoveredMsi": 75,
+    "minMsi": 76,
+    "minCoveredMsi": 82,
 }
