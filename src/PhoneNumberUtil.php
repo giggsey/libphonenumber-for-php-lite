@@ -188,7 +188,8 @@ class PhoneNumberUtil
         54, // Argentina
         55, // Brazil
         62, // Indonesia: some prefixes only (fixed CMDA wireless)
-    ] + self::GEO_MOBILE_COUNTRIES_WITHOUT_MOBILE_AREA_CODES;
+        86, // China
+    ];
 
     /**
      * For performance reasons, amalgamate both into one map.
