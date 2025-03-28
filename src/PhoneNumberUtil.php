@@ -44,7 +44,7 @@ class PhoneNumberUtil
     public const REGION_CODE_FOR_NON_GEO_ENTITY = '001';
 
     // Region-code for the unknown region.
-    protected const UNKNOWN_REGION = 'ZZ';
+    public const UNKNOWN_REGION = 'ZZ';
 
     protected const NANPA_COUNTRY_CODE = 1;
     // The PLUS_SIGN signifies the international prefix.
