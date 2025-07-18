@@ -114,7 +114,7 @@ class PhoneNumberUtil
     protected const UNWANTED_END_CHAR_PATTERN = '[^' . self::DIGITS . self::VALID_ALPHA . '#]+$';
     protected const DIALLABLE_CHAR_MAPPINGS = self::ASCII_DIGIT_MAPPINGS
         + [self::PLUS_SIGN => self::PLUS_SIGN]
-    + ['*' => '*', '#' => '#'];
+        + ['*' => '*', '#' => '#'];
 
     protected static ?PhoneNumberUtil $instance;
 
