@@ -17,8 +17,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-version: [8.1, 8.2, 8.3, 8.4, 8.5]
+        php-version: [8.1, 8.2, 8.3, 8.4]
         composer: [highest, lowest]
+        include:
+          - php-version: "8.5"
+            arch: amd64
+            composer: highest
+          - php-version: "8.5"
+            arch: i386
+            composer: highest
 
     steps:
       - name: Checkout
