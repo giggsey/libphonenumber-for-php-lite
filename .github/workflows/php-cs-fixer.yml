@@ -17,12 +17,12 @@ jobs:
     name: "PHP CS Fixer"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup PHP, with composer and extensions
         uses: shivammathur/setup-php@v2
