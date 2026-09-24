@@ -875,7 +875,7 @@ class PhoneNumberUtil
                     $matches,
                     PREG_OFFSET_CAPTURE
                 );
-                if ($nbMatches > 0 && $matches[0][1] === 0) {
+                if ($nbMatches > 0 && (int) $matches[0][1] === 0) {
                     return $regionCode;
                 }
             } elseif ($this->getNumberTypeHelper($nationalNumber, $metadata) !== PhoneNumberType::UNKNOWN) {
@@ -1118,7 +1118,7 @@ class PhoneNumberUtil
      */
     public function format(PhoneNumber $number, PhoneNumberFormat $numberFormat): string
     {
-        if ($number->getNationalNumber() === '0' && $number->hasRawInput()) {
+        if (($number->getNationalNumber() === '0' || $number->getNationalNumber() === null) && $number->hasRawInput()) {
             // Unparseable numbers that kept their raw input just use that, unless default country was
             // specified and the format is E164. In that case, we prepend the raw input with the country
             // code
@@ -1434,8 +1434,8 @@ class PhoneNumberUtil
         if ($find > 0 && static::isViablePhoneNumber(substr($number, 0, $matches[0][1]))) {
             // The numbers are captured into groups in the regular expression.
 
-            for ($i = 1, $length = count($matches); $i <= $length; $i++) {
-                if ($matches[$i][0] !== '') {
+            for ($i = 1, $length = count($matches); $i < $length; $i++) {
+                if ($matches[$i][1] >= 0) {
                     // We go through the capturing groups until we find one that captured some digits. If none
                     // did, then we will return the empty string.
                     $extension = $matches[$i][0];
