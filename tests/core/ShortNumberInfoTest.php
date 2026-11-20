@@ -427,6 +427,25 @@ class ShortNumberInfoTest extends TestCase
         self::assertEquals(ShortNumberCost::UNKNOWN_COST, $this->shortInfo->getExpectedCostForRegion($this->parse('+4640404', RegionCode::SE), RegionCode::US));
     }
 
+    public function testOutOfRangeNumberOfLeadingZeros(): void
+    {
+        $negative = new PhoneNumber();
+        $negative->setCountryCode(33)
+            ->setNationalNumber('1010')
+            ->setItalianLeadingZero(true)
+            ->setNumberOfLeadingZeros(-1);
+        self::assertTrue($this->shortInfo->isPossibleShortNumber($negative));
+        self::assertTrue($this->shortInfo->isValidShortNumber($negative));
+
+        $huge = new PhoneNumber();
+        $huge->setCountryCode(33)
+            ->setNationalNumber('1010')
+            ->setItalianLeadingZero(true)
+            ->setNumberOfLeadingZeros(PHP_INT_MAX);
+        self::assertFalse($this->shortInfo->isPossibleShortNumber($huge));
+        self::assertFalse($this->shortInfo->isValidShortNumber($huge));
+    }
+
     private function parse(string $number, string $regionCode): PhoneNumber
     {
         try {
